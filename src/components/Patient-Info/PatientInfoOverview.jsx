@@ -91,8 +91,8 @@ const PatientInfoOverview = () => (
         id="overview-title"
         className="text-4xl font-extrabold mb-4 sm:text-5xl"
       >
-        <span className="text-black">Patient </span>
-        <span className="text-blue-700">Informations Vue d’ensemble</span>
+        <span className="text-black">Aperçu de vos </span>
+        <span className="text-blue-700">informations patient</span>
       </h2>
 
       <p className="text-lg sm:text-xl font-light max-w-3xl mx-auto text-gray-900">

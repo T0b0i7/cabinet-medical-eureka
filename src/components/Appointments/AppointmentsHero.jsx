@@ -16,11 +16,7 @@ const simulateApi = (delay = 900, failRate = 0.06) =>
 
 const formatTime = (t) => {
   if (!t) return "";
-  const [hh, mm] = t.split(":");
-  const hour = Number(hh);
-  const ampm = hour >= 12 ? "PM" : "AM";
-  const displayHour = ((hour + 11) % 12) + 1;
-  return `${displayHour}:${mm} ${ampm}`;
+  return t;
 };
 
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
@@ -270,7 +266,7 @@ function QuickBooking({ onOpenFull, onBooked }) {
               onClick={() => onOpenFull({ default: { name, email, date, time } })}
               className="px-3 py-1.5 rounded border border-gray-300 bg-gray-50 text-black text-sm hover:bg-gray-100"
             >
-              Full form
+              Formulaire complet
             </button>
           </div>
         </div>
@@ -525,16 +521,16 @@ export default function AppointmentsHero() {
             <div className="mt-6">
               <ul className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <li className="bg-white border border-slate-100 dark:border-slate-800 rounded-lg p-3 shadow-sm">
-                  <div className="text-sm text-slate-500">Walk-in care</div>
-                  <div className="font-semibold mt-1 text-blue-700">Same-day slots</div>
+                  <div className="text-sm text-slate-500">Sans rendez-vous</div>
+                  <div className="font-semibold mt-1 text-blue-700">Créneaux le jour même</div>
                 </li>
                 <li className="bg-white border border-slate-100 dark:border-slate-800 rounded-lg p-3 shadow-sm">
                   <div className="text-sm text-slate-500">Téléconsultation</div>
                   <div className="font-semibold mt-1 text-blue-700">Consultations vidéo</div>
                 </li>
                 <li className="bg-white border border-slate-100 dark:border-slate-800 rounded-lg p-3 shadow-sm">
-                  <div className="text-sm text-slate-500">Emergency</div>
-                  <div className="font-semibold mt-1 text-blue-700">Priority support</div>
+                  <div className="text-sm text-slate-500">Urgences</div>
+                  <div className="font-semibold mt-1 text-blue-700">Prise en charge prioritaire</div>
                 </li>
               </ul>
             </div>
