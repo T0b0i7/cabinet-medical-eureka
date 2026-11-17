@@ -3,11 +3,13 @@
 Site vitrine du **Cabinet Médical EURÊKA**, à Porto-Novo (Bénin).
 Interface 100 % en français, prise de rendez-vous avec récapitulatif **WhatsApp** pré-rempli, et déploiement statique sur **GitHub Pages**.
 
-### 🔗 Aperçu en ligne
+### 🔗 Aperçus en ligne
 
-**https://t0b0i7.github.io/cabinet-medical-eureka/**
+- **Vercel (principal) :** **https://cabinet-medical-eureka.vercel.app/**
+- **GitHub Pages :** **https://t0b0i7.github.io/cabinet-medical-eureka/**
 
-[![Statut du déploiement](https://img.shields.io/badge/GitHub%20Pages-en%20ligne-2ea44f?logo=github)](https://t0b0i7.github.io/cabinet-medical-eureka/)
+[![Vercel](https://img.shields.io/badge/Vercel-en%20ligne-000?logo=vercel)](https://cabinet-medical-eureka.vercel.app/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-en%20ligne-2ea44f?logo=github)](https://t0b0i7.github.io/cabinet-medical-eureka/)
 [![Next.js](https://img.shields.io/badge/Next.js-15.5-000?logo=nextdotjs)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-087ea4?logo=react)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-38bdf8?logo=tailwindcss)](https://tailwindcss.com/)
@@ -83,9 +85,23 @@ npm run build
 # le site est généré dans le dossier out/
 ```
 
-## 🌍 Déploiement GitHub Pages
+## 🌍 Déploiements
 
-Le site est publié depuis la branche **`gh-pages`** à l’adresse :
+### Vercel
+
+Le site est publié sur **https://cabinet-medical-eureka.vercel.app/**.
+
+Pour republier :
+
+```bash
+npx vercel deploy --prod
+```
+
+Aucune variable d’environnement n’est nécessaire : le `basePath` n’est activé que pour GitHub Pages.
+
+### GitHub Pages
+
+Le site est également publié depuis la branche **`gh-pages`** à l’adresse :
 **https://t0b0i7.github.io/cabinet-medical-eureka/**
 
 Pour republier après une modification :
