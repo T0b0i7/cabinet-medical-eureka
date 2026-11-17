@@ -15,44 +15,44 @@ const services = [
   {
     id: 1,
     icon: <FaStethoscope className="text-blue-600" size={32} aria-hidden="true" />,
-    title: "General Consultation",
+    title: "Consultation de médecine générale",
     description:
-      "Personalized health assessments and expert guidance for all age groups.",
+      "Consultations courantes, bilans de santé et suivi personnalisé pour toute la famille. Tarif : 5 000 FCFA.",
   },
   {
     id: 2,
     icon: <FaHeartbeat className="text-blue-600" size={32} aria-hidden="true" />,
-    title: "Cardiology",
+    title: "ORL",
     description:
-      "Advanced heart care, diagnostics, and monitoring with cutting-edge equipment.",
+      "Consultations spécialisées : troubles de l’audition, sinusites, vertiges et pathologies ORL. Tarif : 10 000 à 15 000 FCFA.",
   },
   {
     id: 3,
     icon: <FaSyringe className="text-blue-600" size={32} aria-hidden="true" />,
-    title: "Vaccination Services",
+    title: "Vaccination",
     description:
-      "Routine and travel immunizations administered by certified professionals.",
+      "Vaccinations et rappels administrés par des professionnels qualifiés.",
   },
   {
     id: 4,
     icon: <FaUserMd className="text-blue-600" size={32} aria-hidden="true" />,
-    title: "Specialist Referrals",
+    title: "Orientation spécialisée",
     description:
-      "Access to trusted specialists for complex health needs and chronic care.",
+      "Orientation vers les spécialistes et les structures partenaires pour les cas complexes.",
   },
   {
     id: 5,
     icon: <FaPills className="text-blue-600" size={32} aria-hidden="true" />,
-    title: "Pharmacy & Prescriptions",
+    title: "Pharmacie et ordonnances",
     description:
-      "Fast and reliable medication services, plus detailed dosage instructions.",
+      "Conseils sur les ordonnances et accès aux médicaments essentiels.",
   },
   {
     id: 6,
     icon: <FaXRay className="text-blue-600" size={32} aria-hidden="true" />,
-    title: "Radiology & Imaging",
+    title: "Radiologie et imagerie",
     description:
-      "Modern diagnostic tools including X-rays, ultrasounds, and more.",
+      "Explorations et examens complémentaires réalisés avec un plateau technique moderne.",
   },
 ];
 
@@ -78,19 +78,19 @@ const ServiceList = () => {
   return (
     <section
       role="region"
-      aria-label="Services Offered"
+      aria-label="Prestations proposées"
       className="bg-white py-20 px-6 md:px-12"
     >
       <div className="max-w-7xl mx-auto">
         <header className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
-            What We{" "}
+            Nos{" "}
             <span className="text-blue-700 underline decoration-blue-300 decoration-4 underline-offset-4">
-              Offer
+              services
             </span>
           </h2>
           <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-light">
-            Explore a wide range of patient-centered medical services designed to support your health journey.
+            Découvrez une gamme de services médicaux centrés sur le patient, pensés pour accompagner votre parcours de santé.
           </p>
         </header>
 

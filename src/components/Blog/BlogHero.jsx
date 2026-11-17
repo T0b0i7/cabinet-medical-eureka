@@ -30,11 +30,11 @@ const BlogHero = () => {
   }, []);
 
   // Text to animate letter by letter
-  const animatedTitle = "Insights & Stories";
+  const animatedTitle = "Conseils & actualités";
 
   return (
     <section
-      aria-label="Blog Hero Section"
+      aria-label="Le blog santé"
       className="relative overflow-hidden bg-black rounded-xl"
       style={{ minHeight: 480 }}
     >
@@ -58,7 +58,7 @@ const BlogHero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-20 flex flex-col justify-center text-center md:text-left min-h-[480px]">
         {/* Animated heading */}
         <h1
-          aria-label="Insights and Stories from Our Health Experts"
+          aria-label="Conseils et actualités de nos professionnels de santé"
           className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-white drop-shadow-lg max-w-3xl mx-auto md:mx-0"
         >
           {startAnimation
@@ -79,7 +79,7 @@ const BlogHero = () => {
             }`}
             style={{ animationDelay: "0.9s" }}
           >
-            From Our Health Experts
+            Par nos experts santé
           </span>
         </h1>
 
@@ -90,20 +90,20 @@ const BlogHero = () => {
           }`}
           style={{ animationDelay: "1.2s" }}
         >
-          Stay updated with the latest health news, expert advice, and wellness tips to help you live your best
-          life.
+          Conseils de nos praticiens, actualités du cabinet et informations utiles
+          pour prendre soin de votre santé au quotidien.
         </p>
 
         {/* CTA button */}
         <a
           href="https://medium.com/"
-          aria-label="Read our blog articles"
+          aria-label="Lire nos articles"
           className={`inline-block mt-8 px-7 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg shadow-lg transition duration-300 max-w-max mx-auto md:mx-0 ${
             startAnimation ? "animate-fadeIn" : ""
           }`}
           style={{ animationDelay: "1.5s" }}
         >
-          Explore Articles
+          Explorer les articles
         </a>
       </div>
 

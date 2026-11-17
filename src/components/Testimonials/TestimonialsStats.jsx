@@ -7,28 +7,28 @@ import { FaStar, FaUsers, FaCommentDots, FaClock } from "react-icons/fa";
 const stats = [
   {
     id: 1,
-    label: "Testimonials",
+    label: "Témoignages",
     value: 1250,
     icon: <FaCommentDots className="text-blue-600 w-7 h-7" />,
     isNumber: true,
   },
   {
     id: 2,
-    label: "Average Rating",
+    label: "Note moyenne",
     value: "4.8 / 5",
     icon: <FaStar className="text-yellow-400 w-7 h-7" />,
     isNumber: false,
   },
   {
     id: 3,
-    label: "Happy Customers",
+    label: "Patients satisfaits",
     value: 980,
     icon: <FaUsers className="text-green-500 w-7 h-7" />,
     isNumber: true,
   },
   {
     id: 4,
-    label: "Years Experience",
+    label: "Années d’expérience",
     value: 12,
     icon: <FaClock className="text-purple-600 w-7 h-7" />,
     isNumber: true,

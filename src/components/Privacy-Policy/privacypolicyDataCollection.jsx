@@ -11,23 +11,15 @@ function DataCollectionSection() {
           id="data-collection-heading"
           className="text-3xl font-extrabold text-blue-700 mb-6"
         >
-          Data Collection
+          Collecte des données
         </h2>
 
-        <p className="text-gray-800 text-lg leading-relaxed mb-6">
-          We gather information to enhance our services for all users. This includes:
-        </p>
+        <p className="text-gray-800 text-lg leading-relaxed mb-6">Nous collectons certaines informations afin d’améliorer nos services pour tous les utilisateurs, notamment :</p>
 
         <ul className="max-w-xl list-disc list-inside space-y-3 text-gray-800 text-lg">
-          <li>
-            <strong>Personal Information:</strong> your name, email, and contact details provided when registering or reaching out.
-          </li>
-          <li>
-            <strong>Usage Data:</strong> details on how you use our site and services to help improve your experience.
-          </li>
-          <li>
-            <strong>Cookies and Tracking Technologies:</strong> used to customize your experience and analyze site traffic.
-          </li>
+          <li>votre nom, votre adresse e-mail et vos coordonnées fournies lors de la prise de rendez-vous ou d’une demande de contact.</li>
+          <li>des informations sur votre utilisation du site et des services, pour améliorer votre expérience.</li>
+          <li>utilisés pour personnaliser votre expérience et analyser la fréquentation du site.</li>
         </ul>
       </div>
     </section>

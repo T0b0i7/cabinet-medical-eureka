@@ -17,13 +17,13 @@ export default function AppointmentsEmptyState() {
   // Handler placeholder for booking action
   const handleBookClick = () => {
     // TODO: Replace alert with real navigation or booking logic
-    alert("Redirecting to booking page...");
+    alert("Redirection vers le formulaire de rendez-vous…");
   };
 
   return (
     <motion.section
       role="region"
-      aria-label="No appointments yet"
+      aria-label="Aucun rendez-vous pour le moment"
       initial={{ opacity: 0, y: 15 }}
       animate={animationControls}
       className="mx-auto max-w-3xl my-[-50px] mb-0 flex flex-col items-center justify-center rounded-lg bg-white px-6 py-20 text-center"
@@ -47,12 +47,13 @@ export default function AppointmentsEmptyState() {
 
       {/* Main Heading */}
       <h2 className="mb-4 text-3xl font-extrabold text-gray-900 sm:text-4xl">
-        No Appointments <span className="text-blue-600">Yet</span>
+        Aucun rendez-vous <span className="text-blue-600">pour le moment</span>
       </h2>
 
       {/* Supporting text */}
       <p className="mb-8 max-w-md text-base text-gray-600 sm:text-lg">
-        You haven't booked any appointments yet. Start by scheduling your first consultation with our certified doctors.
+        Vous n’avez pas encore de rendez-vous. Commencez par planifier votre
+        première consultation avec nos praticiens.
       </p>
 
       {/* Action button */}
@@ -61,7 +62,7 @@ export default function AppointmentsEmptyState() {
         onClick={handleBookClick}
         className="rounded-lg bg-blue-700 px-8 py-3 font-semibold text-white shadow-md transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
       >
-        Book Appointment
+        Prendre rendez-vous
       </button>
     </motion.section>
   );

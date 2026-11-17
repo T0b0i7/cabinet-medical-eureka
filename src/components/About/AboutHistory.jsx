@@ -7,33 +7,33 @@ import { motion } from "framer-motion";
 const timelineData = [
   {
     year: "2005",
-    title: "Foundation",
+    title: "Fondation",
     description:
-      "Our organization was founded with the mission to revolutionize healthcare services and bring innovation to patient care.",
+      "Le Cabinet Médical EURÊKA est né de la volonté d’offrir à Porto-Novo des soins spécialisés de proximité.",
   },
   {
     year: "2010",
-    title: "First Milestone",
+    title: "Première étape",
     description:
-      "Reached 10,000 patients served and opened our first satellite clinic to extend our reach.",
+      "Ouverture des consultations d’ORL et de médecine générale, avec une équipe pluridisciplinaire.",
   },
   {
     year: "2015",
-    title: "Technology Integration",
+    title: "Équipement moderne",
     description:
-      "Introduced advanced telemedicine solutions to connect doctors and patients remotely.",
+      "Installation d’un plateau technique moderne pour les explorations ORL et cervico-faciales.",
   },
   {
     year: "2020",
-    title: "Global Expansion",
+    title: "Rayonnement régional",
     description:
-      "Expanded operations internationally, partnering with global healthcare leaders.",
+      "Développement du suivi spécialisé et des actes de chirurgie cervico-faciale.",
   },
   {
     year: "2023",
-    title: "Sustainability Initiatives",
+    title: "Engagement communautaire",
     description:
-      "Launched programs focused on sustainable healthcare practices and community wellness.",
+      "Ouverture 7j/7 et mise en place d’un accueil dédié aux familles, avec parking sécurisé et salle d’allaitement.",
   },
 ];
 
@@ -57,7 +57,7 @@ const eventAnim = {
 export default function AboutHistory() {
   return (
     <section
-      aria-label="Our History Timeline"
+      aria-label="Notre histoire"
       className="bg-white py-20 px-6 sm:px-12 max-w-7xl mx-auto my-[-50px] mb-[-80px]"
     >
       {/* Section header */}
@@ -69,10 +69,10 @@ export default function AboutHistory() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
-          Our <span className="text-blue-600">History</span>
+          Notre <span className="text-blue-600">histoire</span>
         </h2>
         <p className="mt-4 text-gray-600 text-lg sm:text-xl font-light">
-          A journey of innovation, growth, and commitment to quality care.
+          Un parcours au service de la santé des familles de Porto-Novo.
         </p>
       </motion.div>
 

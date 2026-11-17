@@ -16,16 +16,16 @@ import {
 } from "react-icons/fa";
 
 const specializations = [
-  { id: 1, title: "Neurology", icon: FaBrain },
-  { id: 2, title: "General Medicine", icon: FaStethoscope },
-  { id: 3, title: "Cardiology", icon: FaHeartbeat },
-  { id: 4, title: "Radiology", icon: FaXRay },
-  { id: 5, title: "Immunology", icon: FaSyringe },
-  { id: 6, title: "Dentistry", icon: FaTooth },
-  { id: 7, title: "Nursing", icon: FaUserNurse },
-  { id: 8, title: "Pediatrics", icon: FaBaby },
-  { id: 9, title: "Oncology", icon: FaProcedures },
-  { id: 10, title: "Orthopedics", icon: FaSocks },
+  { id: 1, title: "ORL", icon: FaBrain },
+  { id: 2, title: "Médecine générale", icon: FaStethoscope },
+  { id: 3, title: "ORL", icon: FaHeartbeat },
+  { id: 4, title: "Audiologie", icon: FaXRay },
+  { id: 5, title: "Explorations ORL", icon: FaSyringe },
+  { id: 6, title: "Suivi post-opératoire", icon: FaTooth },
+  { id: 7, title: "Soins infirmiers", icon: FaUserNurse },
+  { id: 8, title: "ORL pédiatrique", icon: FaBaby },
+  { id: 9, title: "Vaccination", icon: FaProcedures },
+  { id: 10, title: "Bilans de santé", icon: FaSocks },
 ];
 
 const CARD_WIDTH = 280; // px
@@ -69,21 +69,21 @@ export default function SpecializationsCoverflow() {
 
   return (
     <section
-      aria-label="Specializations Coverflow Carousel"
+      aria-label="Carrousel des spécialités"
       className="py-20 bg-white select-none mb-[-50px]"
     >
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-4xl font-extrabold text-center mb-12 text-gray-900">
-          Our{" "}
+          Nos{" "}
           <span className="text-blue-700 underline decoration-blue-300 decoration-4 underline-offset-4">
-            Specializations
+            spécialités
           </span>
         </h2>
 
         <div className="relative flex items-center justify-center">
           {/* Left Arrow */}
           <button
-            aria-label="Previous specialization"
+            aria-label="Spécialité précédente"
             onClick={prev}
             className="absolute left-0 z-10 p-3 bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 transition focus:outline-none focus:ring-4 focus:ring-blue-400"
           >
@@ -179,7 +179,7 @@ export default function SpecializationsCoverflow() {
 
           {/* Right Arrow */}
           <button
-            aria-label="Next specialization"
+            aria-label="Spécialité suivante"
             onClick={next}
             className="absolute right-0 z-10 p-3 bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 transition focus:outline-none focus:ring-4 focus:ring-blue-400"
           >

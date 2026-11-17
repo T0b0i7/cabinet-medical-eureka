@@ -9,32 +9,32 @@ const stats = [
     icon: <FaUsers className="text-blue-500 w-8 h-8 md:w-10 md:h-10" aria-hidden="true" />,
     number: 250,
     suffix: "+",
-    label: "Dedicated Team Members",
+    label: "Membres de l’équipe",
   },
   {
     icon: <FaProjectDiagram className="text-green-500 w-8 h-8 md:w-10 md:h-10" aria-hidden="true" />,
     number: 1200,
     suffix: "+",
-    label: "Successful Projects",
+    label: "Patients accompagnés",
   },
   {
     icon: <FaAward className="text-yellow-500 w-8 h-8 md:w-10 md:h-10" aria-hidden="true" />,
     number: 35,
     suffix: "+",
-    label: "Industry Awards Won",
+    label: "Années d’expérience",
   },
   {
     icon: <FaClock className="text-purple-500 w-8 h-8 md:w-10 md:h-10 " aria-hidden="true" />,
     number: 15,
     suffix: "+",
-    label: "Years of Experience",
+    label: "Années d’expérience",
   },
 ];
 
 export default function OurteamStats() {
   return (
     <section
-      aria-label="Our Team Achievements Statistics"
+      aria-label="Réalisations et chiffres de notre équipe"
       className="w-full bg-gradient-to-r from-gray-50 via-white to-gray-50 py-16 md:py-20 my-[-50px] mb-0"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,7 +47,7 @@ export default function OurteamStats() {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold text-blue-600"
           >
-            <span className="text-black">Our Team</span> Achievements
+            <span className="text-black">Nos</span> réalisations
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -56,7 +56,7 @@ export default function OurteamStats() {
             viewport={{ once: true }}
             className="mt-3 text-gray-600 max-w-2xl mx-auto text-sm md:text-base"
           >
-            A quick glance at the numbers that showcase our dedication, expertise, and success over the years.
+            Quelques chiffres qui illustrent notre engagement, notre expertise et nos résultats au fil des années.
           </motion.p>
         </div>
 

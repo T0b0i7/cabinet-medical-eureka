@@ -5,26 +5,26 @@ import { motion } from 'framer-motion';
 
 const emergencySteps = [
   {
-    title: 'Stay Calm',
+    title: 'Restez calme',
     description:
-      'Take deep breaths to maintain calmness and think clearly before acting.',
+      'Respirez profondément pour garder votre calme et agir avec discernement.',
   },
   {
-    title: 'Call Emergency Services',
-    description: 'Dial the emergency number immediately to get professional help.',
+    title: 'Appelez le cabinet',
+    description: 'Contactez immédiatement le cabinet au +229 01 41 60 83 39.',
   },
   {
-    title: 'Provide Details',
+    title: 'Donnez les détails',
     description:
-      'Clearly describe the situation, location, and any injuries or dangers.',
+      'Décrivez clairement la situation, le lieu et les symptômes observés.',
   },
   {
-    title: 'Assist if Safe',
-    description: 'Offer help within your abilities without putting yourself at risk.',
+    title: 'Aidez si possible',
+    description: 'Apportez une aide adaptée sans vous mettre en danger.',
   },
   {
-    title: 'Follow Instructions',
-    description: 'Listen carefully and follow all guidance from emergency responders.',
+    title: 'Suivez les consignes',
+    description: 'Suivez attentivement les recommandations des professionnels de santé.',
   },
 ];
 
@@ -51,7 +51,7 @@ const listItemVariants = {
 const EmergencySteps = () => {
   return (
     <section
-      aria-label="Steps to take during an emergency"
+      aria-label="Les bons réflexes en cas d’urgence"
       className="bg-white text-black py-12 px-6 sm:px-12 md:px-20 lg:px-32 my-[-30px]"
     >
       <div className="max-w-5xl mx-auto">
@@ -61,7 +61,7 @@ const EmergencySteps = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <span className="text-black">Steps to Take in an</span> Emergency
+          <span className="text-black">Les bons réflexes</span> en cas d’urgence
         </motion.h2>
 
         <motion.ol
@@ -75,7 +75,7 @@ const EmergencySteps = () => {
             <motion.li
               key={idx}
               className="flex items-start gap-6"
-              aria-label={`Step ${idx + 1}: ${title}`}
+              aria-label={`Étape ${idx + 1} : ${title}`}
               variants={listItemVariants}
             >
               <div className="flex-shrink-0">

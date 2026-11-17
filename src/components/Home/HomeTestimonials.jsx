@@ -19,163 +19,163 @@ import "swiper/css";
 const testimonials = [
   {
     id: 1,
-    name: "Dr. Emma Johnson",
-    specialty: "Cardiologist",
+    name: "Adjovi Hounsou",
+    specialty: "Patiente — suivi ORL",
     photo:
       "https://media.istockphoto.com/id/96455213/photo/young-medical-girl.webp?a=1&s=612x612&w=0&k=20&c=dae8Fb4n-UyxsDwrr79DRgrBfORqzgoDGzNXK4V_-eM=",
     rating: 4.5,
     testimonial:
-      "Dr. Emma provided outstanding cardiac care with professionalism and empathy, focusing on patient comfort and ensuring a smooth recovery.",
+      "J’ai été très bien accueillie et le médecin a pris le temps de m’expliquer mon traitement. Je recommande le cabinet.",
   },
   {
     id: 2,
-    name: "Dr. Michael Lee",
-    specialty: "Pediatrician",
+    name: "Koffi Zinsou",
+    specialty: "Patient — chirurgie cervico-faciale",
     photo:
       "https://images.unsplash.com/photo-1645066928295-2506defde470?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGRvY3RvcnN8ZW58MHx8MHx8fDA%3D",
     rating: 5,
     testimonial:
-      "Dr. Michael’s gentle manner and thorough care made every visit reassuring. He truly cares about children’s well-being and listens carefully to parents.",
+      "Prise de rendez-vous simple, accueil chaleureux et consultation claire. Une équipe vraiment disponible.",
   },
   {
     id: 3,
-    name: "Dr. Sophia Patel",
-    specialty: "Neurologist",
+    name: "Grâce Ahouandjinou",
+    specialty: "Patiente — médecine générale",
     photo:
       "https://media.istockphoto.com/id/1211631919/photo/friendly-nurse-in-blue-scrubs.webp?a=1&s=612x612&w=0&k=20&c=ifOl1w6Kxua7GrlZjiqeW9-DhOmjtcQvM71v-iZdo6s=",
     rating: 4,
     testimonial:
-      "Dr. Sophia’s expert knowledge and approachable demeanor helped me understand my condition clearly. I appreciate her time and professionalism.",
+      "Les explications sont précises et rassurantes. Ma sinusite a été bien prise en charge.",
   },
   {
     id: 4,
-    name: "Dr. David Kim",
-    specialty: "Orthopedic Surgeon",
+    name: "Isidore Aholou",
+    specialty: "Patient — suivi ORL",
     photo:
       "https://plus.unsplash.com/premium_photo-1677165481551-c91ed6e15f09?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8",
     rating: 4.8,
     testimonial:
-      "Dr. David’s surgical expertise and careful follow-up made my treatment successful. His team was professional and supportive throughout my recovery.",
+      "Le suivi après mon intervention a été impeccable. Merci à toute l’équipe du cabinet.",
   },
   {
     id: 5,
-    name: "Dr. Aisha Rahman",
-    specialty: "Dermatologist",
+    name: "Estelle Agossou",
+    specialty: "Patiente — ORL",
     photo:
       "https://plus.unsplash.com/premium_photo-1681967035389-84aabd80cb1e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     rating: 5,
     testimonial:
-      "Dr. Aisha provided expert skincare advice and treatment that transformed my skin. Her approachable style made every appointment comfortable.",
+      "Un cadre propre et confortable, avec une salle d’allaitement très pratique pour mon bébé.",
   },
   {
     id: 6,
-    name: "Dr. Carlos Mendes",
-    specialty: "ENT Specialist",
+    name: "Benoît Sossou",
+    specialty: "Patient — médecine générale",
     photo:
       "https://images.unsplash.com/photo-1612523138351-4643808db8f3?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8",
     rating: 4.2,
     testimonial:
-      "Dr. Mendes was very attentive and explained every step of my ENT treatment clearly. I felt well cared for and confident in his expertise.",
+      "Consultation rapide et efficace, même un dimanche. Le parking sécurisé est un vrai plus.",
   },
   {
     id: 7,
-    name: "Dr. Laura Chen",
-    specialty: "Psychiatrist",
+    name: "Nadège Tossou",
+    specialty: "Patiente — chirurgie cervico-faciale",
     photo:
       "https://plus.unsplash.com/premium_photo-1702599029013-883a56a51fdc?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fHw%3D",
     rating: 4.9,
     testimonial:
-      "Dr. Laura’s compassionate care helped me regain mental strength. She listens carefully and provides thoughtful guidance every session.",
+      "Le médecin a écouté mes symptômes avec attention et le diagnostic a été juste.",
   },
   {
     id: 8,
-    name: "Dr. James Anderson",
-    specialty: "Urologist",
+    name: "Serge Agbodjan",
+    specialty: "Patient — ORL",
     photo:
       "https://images.unsplash.com/photo-1612276529731-4b21494e6d71?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D",
     rating: 4.6,
     testimonial:
-      "Dr. James is a skilled and respectful professional who provided clear explanations, helping me feel confident and at ease throughout my treatment.",
+      "Très bon accueil, rendez-vous respecté et tarifs clairs. Je reviendrai.",
   },
   {
     id: 9,
-    name: "Dr. Priya Mehta",
-    specialty: "Endocrinologist",
+    name: "Ghislain Ahouansou",
+    specialty: "Patiente — médecine générale",
     photo:
       "https://plus.unsplash.com/premium_photo-1661436275595-e6a8a3943f7a?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8",
     rating: 4.4,
     testimonial:
-      "Dr. Priya offered a clear plan for managing my condition and supported me patiently throughout. Highly professional care.",
+      "J’apprécie la disponibilité et la gentillesse de l’équipe à chaque visite.",
   },
   {
     id: 10,
-    name: "Dr. Thomas Nguyen",
-    specialty: "Gastroenterologist",
+    name: "Rachelle Sossou",
+    specialty: "Patient — ORL",
     photo:
       "https://images.unsplash.com/photo-1612531385446-f7e6d131e1d0?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D",
     rating: 4.7,
     testimonial:
-      "Dr. Thomas simplified a complex procedure with clarity and a calm approach, putting me at ease throughout the treatment.",
+      "Mes vertiges ont enfin été pris au sérieux et traités correctement.",
   },
   {
     id: 11,
-    name: "Dr. Fatima Zahra",
-    specialty: "Ophthalmologist",
+    name: "Arnaud Hounkpatin",
+    specialty: "Patiente — suivi post-opératoire",
     photo:
       "https://plus.unsplash.com/premium_photo-1661700138215-2ade8dd6f0c9?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIyfHx8ZW58MHx8fHx8",
     rating: 5,
     testimonial:
-      "Dr. Fatima was gentle, thorough, and explained every step clearly. Her care made a real difference in my vision.",
+      "Un grand merci pour le suivi attentionné après mon opération.",
   },
   {
     id: 12,
-    name: "Dr. Robert Scott",
-    specialty: "General Physician",
+    name: "Mireille Zinsou",
+    specialty: "Patient — médecine générale",
     photo:
       "https://plus.unsplash.com/premium_photo-1723514536306-26fe5c4adeb7?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D",
     rating: 4.3,
     testimonial:
-      "Dr. Scott is approachable and accurate with his diagnoses. I trust his advice and appreciate his professionalism.",
+      "Le cabinet est facile d’accès et l’équipe est toujours à l’écoute.",
   },
   {
     id: 13,
-    name: "Dr. Elena Garcia",
-    specialty: "Pulmonologist",
+    name: "Dodji Kpèdé",
+    specialty: "Patiente — ORL",
     photo:
       "https://plus.unsplash.com/premium_photo-1661700176531-c8bd4603030f?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI3fHx8ZW58MHx8fHx8",
     rating: 4.8,
     testimonial:
-      "Thanks to Dr. Elena’s thorough treatment, my breathing has improved significantly. She is very caring and professional.",
+      "Excellente prise en charge de mon enfant, avec beaucoup de douceur.",
   },
   {
     id: 14,
-    name: "Dr. Benjamin Carter",
-    specialty: "Oncologist",
+    name: "Sylvie Dossou",
+    specialty: "Patient — chirurgie cervico-faciale",
     photo:
       "https://media.istockphoto.com/id/2161181257/photo/photo-of-doctor-guy-cross-arms-smiling-isolated-grey-color-background.webp?a=1&s=612x612&w=0&k=20&c=U9syri__PrnlJoIy7f9ABirWpQS9cbtFkwNkHWF4UpU=",
     rating: 4.9,
     testimonial:
-      "Dr. Benjamin provided expert guidance and compassion during a challenging time. His skill and dedication are unmatched.",
+      "Professionnalisme et humanité : tout ce que l’on attend d’un cabinet médical.",
   },
   {
     id: 15,
-    name: "Dr. Hana Yamada",
-    specialty: "Rheumatologist",
+    name: "Raoul Assogba",
+    specialty: "Patiente — médecine générale",
     photo:
       "https://plus.unsplash.com/premium_photo-1702598649611-725ca8ca3ab6?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDM1fHx8ZW58MHx8fHx8",
     rating: 4.5,
     testimonial:
-      "Dr. Hana listens attentively and provided me with effective treatment to manage my joint pain. Highly recommended.",
+      "Je recommande pour la qualité des soins et la clarté des explications.",
   },
   {
     id: 16,
-    name: "Dr. Omar Bashir",
-    specialty: "Nephrologist",
+    name: "Akossiwa Amoussou",
+    specialty: "Patient — ORL",
     photo:
       "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     rating: 4.6,
     testimonial:
-      "Dr. Omar’s knowledge and clear explanations helped me understand my condition and the treatment plan thoroughly.",
+      "Un accueil irréprochable et une équipe vraiment dévouée.",
   },
 ];
 
@@ -253,8 +253,8 @@ const ModernCard = ({
         />
         <FaCheckCircle
           className="absolute bottom-1 right-1 text-green-600 text-2xl bg-white rounded-full border border-gray-300"
-          title="Verified"
-          aria-label="Verified"
+          title="Vérifié"
+          aria-label="Vérifié"
         />
       </div>
 
@@ -273,7 +273,7 @@ const ModernCard = ({
               aria-expanded={isExpanded}
               aria-controls={`testimonial-text-${id}`}
             >
-              {isExpanded ? "Show Less" : "Read More"}
+              {isExpanded ? "Voir moins" : "Lire la suite"}
             </button>
           )}
         </p>
@@ -289,17 +289,17 @@ const ModernCard = ({
           <button
             onClick={() => onCopy(id)}
             className="flex items-center gap-2 text-blue-700 hover:text-blue-900 transition-colors font-semibold text-base focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-            aria-label={`Copy link for testimonial by ${name}`}
+            aria-label={`Copier le lien du témoignage de ${name}`}
             type="button"
           >
-            {copied === id ? "Link Copied!" : "Copy Link"} <FaCopy />
+            {copied === id ? "Lien copié !" : "Copier le lien"} <FaCopy />
           </button>
           <a
-            href={`mailto:?subject=Check this testimonial&body=Check this: ${currentUrl}#testimonial-${id}`}
+            href={`mailto:?subject=Découvrez ce témoignage&body=À découvrir : ${currentUrl}#testimonial-${id}`}
             className="flex items-center gap-2 text-blue-700 hover:text-blue-900 transition-colors font-semibold text-base focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-            aria-label={`Share testimonial by ${name}`}
+            aria-label={`Partager le témoignage de ${name}`}
           >
-            Share <FaShareAlt />
+            Partager <FaShareAlt />
           </a>
         </div>
       </div>
@@ -364,8 +364,8 @@ const HomeTestimonials = () => {
             hidden: { opacity: 0, y: 20 },
           }}
         >
-          Trusted Voices{" "}
-          <span className="text-blue-700 font-extrabold">From Our Patients</span>
+          La parole{" "}
+          <span className="text-blue-700 font-extrabold">à nos patients</span>
         </motion.h2>
         <motion.p
           className="text-gray-800 mt-4 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed"
@@ -380,7 +380,7 @@ const HomeTestimonials = () => {
             hidden: { opacity: 0, y: 20 },
           }}
         >
-          Real stories from people who received expert care across various specialties.
+          Des témoignages authentiques de patients pris en charge dans nos différentes spécialités.
         </motion.p>
       </div>
 

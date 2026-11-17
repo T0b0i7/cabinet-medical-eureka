@@ -33,12 +33,12 @@ const iconVariants = {
 };
 
 const insurances = [
-  { id: 1, name: "Blue Cross Blue Shield", icon: <FaShieldAlt className="text-blue-600 w-12 h-12" /> },
-  { id: 2, name: "UnitedHealthcare", icon: <FaHospitalUser className="text-purple-600 w-12 h-12" /> },
-  { id: 3, name: "Aetna", icon: <FaHeartbeat className="text-red-500 w-12 h-12" /> },
-  { id: 4, name: "Cigna", icon: <FaUserMd className="text-green-600 w-12 h-12" /> },
-  { id: 5, name: "Humana", icon: <FaClinicMedical className="text-indigo-600 w-12 h-12" /> },
-  { id: 6, name: "Kaiser Permanente", icon: <FaHandsHelping className="text-teal-600 w-12 h-12" /> },
+  { id: 1, name: "CNSS Bénin", icon: <FaShieldAlt className="text-blue-600 w-12 h-12" /> },
+  { id: 2, name: "Mutuelle de Santé", icon: <FaHospitalUser className="text-purple-600 w-12 h-12" /> },
+  { id: 3, name: "ASCOMA", icon: <FaHeartbeat className="text-red-500 w-12 h-12" /> },
+  { id: 4, name: "NSIA Assurances", icon: <FaUserMd className="text-green-600 w-12 h-12" /> },
+  { id: 5, name: "Sunu Assurances", icon: <FaClinicMedical className="text-indigo-600 w-12 h-12" /> },
+  { id: 6, name: "Activa Assurances", icon: <FaHandsHelping className="text-teal-600 w-12 h-12" /> },
 ];
 
 export default function InsuranceAccepted() {
@@ -77,20 +77,20 @@ export default function InsuranceAccepted() {
   const validate = () => {
     const errors = {};
 
-    if (!formData.insuranceProvider) errors.insuranceProvider = "Please select your insurance provider.";
-    if (!formData.fullName.trim()) errors.fullName = "Full name is required.";
-    if (!formData.dateOfBirth) errors.dateOfBirth = "Date of birth is required.";
+    if (!formData.insuranceProvider) errors.insuranceProvider = "Veuillez sélectionner votre assurance.";
+    if (!formData.fullName.trim()) errors.fullName = "Votre nom complet est requis.";
+    if (!formData.dateOfBirth) errors.dateOfBirth = "La date de naissance est requise.";
 
     if (!formData.phoneNumber.trim()) {
-      errors.phoneNumber = "Phone number is required.";
+      errors.phoneNumber = "Le numéro de téléphone est requis.";
     } else if (!/^\+?[0-9\s\-]{7,15}$/.test(formData.phoneNumber.trim())) {
-      errors.phoneNumber = "Invalid phone number format.";
+      errors.phoneNumber = "Format de numéro de téléphone invalide.";
     }
 
     if (!formData.email.trim()) {
-      errors.email = "Email address is required.";
+      errors.email = "L’adresse e-mail est requise.";
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email.trim())) {
-      errors.email = "Invalid email address.";
+      errors.email = "Adresse e-mail invalide.";
     }
 
     setFormErrors(errors);
@@ -124,7 +124,7 @@ export default function InsuranceAccepted() {
 
   return (
     <section
-      aria-label="Insurance Accepted"
+      aria-label="Assurances acceptées"
       role="region"
       className="bg-white py-20 px-6 sm:px-12 lg:px-24 my-[-30px]"
       ref={sectionRef}
@@ -140,9 +140,9 @@ export default function InsuranceAccepted() {
           variants={itemVariants}
           tabIndex={-1}
         >
-          We Accept{" "}
+          Nous acceptons{" "}
           <span className="text-blue-700 underline decoration-blue-300 decoration-4 underline-offset-4">
-            Your Insurance
+            votre assurance
           </span>
         </motion.h2>
 
@@ -150,13 +150,13 @@ export default function InsuranceAccepted() {
           className="max-w-3xl text-center text-lg sm:text-xl text-gray-700 font-light mb-14"
           variants={itemVariants}
         >
-          NovaHealth partners with leading insurance providers to make your healthcare easy and affordable. Check below if your insurance is accepted.
+          Le Cabinet Médical EURÊKA travaille avec plusieurs assurances et mutuelles pour faciliter votre prise en charge. Vérifiez ci-dessous si votre assurance est acceptée.
         </motion.p>
 
         <motion.ul
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-14 w-full max-w-5xl"
           variants={containerVariants}
-          aria-label="List of accepted insurance providers"
+          aria-label="Liste des assurances acceptées"
         >
           {insurances.map(({ id, name, icon }) => (
             <motion.li
@@ -166,7 +166,7 @@ export default function InsuranceAccepted() {
               whileHover={{ scale: 1.05, boxShadow: "0 12px 24px rgba(59, 130, 246, 0.3)" }}
               whileTap={{ scale: 0.95 }}
               tabIndex={0}
-              aria-label={`Accepted insurance: ${name}`}
+              aria-label={`Assurance acceptée : ${name}`}
             >
               <motion.div variants={iconVariants} aria-hidden="true">
                 {icon}
@@ -187,7 +187,7 @@ export default function InsuranceAccepted() {
           aria-controls="eligibility-modal"
           onClick={() => setModalOpen(true)}
         >
-          Check Your Eligibility
+          Vérifier votre prise en charge
         </motion.button>
       </motion.div>
 
@@ -212,20 +212,20 @@ export default function InsuranceAccepted() {
           >
             <button
               onClick={closeModal}
-              aria-label="Close eligibility form"
+              aria-label="Fermer le formulaire de prise en charge"
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
             >
               <FaTimes className="w-6 h-6" />
             </button>
 
             <h3 id="modal-title" className="text-2xl font-bold text-gray-900 mb-4 text-center">
-              Check Your Insurance Eligibility
+              Vérifier votre prise en charge
             </h3>
 
             {!formSubmitted ? (
               <form onSubmit={handleSubmit} noValidate>
                 <label htmlFor="insuranceProvider" className="block text-sm font-medium text-gray-700 mb-1">
-                  Select Insurance Provider <span className="text-red-500">*</span>
+                  Sélectionner votre assurance <span className="text-red-500">*</span>
                 </label>
                 <select
                   id="insuranceProvider"
@@ -237,7 +237,7 @@ export default function InsuranceAccepted() {
                   }`}
                   required
                 >
-                  <option value="">-- Select --</option>
+                  <option value="">-- Sélectionner --</option>
                   {insurances.map(({ id, name }) => (
                     <option key={id} value={name}>
                       {name}
@@ -251,13 +251,13 @@ export default function InsuranceAccepted() {
                 )}
 
                 <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">
-                  Full Name <span className="text-red-500">*</span>
+                  Nom complet <span className="text-red-500">*</span>
                 </label>
                 <input
                   id="fullName"
                   name="fullName"
                   type="text"
-                  placeholder="John Doe"
+                  placeholder="Votre nom complet"
                   value={formData.fullName}
                   onChange={handleChange}
                   className={`w-full rounded-md border px-3 py-2 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500 border-gray-300 ${
@@ -272,7 +272,7 @@ export default function InsuranceAccepted() {
                 )}
 
                 <label htmlFor="dateOfBirth" className="block text-sm font-medium text-gray-700 mb-1">
-                  Date of Birth <span className="text-red-500">*</span>
+                  Date de naissance <span className="text-red-500">*</span>
                 </label>
                 <input
                   id="dateOfBirth"
@@ -293,13 +293,13 @@ export default function InsuranceAccepted() {
                 )}
 
                 <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-1">
-                  Phone Number <span className="text-red-500">*</span>
+                  Numéro de téléphone <span className="text-red-500">*</span>
                 </label>
                 <input
                   id="phoneNumber"
                   name="phoneNumber"
                   type="tel"
-                  placeholder="+1234567890"
+                  placeholder="+229 01 00 00 00 00"
                   value={formData.phoneNumber}
                   onChange={handleChange}
                   className={`w-full rounded-md border px-3 py-2 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500 border-gray-300 ${
@@ -314,13 +314,13 @@ export default function InsuranceAccepted() {
                 )}
 
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                  Email Address <span className="text-red-500">*</span>
+                  Adresse e-mail <span className="text-red-500">*</span>
                 </label>
                 <input
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="you@example.com"
+                  placeholder="vous@exemple.com"
                   value={formData.email}
                   onChange={handleChange}
                   className={`w-full rounded-md border px-3 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500 border-gray-300 ${
@@ -337,9 +337,9 @@ export default function InsuranceAccepted() {
                 <button
                   type="submit"
                   className="w-full bg-blue-700 hover:bg-blue-800 focus-visible:ring-blue-400 focus:outline-none focus:ring-4 text-white font-semibold px-5 py-3 rounded-lg shadow-lg select-none tracking-wide transition-transform duration-200"
-                  aria-label="Submit eligibility check form"
+                  aria-label="Envoyer la demande de prise en charge"
                 >
-                  Submit
+                  Envoyer
                 </button>
               </form>
             ) : (
@@ -355,17 +355,18 @@ export default function InsuranceAccepted() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
                 <h4 className="text-xl font-semibold mb-2 text-gray-900">
-                  Eligibility Check Submitted!
+                  Demande envoyée !
                 </h4>
                 <p className="text-gray-700 mb-6">
-                  Thank you for submitting your insurance eligibility check. Our team will review your information and contact you shortly.
+                  Merci d’avoir soumis votre demande de prise en charge. Notre équipe
+                  examinera vos informations et vous contactera rapidement.
                 </p>
                 <button
                   onClick={closeModal}
                   className="bg-blue-700 hover:bg-blue-800 focus-visible:ring-blue-400 focus:outline-none focus:ring-4 text-white font-semibold px-6 py-3 rounded-lg shadow-lg select-none tracking-wide transition-transform duration-200"
-                  aria-label="Close eligibility confirmation"
+                  aria-label="Fermer la confirmation"
                 >
-                  Close
+                  Fermer
                 </button>
               </div>
             )}

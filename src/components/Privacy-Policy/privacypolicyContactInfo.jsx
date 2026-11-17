@@ -12,16 +12,16 @@ function ContactInfoSection() {
           id="contact-info-heading"
           className="text-3xl font-extrabold text-blue-700 mb-8"
         >
-          Contact Information
+          Coordonnées
         </h2>
 
         <div className="grid max-w-3xl mx-auto grid-cols-1 gap-10 sm:grid-cols-2 text-gray-800 text-lg">
           <div className="flex items-center gap-4">
             <FaMapMarkerAlt className="flex-shrink-0 w-6 h-6 text-blue-600" />
             <address className="not-italic">
-              123 NovaHealth Ave,
+              Porto-Novo,
               <br />
-              Amsterdam, Netherlands
+              Bénin
             </address>
           </div>
 
@@ -34,14 +34,14 @@ function ContactInfoSection() {
 
           <div className="flex items-center gap-4">
             <FaEnvelope className="flex-shrink-0 w-6 h-6 text-blue-600" />
-            <a href="mailto:support@novahealth.com" className="hover:underline">
-              support@novahealth.com
+            <a href="mailto:contact@cabinet-eureka.bj" className="hover:underline">
+              contact@cabinet-eureka.bj
             </a>
           </div>
 
           <div className="flex items-center gap-4">
             <FaClock className="flex-shrink-0 w-6 h-6 text-blue-600" />
-            <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
+            <p>Ouvert 7j/7 : 08h00 – 18h00</p>
           </div>
         </div>
       </div>

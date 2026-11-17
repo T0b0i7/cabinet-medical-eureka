@@ -6,12 +6,12 @@ import { motion, useAnimation } from "framer-motion";
 const features = [
   {
     id: 1,
-    title: "24/7 Emergency",
-    description: "Round-the-clock emergency services for immediate and critical care.",
+    title: "Ouverture 7j/7",
+    description: "Une disponibilité exceptionnelle du lundi au dimanche, de 08h00 à 18h00.",
     icon: (
       <img
         src="https://img.icons8.com/ios-filled/50/fa314a/ambulance.png"
-        alt="24/7 Emergency icon"
+        alt="Ouverture 7j/7 icon"
         className="h-14 w-14 object-contain"
         loading="lazy"
         draggable={false}
@@ -21,12 +21,12 @@ const features = [
   },
   {
     id: 2,
-    title: "Qualified Doctors",
-    description: "Experienced specialists and general physicians you can trust.",
+    title: "Médecins qualifiés",
+    description: "Une équipe expérimentée en ORL, chirurgie cervico-faciale et médecine générale.",
     icon: (
       <img
         src="https://img.icons8.com/ios-filled/50/4a90e2/doctor-male.png"
-        alt="Qualified Doctors icon"
+        alt="Médecins qualifiés icon"
         className="h-14 w-14 object-contain"
         loading="lazy"
         draggable={false}
@@ -36,8 +36,8 @@ const features = [
   },
   {
     id: 3,
-    title: "Modern Equipment",
-    description: "State-of-the-art medical tools for precise diagnostics and treatments.",
+    title: "Plateau technique moderne",
+    description: "Des équipements récents pour des diagnostics fiables et des soins adaptés.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -58,12 +58,12 @@ const features = [
   },
   {
     id: 4,
-    title: "Patient-Centered Care",
-    description: "Compassionate, personalized services focused on your health journey.",
+    title: "Confort & accessibilité",
+    description: "Parking privé sécurisé, salle d’allaitement dédiée et accueil attentionné pour les familles.",
     icon: (
       <img
         src="https://img.icons8.com/ios-filled/50/f9a825/heart-health.png"
-        alt="Patient-Centered Care icon"
+        alt="Prise en charge humaine icon"
         className="h-14 w-14 object-contain"
         loading="lazy"
         draggable={false}
@@ -135,7 +135,7 @@ export default function HomeFeatures() {
           animate={controls}
           variants={headingVariants}
         >
-          <span style={{ color: "#1D4ED8" }}>Why</span> Choose Us?
+          <span style={{ color: "#1D4ED8" }}>Pourquoi</span> nous choisir ?
         </motion.h2>
 
         <motion.p
@@ -145,7 +145,7 @@ export default function HomeFeatures() {
           variants={headingVariants}
           transition={{ delay: 0.2 }}
         >
-          We provide expert healthcare services with compassion, modern technology, and personalized care.
+          Des soins experts, humains et personnalisés, avec un plateau technique moderne.
         </motion.p>
 
         <motion.div

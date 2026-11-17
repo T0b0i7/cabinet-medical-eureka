@@ -3,18 +3,19 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useSiteConfig } from "../SiteConfigProvider";
 
 const NAV_ITEMS = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Appointments", href: "/appointments" },
-  { label: "Patient Info", href: "/patient-info" },
-  { label: "Emergency", href: "/emergency" },
-  { label: "Our Team", href: "/ourteam" },
-  { label: "Testimonials", href: "/testimonials" },
+  { label: "Accueil", href: "/" },
+  { label: "À propos", href: "/about" },
+  { label: "Spécialités", href: "/services" },
+  { label: "Rendez-vous", href: "/appointments" },
+  { label: "Informations patients", href: "/patient-info" },
+  { label: "Urgences", href: "/emergency" },
+  { label: "Notre équipe", href: "/ourteam" },
+  { label: "Témoignages", href: "/testimonials" },
   { label: "Blog", href: "/blog" },
-  { label: "FAQs", href: "/faqs" },
+  { label: "FAQ", href: "/faqs" },
 ];
 
 export default function Navbar() {
@@ -22,8 +23,9 @@ export default function Navbar() {
   const [isMoreOpen, setIsMoreOpen] = useState(false);
   const moreDropdownRef = useRef(null);
   const currentPath = usePathname() || "/";
+  const site = useSiteConfig();
 
-  // Close drawer and dropdown on Escape key
+  // Fermeture du tiroir et du menu déroulant avec la touche Échap
   useEffect(() => {
     const handleEscape = (event) => {
       if (event.key === "Escape") {
@@ -35,7 +37,7 @@ export default function Navbar() {
     return () => window.removeEventListener("keydown", handleEscape);
   }, []);
 
-  // Close "More" dropdown on outside click
+  // Fermeture du menu « Plus » au clic extérieur
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (moreDropdownRef.current && !moreDropdownRef.current.contains(event.target)) {
@@ -46,7 +48,7 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Prevent body scroll when drawer is open
+  // Blocage du défilement du corps lorsque le tiroir est ouvert
   useEffect(() => {
     document.body.style.overflow = isDrawerOpen ? "hidden" : "";
     return () => {
@@ -54,46 +56,49 @@ export default function Navbar() {
     };
   }, [isDrawerOpen]);
 
-  // Determine if link is active based on current path
-  const checkActive = (href) => {
+  const checkActif = (href) => {
     if (href === "/") return currentPath === "/";
     return currentPath.startsWith(href);
   };
 
-  // Divide nav items: first 5 main, rest in "More"
   const mainNav = NAV_ITEMS.slice(0, 5);
   const moreNav = NAV_ITEMS.slice(5);
 
   return (
     <>
-      {/* Header with desktop nav and mobile toggle */}
+      {/* En-tête avec navigation bureau et bouton mobile */}
       <header className="sticky top-0 z-50 bg-white shadow border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <nav
-            aria-label="Primary Navigation"
+            aria-label="Navigation principale"
             className="flex items-center justify-between h-16"
           >
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link
                 href="/"
-                aria-label="NovaHealth Home"
+                aria-label={`${site.clinic} — Accueil`}
                 onClick={() => setIsDrawerOpen(false)}
-                className="text-2xl font-extrabold text-blue-700 select-none hover:text-blue-800 whitespace-nowrap"
+                className="block leading-tight select-none group"
               >
-                NovaHealth
+                <span className="block text-lg sm:text-xl font-extrabold text-blue-700 group-hover:text-blue-800 whitespace-nowrap">
+                  {site.clinic}
+                </span>
+                <span className="hidden sm:block text-[11px] font-medium text-gray-500 tracking-wide">
+                  {site.city} · {site.hoursShort}
+                </span>
               </Link>
             </div>
 
-            {/* Desktop navigation */}
-            <nav className="hidden md:flex items-center space-x-10 font-semibold text-gray-700 text-sm select-none">
+            {/* Navigation bureau */}
+            <nav className="hidden md:flex items-center space-x-8 font-semibold text-gray-700 text-sm select-none">
               {mainNav.map(({ label, href }) => (
                 <Link
                   key={label}
                   href={href}
                   onClick={() => setIsDrawerOpen(false)}
                   className={`relative py-2 border-b-2 transition-colors duration-300 focus:outline-none focus:border-blue-700 ${
-                    checkActive(href)
+                    checkActif(href)
                       ? "border-blue-700 text-blue-700"
                       : "border-transparent hover:border-blue-700 hover:text-blue-700"
                   }`}
@@ -102,7 +107,7 @@ export default function Navbar() {
                 </Link>
               ))}
 
-              {/* "More" dropdown */}
+              {/* Menu déroulant « Plus » */}
               <div ref={moreDropdownRef} className="relative">
                 <button
                   type="button"
@@ -113,7 +118,7 @@ export default function Navbar() {
                     isMoreOpen ? "border-blue-700 text-blue-700" : "text-gray-700 hover:text-blue-700 hover:border-blue-700"
                   }`}
                 >
-                  <span className="select-none cursor-pointer leading-none">More</span>
+                  <span className="select-none cursor-pointer leading-none">Plus</span>
                   <svg
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +135,7 @@ export default function Navbar() {
                 </button>
 
                 {isMoreOpen && (
-                  <ul className="absolute right-0 mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                  <ul className="absolute right-0 mt-2 w-60 bg-white border border-gray-200 rounded-md shadow-lg z-50">
                     {moreNav.map(({ label, href }) => (
                       <li key={label}>
                         <Link
@@ -140,7 +145,7 @@ export default function Navbar() {
                             setIsDrawerOpen(false);
                           }}
                           className={`block px-4 py-2 transition-colors duration-300 ${
-                            checkActive(href)
+                            checkActif(href)
                               ? "bg-blue-50 text-blue-700 font-semibold"
                               : "text-gray-700 hover:bg-blue-50 hover:text-blue-700"
                           }`}
@@ -153,20 +158,20 @@ export default function Navbar() {
                 )}
               </div>
 
-              {/* Patient Login Button */}
+              {/* Bouton de prise de rendez-vous */}
               <Link
-                href="/dashboard"
+                href="/appointments"
                 onClick={() => setIsDrawerOpen(false)}
-                className="ml-6 px-5 py-2 rounded-md bg-blue-700 text-white font-semibold hover:bg-blue-800 transition-colors duration-300 whitespace-nowrap"
+                className="ml-4 px-5 py-2 rounded-md bg-blue-700 text-white font-semibold hover:bg-blue-800 transition-colors duration-300 whitespace-nowrap"
               >
-                Patient Login
+                Prendre rendez-vous
               </Link>
             </nav>
 
-            {/* Mobile menu toggle button */}
+            {/* Bouton d’ouverture du menu mobile */}
             <button
               type="button"
-              aria-label={isDrawerOpen ? "Close menu" : "Open menu"}
+              aria-label={isDrawerOpen ? "Fermer le menu" : "Ouvrir le menu"}
               aria-expanded={isDrawerOpen}
               aria-controls="mobile-menu"
               onClick={() => setIsDrawerOpen((prev) => !prev)}
@@ -200,7 +205,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Backdrop for drawer */}
+      {/* Voile d’arrière-plan */}
       <div
         aria-hidden="true"
         onClick={() => setIsDrawerOpen(false)}
@@ -209,7 +214,7 @@ export default function Navbar() {
         }`}
       />
 
-      {/* Mobile drawer */}
+      {/* Tiroir mobile */}
       <aside
         id="mobile-menu"
         role="dialog"
@@ -220,24 +225,27 @@ export default function Navbar() {
         }`}
       >
         <nav className="flex flex-col h-full px-6 py-8 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-200">
-          {/* Drawer header with logo and close button */}
-          <div className="flex items-center justify-between mb-8">
+          {/* En-tête du tiroir */}
+          <div className="flex items-center justify-between mb-8 gap-3">
             <Link
               href="/"
-              aria-label="NovaHealth Home"
+              aria-label={`${site.clinic} — Accueil`}
               onClick={() => setIsDrawerOpen(false)}
-              className="text-2xl font-extrabold text-blue-700 select-none hover:text-blue-800 whitespace-nowrap"
+              className="text-base font-extrabold text-blue-700 select-none hover:text-blue-800 leading-tight"
             >
-              NovaHealth
+              {site.clinic}
+              <span className="block text-[11px] font-medium text-gray-500">
+                {site.city}
+              </span>
             </Link>
             <button
               type="button"
-              aria-label="Close menu"
+              aria-label="Fermer le menu"
               onClick={() => setIsDrawerOpen(false)}
               className="text-gray-600 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md p-2 transition-transform duration-300 hover:scale-110 active:scale-95"
             >
               <svg
-                className="w-7 h-7"
+                className="w-6 h-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -249,16 +257,16 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Navigation links */}
-          <ul className="flex flex-col space-y-6 font-semibold text-gray-900 text-lg select-none">
+          {/* Liens de navigation */}
+          <ul className="flex flex-col space-y-5 font-semibold text-gray-900 text-base select-none">
             {NAV_ITEMS.map(({ label, href }) => (
               <li key={label}>
                 <Link
                   href={href}
                   onClick={() => setIsDrawerOpen(false)}
                   tabIndex={0}
-                  className={`block px-6 py-4 rounded-lg border-l-4 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
-                    checkActive(href)
+                  className={`block px-5 py-3 rounded-lg border-l-4 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+                    checkActif(href)
                       ? "border-blue-700 bg-blue-50 text-blue-700 shadow-lg"
                       : "border-transparent hover:border-blue-700 hover:bg-blue-50 hover:text-blue-700"
                   }`}
@@ -269,22 +277,28 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Bottom CTA button */}
-          <div className="mt-auto px-6 pt-10 pb-6">
+          {/* Bouton d’action */}
+          <div className="mt-auto px-2 pt-10 pb-6 space-y-3">
             <Link
-              href="/dashboard"
+              href="/appointments"
               onClick={() => setIsDrawerOpen(false)}
               tabIndex={0}
-              aria-label="Patient Login"
+              aria-label="Prendre rendez-vous"
               className="block w-full text-center bg-blue-700 text-white font-semibold rounded-md py-3 shadow-md hover:bg-blue-800 transition-colors duration-300"
             >
-              Patient Login
+              Prendre rendez-vous
             </Link>
+            <a
+              href={`tel:${site.phoneRaw}`}
+              className="block w-full text-center border border-blue-700 text-blue-700 font-semibold rounded-md py-3 hover:bg-blue-50 transition-colors duration-300"
+            >
+              {site.phone}
+            </a>
           </div>
 
-          {/* Footer text */}
-          <footer className="text-center text-sm text-gray-500 select-none border-t border-gray-300 py-3">
-            &copy; {new Date().getFullYear()} NovaHealth. All rights reserved.
+          {/* Pied du tiroir */}
+          <footer className="text-center text-xs text-gray-500 select-none border-t border-gray-300 py-3">
+            &copy; {new Date().getFullYear()} {site.clinic}. Tous droits réservés.
           </footer>
         </nav>
       </aside>

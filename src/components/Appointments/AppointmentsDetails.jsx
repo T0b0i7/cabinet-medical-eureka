@@ -3,11 +3,11 @@
 import React, { useState, useEffect, useRef } from "react";
 
 const exampleAppointment = {
-  patient: "John Doe",
+  patient: "Koffi Zinsou",
   type: "Consultation",
   datetime: new Date("2025-08-10T09:30"),
-  status: "Confirmed",
-  notes: "Patient has a history of hypertension.\nDiscuss medication adjustments.",
+  status: "Confirmé",
+  notes: "Patient suivi pour hypertension.\nDiscuter de l’adaptation du traitement.",
 };
 
 const statusStyles = {
@@ -37,28 +37,28 @@ export default function AppointmentDetailsPanel() {
           type="button"
           onClick={toggleDetails}
           className="bg-blue-600 px-8 py-4 rounded-2xl font-semibold text-lg text-white shadow-lg transition hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-400"
-          aria-label="Show appointment details"
+          aria-label="Afficher les détails du rendez-vous"
         >
-          Show Appointment Details
+          Afficher les détails du rendez-vous
         </button>
       ) : (
         <section
           ref={detailsRef}
           tabIndex={-1}
           role="dialog"
-          aria-label="Appointment Details"
+          aria-label="Détails du rendez-vous"
           className="max-w-xl mx-auto rounded-3xl bg-white p-10 shadow-2xl select-none outline-none focus:ring-4 focus:ring-indigo-300"
         >
           {/* Header */}
           <header className="mb-8 flex items-center justify-between">
             <h2 className="leading-tight text-3xl font-extrabold text-gray-900">
-              Appointment <span className="text-blue-600">Details</span>
+              rendez-vous <span className="text-blue-600">Details</span>
             </h2>
 
             <button
               type="button"
               onClick={toggleDetails}
-              aria-label="Close appointment details"
+              aria-label="Fermer les détails du rendez-vous"
               className="rounded-full p-2 text-gray-500 transition hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <svg
@@ -85,7 +85,7 @@ export default function AppointmentDetailsPanel() {
             </section>
 
             <section>
-              <h3 className="mb-2 text-xl font-semibold text-gray-900">Appointment Type</h3>
+              <h3 className="mb-2 text-xl font-semibold text-gray-900">Type de rendez-vous</h3>
               <p className="font-semibold text-blue-600">{exampleAppointment.type}</p>
             </section>
 
@@ -95,14 +95,14 @@ export default function AppointmentDetailsPanel() {
                 dateTime={exampleAppointment.datetime.toISOString()}
                 className="font-mono text-base text-gray-700"
               >
-                {exampleAppointment.datetime.toLocaleDateString(undefined, {
+                {exampleAppointment.datetime.toLocaleDateString("fr-FR", {
                   weekday: "long",
                   year: "numeric",
                   month: "long",
                   day: "numeric",
                 })}{" "}
                 at{" "}
-                {exampleAppointment.datetime.toLocaleTimeString(undefined, {
+                {exampleAppointment.datetime.toLocaleTimeString("fr-FR", {
                   hour: "2-digit",
                   minute: "2-digit",
                 })}
@@ -110,7 +110,7 @@ export default function AppointmentDetailsPanel() {
             </section>
 
             <section>
-              <h3 className="mb-2 text-xl font-semibold text-gray-900">Status</h3>
+              <h3 className="mb-2 text-xl font-semibold text-gray-900">Statut</h3>
               <span
                 className={`inline-block select-none rounded-full px-5 py-2 text-sm font-semibold ${
                   statusStyles[exampleAppointment.status] ?? "bg-gray-100 text-gray-700"

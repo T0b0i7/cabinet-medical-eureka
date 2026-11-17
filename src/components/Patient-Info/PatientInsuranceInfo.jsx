@@ -3,21 +3,21 @@
 import React from "react";
 
 const insuranceData = {
-  provider: "HealthFirst Insurance",
-  policyNumber: "HF-123456789",
+  provider: "CNSS Bénin",
+  policyNumber: "CNSS-123456789",
   groupNumber: "GRP-987654",
-  planType: "Preferred Provider Organization (PPO)",
-  coverageStart: "2023-01-01",
-  coverageEnd: "2024-12-31",
-  phone: "+1 (800) 555-1234",
-  email: "support@healthfirst.com",
-  claimsAddress: `123 Insurance Blvd.
-Suite 400
-New York, NY 10001`,
+  planType: "Prise en charge ambulatoire",
+  coverageStart: "2026-01-01",
+  coverageEnd: "2026-12-31",
+  phone: "+229 01 21 30 00 00",
+  email: "contact@cnss.bj",
+  claimsAddress: `CNSS Bénin
+Porto-Novo
+Bénin`,
 };
 
 const formatDate = (dateString) =>
-  new Date(dateString).toLocaleDateString(undefined, {
+  new Date(dateString).toLocaleDateString("fr-FR", {
     year: "numeric",
     month: "short",
     day: "numeric",
@@ -42,31 +42,31 @@ const PatientInsuranceInfo = () => {
         id="insurance-info-title"
         className="text-3xl font-extrabold mb-6 text-center"
       >
-        <span className="text-black">Insurance </span>
-        <span className="text-blue-700">Information</span>
+        <span className="text-black">Informations </span>
+        <span className="text-blue-700">d’assurance</span>
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {/* Left Column */}
         <dl>
-          <InfoItem label="Provider">{insuranceData.provider}</InfoItem>
-          <InfoItem label="Policy Number">{insuranceData.policyNumber}</InfoItem>
-          <InfoItem label="Group Number">{insuranceData.groupNumber}</InfoItem>
-          <InfoItem label="Plan Type">{insuranceData.planType}</InfoItem>
+          <InfoItem label="Assureur">{insuranceData.provider}</InfoItem>
+          <InfoItem label="Numéro de police">{insuranceData.policyNumber}</InfoItem>
+          <InfoItem label="Numéro de groupe">{insuranceData.groupNumber}</InfoItem>
+          <InfoItem label="Type de contrat">{insuranceData.planType}</InfoItem>
         </dl>
 
         {/* Right Column */}
         <dl>
-          <InfoItem label="Coverage Period">
+          <InfoItem label="Période de couverture">
             {formatDate(insuranceData.coverageStart)} - {formatDate(insuranceData.coverageEnd)}
           </InfoItem>
-          <InfoItem label="Customer Service Phone" link={`tel:${insuranceData.phone.replace(/[^\d+]/g, "")}`}>
+          <InfoItem label="Téléphone du service client" link={`tel:${insuranceData.phone.replace(/[^\d+]/g, "")}`}>
             {insuranceData.phone}
           </InfoItem>
-          <InfoItem label="Customer Service Email" link={`mailto:${insuranceData.email}`}>
+          <InfoItem label="E-mail du service client" link={`mailto:${insuranceData.email}`}>
             {insuranceData.email}
           </InfoItem>
-          <InfoItem label="Claims Address">
+          <InfoItem label="Adresse de facturation">
             <pre className="whitespace-pre-line max-w-sm text-gray-900">{insuranceData.claimsAddress}</pre>
           </InfoItem>
         </dl>

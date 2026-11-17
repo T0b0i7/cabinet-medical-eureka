@@ -3,16 +3,16 @@ import React, { useState } from "react";
 
 const DashboardSettings = () => {
   // Form state
-  const [profile, setProfile] = useState({
-    name: "John Doe",
-    email: "john.doe@example.com",
+  const [profile, setProfil] = useState({
+    name: "Koffi Zinsou",
+    email: "koffi.zinsou@example.bj",
     password: "",
     confirmPassword: "",
     emailNotifications: true,
     darkMode: false,
     privacy: {
       showEmail: false,
-      showProfilePicture: true,
+      showProfilPicture: true,
     },
   });
 
@@ -23,31 +23,31 @@ const DashboardSettings = () => {
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
-    if (name === "showEmail" || name === "showProfilePicture") {
-      setProfile((prev) => ({
+    if (name === "showEmail" || name === "showProfilPicture") {
+      setProfil((prev) => ({
         ...prev,
         privacy: { ...prev.privacy, [name]: checked },
       }));
     } else if (type === "checkbox") {
-      setProfile((prev) => ({ ...prev, [name]: checked }));
+      setProfil((prev) => ({ ...prev, [name]: checked }));
     } else {
-      setProfile((prev) => ({ ...prev, [name]: value }));
+      setProfil((prev) => ({ ...prev, [name]: value }));
     }
     setSaved(false);
   };
 
   const validate = () => {
     let tempErrors = {};
-    if (!profile.name.trim()) tempErrors.name = "Name is required";
-    if (!profile.email.trim()) tempErrors.email = "Email is required";
+    if (!profile.name.trim()) tempErrors.name = "Le nom est requis";
+    if (!profile.email.trim()) tempErrors.email = "L’adresse e-mail est requise";
     else if (!/\S+@\S+\.\S+/.test(profile.email))
-      tempErrors.email = "Email is invalid";
+      tempErrors.email = "Adresse e-mail invalide";
 
     if (profile.password || profile.confirmPassword) {
       if (profile.password.length < 6)
-        tempErrors.password = "Password must be at least 6 characters";
+        tempErrors.password = "Le mot de passe doit contenir au moins 6 caractères";
       if (profile.password !== profile.confirmPassword)
-        tempErrors.confirmPassword = "Passwords do not match";
+        tempErrors.confirmPassword = "Les mots de passe ne correspondent pas";
     }
 
     setErrors(tempErrors);
@@ -59,7 +59,7 @@ const DashboardSettings = () => {
     if (validate()) {
       // Simulate saving data, here you could call an API
       setSaved(true);
-      setProfile((prev) => ({
+      setProfil((prev) => ({
         ...prev,
         password: "",
         confirmPassword: "",
@@ -70,16 +70,16 @@ const DashboardSettings = () => {
 
   const handleCancel = () => {
     // Reset to initial data (for demo)
-    setProfile({
-      name: "John Doe",
-      email: "john.doe@example.com",
+    setProfil({
+      name: "Koffi Zinsou",
+      email: "koffi.zinsou@example.bj",
       password: "",
       confirmPassword: "",
       emailNotifications: true,
       darkMode: false,
       privacy: {
         showEmail: false,
-        showProfilePicture: true,
+        showProfilPicture: true,
       },
     });
     setErrors({});
@@ -109,11 +109,11 @@ const DashboardSettings = () => {
           paddingBottom: 8,
         }}
       >
-        Dashboard Settings
+        Tableau de bord Paramètres
       </h2>
 
       <form onSubmit={handleSave} noValidate>
-        {/* Profile Section */}
+        {/* Profil Section */}
         <section style={{ marginBottom: 32 }}>
           <h3
             style={{
@@ -123,7 +123,7 @@ const DashboardSettings = () => {
               color: "#374151",
             }}
           >
-            Profile Information
+            Informations du profil
           </h3>
 
           {/* Name */}
@@ -131,7 +131,7 @@ const DashboardSettings = () => {
             htmlFor="name"
             style={{ display: "block", marginBottom: 6, fontWeight: 600 }}
           >
-            Full Name
+            Nom complet
           </label>
           <input
             id="name"
@@ -139,7 +139,7 @@ const DashboardSettings = () => {
             type="text"
             value={profile.name}
             onChange={handleChange}
-            placeholder="Your full name"
+            placeholder="Votre nom complet"
             style={{
               width: "100%",
               padding: 10,
@@ -164,7 +164,7 @@ const DashboardSettings = () => {
             htmlFor="email"
             style={{ display: "block", marginBottom: 6, fontWeight: 600 }}
           >
-            Email Address
+            Adresse e-mail
           </label>
           <input
             id="email"
@@ -172,7 +172,7 @@ const DashboardSettings = () => {
             type="email"
             value={profile.email}
             onChange={handleChange}
-            placeholder="your.email@example.com"
+            placeholder="votre.email@exemple.com"
             style={{
               width: "100%",
               padding: 10,
@@ -203,13 +203,13 @@ const DashboardSettings = () => {
               color: "#374151",
             }}
           >
-            Change Password
+            Changer le mot de passe
           </h3>
           <label
             htmlFor="password"
             style={{ display: "block", marginBottom: 6, fontWeight: 600 }}
           >
-            New Password
+            Nouveau mot de passe
           </label>
           <input
             id="password"
@@ -217,7 +217,7 @@ const DashboardSettings = () => {
             type="password"
             value={profile.password}
             onChange={handleChange}
-            placeholder="New password"
+            placeholder="Nouveau mot de passe"
             autoComplete="new-password"
             style={{
               width: "100%",
@@ -242,7 +242,7 @@ const DashboardSettings = () => {
             htmlFor="confirmPassword"
             style={{ display: "block", marginBottom: 6, fontWeight: 600 }}
           >
-            Confirm Password
+            Confirmer le mot de passe
           </label>
           <input
             id="confirmPassword"
@@ -250,7 +250,7 @@ const DashboardSettings = () => {
             type="password"
             value={profile.confirmPassword}
             onChange={handleChange}
-            placeholder="Confirm new password"
+            placeholder="Confirmer le nouveau mot de passe"
             autoComplete="new-password"
             style={{
               width: "100%",
@@ -303,7 +303,7 @@ const DashboardSettings = () => {
               onChange={handleChange}
               style={{ width: 20, height: 20, cursor: "pointer" }}
             />
-            Enable email notifications
+            Activer les notifications par e-mail
           </label>
         </section>
 
@@ -338,7 +338,7 @@ const DashboardSettings = () => {
               onChange={handleChange}
               style={{ width: 20, height: 20, cursor: "pointer" }}
             />
-            Enable Dark Mode
+            Activer le mode sombre
           </label>
         </section>
 
@@ -352,7 +352,7 @@ const DashboardSettings = () => {
               color: "#374151",
             }}
           >
-            Privacy Settings
+            Privacy Paramètres
           </h3>
           <label
             htmlFor="showEmail"
@@ -373,11 +373,11 @@ const DashboardSettings = () => {
               onChange={handleChange}
               style={{ width: 20, height: 20, cursor: "pointer" }}
             />
-            Show email on profile
+            Afficher l’e-mail sur le profil
           </label>
 
           <label
-            htmlFor="showProfilePicture"
+            htmlFor="showProfilPicture"
             style={{
               display: "flex",
               alignItems: "center",
@@ -389,14 +389,14 @@ const DashboardSettings = () => {
             }}
           >
             <input
-              id="showProfilePicture"
-              name="showProfilePicture"
+              id="showProfilPicture"
+              name="showProfilPicture"
               type="checkbox"
-              checked={profile.privacy.showProfilePicture}
+              checked={profile.privacy.showProfilPicture}
               onChange={handleChange}
               style={{ width: 20, height: 20, cursor: "pointer" }}
             />
-            Show profile picture publicly
+            Afficher la photo de profil publiquement
           </label>
         </section>
 
@@ -425,7 +425,7 @@ const DashboardSettings = () => {
             onMouseEnter={(e) => (e.target.style.backgroundColor = "#d1d5db")}
             onMouseLeave={(e) => (e.target.style.backgroundColor = "#e5e7eb")}
           >
-            Cancel
+            Annuler
           </button>
 
           <button
@@ -444,7 +444,7 @@ const DashboardSettings = () => {
             onMouseEnter={(e) => (e.target.style.backgroundColor = "#1e40af")}
             onMouseLeave={(e) => (e.target.style.backgroundColor = "#2563eb")}
           >
-            Save Changes
+            Enregistrer
           </button>
         </div>
 
@@ -457,7 +457,7 @@ const DashboardSettings = () => {
               textAlign: "center",
             }}
           >
-            Settings saved successfully!
+            Paramètres enregistrés avec succès !
           </p>
         )}
       </form>

@@ -11,13 +11,9 @@ function PrivacyConsentSection() {
           id="privacy-consent-heading"
           className="text-3xl font-extrabold text-blue-700 mb-6"
         >
-          Your Consent
+          Votre consentement
         </h2>
-        <p className="text-gray-800 text-lg leading-relaxed">
-          By continuing to use our website and services, you acknowledge and agree to our Privacy Policy. 
-          We take your trust seriously and handle your personal information with care and responsibility.
-          If you disagree with any part of this policy, we kindly ask that you refrain from using our services.
-        </p>
+        <p className="text-gray-800 text-lg leading-relaxed">En continuant à utiliser notre site et nos services, vous reconnaissez et acceptez notre politique de confidentialité. Nous traitons vos données avec le plus grand soin.</p>
       </div>
     </section>
   );

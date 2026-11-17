@@ -12,7 +12,7 @@ const ContactInfo = () => {
         id="contact-info-heading"
         className="mb-10 select-text text-3xl sm:text-4xl font-bold text-gray-900"
       >
-        Contact Information
+        Coordonnées
       </h2>
 
       <div className="max-w-4xl mx-auto grid grid-cols-1 gap-10 sm:grid-cols-2 text-gray-700 text-lg sm:text-xl font-light">
@@ -22,11 +22,11 @@ const ContactInfo = () => {
             aria-hidden="true"
           />
           <address className="not-italic leading-relaxed">
-            123 NovaHealth Blvd.
+            Porto-Novo,
             <br />
-            Wellness City, NL 12345
+            Bénin
             <br />
-            Netherlands
+            Bénin
           </address>
         </div>
 
@@ -43,19 +43,19 @@ const ContactInfo = () => {
         <div className="flex items-center gap-4">
           <FaEnvelope className="w-6 h-6 text-blue-600" aria-hidden="true" />
           <a
-            href="mailto:support@novahealth.com"
+            href="mailto:contact@cabinet-eureka.bj"
             className="rounded focus:outline-none focus:ring-2 focus:ring-blue-400 hover:underline"
           >
-            support@novahealth.com
+            contact@cabinet-eureka.bj
           </a>
         </div>
 
         <div className="flex items-center gap-4">
           <FaClock className="w-6 h-6 text-blue-600" aria-hidden="true" />
           <p>
-            Mon - Fri: 8:00 AM - 6:00 PM
+            Ouvert 7j/7 : 08h00 – 18h00
             <br />
-            Sat - Sun: By Appointment
+            Sam – Dim : sur rendez-vous
           </p>
         </div>
       </div>

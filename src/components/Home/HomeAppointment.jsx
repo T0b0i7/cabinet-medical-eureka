@@ -2,15 +2,14 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-
-const APPOINTMENT_REASONS = [
-  "General Consultation",
-  "Follow-up Visit",
-  "Lab Tests",
-  "Vaccination",
-  "Emergency Care",
-  "Other",
-];
+import { FaWhatsapp, FaCheckCircle } from "react-icons/fa";
+import { useSiteConfig } from "../SiteConfigProvider";
+import {
+  SPECIALTIES,
+  TIME_SLOTS,
+  appointmentMessage,
+  whatsappUrl,
+} from "@/lib/siteConfig";
 
 const containerMotion = {
   hidden: {},
@@ -26,29 +25,32 @@ const fadeUpMotion = {
 
 const buttonMotion = {
   rest: { scale: 1 },
-  hover: { scale: 1.05 },
-  tap: { scale: 0.95 },
+  hover: { scale: 1.03 },
+  tap: { scale: 0.97 },
+};
+
+const EMPTY_FORM = {
+  name: "",
+  phone: "",
+  specialty: "",
+  date: "",
+  time: "",
+  message: "",
 };
 
 export default function HomeAppointment() {
+  const site = useSiteConfig();
   const animationControls = useAnimation();
   const sectionRef = useRef(null);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    date: "",
-    time: "",
-    reason: "",
-  });
-
+  const [formData, setFormData] = useState(EMPTY_FORM);
   const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isEnvoyerting, setIsEnvoyerting] = useState(false);
   const [successMessage, setSuccessMessage] = useState(false);
+  const [sentMessage, setSentMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  // Trigger animation when section scrolls into view
+  // Déclenche l’animation lorsque la section devient visible
   useEffect(() => {
     if (!sectionRef.current) return;
 
@@ -56,7 +58,7 @@ export default function HomeAppointment() {
       ([entry]) => {
         if (entry.isIntersecting) {
           animationControls.start("visible");
-          observer.disconnect(); // Animate once
+          observer.disconnect();
         }
       },
       { threshold: 0.25 }
@@ -67,53 +69,42 @@ export default function HomeAppointment() {
     return () => observer.disconnect();
   }, [animationControls]);
 
-  // Validate form fields
   function validateForm() {
     const newErrors = {};
 
-    if (!formData.name.trim()) newErrors.name = "Full name is required";
-
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)
-    ) {
-      newErrors.email = "Invalid email address";
-    }
+    if (!formData.name.trim()) newErrors.name = "Votre nom complet est requis";
 
     if (!formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
-    } else if (!/^\+?[\d\s-]{7,15}$/.test(formData.phone)) {
-      newErrors.phone = "Invalid phone number";
+      newErrors.phone = "Votre numéro de téléphone est requis";
+    } else if (!/^\+?[\d\s-]{8,20}$/.test(formData.phone.trim())) {
+      newErrors.phone = "Numéro de téléphone invalide";
+    }
+
+    if (!formData.specialty) {
+      newErrors.specialty = "Veuillez choisir une spécialité";
     }
 
     if (!formData.date) {
-      newErrors.date = "Date is required";
+      newErrors.date = "La date est requise";
     } else if (new Date(formData.date) < new Date(new Date().toDateString())) {
-      newErrors.date = "Date cannot be in the past";
+      newErrors.date = "La date ne peut pas être dans le passé";
     }
 
-    if (!formData.time) newErrors.time = "Time is required";
-
-    if (!formData.reason) newErrors.reason = "Please select a reason";
+    if (!formData.time) newErrors.time = "Veuillez choisir un créneau";
 
     return newErrors;
   }
 
-  // Handle input changes and reset related errors/messages
   function handleChange(e) {
     const { name, value } = e.target;
 
     setFormData((prev) => ({ ...prev, [name]: value }));
-
     setErrors((prev) => ({ ...prev, [name]: "" }));
-
     setErrorMessage("");
     setSuccessMessage(false);
   }
 
-  // Handle form submission
-  async function handleSubmit(e) {
+  async function handleEnvoyer(e) {
     e.preventDefault();
 
     setErrorMessage("");
@@ -126,27 +117,27 @@ export default function HomeAppointment() {
       return;
     }
 
-    setIsSubmitting(true);
+    setIsEnvoyerting(true);
 
     try {
-      // Simulate async call (replace with real API request)
-      await new Promise((res) => setTimeout(res, 1500));
+      const message = appointmentMessage(site, formData);
+      window.open(whatsappUrl(site, message), "_blank", "noopener,noreferrer");
+      setSentMessage(message);
+      await new Promise((res) => setTimeout(res, 800));
 
       setSuccessMessage(true);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        date: "",
-        time: "",
-        reason: "",
-      });
+      setFormData(EMPTY_FORM);
     } catch {
-      setErrorMessage("Something went wrong. Please try again later.");
+      setErrorMessage(
+        "Une erreur est survenue. Veuillez réessayer ou nous contacter par téléphone."
+      );
     } finally {
-      setIsSubmitting(false);
+      setIsEnvoyerting(false);
     }
   }
+
+  const recapMessage = appointmentMessage(site, formData);
+  const lastSentMessage = sentMessage || recapMessage;
 
   return (
     <section
@@ -165,24 +156,34 @@ export default function HomeAppointment() {
           className="text-3xl font-extrabold text-gray-900 mb-4 text-center"
           variants={fadeUpMotion}
         >
-          Schedule an <span className="text-blue-700">Appointment</span>
+          Prendre <span className="text-blue-700">rendez-vous</span>
         </motion.h2>
 
         <motion.p
           className="text-center text-gray-600 max-w-xl mx-auto mb-12"
           variants={fadeUpMotion}
         >
-          Book your appointment easily with our expert medical team. We’re here
-          to help you.
+          Choisissez votre spécialité et votre créneau : votre demande sera
+          envoyée directement au {site.clinic} par WhatsApp.
         </motion.p>
 
         {successMessage && (
           <motion.div
             role="alert"
-            className="mb-8 max-w-xl mx-auto bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md text-center font-semibold"
+            className="mb-6 max-w-xl mx-auto bg-green-100 border border-green-400 text-green-700 px-4 py-4 rounded-md text-center font-semibold"
             variants={fadeUpMotion}
           >
-            Your appointment has been scheduled successfully!
+            <span className="flex items-center justify-center gap-2 mb-2">
+              <FaCheckCircle aria-hidden="true" /> Votre demande a été préparée !
+            </span>
+            <a
+              href={whatsappUrl(site, lastSentMessage)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg bg-green-600 px-5 py-2 text-white hover:bg-green-700"
+            >
+              <FaWhatsapp aria-hidden="true" /> Renvoyer sur WhatsApp
+            </a>
           </motion.div>
         )}
 
@@ -197,18 +198,15 @@ export default function HomeAppointment() {
         )}
 
         <motion.form
-          onSubmit={handleSubmit}
+          onEnvoyer={handleEnvoyer}
           noValidate
           className="grid grid-cols-1 gap-6 sm:grid-cols-2"
           variants={containerMotion}
         >
-          {/* Full Name */}
+          {/* Nom complet */}
           <motion.div className="sm:col-span-2" variants={fadeUpMotion}>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Full Name <span className="text-red-600">*</span>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              Nom complet <span className="text-red-600">*</span>
             </label>
             <input
               id="name"
@@ -216,71 +214,26 @@ export default function HomeAppointment() {
               type="text"
               value={formData.name}
               onChange={handleChange}
-              disabled={isSubmitting}
-              placeholder="Your full name"
+              disabled={isEnvoyerting}
+              placeholder="Ex. : Adjovi Sossou"
               required
               aria-invalid={!!errors.name}
               aria-describedby={errors.name ? "name-error" : undefined}
               className={`block w-full rounded-md border px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                errors.name
-                  ? "border-red-500 focus:ring-red-500"
-                  : "border-gray-300"
+                errors.name ? "border-red-500 focus:ring-red-500" : "border-gray-300"
               }`}
             />
             {errors.name && (
-              <p
-                id="name-error"
-                role="alert"
-                className="mt-1 text-red-600 text-sm"
-              >
+              <p id="name-error" role="alert" className="mt-1 text-red-600 text-sm">
                 {errors.name}
               </p>
             )}
           </motion.div>
 
-          {/* Email */}
+          {/* Téléphone */}
           <motion.div className="sm:col-span-2" variants={fadeUpMotion}>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Email Address <span className="text-red-600">*</span>
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              disabled={isSubmitting}
-              placeholder="you@example.com"
-              required
-              aria-invalid={!!errors.email}
-              aria-describedby={errors.email ? "email-error" : undefined}
-              className={`block w-full rounded-md border px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                errors.email
-                  ? "border-red-500 focus:ring-red-500"
-                  : "border-gray-300"
-              }`}
-            />
-            {errors.email && (
-              <p
-                id="email-error"
-                role="alert"
-                className="mt-1 text-red-600 text-sm"
-              >
-                {errors.email}
-              </p>
-            )}
-          </motion.div>
-
-          {/* Phone */}
-          <motion.div className="sm:col-span-2" variants={fadeUpMotion}>
-            <label
-              htmlFor="phone"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Phone Number <span className="text-red-600">*</span>
+            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+              Téléphone / WhatsApp <span className="text-red-600">*</span>
             </label>
             <input
               id="phone"
@@ -288,35 +241,60 @@ export default function HomeAppointment() {
               type="tel"
               value={formData.phone}
               onChange={handleChange}
-              disabled={isSubmitting}
-              placeholder="+1234567890"
+              disabled={isEnvoyerting}
+              placeholder="+229 01 41 60 83 39"
               required
               aria-invalid={!!errors.phone}
               aria-describedby={errors.phone ? "phone-error" : undefined}
               className={`block w-full rounded-md border px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                errors.phone
-                  ? "border-red-500 focus:ring-red-500"
-                  : "border-gray-300"
+                errors.phone ? "border-red-500 focus:ring-red-500" : "border-gray-300"
               }`}
             />
             {errors.phone && (
-              <p
-                id="phone-error"
-                role="alert"
-                className="mt-1 text-red-600 text-sm"
-              >
+              <p id="phone-error" role="alert" className="mt-1 text-red-600 text-sm">
                 {errors.phone}
+              </p>
+            )}
+          </motion.div>
+
+          {/* Spécialité */}
+          <motion.div className="sm:col-span-2" variants={fadeUpMotion}>
+            <label htmlFor="specialty" className="block text-sm font-medium text-gray-700 mb-1">
+              Spécialité <span className="text-red-600">*</span>
+            </label>
+            <select
+              id="specialty"
+              name="specialty"
+              value={formData.specialty}
+              onChange={handleChange}
+              disabled={isEnvoyerting}
+              required
+              aria-invalid={!!errors.specialty}
+              aria-describedby={errors.specialty ? "specialty-error" : undefined}
+              className={`block w-full rounded-md border bg-white px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                errors.specialty ? "border-red-500 focus:ring-red-500" : "border-gray-300"
+              }`}
+            >
+              <option value="" disabled>
+                Choisir une spécialité
+              </option>
+              {SPECIALTIES.map((s) => (
+                <option key={s.id} value={s.label}>
+                  {s.label} — {s.price}
+                </option>
+              ))}
+            </select>
+            {errors.specialty && (
+              <p id="specialty-error" role="alert" className="mt-1 text-red-600 text-sm">
+                {errors.specialty}
               </p>
             )}
           </motion.div>
 
           {/* Date */}
           <motion.div variants={fadeUpMotion}>
-            <label
-              htmlFor="date"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Preferred Date <span className="text-red-600">*</span>
+            <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-1">
+              Date souhaitée <span className="text-red-600">*</span>
             </label>
             <input
               id="date"
@@ -324,112 +302,77 @@ export default function HomeAppointment() {
               type="date"
               value={formData.date}
               onChange={handleChange}
-              disabled={isSubmitting}
+              disabled={isEnvoyerting}
               min={new Date().toISOString().split("T")[0]}
               required
               aria-invalid={!!errors.date}
               aria-describedby={errors.date ? "date-error" : undefined}
               className={`block w-full rounded-md border px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                errors.date
-                  ? "border-red-500 focus:ring-red-500"
-                  : "border-gray-300"
+                errors.date ? "border-red-500 focus:ring-red-500" : "border-gray-300"
               }`}
             />
             {errors.date && (
-              <p
-                id="date-error"
-                role="alert"
-                className="mt-1 text-red-600 text-sm"
-              >
+              <p id="date-error" role="alert" className="mt-1 text-red-600 text-sm">
                 {errors.date}
               </p>
             )}
           </motion.div>
 
-          {/* Time */}
+          {/* Créneau */}
           <motion.div variants={fadeUpMotion}>
-            <label
-              htmlFor="time"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Preferred Time <span className="text-red-600">*</span>
+            <label htmlFor="time" className="block text-sm font-medium text-gray-700 mb-1">
+              Créneau horaire <span className="text-red-600">*</span>
             </label>
-            <input
+            <select
               id="time"
               name="time"
-              type="time"
               value={formData.time}
               onChange={handleChange}
-              disabled={isSubmitting}
-              min="08:00"
-              max="18:00"
+              disabled={isEnvoyerting}
               required
               aria-invalid={!!errors.time}
               aria-describedby={errors.time ? "time-error" : undefined}
-              className={`block w-full rounded-md border px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                errors.time
-                  ? "border-red-500 focus:ring-red-500"
-                  : "border-gray-300"
+              className={`block w-full rounded-md border bg-white px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                errors.time ? "border-red-500 focus:ring-red-500" : "border-gray-300"
               }`}
-            />
+            >
+              <option value="" disabled>
+                Choisir un créneau
+              </option>
+              {TIME_SLOTS.map((slot) => (
+                <option key={slot} value={slot}>
+                  {slot.replace(":", "h")}
+                </option>
+              ))}
+            </select>
             {errors.time && (
-              <p
-                id="time-error"
-                role="alert"
-                className="mt-1 text-red-600 text-sm"
-              >
+              <p id="time-error" role="alert" className="mt-1 text-red-600 text-sm">
                 {errors.time}
               </p>
             )}
             <p className="text-xs text-gray-500 mt-1">
-              Available hours: 08:00 AM - 06:00 PM
+              Créneaux disponibles de 08h00 à 18h00, 7j/7.
             </p>
           </motion.div>
 
-          {/* Reason */}
+          {/* Motif */}
           <motion.div className="sm:col-span-2" variants={fadeUpMotion}>
-            <label
-              htmlFor="reason"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Reason for Appointment <span className="text-red-600">*</span>
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+              Motif de consultation (facultatif)
             </label>
-            <select
-              id="reason"
-              name="reason"
-              value={formData.reason}
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              value={formData.message}
               onChange={handleChange}
-              disabled={isSubmitting}
-              required
-              aria-invalid={!!errors.reason}
-              aria-describedby={errors.reason ? "reason-error" : undefined}
-              className={`block w-full rounded-md border px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                errors.reason
-                  ? "border-red-500 focus:ring-red-500"
-                  : "border-gray-300"
-              }`}
-            >
-              <option value="" disabled>
-                Select reason
-              </option>
-              {APPOINTMENT_REASONS.map((reason) => (
-                <option key={reason} value={reason}>
-                  {reason}
-                </option>
-              ))}
-            </select>
-            {errors.reason && (
-              <p
-                id="reason-error"
-                role="alert"
-                className="mt-1 text-red-600 text-sm"
-              >
-                {errors.reason}
-              </p>
-            )}
+              disabled={isEnvoyerting}
+              placeholder="Décrivez brièvement vos symptômes ou votre demande…"
+              className="block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
           </motion.div>
 
-          {/* Submit Button */}
+          {/* Bouton d’envoi */}
           <motion.div
             className="sm:col-span-2"
             variants={fadeUpMotion}
@@ -440,12 +383,26 @@ export default function HomeAppointment() {
           >
             <motion.button
               type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-blue-700 hover:bg-blue-800 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-lg transition-colors"
+              disabled={isEnvoyerting}
+              className="w-full inline-flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-800 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-lg transition-colors"
               variants={buttonMotion}
             >
-              {isSubmitting ? "Scheduling..." : "Schedule Appointment"}
+              {isEnvoyerting ? (
+                "Envoi en cours…"
+              ) : (
+                <>
+                  <FaWhatsapp className="w-5 h-5" aria-hidden="true" />
+                  Confirmer et envoyer sur WhatsApp
+                </>
+              )}
             </motion.button>
+            <p className="mt-3 text-center text-xs text-gray-500">
+              Ou appelez le{" "}
+              <a href={`tel:${site.phoneRaw}`} className="font-semibold text-blue-700">
+                {site.phone}
+              </a>{" "}
+              — {site.hours}.
+            </p>
           </motion.div>
         </motion.form>
       </motion.div>

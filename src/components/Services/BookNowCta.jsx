@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 // Spinner icon for loading state
@@ -66,7 +67,7 @@ const BookNowCta = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: "easeOut" }}
         >
-          Ready to Take the Next Step?
+          Prêt à passer à l’étape suivante ?
         </motion.h2>
 
         <motion.p
@@ -75,7 +76,8 @@ const BookNowCta = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.85, ease: "easeOut" }}
         >
-          Book your appointment today and experience exceptional care tailored just for you.
+          Prenez rendez-vous dès aujourd’hui et bénéficiez de soins d’exception
+          adaptés à vos besoins.
         </motion.p>
 
         <motion.div
@@ -97,16 +99,16 @@ const BookNowCta = () => {
               disabled:bg-gray-300 disabled:text-gray-600 disabled:cursor-not-allowed`}
           >
             {bookingInProgress && <Spinner />}
-            {bookingComplete ? "Booked!" : bookingInProgress ? "Booking..." : "Book Now"}
+            {bookingComplete ? "Envoyé !" : bookingInProgress ? "Envoi en cours…" : "Prendre rendez-vous"}
           </button>
 
           {/* Secondary link for more info */}
-          <a
-            href="/learn-more"
+          <Link
+            href="/appointments"
             className="inline-flex items-center justify-center text-white font-medium underline underline-offset-4 hover:text-blue-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-80 rounded-md px-4 py-4"
           >
-            Learn More
-          </a>
+            En savoir plus
+          </Link>
         </motion.div>
 
         {/* Privacy note */}
@@ -116,7 +118,8 @@ const BookNowCta = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.85, duration: 1 }}
         >
-          * Your privacy and security are our top priorities. We’ll never share your information.
+          * Votre confidentialité et votre sécurité sont nos priorités. Vos informations
+          ne seront jamais partagées.
         </motion.p>
       </div>
     </section>

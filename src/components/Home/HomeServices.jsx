@@ -23,34 +23,22 @@ const MotionLink = motion(
 
 const services = [
   {
-    title: "General Checkup",
-    description: "Routine health exams and personalized consultations.",
-    icon: <FaStethoscope className="text-4xl text-blue-700" />,
-  },
-  {
-    title: "Cardiology",
-    description: "Comprehensive heart care and diagnostics.",
+    title: "Oto-Rhino-Laryngologie (ORL)",
+    description:
+      "Consultations spécialisées, troubles de l’audition, sinusites, vertiges et pathologies ORL.",
     icon: <FaHeartbeat className="text-4xl text-red-600" />,
   },
   {
-    title: "Expert Physicians",
-    description: "Certified doctors with years of experience.",
+    title: "Chirurgie Cervico-Faciale",
+    description:
+      "Explorations et actes chirurgicaux spécialisés de la tête et du cou.",
     icon: <FaUserMd className="text-4xl text-emerald-700" />,
   },
   {
-    title: "Pharmacy Services",
-    description: "Access to trusted medications & refills.",
-    icon: <FaCapsules className="text-4xl text-purple-700" />,
-  },
-  {
-    title: "Radiology & Imaging",
-    description: "Advanced diagnostic equipment and care.",
-    icon: <FaXRay className="text-4xl text-sky-700" />,
-  },
-  {
-    title: "Emergency Services",
-    description: "24/7 emergency support and fast response.",
-    icon: <FaBriefcaseMedical className="text-4xl text-rose-600" />,
+    title: "Médecine Générale & Suivi",
+    description:
+      "Consultations courantes, bilans de santé et prise en charge des urgences légères.",
+    icon: <FaStethoscope className="text-4xl text-blue-700" />,
   },
 ];
 
@@ -98,7 +86,7 @@ const HomeServices = () => {
     <section
       className="flex flex-col justify-center items-center bg-white px-6 md:px-12 lg:px-24 my-20"
       style={{ textAlign: "center" }}
-      aria-label="Our Medical Services Section"
+      aria-label="Nos spécialités Spécialités Section"
     >
       {/* Heading & Paragraph Container */}
       <motion.div
@@ -113,7 +101,7 @@ const HomeServices = () => {
           style={{ color: "#1D4ED8" }}
           variants={textVariants}
         >
-          Our Medical <span style={{ color: "#000" }}>Services</span>
+          Nos spécialités <span style={{ color: "#000" }}>Spécialités</span>
         </motion.h2>
 
         <motion.p
@@ -122,8 +110,8 @@ const HomeServices = () => {
           variants={textVariants}
           transition={{ delay: 0.2 }}
         >
-          We offer a wide range of healthcare services provided by licensed
-          professionals using the latest medical technologies.
+          Oto-rhino-laryngologie, chirurgie cervico-faciale et médecine
+          générale : une prise en charge complète pour toute la famille.
         </motion.p>
       </motion.div>
 
@@ -172,10 +160,10 @@ const HomeServices = () => {
           className="inline-block bg-blue-700 text-white hover:bg-blue-800 transition-colors duration-300 font-semibold px-10 py-4 rounded-2xl shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-400"
           variants={buttonVariants}
           whileHover="hover"
-          aria-label="Explore all services"
+          aria-label="Découvrir toutes les spécialités"
           tabIndex={0}
         >
-          Explore All Services
+          Découvrir toutes les spécialités
         </MotionLink>
       </motion.div>
     </section>

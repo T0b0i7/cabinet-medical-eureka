@@ -11,14 +11,10 @@ const ChildrenPrivacySection = () => {
           id="children-privacy-heading"
           className="text-3xl font-extrabold text-blue-700 mb-6"
         >
-          Children’s Privacy
+          Confidentialité des enfants
         </h2>
-        <p className="text-gray-800 text-lg leading-relaxed mb-6">
-          We take children’s privacy seriously. Our platform isn’t meant for anyone under 13, and we don’t intentionally collect personal info from kids without permission from a parent or guardian.
-        </p>
-        <p className="text-gray-800 text-lg leading-relaxed">
-          If it ever comes to our attention that we’ve collected data from a child without parental approval, we’ll act quickly to remove that information.
-        </p>
+        <p className="text-gray-800 text-lg leading-relaxed mb-6">Nous prenons la confidentialité des enfants très au sérieux. Notre site ne s’adresse pas aux enfants de moins de 13 ans et nous ne collectons pas sciemment leurs données sans l’accord d’un parent ou tuteur.</p>
+        <p className="text-gray-800 text-lg leading-relaxed">Si nous apprenons que des données ont été collectées auprès d’un enfant sans autorisation parentale, nous les supprimerons rapidement.</p>
       </div>
     </section>
   );

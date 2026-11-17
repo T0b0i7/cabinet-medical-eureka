@@ -11,7 +11,7 @@ const formatDate = (date) => {
   if (!date) return "N/A";
   try {
     const options = { year: "numeric", month: "long", day: "numeric" };
-    return new Date(date).toLocaleDateString(undefined, options);
+    return new Date(date).toLocaleDateString("fr-FR", options);
   } catch {
     return "N/A";
   }
@@ -23,7 +23,7 @@ const formatTime = (time) => {
     const [hours, minutes] = time.split(":").map(Number);
     const dateObj = new Date();
     dateObj.setHours(hours, minutes);
-    return dateObj.toLocaleTimeString(undefined, {
+    return dateObj.toLocaleTimeString("fr-FR", {
       hour: "2-digit",
       minute: "2-digit",
       hour12: true,
@@ -195,33 +195,33 @@ const AppointmentsConfirmation = ({
         animate={controls}
       >
         <h2 tabIndex={-1}>
-          <span style={{ color: "black" }}>Appointment </span>
-          <span style={{ color: PRIMARY_BLUE }}>Confirmed</span>
+          <span style={{ color: "black" }}>Rendez-vous </span>
+          <span style={{ color: PRIMARY_BLUE }}>Confirmé</span>
         </h2>
 
         <p>
-          Thank you, <strong>{fullName || "Guest"}</strong>! Your appointment
-          request has been successfully submitted.
+          Merci, <strong>{fullName || "cher patient"}</strong> ! Votre demande de
+          rendez-vous a bien été enregistrée.
         </p>
 
         <dl className="appointment-details">
-          <dt>Full Name:</dt>
-          <dd>{fullName || "N/A"}</dd>
+          <dt>Nom complet:</dt>
+          <dd>{fullName || "Non renseigné"}</dd>
 
-          <dt>Email:</dt>
+          <dt>E-mail:</dt>
           <dd>{email || "N/A"}</dd>
 
-          <dt>Phone:</dt>
+          <dt>Téléphone:</dt>
           <dd>{phone || "N/A"}</dd>
 
           <dt>Date:</dt>
           <dd>{formatDate(date)}</dd>
 
-          <dt>Time:</dt>
+          <dt>Heure:</dt>
           <dd>{formatTime(time)}</dd>
 
           <dt>Message:</dt>
-          <dd>{message ? message : <em>No additional message provided.</em>}</dd>
+          <dd>{message ? message : <em>Aucun message complémentaire.</em>}</dd>
         </dl>
 
         <button
@@ -229,9 +229,9 @@ const AppointmentsConfirmation = ({
           onClick={handleResetClick}
           className="reset-btn"
           disabled={isProcessing}
-          aria-label="Reset appointment form to book another appointment"
+          aria-label="Réinitialiser le formulaire pour prendre un autre rendez-vous"
         >
-          {isProcessing ? "Processing..." : "Book Another Appointment"}
+          {isProcessing ? "Traitement…" : "Prendre un autre rendez-vous"}
         </button>
       </motion.section>
     </>

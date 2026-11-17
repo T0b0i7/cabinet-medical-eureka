@@ -18,16 +18,16 @@ export default function FaqsAskQuestion() {
   // Validation function
   const validate = () => {
     const errors = {};
-    if (!formData.name.trim()) errors.name = "Full Name is required.";
+    if (!formData.name.trim()) errors.name = "Votre nom complet est requis.";
     if (!formData.email.trim()) {
-      errors.email = "Email is required.";
+      errors.email = "L’adresse e-mail est requise.";
     } else if (
       !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())
     ) {
-      errors.email = "Invalid email address.";
+      errors.email = "Adresse e-mail invalide.";
     }
     if (!formData.question.trim())
-      errors.question = "Please enter your question.";
+      errors.question = "Veuillez saisir votre question.";
     return errors;
   };
 
@@ -64,7 +64,7 @@ export default function FaqsAskQuestion() {
 
       // Simulate random failure 15%
       if (Math.random() < 0.15) {
-        throw new Error("Submission failed.");
+        throw new Error("Échec de l’envoi.");
       }
 
       setSubmitStatus("success");
@@ -83,11 +83,11 @@ export default function FaqsAskQuestion() {
 
   return (
     <section
-      aria-label="Ask a question form"
+      aria-label="Poser une question"
       className="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-md sm:p-12"
     >
       <h2 className="text-2xl font-extrabold text-blue-700 mb-6 text-center select-text">
-        Have a Question? Ask Us!
+        Une question ? Posez-la-nous !
       </h2>
 
       {submitStatus === "success" && (
@@ -98,7 +98,7 @@ export default function FaqsAskQuestion() {
           className="mb-6 flex items-center gap-3 text-green-700 bg-green-100 border border-green-300 rounded-md p-4"
         >
           <FaCheckCircle className="w-6 h-6" aria-hidden="true" />
-          <p className="font-medium">Thank you! Your question has been sent.</p>
+          <p className="font-medium">Merci ! Votre question a bien été envoyée.</p>
         </div>
       )}
 
@@ -109,7 +109,7 @@ export default function FaqsAskQuestion() {
         >
           <FaTimesCircle className="w-6 h-6" aria-hidden="true" />
           <p className="font-medium">
-            Oops! Something went wrong. Please try again later.
+            Oups ! Une erreur est survenue. Veuillez réessayer.
           </p>
         </div>
       )}
@@ -117,13 +117,13 @@ export default function FaqsAskQuestion() {
       <form onSubmit={handleSubmit} noValidate>
         {/* Name */}
         <label htmlFor="name" className="block mb-1 font-semibold text-gray-900">
-          Full Name <span className="text-red-600">*</span>
+          Nom complet <span className="text-red-600">*</span>
         </label>
         <input
           id="name"
           name="name"
           type="text"
-          placeholder="Your full name"
+          placeholder="Votre nom complet"
           value={formData.name}
           onChange={handleChange}
           disabled={submitting}
@@ -148,13 +148,13 @@ export default function FaqsAskQuestion() {
 
         {/* Email */}
         <label htmlFor="email" className="block mb-1 font-semibold text-gray-900">
-          Email Address <span className="text-red-600">*</span>
+          Adresse e-mail <span className="text-red-600">*</span>
         </label>
         <input
           id="email"
           name="email"
           type="email"
-          placeholder="you@example.com"
+          placeholder="vous@exemple.com"
           value={formData.email}
           onChange={handleChange}
           disabled={submitting}
@@ -182,12 +182,12 @@ export default function FaqsAskQuestion() {
           htmlFor="question"
           className="block mb-1 font-semibold text-gray-900"
         >
-          Your Question <span className="text-red-600">*</span>
+          Votre question <span className="text-red-600">*</span>
         </label>
         <textarea
           id="question"
           name="question"
-          placeholder="Type your question here..."
+          placeholder="Écrivez votre question ici…"
           rows={5}
           value={formData.question}
           onChange={handleChange}
@@ -240,12 +240,12 @@ export default function FaqsAskQuestion() {
                   d="M4 12a8 8 0 018-8v8H4z"
                 ></path>
               </svg>
-              Sending...
+              Envoi en cours…
             </>
           ) : (
             <>
               <FaPaperPlane />
-              Send Question
+              Envoyer la question
             </>
           )}
         </button>

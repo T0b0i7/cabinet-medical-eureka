@@ -13,28 +13,28 @@ import { motion } from 'framer-motion';
 const PATIENT_STATUSES = [
   {
     id: 'active',
-    name: 'Active',
+    name: 'Actif',
     count: 180,
     icon: <HiUserGroup />,
     color: '#3b82f6', // blue-500
   },
   {
     id: 'inactive',
-    name: 'Inactive',
+    name: 'Inactif',
     count: 65,
     icon: <HiUserRemove />,
     color: '#6b7280', // gray-500
   },
   {
     id: 'pending',
-    name: 'Pending',
+    name: 'En attente',
     count: 25,
     icon: <HiUserAdd />,
     color: '#f59e0b', // amber-500
   },
   {
     id: 'discharged',
-    name: 'Discharged',
+    name: 'Sorti',
     count: 40,
     icon: <HiUserCircle />,
     color: '#10b981', // emerald-500
@@ -59,19 +59,19 @@ const progressVariants = {
 
 const DashboardPatients = () => {
   const [patients, setPatients] = useState(PATIENT_STATUSES);
-  const [loading, setLoading] = useState(false);
+  const [loading, setChargement] = useState(false);
 
   const totalPatients = useMemo(
     () => patients.reduce((sum, p) => sum + p.count, 0),
     [patients]
   );
 
-  const handleRefresh = () => {
+  const handleActualiser = () => {
     if (loading) return;
-    setLoading(true);
+    setChargement(true);
     setTimeout(() => {
       setPatients(generateRandomPatientCounts());
-      setLoading(false);
+      setChargement(false);
     }, 1200);
   };
 
@@ -87,14 +87,14 @@ const DashboardPatients = () => {
           id="patients-title"
           className="text-3xl font-extrabold tracking-tight text-gray-900 select-none"
         >
-          Patient Overview
+          Vue d’ensemble des patients
         </h2>
 
         <button
           type="button"
-          onClick={handleRefresh}
+          onClick={handleActualiser}
           disabled={loading}
-          aria-label="Refresh patient data"
+          aria-label="Actualiser les données patients"
           className={`mt-4 sm:mt-0 inline-flex items-center gap-2 px-4 py-2 rounded-md font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 transition ${
             loading
               ? 'cursor-not-allowed bg-blue-100 text-blue-600'
@@ -107,16 +107,16 @@ const DashboardPatients = () => {
             }`}
             aria-hidden="true"
           />
-          Refresh
+          Actualiser
         </button>
       </header>
 
       <div className="flex flex-col md:flex-row md:space-x-10 gap-8">
-        {/* Total Patients Card */}
+        {/* Patients au total Card */}
         <article
           className="flex-1 bg-blue-50 rounded-xl p-8 flex flex-col justify-center items-center shadow-md hover:shadow-lg transition-shadow"
           style={{ minWidth: 240 }}
-          aria-label="Total Patients"
+          aria-label="Patients au total"
         >
           <HiUserGroup
             className="w-16 h-16 text-blue-600 mb-4"
@@ -126,7 +126,7 @@ const DashboardPatients = () => {
             className="text-gray-700 text-xl font-semibold tracking-wide mb-2"
             style={{ letterSpacing: '0.03em' }}
           >
-            Total Patients
+            Patients au total
           </p>
           <p
             className="text-5xl font-extrabold text-blue-700"

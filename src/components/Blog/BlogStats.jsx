@@ -3,7 +3,7 @@ import React from "react";
 const statsData = [
   {
     id: 1,
-    title: "Total Posts",
+    title: "Articles publiés",
     value: "128",
     icon: (
       <svg
@@ -25,7 +25,7 @@ const statsData = [
   },
   {
     id: 2,
-    title: "Total Readers",
+    title: "Lecteurs",
     value: "48K+",
     icon: (
       <svg
@@ -47,7 +47,7 @@ const statsData = [
   },
   {
     id: 3,
-    title: "Average Rating",
+    title: "Note moyenne",
     value: "4.8 / 5",
     icon: (
       <svg
@@ -69,7 +69,7 @@ const statsData = [
   },
   {
     id: 4,
-    title: "Categories Covered",
+    title: "Catégories",
     value: "7+",
     icon: (
       <svg
@@ -94,7 +94,7 @@ const statsData = [
 export default function BlogStats() {
   return (
     <section
-      aria-label="Blog statistics overview"
+      aria-label="Chiffres du blog"
       className="max-w-5xl mx-auto px-6 py-16 -my-8"
     >
       <h2 className="text-3xl font-extrabold text-center mb-12 text-gray-900">

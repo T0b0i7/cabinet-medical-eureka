@@ -7,63 +7,63 @@ import { motion, AnimatePresence } from "framer-motion";
 const doctors = [
   {
     id: 1,
-    name: "Dr. Emma Johnson",
-    specialty: "Cardiologist",
+    name: "Dr Romuald Adjakpa",
+    specialty: "Oto-Rhino-Laryngologiste (ORL)",
     photo:
       "https://plus.unsplash.com/premium_photo-1675807264002-74250202f195?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    phone: "+1 (555) 123-4567",
-    email: "emma.johnson@healthcare.com",
-    experienceYears: 12,
+    phone: "+229 01 41 60 83 39",
+    email: "contact@cabinet-eureka.bj",
+    experienceYears: 15,
     achievements:
-      "Successfully performed over 1000 cardiac surgeries with a 98% success rate.",
-    salary: "$220,000 per year",
+      "Consultations ORL spécialisées : audition, sinusites, vertiges et pathologies de la gorge.",
+    salary: "Consultation : 10 000 à 15 000 FCFA",
     bio:
-      "Dr. Emma Johnson is a board-certified cardiologist specializing in interventional cardiology and preventive care. She has a compassionate approach and stays updated with the latest cardiac care techniques.",
+      "Le Dr Romuald Adjakpa est oto-rhino-laryngologiste au Cabinet Médical EURÊKA. Il prend en charge les troubles de l’audition, les sinusites chroniques, les vertiges et les affections ORL de l’enfant comme de l’adulte.",
   },
   {
     id: 2,
-    name: "Dr. Michael Lee",
-    specialty: "Pediatrician",
+    name: "Dr Barthélémy Gnonlonfoun",
+    specialty: "Chirurgien cervico-facial",
     photo:
       "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRvY3RvcnN8ZW58MHx8MHx8fDA%3D",
-    phone: "+1 (555) 987-6543",
-    email: "michael.lee@healthcare.com",
-    experienceYears: 9,
+    phone: "+229 01 41 60 83 39",
+    email: "contact@cabinet-eureka.bj",
+    experienceYears: 12,
     achievements:
-      "Renowned for compassionate pediatric care and development of child wellness programs.",
-    salary: "$185,000 per year",
+      "Explorations et actes chirurgicaux spécialisés de la tête et du cou.",
+    salary: "Actes sur devis",
     bio:
-      "Dr. Michael Lee has been dedicated to children's health and wellness for almost a decade. He specializes in preventive pediatric medicine and developmental assessments.",
+      "Le Dr Barthélémy Gnonlonfoun est chirurgien cervico-facial. Il réalise les explorations et les actes chirurgicaux spécialisés, avec un suivi attentif avant et après l’intervention.",
   },
   {
     id: 3,
-    name: "Dr. Sophia Patel",
-    specialty: "Neurologist",
+    name: "Dr Sylvie Dossou-Yovo",
+    specialty: "Oto-Rhino-Laryngologiste — audiologie",
     photo:
       "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    phone: "+1 (555) 456-7890",
-    email: "sophia.patel@healthcare.com",
-    experienceYears: 15,
+    phone: "+229 01 41 60 83 39",
+    email: "contact@cabinet-eureka.bj",
+    experienceYears: 9,
     achievements:
-      "Published 30+ papers on neurological disorders and lead neurologist for clinical trials.",
-    salary: "$240,000 per year",
+      "Suivi des troubles de l’audition et accompagnement des patients appareillés.",
+    salary: "Consultation : 10 000 à 15 000 FCFA",
     bio:
-      "Dr. Sophia Patel specializes in neurological disorders, including stroke and epilepsy. She is passionate about research and improving patient outcomes.",
+      "Le Dr Sylvie Dossou-Yovo accompagne les patients présentant des troubles de l’audition et coordonne les bilans audiologiques au sein du cabinet.",
   },
   {
     id: 4,
-    name: "Dr. David Kim",
-    specialty: "Orthopedic Surgeon",
+    name: "Dr Isidore Aholou",
+    specialty: "Médecin généraliste",
     photo:
       "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGRvY3RvcnN8ZW58MHx8MHx8fDA%3D",
-    phone: "+1 (555) 321-0987",
-    email: "david.kim@healthcare.com",
+    phone: "+229 01 41 60 83 39",
+    email: "contact@cabinet-eureka.bj",
     experienceYears: 11,
     achievements:
-      "Performed 500+ successful joint replacement surgeries with excellent patient recovery.",
-    salary: "$210,000 per year",
+      "Consultations courantes, bilans de santé et prise en charge des urgences légères.",
+    salary: "Consultation : 5 000 FCFA",
     bio:
-      "Dr. David Kim is an experienced orthopedic surgeon focusing on joint replacement and sports injuries, providing personalized patient care.",
+      "Le Dr Isidore Aholou assure les consultations de médecine générale, les bilans de santé et le suivi régulier des patients du cabinet, 7 jours sur 7.",
   },
 ];
 
@@ -131,14 +131,14 @@ export default function HomeDoctors() {
           className="text-3xl sm:text-4xl font-extrabold text-gray-900"
           variants={textVariants}
         >
-          Meet Our <span className="text-blue-700">Doctors</span>
+          Notre <span className="text-blue-700">équipe médicale</span>
         </motion.h2>
         <motion.p
           className="text-gray-700 mt-3 max-w-xl mx-auto text-base sm:text-lg"
           variants={textVariants}
           transition={{ delay: 0.2 }}
         >
-          Professional care from our certified and experienced medical experts.
+          Des soins dispensés par des praticiens diplômés et expérimentés.
         </motion.p>
       </motion.div>
 
@@ -201,7 +201,7 @@ export default function HomeDoctors() {
               <a
                 href={`mailto:${doctor.email}`}
                 className="hover:text-blue-800 transition-colors"
-                aria-label={`Email ${doctor.name}`}
+                aria-label={`E-mail ${doctor.name}`}
                 onClick={(e) => e.stopPropagation()}
               >
                 <FaEnvelope />
@@ -237,7 +237,7 @@ export default function HomeDoctors() {
             >
               <button
                 onClick={() => setActiveDoctor(null)}
-                aria-label="Close doctor details"
+                aria-label="Fermer les détails du praticien"
                 className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 focus:outline-none"
               >
                 <svg
@@ -280,14 +280,14 @@ export default function HomeDoctors() {
 
                   <ul className="mb-4 space-y-1 text-gray-700 text-sm leading-snug">
                     <li>
-                      <strong>Experience:</strong> {activeDoctor.experienceYears}{" "}
+                      <strong>Expérience :</strong> {activeDoctor.experienceYears}{" "}
                       years
                     </li>
                     <li>
-                      <strong>Achievements:</strong> {activeDoctor.achievements}
+                      <strong>Réalisations :</strong> {activeDoctor.achievements}
                     </li>
                     <li>
-                      <strong>Salary:</strong> {activeDoctor.salary}
+                      <strong>Tarif :</strong> {activeDoctor.salary}
                     </li>
                   </ul>
 
@@ -303,7 +303,7 @@ export default function HomeDoctors() {
                     <a
                       href={`mailto:${activeDoctor.email}`}
                       className="flex items-center gap-2 hover:text-blue-800 transition-colors truncate max-w-full"
-                      aria-label={`Email ${activeDoctor.name}`}
+                      aria-label={`E-mail ${activeDoctor.name}`}
                     >
                       <FaEnvelope className="flex-shrink-0" />
                       <span className="truncate">{activeDoctor.email}</span>

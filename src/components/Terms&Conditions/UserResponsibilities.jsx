@@ -2,11 +2,11 @@
 import React from "react";
 
 const userResponsibilitiesList = [
-  "Provide accurate and truthful information during registration and usage.",
-  "Use our services responsibly and follow all applicable laws and guidelines.",
-  "Maintain the confidentiality of your account credentials.",
-  "Notify us promptly of any unauthorized use or security breaches.",
-  "Respect other users and do not engage in abusive or harmful behavior.",
+  "Fournir des informations exactes et sincères lors de votre inscription et de l’utilisation du site.",
+  "Utiliser nos services de manière responsable et respecter les lois et consignes applicables.",
+  "Préserver la confidentialité de vos identifiants de compte.",
+  "Nous informer rapidement de toute utilisation non autorisée ou faille de sécurité.",
+  "Respecter les autres utilisateurs et éviter tout comportement abusif ou nuisible.",
 ];
 
 const ResponsibilityItem = ({ text }) => {
@@ -15,9 +15,7 @@ const ResponsibilityItem = ({ text }) => {
       tabIndex={0}
       className="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md transition ease-in-out duration-200"
       aria-label={text}
-    >
-      {text}
-    </li>
+    >Fournir des informations exactes et sincères lors de votre inscription et de l’utilisation du site.</li>
   );
 };
 
@@ -31,7 +29,7 @@ const UserResponsibilities = () => {
         id="user-responsibilities-heading"
         className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 select-text"
       >
-        User Responsibilities
+        Responsabilités de l’utilisateur
       </h2>
 
       <ul className="max-w-3xl mx-auto list-disc list-inside space-y-4 text-lg sm:text-xl leading-relaxed text-gray-800 font-light">

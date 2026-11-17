@@ -8,48 +8,48 @@ import { FaStar } from "react-icons/fa";
 const testimonials = [
   {
     id: 1,
-    author: "Lucas Anderson",
-    text: "An outstanding experience with a truly dedicated team. Their professionalism shines through every step.",
+    author: "Arnaud Hounkpatin",
+    text: "Une expérience remarquable avec une équipe réellement dévouée. Le professionnalisme est présent à chaque étape.",
     rating: 5,
     image:
       "https://images.unsplash.com/photo-1605684954998-685c79d6a018?w=400&auto=format&fit=crop&q=60",
   },
   {
     id: 2,
-    author: "Maria Gonzales",
-    text: "Their attention to detail and personalized care exceeded my expectations. Highly recommend!",
+    author: "Grâce Adanle",
+    text: "Leur attention aux détails et la personnalisation des soins ont dépassé mes attentes. Je recommande !",
     rating: 4,
     image:
       "https://plus.unsplash.com/premium_photo-1664475543697-229156438e1e?w=400&auto=format&fit=crop&q=60",
   },
   {
     id: 3,
-    author: "David Lee",
-    text: "A seamless and supportive journey from start to finish. Truly top-notch service.",
+    author: "Ghislain Ahouansou",
+    text: "Un parcours fluide et rassurant du début à la fin. Un service vraiment excellent.",
     rating: 5,
     image:
       "https://plus.unsplash.com/premium_photo-1661578535048-7a30e3a71d25?w=400&auto=format&fit=crop&q=60",
   },
   {
     id: 4,
-    author: "Sophia Patel",
-    text: "Professional, caring, and efficient. I felt valued and well looked after at every visit.",
+    author: "Nadège Tossou",
+    text: "Une équipe professionnelle, attentionnée et efficace. Je me suis sentie valorisée à chaque visite.",
     rating: 5,
     image:
       "https://images.unsplash.com/photo-1662837775286-7e6258c7c595?w=400&auto=format&fit=crop&q=60",
   },
   {
     id: 5,
-    author: "James Kim",
-    text: "Highly skilled team with a personal touch. They made all the difference.",
+    author: "Éric Dangbénon",
+    text: "Une équipe très compétente et humaine. Cela a fait toute la différence.",
     rating: 4,
     image:
       "https://plus.unsplash.com/premium_photo-1661478177049-f8569388e0c5?w=400&auto=format&fit=crop&q=60",
   },
   {
     id: 6,
-    author: "Emma Brown",
-    text: "I appreciated the warm environment and expert care. A wonderful experience overall.",
+    author: "Rachelle Sossou",
+    text: "J’ai apprécié la chaleur de l’accueil et la qualité des soins. Une très belle expérience.",
     rating: 5,
     image:
       "https://plus.unsplash.com/premium_photo-1661722577924-5493be567c61?w=400&auto=format&fit=crop&q=60",
@@ -106,14 +106,14 @@ export default function TestimonialsCarousel() {
 
   return (
     <section
-      aria-label="Testimonials Carousel"
+      aria-label="Carrousel des témoignages"
       className="py-16 bg-white select-none my-[-80px]"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-10 sm:mb-12 text-gray-900">
-          Our{" "}
+          Nos{" "}
           <span className="text-blue-700 underline decoration-blue-400 decoration-4 underline-offset-4">
-            Testimonials
+            témoignages
           </span>
         </h2>
 
@@ -186,7 +186,7 @@ function CarouselArrow({ direction, onClick, className }) {
   const isLeft = direction === "left";
   return (
     <button
-      aria-label={isLeft ? "Previous testimonial" : "Next testimonial"}
+      aria-label={isLeft ? "Témoignage précédent" : "Témoignage suivant"}
       onClick={onClick}
       className={`${className} z-20 p-2 sm:p-3 bg-blue-700 rounded-full shadow-lg hover:bg-blue-800 transition`}
     >

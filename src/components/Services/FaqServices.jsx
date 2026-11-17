@@ -6,29 +6,29 @@ import { FaChevronDown } from "react-icons/fa";
 
 const faqsData = [
   {
-    question: "What types of healthcare services do you provide?",
+    question: "Quelles spécialités propose le cabinet ?",
     answer:
-      "We provide comprehensive healthcare services including routine checkups, specialized treatments, diagnostics, emergency care, and telehealth consultations.",
+      "Le cabinet propose l’ORL, la chirurgie cervico-faciale et la médecine générale, ainsi que des bilans de santé et la prise en charge des urgences légères.",
   },
   {
-    question: "How do I book an appointment?",
+    question: "Comment prendre rendez-vous ?",
     answer:
-      "Appointments can be booked easily online via our website or by calling our support team. We offer both in-person and virtual visit options.",
+      "Vous pouvez réserver en ligne sur notre site, par téléphone au +229 01 41 60 83 39 ou par WhatsApp. Les consultations se font au cabinet, sur rendez-vous.",
   },
   {
-    question: "Do you accept insurance?",
+    question: "Acceptez-vous les assurances ?",
     answer:
-      "Yes, we accept most major insurance plans. Please check our insurance page or contact us directly for more details on accepted providers.",
+      "Le cabinet travaille avec plusieurs assurances et mutuelles. Contactez l’accueil pour vérifier votre prise en charge.",
   },
   {
-    question: "Are your medical professionals certified?",
+    question: "Les praticiens sont-ils qualifiés ?",
     answer:
-      "Absolutely. All our doctors and specialists are fully certified, licensed, and have extensive experience in their respective fields.",
+      "Oui. Tous nos praticiens sont diplômés, agréés et justifient d’une solide expérience dans leur spécialité.",
   },
   {
-    question: "Is telehealth available?",
+    question: "La téléconsultation est-elle disponible ?",
     answer:
-      "Yes, we offer telehealth consultations for your convenience, allowing you to access healthcare services remotely.",
+      "Certaines situations peuvent être abordées en téléconsultation. Contactez le secrétariat pour vérifier si votre demande s’y prête.",
   },
 ];
 
@@ -60,7 +60,7 @@ const FaqServices = () => {
   return (
     <section
       id="faq-services"
-      aria-label="Frequently Asked Questions about Services"
+      aria-label="Questions fréquentes about Spécialités"
       className="bg-white py-20 px-6 sm:px-10 lg:px-20"
     >
       <motion.div

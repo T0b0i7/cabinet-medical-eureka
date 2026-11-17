@@ -5,23 +5,23 @@ import React from "react";
 const ServiceLocationMap = () => {
   return (
     <section
-      aria-label="Service Location Map"
+      aria-label="Accès au cabinet"
       className="max-w-7xl mx-auto px-6 sm:px-12 py-16"
     >
       {/* Heading */}
       <div className="text-center max-w-3xl mx-auto mb-10">
         <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
-          Our Service <span className="text-blue-600">Locations</span>
+          Nos <span className="text-blue-600">lieux de consultation</span>
         </h2>
         <p className="mt-4 text-gray-600 text-lg sm:text-xl leading-relaxed">
-          We proudly serve multiple locations across the country. Find the nearest service center on the map below.
+          Nous accueillons les patients à Porto-Novo et dans ses environs. Retrouvez notre adresse sur la carte ci-dessous.
         </p>
       </div>
 
       {/* Map container */}
       <div
         tabIndex={0}
-        aria-label="Interactive map showing our service locations"
+        aria-label="Carte interactive de localisation du cabinet"
         className="w-full aspect-[16/9] rounded-3xl overflow-hidden shadow-lg border border-gray-200 focus:outline-none focus:ring-4 focus:ring-blue-300"
       >
         <iframe

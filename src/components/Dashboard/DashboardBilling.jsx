@@ -5,22 +5,22 @@ const initialInvoices = [
   {
     id: "INV-1001",
     date: "2025-07-15",
-    amount: 250.0,
-    status: "Paid",
+    amount: 25000,
+    status: "Payé",
     pdfUrl: "#",
   },
   {
     id: "INV-1002",
     date: "2025-08-01",
-    amount: 400.0,
-    status: "Due",
+    amount: 40000,
+    status: "Dû",
     pdfUrl: "#",
   },
   {
     id: "INV-1003",
     date: "2025-08-10",
-    amount: 125.0,
-    status: "Upcoming",
+    amount: 12500,
+    status: "À venir",
     pdfUrl: "#",
   },
 ];
@@ -29,14 +29,14 @@ const DashboardBilling = () => {
   const [invoices] = useState(initialInvoices);
 
   // Calculate totals
-  const totalDue = invoices
-    .filter((inv) => inv.status === "Due")
+  const totalDû = invoices
+    .filter((inv) => inv.status === "Dû")
     .reduce((sum, inv) => sum + inv.amount, 0);
-  const totalPaid = invoices
-    .filter((inv) => inv.status === "Paid")
+  const totalPayé = invoices
+    .filter((inv) => inv.status === "Payé")
     .reduce((sum, inv) => sum + inv.amount, 0);
   const totalUpcoming = invoices
-    .filter((inv) => inv.status === "Upcoming")
+    .filter((inv) => inv.status === "À venir")
     .reduce((sum, inv) => sum + inv.amount, 0);
 
   return (
@@ -50,7 +50,7 @@ const DashboardBilling = () => {
       }}
     >
       <h2 style={{ fontSize: 28, fontWeight: "700", marginBottom: 24 }}>
-        Billing Overview
+        Facturation Vue d’ensemble
       </h2>
 
       {/* Summary Cards */}
@@ -65,17 +65,17 @@ const DashboardBilling = () => {
       >
         {[
           {
-            title: "Total Due",
-            amount: totalDue,
+            title: "Total dû",
+            amount: totalDû,
             color: "#d32f2f",
           },
           {
-            title: "Total Paid",
-            amount: totalPaid,
+            title: "Total payé",
+            amount: totalPayé,
             color: "#388e3c",
           },
           {
-            title: "Upcoming",
+            title: "À venir",
             amount: totalUpcoming,
             color: "#fbc02d",
           },
@@ -111,7 +111,7 @@ const DashboardBilling = () => {
                 letterSpacing: "0.03em",
               }}
             >
-              ${amount.toFixed(2)}
+              {amount.toLocaleString("fr-FR")} FCFA
             </p>
           </div>
         ))}
@@ -127,7 +127,7 @@ const DashboardBilling = () => {
             userSelect: "none",
           }}
         >
-          Recent Invoices
+          Factures récentes
         </h3>
         <table
           style={{
@@ -143,7 +143,7 @@ const DashboardBilling = () => {
             }}
           >
             <tr>
-              {["Invoice ID", "Date", "Amount", "Status", "Download"].map(
+              {["N° de facture", "Date", "Montant", "Statut", "Télécharger"].map(
                 (header) => (
                   <th
                     key={header}
@@ -167,7 +167,7 @@ const DashboardBilling = () => {
               <tr
                 key={id}
                 style={{
-                  backgroundColor: status === "Due" ? "#ffe6e6" : "white",
+                  backgroundColor: status === "Dû" ? "#ffe6e6" : "white",
                   transition: "background-color 0.3s",
                 }}
               >
@@ -188,7 +188,7 @@ const DashboardBilling = () => {
                     color: "#555",
                   }}
                 >
-                  {new Date(date).toLocaleDateString()}
+                  {new Date(date).toLocaleDateString("fr-FR")}
                 </td>
                 <td
                   style={{
@@ -198,7 +198,7 @@ const DashboardBilling = () => {
                     color: "#222",
                   }}
                 >
-                  ${amount.toFixed(2)}
+                  {amount.toLocaleString("fr-FR")} FCFA
                 </td>
                 <td
                   style={{
@@ -206,9 +206,9 @@ const DashboardBilling = () => {
                     borderBottom: "1px solid #eee",
                     fontWeight: "700",
                     color:
-                      status === "Paid"
+                      status === "Payé"
                         ? "#388e3c"
-                        : status === "Due"
+                        : status === "Dû"
                         ? "#d32f2f"
                         : "#fbc02d",
                   }}

@@ -51,13 +51,13 @@ const ContactForm = () => {
     <form className="space-y-5" noValidate>
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-          Full Name
+          Nom complet
         </label>
         <input
           id="name"
           name="name"
           type="text"
-          placeholder="Enter your name"
+          placeholder="Votre nom"
           className="w-full rounded-lg border border-gray-300 px-4 py-2 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           autoComplete="name"
           required
@@ -66,13 +66,13 @@ const ContactForm = () => {
 
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-          Email Address
+          Adresse e-mail
         </label>
         <input
           id="email"
           name="email"
           type="email"
-          placeholder="Enter your email"
+          placeholder="Votre adresse e-mail"
           className="w-full rounded-lg border border-gray-300 px-4 py-2 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           autoComplete="email"
           required
@@ -81,13 +81,13 @@ const ContactForm = () => {
 
       <div>
         <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-          Subject
+          Objet
         </label>
         <input
           id="subject"
           name="subject"
           type="text"
-          placeholder="Subject"
+          placeholder="Objet"
           className="w-full rounded-lg border border-gray-300 px-4 py-2 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           required
         />
@@ -101,7 +101,7 @@ const ContactForm = () => {
           id="message"
           name="message"
           rows="5"
-          placeholder="Write your message..."
+          placeholder="Écrivez votre message…"
           className="w-full rounded-lg border border-gray-300 px-4 py-2 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           required
         />
@@ -111,7 +111,7 @@ const ContactForm = () => {
         type="submit"
         className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-lg transition-colors duration-300"
       >
-        Send Message
+        Envoyer le message
       </button>
     </form>
   );
@@ -124,11 +124,11 @@ export default function OurteamContact() {
         {/* Section Heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            Get in Touch With <span className="text-blue-600">Our Team</span>
+            Contactez <span className="text-blue-600">notre équipe</span>
           </h2>
           <p className="mt-3 text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
-            Whether you have a question, want to collaborate, or simply say hello — we’re here to
-            listen.
+            Une question, un projet de collaboration ou simplement envie
+            d’échanger ? Nous sommes à votre écoute.
           </p>
         </div>
 
@@ -141,19 +141,19 @@ export default function OurteamContact() {
           {/* Contact details panel */}
           <aside className="flex flex-col justify-between bg-white rounded-2xl shadow-lg p-6 sm:p-8">
             <div className="space-y-6">
-              <ContactInfoItem icon={<FaPhoneAlt />} label="Call Us" value="+1 234 567 890" />
-              <ContactInfoItem icon={<FaEnvelope />} label="Email Us" value="contact@ourteam.com" />
+              <ContactInfoItem icon={<FaPhoneAlt />} label="Appelez-nous" value="+229 01 41 60 83 39" />
+              <ContactInfoItem icon={<FaEnvelope />} label="Écrivez-nous" value="contact@cabinet-eureka.bj" />
               <ContactInfoItem
                 icon={<FaMapMarkerAlt />}
-                label="Visit Us"
-                value="123 Main Street, City, Country"
+                label="Rendez-nous visite"
+                value="Porto-Novo, Bénin"
               />
             </div>
 
             {/* Map embed */}
             <div className="w-full h-52 rounded-xl overflow-hidden shadow border border-gray-300 mt-4">
               <iframe
-                title="Our Location"
+                title="Notre adresse"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086716393178!2d-122.41941568468153!3d37.7749297797588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064d3a8fffb%3A0x2d831bdb9fee9604!2s123%20Main%20St%2C%20San%20Francisco%2C%20CA%2094105%2C%20USA!5e0!3m2!1sen!2s!4v1693429584035!5m2!1sen!2s"
                 width="100%"
                 height="100%"
@@ -166,7 +166,7 @@ export default function OurteamContact() {
 
             {/* Social media links */}
             <div className="mt-8">
-              <p className="text-sm text-gray-500 mb-3">Follow Us</p>
+              <p className="text-sm text-gray-500 mb-3">Suivez-nous</p>
               <div className="flex space-x-3">
                 <SocialLink Icon={FaFacebookF} url="#" label="Facebook" />
                 <SocialLink Icon={FaTwitter} url="#" label="Twitter" />

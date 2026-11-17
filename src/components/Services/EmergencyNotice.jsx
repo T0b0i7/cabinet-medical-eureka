@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { FaExclamationTriangle } from "react-icons/fa";
 
 const EmergencyNotice = () => {
@@ -19,23 +20,23 @@ const EmergencyNotice = () => {
           />
           <div className="min-w-0">
             <h3 className="text-lg sm:text-xl md:text-2xl font-semibold leading-tight mb-1">
-              Emergency Notice
+              Alerte urgences
             </h3>
             <p className="text-sm sm:text-base leading-relaxed">
-              Our emergency services operate 24/7 to assist you with urgent
-              medical needs.
+              Notre service d’urgences est disponible 24h/24 pour répondre à vos
+              besoins médicaux urgents.
             </p>
           </div>
         </div>
 
         {/* Call to action button */}
         <div className="flex-shrink-0 self-center sm:self-auto">
-          <a
+          <Link
             href="/emergency"
             className="inline-block bg-white text-red-600 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-70 transition-colors duration-300 whitespace-nowrap text-base sm:text-lg"
           >
-            Learn More
-          </a>
+            En savoir plus
+          </Link>
         </div>
       </div>
     </section>

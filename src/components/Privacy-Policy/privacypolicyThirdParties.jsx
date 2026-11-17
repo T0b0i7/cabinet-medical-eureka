@@ -11,27 +11,21 @@ function ThirdPartyServicesSection() {
           id="third-party-services-heading"
           className="mb-6 text-3xl font-extrabold text-blue-700"
         >
-          Third-Party Services
+          Tiers partenaires
         </h2>
 
-        <p className="mb-6 leading-relaxed text-gray-800 text-lg">
-          We may share your information with trusted third-party providers who assist us in operating our website, running our business, or serving you. These partners are contractually obligated to protect your data and keep it confidential.
-        </p>
+        <p className="mb-6 leading-relaxed text-gray-800 text-lg">Nous pouvons partager vos informations avec des prestataires de confiance qui nous aident à faire fonctionner le site ou à vous accompagner. Ces partenaires sont tenus de protéger vos données.</p>
 
-        <p className="mb-6 leading-relaxed text-gray-800 text-lg">
-          Examples of such third parties include:
-        </p>
+        <p className="mb-6 leading-relaxed text-gray-800 text-lg">Exemples de tiers concernés :</p>
 
         <ul className="max-w-xl list-disc list-inside space-y-3 text-gray-800 text-lg">
-          <li>Payment processors</li>
-          <li>Analytics and marketing services</li>
-          <li>Customer support platforms</li>
-          <li>Cloud hosting providers</li>
+          <li>Prestataires de paiement</li>
+          <li>Services d’analyse et de communication</li>
+          <li>Plateformes d’assistance aux patients</li>
+          <li>Hébergeurs cloud</li>
         </ul>
 
-        <p className="mt-6 leading-relaxed text-gray-800 text-lg">
-          We carefully select these partners and regularly review their privacy practices to ensure your data remains secure.
-        </p>
+        <p className="mt-6 leading-relaxed text-gray-800 text-lg">Nous sélectionnons ces partenaires avec soin et vérifions régulièrement leurs pratiques en matière de confidentialité.</p>
       </div>
     </section>
   );

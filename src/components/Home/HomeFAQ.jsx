@@ -6,39 +6,39 @@ import { motion, AnimatePresence, useAnimation } from "framer-motion";
 const FAQ_DATA = [
   {
     id: 1,
-    question: "What services do you offer?",
+    question: "Quelles spécialités propose le cabinet ?",
     answer:
-      "We provide a wide range of healthcare services including general consultation, diagnostics, vaccinations, and emergency care.",
+      "Le Cabinet Médical EURÊKA propose l’ORL, la chirurgie cervico-faciale et la médecine générale, ainsi que des bilans de santé et la prise en charge des urgences légères.",
   },
   {
     id: 2,
-    question: "How can I schedule an appointment?",
+    question: "Comment prendre rendez-vous ?",
     answer:
-      "You can schedule an appointment by clicking the 'Schedule Appointment' button on our homepage or by contacting us directly via phone or email.",
+      "Cliquez sur le bouton « Prendre rendez-vous » de notre site, appelez-nous au +229 01 41 60 83 39 ou écrivez-nous sur WhatsApp. Vous choisissez la spécialité, la date et le créneau.",
   },
   {
     id: 3,
-    question: "Do you accept insurance?",
+    question: "Acceptez-vous les assurances ?",
     answer:
-      "Yes, we accept most major insurance plans. Please contact our billing department for specific insurance questions.",
+      "Le cabinet travaille avec plusieurs assurances et mutuelles. Contactez l’accueil pour vérifier votre prise en charge.",
   },
   {
     id: 4,
-    question: "What are your working hours?",
+    question: "Quels sont les horaires d’ouverture ?",
     answer:
-      "Our clinic operates Monday to Friday from 8:00 AM to 6:00 PM and Saturdays from 9:00 AM to 1:00 PM.",
+      "Le cabinet est ouvert 7 jours sur 7, de 08h00 à 18h00.",
   },
   {
     id: 5,
-    question: "Can I get prescription refills online?",
+    question: "Puis-je demander un renouvellement d’ordonnance ?",
     answer:
-      "Yes, registered patients can request prescription refills through our patient portal available on our website.",
+      "Oui, les patients suivis peuvent demander un renouvellement d’ordonnance auprès du secrétariat, après avis du praticien.",
   },
   {
     id: 6,
-    question: "What safety measures are in place for COVID-19?",
+    question: "Quelles mesures d’hygiène sont appliquées ?",
     answer:
-      "We follow all CDC guidelines including mandatory masks, social distancing, and regular sanitation to ensure patient safety.",
+      "Nous appliquons des protocoles stricts de désinfection, aérons les salles et respectons les règles d’hygiène pour la sécurité de tous.",
   },
 ];
 

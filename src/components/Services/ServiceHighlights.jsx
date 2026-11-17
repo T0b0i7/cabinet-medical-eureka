@@ -15,38 +15,38 @@ const highlights = [
   {
     id: 1,
     icon: <FaClinicMedical className="text-blue-600" size={32} aria-hidden="true" />,
-    title: "Modern Clinics",
-    description: "State-of-the-art facilities designed for efficiency and comfort.",
+    title: "Cabinet moderne",
+    description: "Un cadre moderne et confortable, pensé pour les patients et leurs familles.",
   },
   {
     id: 2,
     icon: <FaMicroscope className="text-blue-600" size={32} aria-hidden="true" />,
-    title: "Advanced Labs",
-    description: "Fast and accurate testing powered by the latest technology.",
+    title: "Plateau technique",
+    description: "Des explorations ORL et cervico-faciales réalisées avec un équipement récent.",
   },
   {
     id: 3,
     icon: <FaBriefcaseMedical className="text-blue-600" size={32} aria-hidden="true" />,
-    title: "Emergency Kits",
-    description: "Equipped for rapid response and on-site care essentials.",
+    title: "Matériel d’urgence",
+    description: "Le matériel nécessaire pour prendre en charge rapidement les urgences légères.",
   },
   {
     id: 4,
     icon: <FaProcedures className="text-blue-600" size={32} aria-hidden="true" />,
-    title: "Inpatient Care",
-    description: "Comfortable recovery rooms and 24/7 nursing support.",
+    title: "Soins et suivi",
+    description: "Un suivi attentif avant et après les soins, avec des conseils personnalisés.",
   },
   {
     id: 5,
     icon: <FaAmbulance className="text-blue-600" size={32} aria-hidden="true" />,
-    title: "24/7 Ambulance",
-    description: "Quick-response emergency transport across the city.",
+    title: "Transport sanitaire",
+    description: "Orientation rapide vers les structures adaptées en cas d’urgence.",
   },
   {
     id: 6,
     icon: <FaNotesMedical className="text-blue-600" size={32} aria-hidden="true" />,
-    title: "Digital Records",
-    description: "Secure and accessible medical records for all patients.",
+    title: "Dossier patient numérique",
+    description: "Un dossier patient sécurisé et accessible depuis votre espace personnel.",
   },
 ];
 
@@ -72,7 +72,7 @@ const ServiceHighlights = () => {
   return (
     <section
       role="region"
-      aria-label="Service Highlights"
+      aria-label="Points forts"
       className="bg-white py-20 px-6 md:px-12"
     >
       <div className="max-w-7xl mx-auto">
@@ -84,7 +84,7 @@ const ServiceHighlights = () => {
             </span>
           </h2>
           <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-light">
-            Discover key features that make our healthcare services stand out from the rest.
+            Découvrez les atouts qui distinguent notre cabinet et la qualité de nos soins.
           </p>
         </header>
 

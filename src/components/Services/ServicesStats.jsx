@@ -8,7 +8,7 @@ const stats = [
   {
     id: 1,
     icon: <FaUserMd className="text-4xl text-white" aria-hidden="true" />,
-    title: "Qualified Doctors",
+    title: "Médecins qualifiés",
     count: 1200,
     suffix: "+",
     bg: "bg-gradient-to-r from-blue-600 to-blue-700",
@@ -16,14 +16,14 @@ const stats = [
   {
     id: 2,
     icon: <FaHospital className="text-4xl text-white" aria-hidden="true" />,
-    title: "Successful Surgeries",
+    title: "Actes réalisés",
     count: 350,
     bg: "bg-gradient-to-r from-blue-600 to-blue-700",
   },
   {
     id: 3,
     icon: <FaHeartbeat className="text-4xl text-white" aria-hidden="true" />,
-    title: "Patients Treated",
+    title: "Patients accompagnés",
     count: 5000,
     suffix: "+",
     bg: "bg-gradient-to-r from-blue-600 to-blue-700",
@@ -31,7 +31,7 @@ const stats = [
   {
     id: 4,
     icon: <FaClock className="text-4xl text-white" aria-hidden="true" />,
-    title: "Hours Emergency Care",
+    title: "Urgences légères",
     count: 24,
     bg: "bg-gradient-to-r from-blue-600 to-blue-700",
   },
@@ -68,7 +68,7 @@ const useCountUp = (target, inView, duration = 2000) => {
 const ServicesStats = () => {
   return (
     <section
-      aria-label="Why Choose Our Services"
+      aria-label="Pourquoi choisir nos spécialités"
       className="py-20 px-4 sm:px-6 lg:px-12 bg-gray-50 my-[-100px] mb-0"
     >
       <div className="max-w-7xl mx-auto text-center mb-12 px-4 sm:px-0">
@@ -78,8 +78,8 @@ const ServicesStats = () => {
           transition={{ duration: 0.6 }}
           className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900"
         >
-          Why Choose{" "}
-          <span className="text-blue-600">Our Services</span>
+          Pourquoi choisir{" "}
+          <span className="text-blue-600">nos spécialités</span>
         </motion.h2>
 
         <motion.p
@@ -88,8 +88,8 @@ const ServicesStats = () => {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="mt-4 text-gray-600 max-w-2xl mx-auto"
         >
-          We provide world-class medical care with a team of dedicated
-          professionals, ensuring you get the best treatment possible.
+          Nous proposons des soins de qualité avec une équipe dévouée, pour vous
+          garantir la meilleure prise en charge possible.
         </motion.p>
       </div>
 

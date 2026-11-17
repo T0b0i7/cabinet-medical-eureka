@@ -105,14 +105,14 @@ export default function PatientInfoHero() {
   // Simple validation logic
   const validate = () => {
     const errors = {};
-    if (!formData.fullName.trim()) errors.fullName = "Full name is required";
+    if (!formData.fullName.trim()) errors.fullName = "Votre nom complet est requis";
     if (!formData.phone.trim()) {
-      errors.phone = "Phone number is required";
+      errors.phone = "Le numéro de téléphone est requis";
     } else if (!/^\+?\d{7,15}$/.test(formData.phone.trim())) {
-      errors.phone = "Enter a valid phone number";
+      errors.phone = "Saisissez un numéro de téléphone valide";
     }
-    if (!formData.dob) errors.dob = "Date of birth is required";
-    if (!formData.gender) errors.gender = "Please select your gender";
+    if (!formData.dob) errors.dob = "La date de naissance est requise";
+    if (!formData.gender) errors.gender = "Veuillez choisir votre sexe";
     return errors;
   };
 
@@ -151,7 +151,7 @@ export default function PatientInfoHero() {
       // Simulated network delay
       await new Promise((res) => setTimeout(res, 1500));
       // Simulate occasional failure (25%)
-      if (Math.random() < 0.25) throw new Error("Simulated error");
+      if (Math.random() < 0.25) throw new Error("Erreur simulée");
 
       setSubmitSuccess(true);
       setFormData({
@@ -161,7 +161,7 @@ export default function PatientInfoHero() {
         gender: "",
       });
     } catch {
-      setSubmitError("Submission failed. Please try again.");
+      setSubmitError("Envoi échoué. Veuillez réessayer.");
     } finally {
       setSubmitting(false);
     }
@@ -217,7 +217,7 @@ export default function PatientInfoHero() {
   return (
     <>
       <section
-        aria-label="Patient Information Hero Section"
+        aria-label="Informations du patient"
         className="bg-white text-black min-h-[480px] flex items-center px-6 md:px-12 my-20 lg:my-0"
       >
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center w-full gap-10">
@@ -232,9 +232,9 @@ export default function PatientInfoHero() {
               variants={heroTextVariants}
               className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight drop-shadow-sm"
             >
-              Welcome to{" "}
-              <span className="text-blue-700" aria-label="Your Care Center">
-                Your Care Center
+              Bienvenue dans{" "}
+              <span className="text-blue-700" aria-label="Votre espace santé">
+                votre espace santé
               </span>
             </motion.h1>
 
@@ -243,8 +243,8 @@ export default function PatientInfoHero() {
               variants={heroTextVariants}
               className="mt-5 text-lg sm:text-xl md:text-2xl font-light max-w-xl mx-auto md:mx-0"
             >
-              Please provide your details so we can offer personalized patient
-              services and care.
+              Renseignez vos informations afin que nous puissions vous proposer des
+              services et une prise en charge personnalisés.
             </motion.p>
 
             <motion.button
@@ -253,9 +253,9 @@ export default function PatientInfoHero() {
               type="button"
               onClick={() => setModalOpen(true)}
               className="mt-8 px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg shadow-lg transition-colors focus:outline-none focus:ring-4 focus:ring-blue-300"
-              aria-label="Provide Patient Information"
+              aria-label="Renseigner vos informations"
             >
-              Provide Info
+              Renseigner mes informations
             </motion.button>
           </motion.div>
 
@@ -267,7 +267,7 @@ export default function PatientInfoHero() {
           >
             <img
               src="https://plus.unsplash.com/premium_photo-1683121665192-4f1896dd5177?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Patient consulting with healthcare professional"
+              alt="Patient en consultation avec un professionnel de santé"
               className="rounded-xl shadow-xl w-full object-cover"
               loading="lazy"
               decoding="async"
@@ -307,7 +307,7 @@ export default function PatientInfoHero() {
                 type="button"
                 onClick={closeModal}
                 className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 focus:outline-none"
-                aria-label="Close patient information form"
+                aria-label="Fermer le formulaire d’informations du patient"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -330,11 +330,11 @@ export default function PatientInfoHero() {
                 className="text-2xl font-bold mb-4 text-blue-700"
                 tabIndex={-1}
               >
-                Patient Information
+                Informations du patient
               </h2>
 
               <p id="patient-info-modal-desc" className="mb-6 text-gray-700">
-                Kindly fill out the following details to help us serve you better.
+                Renseignez les informations suivantes pour nous aider à mieux vous accompagner.
               </p>
 
               {submitSuccess ? (
@@ -342,19 +342,19 @@ export default function PatientInfoHero() {
                   role="alert"
                   className="text-green-600 font-semibold text-center my-6 animate-fadeIn"
                 >
-                  Thank you! Your information was submitted successfully.
+                  Merci ! Vos informations ont bien été enregistrées.
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} noValidate>
                   {/* Full Name */}
                   <FormField
-                    label="Full Name"
+                    label="Nom complet"
                     id="fullName"
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleChange}
                     error={formErrors.fullName}
-                    placeholder="Jane Doe"
+                    placeholder="Adjovi Hounsou"
                     disabled={submitting}
                     ref={firstInputRef}
                     required
@@ -364,7 +364,7 @@ export default function PatientInfoHero() {
 
                   {/* Phone Number */}
                   <FormField
-                    label="Phone Number"
+                    label="Numéro de téléphone"
                     id="phone"
                     name="phone"
                     value={formData.phone}
@@ -379,7 +379,7 @@ export default function PatientInfoHero() {
 
                   {/* Date of Birth */}
                   <FormField
-                    label="Date of Birth"
+                    label="Date de naissance"
                     id="dob"
                     name="dob"
                     value={formData.dob}
@@ -412,12 +412,12 @@ export default function PatientInfoHero() {
                       disabled={submitting}
                       required
                     >
-                      <option value="">Select Gender</option>
-                      <option value="female">Female</option>
-                      <option value="male">Male</option>
-                      <option value="nonbinary">Non-binary</option>
-                      <option value="other">Other</option>
-                      <option value="preferNotToSay">Prefer not to say</option>
+                      <option value="">Choisir le sexe</option>
+                      <option value="female">Femme</option>
+                      <option value="male">Homme</option>
+                      <option value="nonbinary">Non binaire</option>
+                      <option value="other">Autre</option>
+                      <option value="preferNotToSay">Je préfère ne pas préciser</option>
                     </select>
                     {formErrors.gender && (
                       <p
@@ -452,7 +452,7 @@ export default function PatientInfoHero() {
                         Submitting...
                       </>
                     ) : (
-                      "Submit Info"
+                      "Envoyer les informations"
                     )}
                   </button>
                 </form>

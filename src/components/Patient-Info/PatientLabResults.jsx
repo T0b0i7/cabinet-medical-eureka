@@ -5,16 +5,16 @@ import React, { useState, useMemo } from "react";
 const initialLabResults = [
   {
     id: 1,
-    testName: "Complete Blood Count (CBC)",
+    testName: "Numération formule sanguine (NFS)",
     date: "2024-07-01",
     result: "Normal",
     normalRange: "N/A",
     status: "Normal",
-    notes: "No abnormalities detected.",
+    notes: "Aucune anomalie détectée.",
   },
   {
     id: 2,
-    testName: "Blood Glucose",
+    testName: "Glycémie",
     date: "2024-07-15",
     result: "110 mg/dL",
     normalRange: "70 - 110 mg/dL",
@@ -23,12 +23,12 @@ const initialLabResults = [
   },
   {
     id: 3,
-    testName: "Cholesterol",
+    testName: "Cholestérol",
     date: "2024-06-20",
     result: "220 mg/dL",
     normalRange: "< 200 mg/dL",
-    status: "High",
-    notes: "Recommend lifestyle changes and re-test in 3 months.",
+    status: "Élevée",
+    notes: "Modifications du mode de vie recommandées, contrôle dans 3 mois.",
   },
   {
     id: 4,
@@ -36,17 +36,17 @@ const initialLabResults = [
     date: "2024-05-10",
     result: "25 ng/mL",
     normalRange: "30 - 100 ng/mL",
-    status: "Low",
-    notes: "Supplementation advised.",
+    status: "Faible",
+    notes: "Supplémentation conseillée.",
   },
 ];
 
-// Status color mapping for badges
+// Statut color mapping for badges
 const statusColors = {
   Normal: "text-green-600 bg-green-100",
-  High: "text-red-700 bg-red-100",
-  Low: "text-yellow-800 bg-yellow-100",
-  Pending: "text-gray-700 bg-gray-100",
+  Élevée: "text-red-700 bg-red-100",
+  Faible: "text-yellow-800 bg-yellow-100",
+  "En attente": "text-gray-700 bg-gray-100",
 };
 
 const PatientLabResults = () => {
@@ -79,7 +79,7 @@ const PatientLabResults = () => {
           aria-label={`Sort by date ${sortAsc ? "ascending" : "descending"}`}
           type="button"
         >
-          Sort by Date: {sortAsc ? "Oldest First" : "Newest First"}
+          Sort by Date: {sortAsc ? "Plus anciens d’abord" : "Plus récents d’abord"}
         </button>
       </div>
 
@@ -91,7 +91,7 @@ const PatientLabResults = () => {
               <th className="p-3 border border-blue-200">Date</th>
               <th className="p-3 border border-blue-200">Result</th>
               <th className="p-3 border border-blue-200">Normal Range</th>
-              <th className="p-3 border border-blue-200">Status</th>
+              <th className="p-3 border border-blue-200">Statut</th>
               <th className="p-3 border border-blue-200 rounded-tr-lg">Notes</th>
             </tr>
           </thead>
@@ -99,7 +99,7 @@ const PatientLabResults = () => {
             {sortedResults.length === 0 ? (
               <tr>
                 <td colSpan={6} className="text-center p-6 text-gray-600">
-                  No lab results found.
+                  Non lab results found.
                 </td>
               </tr>
             ) : (
@@ -111,7 +111,7 @@ const PatientLabResults = () => {
                   >
                     <td className="p-3 border border-blue-200 whitespace-normal">{testName}</td>
                     <td className="p-3 border border-blue-200 whitespace-nowrap">
-                      {new Date(date).toLocaleDateString(undefined, {
+                      {new Date(date).toLocaleDateString("fr-FR", {
                         year: "numeric",
                         month: "short",
                         day: "numeric",
@@ -124,7 +124,7 @@ const PatientLabResults = () => {
                         className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${
                           statusColors[status] || "text-gray-700 bg-gray-200"
                         }`}
-                        aria-label={`Status: ${status}`}
+                        aria-label={`Statut: ${status}`}
                       >
                         {status}
                       </span>

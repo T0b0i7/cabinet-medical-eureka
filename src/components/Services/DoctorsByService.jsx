@@ -7,28 +7,28 @@ import { FaStar, FaRegStar } from "react-icons/fa";
 // Data of doctors grouped by their specialty service
 const doctorsData = [
   {
-    service: "Cardiology",
+    service: "ORL",
     doctors: [
       {
         id: 1,
-        name: "Dr. Emily Thompson",
-        specialty: "Heart Specialist",
+        name: "Dr Romuald Adjakpa",
+        specialty: "Spécialiste ORL",
         rating: 4.8,
         photo:
           "https://plus.unsplash.com/premium_photo-1664392363342-47dcc1c5e631?q=80&w=1068&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         id: 2,
-        name: "Dr. Michael Lee",
-        specialty: "Cardiologist",
+        name: "Dr Chantal Houngbédji",
+        specialty: "Oto-Rhino-Laryngologiste (ORL)",
         rating: 4.6,
         photo:
           "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         id: 3,
-        name: "Dr. Sarah Kim",
-        specialty: "Interventional Cardiologist",
+        name: "Dr Sylvie Dossou-Yovo",
+        specialty: "ORL — chirurgie cervico-faciale",
         rating: 4.7,
         photo:
           "https://plus.unsplash.com/premium_photo-1661341423936-40b48564a5bf?q=80&w=388&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -36,28 +36,28 @@ const doctorsData = [
     ],
   },
   {
-    service: "Dermatology",
+    service: "Chirurgie Cervico-Faciale",
     doctors: [
       {
         id: 4,
-        name: "Dr. Sophia Patel",
-        specialty: "Skin Specialist",
+        name: "Dr Barthélémy Gnonlonfoun",
+        specialty: "Médecin généraliste",
         rating: 4.9,
         photo:
           "https://plus.unsplash.com/premium_photo-1661436275595-e6a8a3943f7a?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D",
       },
       {
         id: 5,
-        name: "Dr. James Wilson",
-        specialty: "Dermatologist",
+        name: "Dr Barthélémy Gnonlonfoun",
+        specialty: "Chirurgien cervico-facial",
         rating: 4.7,
         photo:
           "https://images.unsplash.com/photo-1659353888357-75e5858a5bc5?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8",
       },
       {
         id: 6,
-        name: "Dr. Lily Anderson",
-        specialty: "Cosmetic Dermatologist",
+        name: "Dr Chantal Houngbédji",
+        specialty: "Médecin généraliste",
         rating: 4.8,
         photo:
           "https://plus.unsplash.com/premium_photo-1681996428751-93e0294fe98d?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D",
@@ -65,28 +65,28 @@ const doctorsData = [
     ],
   },
   {
-    service: "Neurology",
+    service: "Médecine Générale",
     doctors: [
       {
         id: 7,
-        name: "Dr. Olivia Martinez",
-        specialty: "Neurologist",
+        name: "Dr Chantal Houngbédji",
+        specialty: "Chirurgien cervico-facial",
         rating: 4.9,
         photo:
           "https://plus.unsplash.com/premium_photo-1661713606200-2832945b8d3f?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8",
       },
       {
         id: 8,
-        name: "Dr. Daniel Garcia",
-        specialty: "Neurosurgeon",
+        name: "Dr Isidore Aholou",
+        specialty: "Chirurgien cervico-facial",
         rating: 4.7,
         photo:
           "https://images.unsplash.com/photo-1620293023555-272e1a661b26?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHx8",
       },
       {
         id: 9,
-        name: "Dr. Grace Lee",
-        specialty: "Pediatric Neurologist",
+        name: "Dr Sylvie Dossou-Yovo",
+        specialty: "ORL pédiatrique",
         rating: 4.8,
         photo:
           "https://plus.unsplash.com/premium_photo-1702599071585-c929589036c5?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHx8",
@@ -183,14 +183,14 @@ const AppointmentModal = ({ isOpen, onClose, doctor }) => {
   // Validate form fields
   const validateForm = () => {
     const errors = {};
-    if (!formData.fullName.trim()) errors.fullName = "Full name is required";
-    if (!formData.email.trim()) errors.email = "Email address is required";
+    if (!formData.fullName.trim()) errors.fullName = "Votre nom complet est requis";
+    if (!formData.email.trim()) errors.email = "L’adresse e-mail est requise";
     else if (
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)
     )
-      errors.email = "Invalid email address";
-    if (!formData.date) errors.date = "Please select a date";
-    if (!formData.time) errors.time = "Please select a time";
+      errors.email = "Adresse e-mail invalide";
+    if (!formData.date) errors.date = "Veuillez choisir une date";
+    if (!formData.time) errors.time = "Veuillez choisir un créneau";
 
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
@@ -268,12 +268,12 @@ const AppointmentModal = ({ isOpen, onClose, doctor }) => {
               id="modal-title"
               className="text-2xl sm:text-3xl font-extrabold text-blue-900 tracking-tight"
             >
-              Book Appointment
+              Prendre rendez-vous
             </h3>
             <button
               type="button"
               onClick={handleModalClose}
-              aria-label="Close modal"
+              aria-label="Fermer la fenêtre"
               className="text-blue-700 hover:text-blue-900 focus:outline-none focus:ring-4 focus:ring-blue-400 rounded-full p-2 transition"
             >
               <svg
@@ -301,22 +301,22 @@ const AppointmentModal = ({ isOpen, onClose, doctor }) => {
               className="text-center text-green-700 space-y-4"
             >
               <p className="text-lg sm:text-xl font-semibold">
-                Your appointment with{" "}
-                <span className="font-bold">{doctor?.name || "the doctor"}</span>{" "}
-                has been successfully booked!
+                Votre rendez-vous avec{" "}
+                <span className="font-bold">{doctor?.name || "le praticien"}</span>{" "}
+                a bien été enregistré !
               </p>
               <button
                 type="button"
                 onClick={handleModalClose}
                 className="inline-block bg-blue-600 hover:bg-blue-700 focus-visible:ring-4 focus-visible:ring-blue-400 focus:outline-none text-white rounded-xl px-8 py-3 font-semibold shadow-lg transition text-base"
               >
-                Close
+                Fermer
               </button>
             </motion.div>
           ) : (
             <>
               <p className="mb-6 text-blue-800 font-medium text-sm sm:text-base">
-                Booking with{" "}
+                Rendez-vous avec{" "}
                 <span className="font-semibold">{doctor?.name || "---"}</span> -{" "}
                 <span>{doctor?.specialty || "---"}</span>
               </p>
@@ -332,7 +332,7 @@ const AppointmentModal = ({ isOpen, onClose, doctor }) => {
                     htmlFor="fullName"
                     className="block text-blue-900 font-semibold mb-2"
                   >
-                    Full Name *
+                    Nom complet *
                   </label>
                   <input
                     type="text"
@@ -343,7 +343,7 @@ const AppointmentModal = ({ isOpen, onClose, doctor }) => {
                     aria-invalid={!!formErrors.fullName}
                     aria-describedby="fullName-error"
                     required
-                    placeholder="Your full name"
+                    placeholder="Votre nom complet"
                     className={`w-full rounded-lg border px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-4 ${
                       formErrors.fullName
                         ? "border-red-500 focus:ring-red-400"
@@ -367,7 +367,7 @@ const AppointmentModal = ({ isOpen, onClose, doctor }) => {
                     htmlFor="email"
                     className="block text-blue-900 font-semibold mb-2"
                   >
-                    Email Address *
+                    Adresse e-mail *
                   </label>
                   <input
                     type="email"
@@ -378,7 +378,7 @@ const AppointmentModal = ({ isOpen, onClose, doctor }) => {
                     aria-invalid={!!formErrors.email}
                     aria-describedby="email-error"
                     required
-                    placeholder="you@example.com"
+                    placeholder="vous@exemple.com"
                     className={`w-full rounded-lg border px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-4 ${
                       formErrors.email
                         ? "border-red-500 focus:ring-red-400"
@@ -403,7 +403,7 @@ const AppointmentModal = ({ isOpen, onClose, doctor }) => {
                       htmlFor="date"
                       className="block text-blue-900 font-semibold mb-2"
                     >
-                      Appointment Date *
+                      rendez-vous Date *
                     </label>
                     <input
                       type="date"
@@ -437,7 +437,7 @@ const AppointmentModal = ({ isOpen, onClose, doctor }) => {
                       htmlFor="time"
                       className="block text-blue-900 font-semibold mb-2"
                     >
-                      Appointment Time *
+                      Heure du rendez-vous *
                     </label>
                     <input
                       type="time"
@@ -480,7 +480,7 @@ const AppointmentModal = ({ isOpen, onClose, doctor }) => {
                     rows={3}
                     value={formData.notes}
                     onChange={handleInputChange}
-                    placeholder="Optional"
+                    placeholder="Facultatif"
                     className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-blue-400 resize-y shadow-sm transition"
                   />
                 </div>
@@ -491,7 +491,7 @@ const AppointmentModal = ({ isOpen, onClose, doctor }) => {
                   disabled={submitting}
                   className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:from-blue-400 disabled:to-blue-400 text-white font-semibold rounded-xl px-6 py-3 shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-400 transition text-lg sm:text-xl"
                 >
-                  {submitting ? "Booking..." : "Confirm Appointment"}
+                  {submitting ? "Envoi en cours…" : "Confirmer le rendez-vous"}
                 </button>
               </form>
             </>
@@ -528,7 +528,7 @@ const DoctorsByService = () => {
         id="doctors-by-service-heading"
         className="text-5xl sm:text-6xl font-extrabold mb-16 text-center tracking-wide drop-shadow-md"
       >
-        <span className="text-black">Our Doctors </span>
+        <span className="text-black">Nos praticiens </span>
         <span className="text-blue-600">by Service</span>
       </h2>
 
@@ -578,7 +578,7 @@ const DoctorsByService = () => {
                   }}
                   className="mt-auto bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold rounded-xl px-5 py-2 sm:px-8 sm:py-3 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-400 transition whitespace-nowrap text-sm sm:text-base "
                 >
-                  Book Appointment
+                  Prendre rendez-vous
                 </button>
               </motion.article>
             ))}

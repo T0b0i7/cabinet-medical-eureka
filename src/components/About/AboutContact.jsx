@@ -44,7 +44,7 @@ const AboutContact = () => {
 
   return (
     <section
-      aria-label="Contact Us Section"
+      aria-label="Nous contacter"
       className="bg-white py-20 px-6 sm:px-10 lg:px-20 max-w-7xl mx-auto"
     >
       <motion.div
@@ -57,33 +57,33 @@ const AboutContact = () => {
         {/* Contact Information */}
         <motion.div variants={itemVariants} className="space-y-8">
           <h2 className="text-4xl font-extrabold text-gray-900 leading-tight">
-            Get in <span className="text-blue-700">Touch</span>
+            Prenez <span className="text-blue-700">contact</span>
           </h2>
           <p className="text-gray-700 text-lg font-light max-w-md">
-            We’d love to hear from you! Whether you have questions about our
-            services or want to schedule an appointment, reach out and we’ll get
-            back to you promptly.
+            Nous serions ravis d’échanger avec vous. Que vous ayez des questions
+            sur nos spécialités ou que vous souhaitiez prendre rendez-vous,
+            écrivez-nous : nous vous répondons rapidement.
           </p>
 
           <div className="space-y-6 max-w-md">
             <div className="flex items-center space-x-4 text-gray-800">
               <FaPhoneAlt className="text-blue-700 w-6 h-6" aria-hidden="true" />
               <a
-                href="tel:+1234567890"
+                href="tel:+2290141608339"
                 className="hover:text-blue-700 transition"
-                aria-label="Call us at +1 (234) 567-890"
+                aria-label="Appelez-nous au +229 01 41 60 83 39"
               >
-                +1 (234) 567-890
+                +229 01 41 60 83 39
               </a>
             </div>
             <div className="flex items-center space-x-4 text-gray-800">
               <FaEnvelope className="text-blue-700 w-6 h-6" aria-hidden="true" />
               <a
-                href="mailto:contact@novahealth.com"
+                href="mailto:contact@cabinet-eureka.bj"
                 className="hover:text-blue-700 transition"
-                aria-label="Email us at contact@novahealth.com"
+                aria-label="Écrivez-nous à contact@cabinet-eureka.bj"
               >
-                contact@novahealth.com
+                contact@cabinet-eureka.bj
               </a>
             </div>
             <div className="flex flex-col space-y-2 text-gray-800 max-w-md">
@@ -93,15 +93,15 @@ const AboutContact = () => {
                   aria-hidden="true"
                 />
                 <address className="not-italic">
-                  123 Nova Street, Health City, Country
+                  Cabinet Médical EURÊKA, Porto-Novo, Bénin
                 </address>
               </div>
 
               {/* Embedded Google Map */}
               <div className="w-full aspect-[16/9] rounded-lg overflow-hidden border border-gray-300 shadow-sm mt-12">
                 <iframe
-                  title="NovaHealth Location Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019709728927!2d-122.41941508468113!3d37.77492977975943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808cc71deeb1%3A0x2f0956efc3f80f06!2s123%20Nova%20Street%2C%20San%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1691423852000!5m2!1sen!2sus"
+                  title="Localisation du cabinet sur la carte"
+                  src="https://www.google.com/maps?q=Porto-Novo,B%C3%A9nin&output=embed"
                   loading="lazy"
                   className="w-full h-full border-0"
                   allowFullScreen
@@ -118,7 +118,7 @@ const AboutContact = () => {
           variants={itemVariants}
           className="bg-gray-50 rounded-xl shadow-md p-8"
           noValidate
-          aria-label="Contact form"
+          aria-label="Formulaire de contact"
         >
           {submitted && (
             <p
@@ -126,7 +126,7 @@ const AboutContact = () => {
               role="alert"
               aria-live="polite"
             >
-              Thank you for reaching out! We will get back to you soon.
+              Merci pour votre message ! Nous vous répondrons dans les meilleurs délais.
             </p>
           )}
           <div className="mb-5">
@@ -134,7 +134,7 @@ const AboutContact = () => {
               htmlFor="name"
               className="block text-gray-700 font-semibold mb-2"
             >
-              Name
+              Nom
             </label>
             <input
               id="name"
@@ -143,7 +143,7 @@ const AboutContact = () => {
               required
               value={formData.name}
               onChange={handleChange}
-              placeholder="Your full name"
+              placeholder="Votre nom complet"
               className="w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-blue-700 transition"
             />
           </div>
@@ -153,7 +153,7 @@ const AboutContact = () => {
               htmlFor="email"
               className="block text-gray-700 font-semibold mb-2"
             >
-              Email
+              E-mail
             </label>
             <input
               id="email"
@@ -162,7 +162,7 @@ const AboutContact = () => {
               required
               value={formData.email}
               onChange={handleChange}
-              placeholder="you@example.com"
+              placeholder="vous@exemple.com"
               className="w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-blue-700 transition"
             />
           </div>
@@ -172,7 +172,7 @@ const AboutContact = () => {
               htmlFor="subject"
               className="block text-gray-700 font-semibold mb-2"
             >
-              Subject
+              Objet
             </label>
             <input
               id="subject"
@@ -181,7 +181,7 @@ const AboutContact = () => {
               required
               value={formData.subject}
               onChange={handleChange}
-              placeholder="Subject of your message"
+              placeholder="Objet de votre message"
               className="w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-blue-700 transition"
             />
           </div>
@@ -200,7 +200,7 @@ const AboutContact = () => {
               required
               value={formData.message}
               onChange={handleChange}
-              placeholder="Write your message here..."
+              placeholder="Écrivez votre message ici…"
               className="w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 resize-y focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-blue-700 transition"
             />
           </div>
@@ -209,7 +209,7 @@ const AboutContact = () => {
             type="submit"
             className="w-full bg-blue-700 hover:bg-blue-800 focus-visible:ring-blue-400 focus:outline-none focus:ring-4 text-white font-semibold py-3 rounded-lg shadow-lg transition"
           >
-            Send Message
+            Envoyer le message
           </button>
         </motion.form>
       </motion.div>

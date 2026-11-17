@@ -13,7 +13,7 @@ const statsData = [
   {
     id: 1,
     icon: <FaUsers className="text-3xl text-white" />,
-    label: "Happy Patients",
+    label: "Patients accompagnés",
     number: 52430,
     suffix: "+",
     background: "bg-gradient-to-r from-blue-600 to-blue-700",
@@ -21,14 +21,14 @@ const statsData = [
   {
     id: 2,
     icon: <FaHospital className="text-3xl text-white" />,
-    label: "Hospitals Joined",
+    label: "Spécialités médicales",
     number: 189,
     background: "bg-gradient-to-r from-blue-600 to-blue-700",
   },
   {
     id: 3,
     icon: <FaAward className="text-3xl text-white" />,
-    label: "Award Winning",
+    label: "Équipe expérimentée",
     number: 26,
     suffix: "+",
     background: "bg-gradient-to-r from-blue-600 to-blue-700",
@@ -36,7 +36,7 @@ const statsData = [
   {
     id: 4,
     icon: <FaBriefcaseMedical className="text-3xl text-white" />,
-    label: "Doctors & Staff",
+    label: "Parking & confort",
     number: 3700,
     suffix: "+",
     background: "bg-gradient-to-r from-blue-600 to-blue-700",
@@ -85,7 +85,7 @@ const AboutStats = () => {
           transition={{ duration: 0.6 }}
           className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight"
         >
-          Our Impact in Numbers
+          Notre impact en chiffres
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -93,7 +93,7 @@ const AboutStats = () => {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="mt-4 text-gray-600 max-w-2xl mx-auto"
         >
-          We take pride in delivering top healthcare services to thousands around the world. Here are a few of our proud milestones.
+          Nous sommes fiers d’accompagner des milliers de patients avec des soins de qualité. Voici quelques chiffres clés.
         </motion.p>
       </div>
 

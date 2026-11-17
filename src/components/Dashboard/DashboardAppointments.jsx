@@ -11,10 +11,10 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 
 const APPOINTMENT_CATEGORIES = [
-  { id: 'general', name: 'General', count: 125, icon: <HiUserGroup />, color: '#4f46e5' },
-  { id: 'dental', name: 'Dental', count: 85, icon: <HiOutlineCheckCircle />, color: '#10b981' },
-  { id: 'cardiology', name: 'Cardiology', count: 45, icon: <HiClock />, color: '#ef4444' },
-  { id: 'pediatrics', name: 'Pediatrics', count: 70, icon: <HiCalendar />, color: '#f59e0b' },
+  { id: 'general', name: 'Médecine générale', count: 125, icon: <HiUserGroup />, color: '#4f46e5' },
+  { id: 'dental', name: 'Dentaire', count: 85, icon: <HiOutlineCheckCircle />, color: '#10b981' },
+  { id: 'cardiology', name: 'ORL', count: 45, icon: <HiClock />, color: '#ef4444' },
+  { id: 'pediatrics', name: 'Pédiatrie', count: 70, icon: <HiCalendar />, color: '#f59e0b' },
 ];
 
 // Utility to simulate random data refresh (new counts)
@@ -35,7 +35,7 @@ const progressVariants = {
 
 const DashboardAppointments = () => {
   const [appointments, setAppointments] = useState(APPOINTMENT_CATEGORIES);
-  const [loading, setLoading] = useState(false);
+  const [loading, setChargement] = useState(false);
 
   // Total appointments count (memoized)
   const totalAppointments = useMemo(
@@ -43,13 +43,13 @@ const DashboardAppointments = () => {
     [appointments]
   );
 
-  // Refresh data handler
-  const handleRefresh = () => {
+  // Actualiser data handler
+  const handleActualiser = () => {
     if (loading) return;
-    setLoading(true);
+    setChargement(true);
     setTimeout(() => {
       setAppointments(generateRandomCounts());
-      setLoading(false);
+      setChargement(false);
     }, 1200);
   };
 
@@ -65,14 +65,14 @@ const DashboardAppointments = () => {
           id="appointments-title"
           className="text-3xl font-extrabold tracking-tight text-gray-900 select-none"
         >
-          Appointment Overview
+          rendez-vous Vue d’ensemble
         </h2>
 
         <button
           type="button"
-          onClick={handleRefresh}
+          onClick={handleActualiser}
           disabled={loading}
-          aria-label="Refresh appointment data"
+          aria-label="Actualiser les rendez-vous"
           className={`mt-4 sm:mt-0 inline-flex items-center gap-2 px-4 py-2 rounded-md font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 transition ${
             loading
               ? 'cursor-not-allowed bg-indigo-100 text-indigo-600'
@@ -85,16 +85,16 @@ const DashboardAppointments = () => {
             }`}
             aria-hidden="true"
           />
-          Refresh
+          Actualiser
         </button>
       </header>
 
       <div className="flex flex-col md:flex-row md:space-x-10 gap-8">
-        {/* Total Appointments Card */}
+        {/* Total Rendez-vous Card */}
         <article
           className="flex-1 bg-indigo-50 rounded-xl p-8 flex flex-col justify-center items-center shadow-md hover:shadow-lg transition-shadow"
           style={{ minWidth: 240 }}
-          aria-label="Total Appointments"
+          aria-label="Total des rendez-vous"
         >
           <HiCalendar
             className="w-16 h-16 text-indigo-600 mb-4"
@@ -104,7 +104,7 @@ const DashboardAppointments = () => {
             className="text-gray-700 text-xl font-semibold tracking-wide mb-2"
             style={{ letterSpacing: '0.03em' }}
           >
-            Total Appointments
+            Total des rendez-vous
           </p>
           <p
             className="text-5xl font-extrabold text-indigo-700"

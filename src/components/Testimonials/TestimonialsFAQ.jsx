@@ -7,29 +7,29 @@ import { FiPlus, FiMinus } from "react-icons/fi";
 // FAQs Data
 const faqs = [
   {
-    question: "How do you select testimonials for your website?",
+    question: "Comment sélectionnez-vous les témoignages ?",
     answer:
-      "We carefully choose testimonials that reflect genuine experiences from a wide range of clients, focusing on honesty and relevance to our services.",
+      "Nous publions des témoignages qui reflètent des expériences réelles de patients, en privilégiant l’authenticité et la pertinence par rapport à nos services.",
   },
   {
-    question: "Can I submit my own testimonial?",
+    question: "Puis-je partager mon propre témoignage ?",
     answer:
-      "Absolutely. We’d love to hear from you! Just head over to our contact page and use the 'Submit Testimonial' form.",
+      "Bien sûr ! Nous serons ravis de vous lire. Utilisez le formulaire de contact du site pour nous transmettre votre témoignage.",
   },
   {
-    question: "Are the testimonials verified?",
+    question: "Les témoignages sont-ils vérifiés ?",
     answer:
-      "Yes — every testimonial is verified to ensure authenticity before it’s featured on our website.",
+      "Oui — chaque témoignage est vérifié afin d’en garantir l’authenticité avant sa publication.",
   },
   {
-    question: "How often do you update the testimonials?",
+    question: "À quelle fréquence mettez-vous à jour les témoignages ?",
     answer:
-      "We update regularly to share the latest client feedback and success stories.",
+      "Nous les mettons à jour régulièrement pour partager les retours les plus récents de nos patients.",
   },
   {
-    question: "Can I use a testimonial from your site for my marketing?",
+    question: "Puis-je réutiliser un témoignage de votre site ?",
     answer:
-      "Please reach out to us first for permission so we can ensure everything stays compliant.",
+      "Contactez-nous au préalable pour obtenir une autorisation et garantir le respect des règles de confidentialité.",
   },
 ];
 
@@ -42,7 +42,7 @@ const TestimonialsFAQ = () => {
 
   return (
     <section
-      aria-label="Testimonials Frequently Asked Questions"
+      aria-label="Testimonials Questions fréquentes"
       className="relative max-w-5xl mx-auto px-4 sm:px-8 py-12"
     >
       {/* Card-like Background */}

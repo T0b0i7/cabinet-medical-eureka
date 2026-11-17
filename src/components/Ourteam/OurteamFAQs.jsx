@@ -6,29 +6,29 @@ import { FiPlus, FiMinus } from "react-icons/fi";
 
 const faqList = [
   {
-    question: "Who are the key members of your team?",
+    question: "Qui compose l’équipe du cabinet ?",
     answer:
-      "Our team consists of experienced designers, developers, marketers, and project managers — all experts in their fields.",
+      "Le cabinet réunit des médecins ORL, un chirurgien cervico-facial, des généralistes et une équipe d’accueil et de soins.",
   },
   {
-    question: "What makes your team unique?",
+    question: "Qu’est-ce qui distingue votre équipe ?",
     answer:
-      "We blend creativity with technical skills and a collaborative approach to craft solutions that truly fit our clients' needs.",
+      "Une équipe pluridisciplinaire, disponible 7j/7, qui coordonne chaque étape de votre prise en charge.",
   },
   {
-    question: "Do you work with international clients?",
+    question: "Recevez-vous les patients venus de l’extérieur ?",
     answer:
-      "Absolutely! We've partnered with clients across 20+ countries, adapting seamlessly to different cultures and markets.",
+      "Oui, le cabinet accueille les patients de Porto-Novo et de tout le Bénin, ainsi que les visiteurs de passage.",
   },
   {
-    question: "How can I join your team?",
+    question: "Comment rejoindre votre équipe ?",
     answer:
-      "We’re always on the lookout for passionate professionals. Visit our Careers page or reach out directly with your resume and portfolio.",
+      "Vous pouvez adresser votre candidature à contact@cabinet-eureka.bj.",
   },
   {
-    question: "What industries do you specialize in?",
+    question: "Quelles sont vos spécialités médicales ?",
     answer:
-      "Our experience spans e-commerce, healthcare, finance, education, and entertainment sectors.",
+      "ORL, chirurgie cervico-faciale et médecine générale, avec un accompagnement personnalisé.",
   },
 ];
 
@@ -41,7 +41,7 @@ export default function OurteamFAQs() {
 
   return (
     <section
-      aria-label="Frequently Asked Questions about Our Team"
+      aria-label="Questions fréquentes about Notre équipe"
       className="relative max-w-5xl mx-auto px-4 sm:px-8 py-12 my-[-30px] mb-0"
     >
       {/* Background layer */}
@@ -50,7 +50,7 @@ export default function OurteamFAQs() {
       {/* Foreground content */}
       <div className="relative z-10">
         <h2 className="text-4xl sm:text-5xl font-extrabold text-center text-blue-600 mb-10">
-          <span className="text-black">Our Team</span> FAQs
+          <span className="text-black">Notre équipe</span> FAQs
         </h2>
 
         <ul className="space-y-4">

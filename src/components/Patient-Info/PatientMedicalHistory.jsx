@@ -4,14 +4,14 @@ import React, { useState } from "react";
 
 // List of medical conditions for checkbox group
 const MEDICAL_CONDITIONS = [
-  "Diabetes",
+  "Diabète",
   "Hypertension",
-  "Heart Disease",
+  "Maladie cardiaque",
   "Asthma",
   "Cancer",
-  "Kidney Disease",
-  "Arthritis",
-  "Other",
+  "Maladie rénale",
+  "Arthrite",
+  "Autre",
 ];
 
 // A reusable checkbox input with label for better clarity and reusability
@@ -141,20 +141,20 @@ export default function PatientMedicalHistory() {
     const errors = {};
 
     if (form.existingConditions.length === 0)
-      errors.existingConditions = "Please select at least one existing condition or 'None'.";
+      errors.existingConditions = "Veuillez sélectionner au moins une pathologie ou « Aucun ».";
 
     if (!form.medications.trim())
-      errors.medications = "Please list any current medications or enter 'None'.";
+      errors.medications = "Listez les traitements en cours ou saisissez « Aucun ».";
 
     if (!form.allergies.trim())
-      errors.allergies = "Please list any allergies or enter 'None'.";
+      errors.allergies = "Listez les allergies ou saisissez « Aucun ».";
 
     if (!form.familyHistory.trim())
-      errors.familyHistory = "Please provide family medical history or enter 'None'.";
+      errors.familyHistory = "Renseignez les antécédents familiaux ou saisissez « Aucun ».";
 
-    if (!form.smoking) errors.smoking = "Please select your smoking status.";
+    if (!form.smoking) errors.smoking = "Veuillez indiquer votre statut tabagique.";
 
-    if (!form.alcohol) errors.alcohol = "Please select your alcohol consumption status.";
+    if (!form.alcohol) errors.alcohol = "Veuillez indiquer votre consommation d’alcool.";
 
     return errors;
   };
@@ -189,7 +189,7 @@ export default function PatientMedicalHistory() {
         alcohol: "",
       });
     } catch {
-      setFormErrors({ submit: "Submission failed. Please try again." });
+      setFormErrors({ submit: "Envoi échoué. Veuillez réessayer." });
     } finally {
       setIsSubmitting(false);
     }
@@ -202,14 +202,14 @@ export default function PatientMedicalHistory() {
     >
       <h2 id="medical-history-title" className="text-3xl font-extrabold mb-10 text-center">
         <span className="text-black">Patient </span>
-        <span className="text-blue-700">Medical History</span>
+        <span className="text-blue-700">Antécédents médicaux</span>
       </h2>
 
       <form onSubmit={handleSubmit} noValidate>
         {/* Existing Medical Conditions */}
         <fieldset className="mb-10" aria-describedby={formErrors.existingConditions ? "existingConditions-error" : undefined}>
           <legend className="font-semibold text-gray-900 mb-5 text-lg">
-            Existing Medical Conditions <span className="text-red-600">*</span>
+            Antécédents médicaux <span className="text-red-600">*</span>
           </legend>
           <div className="flex flex-wrap gap-x-16 gap-y-4 md:gap-x-12 md:gap-y-6 justify-start max-w-full">
             {MEDICAL_CONDITIONS.map((condition) => (
@@ -233,7 +233,7 @@ export default function PatientMedicalHistory() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
           <div>
             <label htmlFor="medications" className="block font-semibold mb-2 text-gray-900 text-lg">
-              Current Medications <span className="text-red-600">*</span>
+              Current Traitements <span className="text-red-600">*</span>
             </label>
             <textarea
               id="medications"
@@ -242,7 +242,7 @@ export default function PatientMedicalHistory() {
               value={form.medications}
               onChange={handleInputChange}
               disabled={isSubmitting}
-              placeholder="List all current medications or enter 'None'"
+              placeholder="Listez les traitements en cours ou saisissez « Aucun »"
               className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors resize-none text-gray-900 text-base ${
                 formErrors.medications ? "border-red-500" : "border-gray-300"
               }`}
@@ -268,7 +268,7 @@ export default function PatientMedicalHistory() {
               value={form.allergies}
               onChange={handleInputChange}
               disabled={isSubmitting}
-              placeholder="List any allergies or enter 'None'"
+              placeholder="Listez les allergies ou saisissez « Aucun »"
               className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors resize-none text-gray-900 text-base ${
                 formErrors.allergies ? "border-red-500" : "border-gray-300"
               }`}
@@ -285,7 +285,7 @@ export default function PatientMedicalHistory() {
 
           <div className="md:col-span-2">
             <label htmlFor="familyHistory" className="block font-semibold mb-2 text-gray-900 text-lg">
-              Family Medical History <span className="text-red-600">*</span>
+              Family Antécédents médicaux <span className="text-red-600">*</span>
             </label>
             <textarea
               id="familyHistory"
@@ -294,7 +294,7 @@ export default function PatientMedicalHistory() {
               value={form.familyHistory}
               onChange={handleInputChange}
               disabled={isSubmitting}
-              placeholder="Describe any relevant family medical history or enter 'None'"
+              placeholder="Décrivez les antécédents familiaux ou saisissez « Aucun »"
               className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors resize-none text-gray-900 text-base ${
                 formErrors.familyHistory ? "border-red-500" : "border-gray-300"
               }`}
@@ -312,9 +312,9 @@ export default function PatientMedicalHistory() {
 
         {/* Smoking status */}
         <RadioGroup
-          legend="Do you smoke?"
+          legend="Fumez-vous ?"
           name="smoking"
-          options={["Yes", "No", "Occasionally", "Prefer not to say"]}
+          options={["Oui", "No", "Occasionnellement", "Je préfère ne pas préciser"]}
           selectedValue={form.smoking}
           onChange={handleInputChange}
           error={formErrors.smoking}
@@ -323,9 +323,9 @@ export default function PatientMedicalHistory() {
 
         {/* Alcohol consumption */}
         <RadioGroup
-          legend="Do you consume alcohol?"
+          legend="Consommez-vous de l’alcool ?"
           name="alcohol"
-          options={["Yes", "No", "Occasionally", "Prefer not to say"]}
+          options={["Oui", "No", "Occasionnellement", "Je préfère ne pas préciser"]}
           selectedValue={form.alcohol}
           onChange={handleInputChange}
           error={formErrors.alcohol}
@@ -342,7 +342,7 @@ export default function PatientMedicalHistory() {
         {/* Success message */}
         {submitSuccess && (
           <p className="mt-8 text-green-600 font-semibold text-center" role="alert">
-            Medical history submitted successfully!
+            Antécédents médicaux enregistrés avec succès !
           </p>
         )}
 
@@ -373,7 +373,7 @@ export default function PatientMedicalHistory() {
               Submitting...
             </>
           ) : (
-            "Submit Medical History"
+            "Envoyer Antécédents médicaux"
           )}
         </button>
       </form>

@@ -7,34 +7,34 @@ import { motion, AnimatePresence } from 'framer-motion';
 const INITIAL_MESSAGES = [
   {
     id: '1',
-    sender: 'John Doe',
+    sender: 'Koffi Zinsou',
     avatar: 'https://i.pravatar.cc/40?u=john',
-    preview: 'Hi Dr. Admin, I wanted to check my appointment status...',
-    time: '5 min ago',
+    preview: 'Bonjour docteur, je souhaitais vérifier l’état de mon rendez-vous…',
+    time: 'il y a 5 min',
     read: false,
   },
   {
     id: '2',
-    sender: 'Jane Smith',
+    sender: 'Grâce Ahouandjinou',
     avatar: 'https://i.pravatar.cc/40?u=jane',
-    preview: 'Thank you for your help during my last visit.',
-    time: '1 hour ago',
+    preview: 'Merci pour votre aide lors de ma dernière visite.',
+    time: 'il y a 1 heure',
     read: true,
   },
   {
     id: '3',
-    sender: 'Mark Lee',
+    sender: 'Benoît Sossou',
     avatar: 'https://i.pravatar.cc/40?u=mark',
-    preview: 'Could you please reschedule my dental cleaning?',
-    time: '2 hours ago',
+    preview: 'Pourriez-vous décaler mon rendez-vous de détartrage ?',
+    time: 'il y a 2 heures',
     read: false,
   },
   {
     id: '4',
-    sender: 'Anna Johnson',
+    sender: 'Estelle Agossou',
     avatar: 'https://i.pravatar.cc/40?u=anna',
-    preview: 'I have some questions about my recent lab results.',
-    time: 'Yesterday',
+    preview: 'J’ai des questions concernant mes derniers résultats d’analyse.',
+    time: 'Hier',
     read: true,
   },
 ];
@@ -42,7 +42,7 @@ const INITIAL_MESSAGES = [
 const DashboardMessages = () => {
   const [messages, setMessages] = useState(INITIAL_MESSAGES);
 
-  const toggleReadStatus = (id) => {
+  const toggleLuStatut = (id) => {
     setMessages((prev) =>
       prev.map((msg) => (msg.id === id ? { ...msg, read: !msg.read } : msg))
     );
@@ -63,11 +63,11 @@ const DashboardMessages = () => {
         </h2>
         <button
           type="button"
-          aria-label="Compose new message"
+          aria-label="Nouveau message"
           className="mt-4 sm:mt-0 inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-md font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 transition"
         >
           <HiPencilAlt className="w-5 h-5" aria-hidden="true" />
-          New Message
+          Nouveau message
         </button>
       </header>
 
@@ -85,7 +85,7 @@ const DashboardMessages = () => {
               layout
               role="listitem"
               tabIndex={0}
-              onClick={() => toggleReadStatus(id)}
+              onClick={() => toggleLuStatut(id)}
               className={`flex items-center gap-4 p-4 rounded-lg cursor-pointer transition shadow-sm
                 ${
                   read
@@ -93,13 +93,13 @@ const DashboardMessages = () => {
                     : 'bg-white font-semibold text-gray-900 shadow-md hover:shadow-lg'
                 }
                 focus:outline-none   focus:ring-offset-1`}
-              aria-label={`Message from ${sender}, ${
-                read ? 'read' : 'unread'
-              }. Click to mark as ${read ? 'unread' : 'read'}.`}
+              aria-label={`Message de ${sender}, ${
+                read ? 'lu' : 'non lu'
+              }. Cliquez pour marquer comme ${read ? 'non lu' : 'lu'}.`}
             >
               <img
                 src={avatar}
-                alt={`Avatar of ${sender}`}
+                alt={`Photo de profil de ${sender}`}
                 className="w-10 h-10 rounded-full object-cover flex-shrink-0"
                 loading="lazy"
               />

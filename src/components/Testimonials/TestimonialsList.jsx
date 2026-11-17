@@ -7,60 +7,60 @@ import { FaStar } from "react-icons/fa";
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
+    name: "Nadège Tossou",
     role: "Patient",
     review:
-      "The team was incredibly professional and made me feel comfortable from the moment I walked in. Highly recommended!",
+      "L’équipe a été très professionnelle et m’a mise à l’aise dès mon arrivée. Je recommande vivement !",
     rating: 5,
     image:
       "https://images.unsplash.com/photo-1606166228927-3feafb447265?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0",
   },
   {
     id: 2,
-    name: "Mark Thompson",
-    role: "Customer",
+    name: "Serge Agbodjan",
+    role: "Patient",
     review:
-      "Excellent service! The attention to detail and personal care exceeded my expectations.",
+      "Un service excellent ! L’attention portée aux détails et la qualité de la prise en charge ont dépassé mes attentes.",
     rating: 5,
     image:
       "https://plus.unsplash.com/premium_photo-1723626014994-caef68c25493?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
   },
   {
     id: 3,
-    name: "Emily Davis",
-    role: "Client",
+    name: "Estelle Agossou",
+    role: "Patiente",
     review:
-      "I felt truly cared for. The staff went above and beyond to ensure everything was perfect.",
+      "Je me suis sentie vraiment prise en charge. Le personnel a tout fait pour que tout se passe bien.",
     rating: 4,
     image:
       "https://images.unsplash.com/photo-1644611148697-3eb43ac6c390?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
   },
   {
     id: 4,
-    name: "James Carter",
-    role: "Customer",
+    name: "Koffi Zinsou",
+    role: "Patient",
     review:
-      "Friendly, professional, and highly skilled team. I will definitely be coming back!",
+      "Une équipe aimable, professionnelle et très compétente. Je reviendrai sans hésiter !",
     rating: 5,
     image:
       "https://images.unsplash.com/photo-1543075270-17e1257ec612?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
   },
   {
     id: 5,
-    name: "Olivia Martinez",
+    name: "Mireille Zinsou",
     role: "Patient",
     review:
-      "From booking to follow-up, the entire process was smooth and stress-free. A truly caring experience.",
+      "De la prise de rendez-vous au suivi, tout a été simple et rassurant. Une vraie attention au patient.",
     rating: 5,
     image:
       "https://plus.unsplash.com/premium_photo-1723626014994-caef68c25493?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
   },
   {
     id: 6,
-    name: "William Harris",
+    name: "Boniface Kpogan",
     role: "Client",
     review:
-      "I appreciate the professionalism and warmth shown by every staff member. They made me feel valued.",
+      "J’apprécie le professionnalisme et la chaleur de chaque membre de l’équipe. Je me suis sentie considérée.",
     rating: 4,
     image:
       "https://images.unsplash.com/photo-1616434116710-c45ce99c1a77?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0",
@@ -79,7 +79,7 @@ const fadeInUp = {
 const TestimonialsList = () => {
   return (
     <section
-      aria-label="Customer Testimonials List"
+      aria-label="Liste des témoignages patients"
       className="bg-gradient-to-b from-gray-50 to-white py-16 px-5 sm:px-8 md:px-12 my-[-50px]"
     >
       <div className="max-w-7xl mx-auto">
@@ -95,15 +95,15 @@ const TestimonialsList = () => {
             variants={fadeInUp}
             className="text-3xl sm:text-4xl font-extrabold text-gray-900"
           >
-            <span className="text-blue-600">What People Are</span> Saying
+            <span className="text-blue-600">Ce que disent</span> nos patients
           </motion.h2>
           <motion.p
             custom={1}
             variants={fadeInUp}
             className="mt-3 text-base sm:text-lg text-gray-700 max-w-2xl mx-auto"
           >
-            Real feedback from our valued customers who have experienced our
-            services firsthand.
+            Des retours authentiques de patients qui ont vécu leur prise en
+            charge au cabinet.
           </motion.p>
         </motion.div>
 

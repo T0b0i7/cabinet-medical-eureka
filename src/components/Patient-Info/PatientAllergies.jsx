@@ -5,21 +5,21 @@ import React, { useState } from "react";
 const defaultAllergies = [
   {
     id: 1,
-    allergen: "Peanuts",
-    reaction: "Hives, swelling",
-    severity: "Severe",
-    notes: "Carry epinephrine auto-injector",
+    allergen: "Arachides",
+    reaction: "Urticaire, gonflement",
+    severity: "Sévère",
+    notes: "Garder un auto-injecteur d’adrénaline",
   },
   {
     id: 2,
-    allergen: "Penicillin",
+    allergen: "Pénicilline",
     reaction: "Rash",
-    severity: "Moderate",
+    severity: "Modérée",
     notes: "",
   },
 ];
 
-const severityLevels = ["Mild", "Moderate", "Severe"];
+const severityLevels = ["Mild", "Modérée", "Sévère"];
 
 export default function PatientAllergies() {
   const [allergies, setAllergies] = useState(defaultAllergies);
@@ -38,9 +38,9 @@ export default function PatientAllergies() {
   // Basic validation for required fields
   function validateForm() {
     const errors = {};
-    if (!formData.allergen.trim()) errors.allergen = "Allergen is required";
-    if (!formData.reaction.trim()) errors.reaction = "Reaction is required";
-    if (!formData.severity) errors.severity = "Severity is required";
+    if (!formData.allergen.trim()) errors.allergen = "L’allergène est requis";
+    if (!formData.reaction.trim()) errors.reaction = "La réaction est requise";
+    if (!formData.severity) errors.severity = "La gravité est requise";
     return errors;
   }
 
@@ -114,9 +114,9 @@ export default function PatientAllergies() {
   }
 
   // Remove allergy entry after user confirmation
-  function removeAllergy(id) {
+  function removeAllergie(id) {
     const confirmed = window.confirm(
-      "Are you sure you want to delete this allergy record?"
+      "Voulez-vous vraiment supprimer cette allergie ?"
     );
 
     if (!confirmed) return;
@@ -131,13 +131,13 @@ export default function PatientAllergies() {
   return (
     <section className="max-w-5xl mx-auto p-6 bg-white rounded-xl shadow-md">
       <h2 className="mb-8 text-center text-3xl font-extrabold">
-        <span className="text-black">Allergy </span>
-        <span className="text-blue-700">Information</span>
+        <span className="text-black">Allergie </span>
+        <span className="text-blue-700">Informations</span>
       </h2>
 
-      {/* Allergy table or no data message */}
+      {/* Allergie table or no data message */}
       {allergies.length === 0 ? (
-        <p className="mb-12 text-center text-gray-600">No allergies recorded.</p>
+        <p className="mb-12 text-center text-gray-600">Aucune allergie enregistrée.</p>
       ) : (
         <div className="mb-12 overflow-x-auto">
           <table className="min-w-[600px] w-full border-collapse text-left">
@@ -170,18 +170,18 @@ export default function PatientAllergies() {
                     <button
                       type="button"
                       onClick={() => startEditing(id)}
-                      aria-label={`Edit allergy ${allergen}`}
+                      aria-label={`Modifier allergy ${allergen}`}
                       className="focus:outline-none focus:ring-2 focus:ring-blue-400 rounded font-semibold text-blue-600 hover:text-blue-800"
                     >
-                      Edit
+                      Modifier
                     </button>
                     <button
                       type="button"
-                      onClick={() => removeAllergy(id)}
-                      aria-label={`Delete allergy ${allergen}`}
+                      onClick={() => removeAllergie(id)}
+                      aria-label={`Supprimer allergy ${allergen}`}
                       className="focus:outline-none focus:ring-2 focus:ring-red-400 rounded font-semibold text-red-600 hover:text-red-800"
                     >
-                      Delete
+                      Supprimer
                     </button>
                   </td>
                 </tr>
@@ -191,10 +191,10 @@ export default function PatientAllergies() {
         </div>
       )}
 
-      {/* Allergy Form */}
+      {/* Allergie Form */}
       <div className="mx-auto max-w-3xl border-t border-gray-300 pt-8">
         <h3 className="mb-6 text-center text-2xl font-semibold text-gray-900">
-          {editingId !== null ? "Edit Allergy" : "Add New Allergy"}
+          {editingId !== null ? "Modifier l’allergie" : "Ajouter une nouvelle allergie"}
         </h3>
 
         <form
@@ -214,7 +214,7 @@ export default function PatientAllergies() {
               id="allergen"
               name="allergen"
               type="text"
-              placeholder="Peanuts"
+              placeholder="Arachides"
               value={formData.allergen}
               onChange={handleInputChange}
               disabled={isSubmitting}
@@ -248,7 +248,7 @@ export default function PatientAllergies() {
               id="reaction"
               name="reaction"
               type="text"
-              placeholder="Hives, swelling"
+              placeholder="Urticaire, gonflement"
               value={formData.reaction}
               onChange={handleInputChange}
               disabled={isSubmitting}
@@ -292,7 +292,7 @@ export default function PatientAllergies() {
               }`}
             >
               <option value="" disabled>
-                Select severity
+                Sélectionner severity
               </option>
               {severityLevels.map((level) => (
                 <option key={level} value={level}>
@@ -323,7 +323,7 @@ export default function PatientAllergies() {
               id="notes"
               name="notes"
               rows={3}
-              placeholder="Additional information or precautions"
+              placeholder="Informationss complémentaires ou précautions"
               value={formData.notes}
               onChange={handleInputChange}
               disabled={isSubmitting}
@@ -364,9 +364,9 @@ export default function PatientAllergies() {
                   Saving...
                 </>
               ) : editingId !== null ? (
-                "Update Allergy"
+                "Mettre à jour l’allergie"
               ) : (
-                "Add Allergy"
+                "Ajouter une allergie"
               )}
             </button>
 
@@ -376,7 +376,7 @@ export default function PatientAllergies() {
                 onClick={resetForm}
                 className="ml-4 rounded-lg bg-gray-300 px-6 py-3 font-semibold text-gray-800 transition-colors hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400"
               >
-                Cancel
+                Annuler
               </button>
             )}
           </div>

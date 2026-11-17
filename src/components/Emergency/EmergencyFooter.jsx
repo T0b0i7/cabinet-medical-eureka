@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const EmergencyFooter = () => {
   return (
     <motion.section
-      aria-label="Emergency information footer"
+      aria-label="Informations d’urgence"
       className="max-w-5xl mx-auto mt-16 px-6 sm:px-8 md:px-12 py-8 rounded-3xl bg-gradient-to-r from-white via-gray-50 to-white shadow-lg border border-gray-200"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
@@ -21,11 +21,11 @@ const EmergencyFooter = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
         >
           <h3 className="text-2xl sm:text-3xl font-semibold text-blue-700 mb-2 select-none leading-tight">
-            Thank You for Trusting Your Emergency Team
+            Merci de faire confiance à notre équipe
           </h3>
           <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
-            We’re dedicated to providing rapid and expert emergency assistance
-            whenever you need it. Your safety and care are our top priorities.
+            Nous nous engageons à vous orienter rapidement et à vous accompagner
+            à tout moment. Votre sécurité et votre santé sont notre priorité.
           </p>
         </motion.div>
 
@@ -55,11 +55,11 @@ const EmergencyFooter = () => {
                 />
               </svg>
               <a
-                href="tel:911"
+                href="tel:+2290141608339"
                 className="hover:text-blue-700 transition-colors break-words"
-                aria-label="Call emergency phone number"
+                aria-label="Appeler le cabinet"
               >
-                911
+                +229 01 41 60 83 39
               </a>
             </div>
 
@@ -80,11 +80,11 @@ const EmergencyFooter = () => {
                 />
               </svg>
               <a
-                href="mailto:emergency@yourcarecenter.com"
+                href="mailto:contact@cabinet-eureka.bj"
                 className="hover:text-blue-700 transition-colors break-words"
-                aria-label="Email emergency support"
+                aria-label="Écrire au cabinet"
               >
-                emergency@yourcarecenter.com
+                contact@cabinet-eureka.bj
               </a>
             </div>
           </div>
@@ -93,12 +93,12 @@ const EmergencyFooter = () => {
           <motion.button
             type="button"
             className="bg-blue-700 hover:bg-blue-800 text-white font-semibold text-sm sm:text-base px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg shadow-lg transition-colors focus:outline-none focus:ring-4 focus:ring-blue-300 whitespace-nowrap"
-            aria-label="Contact emergency response team"
+            aria-label="Contacter l’équipe du cabinet"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            Contact Emergency Team
+            Contacter le cabinet
           </motion.button>
         </motion.div>
       </div>

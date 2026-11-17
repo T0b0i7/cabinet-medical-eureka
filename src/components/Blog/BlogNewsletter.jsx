@@ -31,18 +31,18 @@ export default function BlogNewsletter() {
 
   return (
     <section
-      aria-label="Newsletter subscription"
+      aria-label="Abonnement à la newsletter"
       className="max-w-lg mx-auto bg-white rounded-2xl p-10 mb-5"
     >
       <h2 className="text-3xl font-bold text-center text-gray-900 mb-6 tracking-wide">
-        Join Our{" "}
+        Rejoignez notre{" "}
         <span className="text-blue-600 bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
-          Newsletter
+          newsletter
         </span>
       </h2>
 
       <p className="text-center text-gray-900 mb-8">
-        Stay updated with the latest blog posts and wellness tips.
+        Recevez nos derniers articles et conseils bien-être.
       </p>
 
       <form
@@ -53,7 +53,7 @@ export default function BlogNewsletter() {
         <input
           type="email"
           name="email"
-          placeholder="Your email address"
+          placeholder="Votre adresse e-mail"
           className={`w-full sm:flex-1 rounded-lg border-2 px-5 py-3 text-lg font-medium placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-blue-400 transition ${
             error ? "border-red-400" : "border-gray-300"
           } text-gray-900`}
@@ -94,7 +94,7 @@ export default function BlogNewsletter() {
               />
             </svg>
           ) : (
-            "Subscribe"
+            "S’abonner"
           )}
         </button>
       </form>

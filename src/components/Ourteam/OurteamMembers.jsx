@@ -5,11 +5,11 @@ import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 
 const teamMembers = [
   {
-    name: "Alice Johnson",
-    role: "Project Manager",
+    name: "Dr Romuald Adjakpa",
+    role: "Oto-Rhino-Laryngologiste (ORL)",
     photo:
       "https://images.unsplash.com/photo-1659353888906-adb3e0041693?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    bio: "Passionate about delivering projects on time with quality and excellence.",
+    bio: "Consultations ORL, troubles de l’audition et suivi des patients.",
     socials: {
       linkedin: "https://linkedin.com/in/alicejohnson",
       twitter: "https://twitter.com/alicejohnson",
@@ -17,11 +17,11 @@ const teamMembers = [
     },
   },
   {
-    name: "Mark Williams",
-    role: "Lead Developer",
+    name: "Dr Chantal Houngbédji",
+    role: "Chirurgien cervico-facial",
     photo:
       "https://images.unsplash.com/photo-1659353887617-8cf154b312c5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    bio: "Coding wizard crafting clean and efficient code for scalable applications.",
+    bio: "Explorations et actes de chirurgie cervico-faciale.",
     socials: {
       linkedin: "https://linkedin.com/in/markwilliams",
       twitter: "https://twitter.com/markwilliams",
@@ -29,11 +29,11 @@ const teamMembers = [
     },
   },
   {
-    name: "Sophia Lee",
-    role: "UX/UI Designer",
+    name: "Dr Sylvie Dossou-Yovo",
+    role: "ORL — audiologie",
     photo:
       "https://plus.unsplash.com/premium_photo-1682089874677-3eee554feb19?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    bio: "Designing intuitive and delightful user experiences with a creative touch.",
+    bio: "Bilans auditifs et accompagnement des patients appareillés.",
     socials: {
       linkedin: "https://linkedin.com/in/sophialee",
       twitter: "https://twitter.com/sophialee",
@@ -41,11 +41,11 @@ const teamMembers = [
     },
   },
   {
-    name: "David Kim",
-    role: "QA Engineer",
+    name: "M. Koffi Zinsou",
+    role: "Responsable de l’accueil",
     photo:
       "https://images.unsplash.com/photo-1612363584451-cd060fb62018?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    bio: "Ensuring the highest quality standards through meticulous testing.",
+    bio: "Accueil, prise de rendez-vous et orientation des patients.",
     socials: {
       linkedin: "https://linkedin.com/in/davidkim",
       twitter: "https://twitter.com/davidkim",
@@ -57,11 +57,11 @@ const teamMembers = [
 export default function OurteamMembers() {
   return (
     <section
-      aria-label="Meet Our Team Members"
+      aria-label="Notre équipe"
       className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 py-20 bg-white my-[-30px]"
     >
       <h2 className="text-4xl font-extrabold text-blue-700 mb-12 text-center">
-        <span className="text-black">Meet Our</span> Team
+        <span className="text-black">Notre</span> équipe
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         {teamMembers.map(({ name, role, photo, bio, socials }, index) => (

@@ -6,12 +6,12 @@ const PatientNotes = () => {
   const [notes, setNotes] = useState([
     {
       id: 1,
-      content: "Patient reported mild headaches over the last week.",
+      content: "Le patient signale de légers maux de tête depuis une semaine.",
       createdAt: new Date("2024-07-25T10:30:00"),
     },
     {
       id: 2,
-      content: "Recommended increasing hydration and follow-up in 2 weeks.",
+      content: "Hydratation renforcée recommandée, suivi dans 2 semaines.",
       createdAt: new Date("2024-07-28T14:15:00"),
     },
   ]);
@@ -64,7 +64,7 @@ const PatientNotes = () => {
   };
 
   const deleteNote = (id) => {
-    const confirmed = window.confirm("Are you sure you want to delete this note?");
+    const confirmed = window.confirm("Voulez-vous vraiment supprimer cette note ?");
     if (!confirmed) return;
 
     setNotes((prevNotes) => prevNotes.filter((note) => note.id !== id));
@@ -97,7 +97,7 @@ const PatientNotes = () => {
         id="patient-notes-heading"
         className="text-3xl font-extrabold text-blue-700 mb-6 text-center"
       >
-        Patient Notes
+        Notes médicales
       </h2>
 
       <div className="mb-6">
@@ -105,7 +105,7 @@ const PatientNotes = () => {
           htmlFor="note-textarea"
           className="block font-semibold text-gray-700 mb-2"
         >
-          {editingNoteId !== null ? "Edit Note" : "Add a New Note"}
+          {editingNoteId !== null ? "Modifier la note" : "Ajouter une nouvelle note"}
         </label>
         <textarea
           id="note-textarea"
@@ -114,7 +114,7 @@ const PatientNotes = () => {
           value={currentInput}
           onChange={onInputChange}
           onKeyDown={onTextareaKeyDown}
-          placeholder="Write your note here. Press Ctrl+Enter (Cmd+Enter) to save."
+          placeholder="Écrivez votre note ici. Appuyez sur Ctrl+Entrée (Cmd+Entrée) pour enregistrer."
           className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none transition-colors"
           aria-multiline="true"
         />
@@ -131,7 +131,7 @@ const PatientNotes = () => {
                 : "bg-blue-700 opacity-50 cursor-not-allowed"
             }`}
           >
-            {editingNoteId !== null ? "Save Note" : "Add Note"}
+            {editingNoteId !== null ? "Enregistrer Note" : "Ajouter une note"}
           </button>
 
           {editingNoteId !== null && (
@@ -140,7 +140,7 @@ const PatientNotes = () => {
               onClick={cancelEdit}
               className="px-6 py-2 font-semibold rounded-lg bg-gray-300 text-gray-700 hover:bg-gray-400 focus:ring-4 focus:ring-gray-300 transition-colors"
             >
-              Cancel
+              Annuler
             </button>
           )}
         </div>
@@ -148,7 +148,7 @@ const PatientNotes = () => {
 
       <ul className="space-y-5 max-h-[480px] overflow-y-auto">
         {notes.length === 0 ? (
-          <li className="text-center text-gray-500">No notes available.</li>
+          <li className="text-center text-gray-500">Non notes available.</li>
         ) : (
           notes.map(({ id, content, createdAt }) => (
             <li
@@ -160,7 +160,7 @@ const PatientNotes = () => {
 
                 <div className="flex space-x-2 ml-4 flex-shrink-0">
                   <IconButton
-                    label={`Edit note created on ${createdAt.toLocaleDateString()}`}
+                    label={`Modifier la note du ${createdAt.toLocaleDateString("fr-FR")}`}
                     onClick={() => startEditing(id)}
                     icon={
                       <EditIcon />
@@ -168,7 +168,7 @@ const PatientNotes = () => {
                     colorClasses="text-blue-600 hover:text-blue-800"
                   />
                   <IconButton
-                    label={`Delete note created on ${createdAt.toLocaleDateString()}`}
+                    label={`Supprimer la note du ${createdAt.toLocaleDateString("fr-FR")}`}
                     onClick={() => deleteNote(id)}
                     icon={
                       <DeleteIcon />
@@ -182,8 +182,8 @@ const PatientNotes = () => {
                 dateTime={createdAt.toISOString()}
                 className="block mt-2 text-xs text-gray-500 select-none"
               >
-                Created on{" "}
-                {createdAt.toLocaleDateString(undefined, {
+                Créée le{" "}
+                {createdAt.toLocaleDateString("fr-FR", {
                   year: "numeric",
                   month: "short",
                   day: "numeric",

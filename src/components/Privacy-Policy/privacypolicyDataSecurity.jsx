@@ -11,33 +11,21 @@ function DataSecuritySection() {
           id="data-security-heading"
           className="text-3xl font-extrabold text-blue-700 mb-6"
         >
-          Data Security
+          Sécurité des données
         </h2>
 
-        <p className="text-gray-800 text-lg leading-relaxed mb-6">
-          We follow industry-leading security practices to protect your personal data from unauthorized access, alteration, disclosure, or destruction. Our approach includes:
-        </p>
+        <p className="text-gray-800 text-lg leading-relaxed mb-6">Nous appliquons des pratiques de sécurité rigoureuses pour protéger vos données contre tout accès non autorisé, modification, divulgation ou destruction. Notre approche comprend :</p>
 
         <ul className="max-w-xl list-disc list-inside space-y-3 text-gray-800 text-lg">
-          <li>
-            <strong>Encryption:</strong> Securing data transmission using SSL/TLS protocols.
-          </li>
-          <li>
-            <strong>Access Controls:</strong> Limiting data access exclusively to authorized personnel.
-          </li>
-          <li>
-            <strong>Regular Audits:</strong> Performing routine security assessments and updates.
-          </li>
-          <li>
-            <strong>Data Minimization:</strong> Collecting only what is necessary for our services.
-          </li>
-          <li>
-            <strong>Secure Storage:</strong> Protecting stored data with firewalls, anti-malware, and secure servers.
-          </li>
+          <li>Sécurisation des transmissions de données via les protocoles SSL/TLS.</li>
+          <li>Accès aux données limité au personnel autorisé.</li>
+          <li>Évaluations et mises à jour régulières de la sécurité.</li>
+          <li>Collecte uniquement des données nécessaires à nos services.</li>
+          <li>Protection des données stockées par pare-feu, anti-malware et serveurs sécurisés.</li>
         </ul>
 
         <p className="mt-6 text-gray-800 text-lg leading-relaxed">
-          Despite our efforts, no system is completely foolproof. Please exercise caution when sharing sensitive information online.
+          Malgré nos efforts, aucun système n’est totalement infaillible. Restez prudent lorsque vous partagez des informations sensibles en ligne.
         </p>
       </div>
     </section>

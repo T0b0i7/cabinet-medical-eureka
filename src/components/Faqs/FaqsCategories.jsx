@@ -13,57 +13,57 @@ const faqsByCategory = {
   1: [
     {
       id: 101,
-      question: "What services do you offer?",
+      question: "Quelles spécialités propose le cabinet ?",
       answer:
-        "We offer a wide range of healthcare services including primary care, specialist consultations, diagnostics, and telehealth.",
+        "Le Cabinet Médical EURÊKA propose l’ORL, la chirurgie cervico-faciale et la médecine générale, ainsi que des bilans de santé et la prise en charge des urgences légères.",
     },
     {
       id: 102,
-      question: "How can I contact support?",
+      question: "Comment contacter le cabinet ?",
       answer:
-        "You can contact our support team 24/7 via phone, email, or live chat on our website.",
+        "Vous pouvez nous joindre au +229 01 41 60 83 39, par WhatsApp ou par e-mail à contact@cabinet-eureka.bj, 7j/7 de 08h00 à 18h00.",
     },
   ],
   2: [
     {
       id: 201,
-      question: "How do I book an appointment?",
+      question: "Comment prendre rendez-vous ?",
       answer:
-        "You can book an appointment using our online scheduler or by calling our support line.",
+        "Vous pouvez réserver en ligne depuis notre site, par téléphone ou directement par WhatsApp. Choisissez la spécialité, la date et le créneau qui vous conviennent.",
     },
     {
       id: 202,
-      question: "Can I reschedule my appointment?",
+      question: "Puis-je modifier ou annuler mon rendez-vous ?",
       answer:
-        "Yes, appointments can be rescheduled up to 24 hours before the scheduled time via your account dashboard.",
+        "Oui, vous pouvez modifier ou annuler votre rendez-vous en nous contactant au moins 24 heures avant l’heure prévue.",
     },
   ],
   3: [
     {
       id: 301,
-      question: "How do I access my medical records?",
+      question: "Comment accéder à mon dossier patient ?",
       answer:
-        "Medical records can be accessed securely through your patient portal after logging in.",
+        "Vos informations médicales sont accessibles de manière sécurisée depuis votre espace patient après connexion.",
     },
     {
       id: 302,
-      question: "Can I update my medical information?",
+      question: "Puis-je mettre à jour mes informations médicales ?",
       answer:
-        "Yes, you can update certain medical information via your portal or by contacting your healthcare provider directly.",
+        "Oui, certaines informations peuvent être mises à jour depuis votre espace patient ou en contactant directement le cabinet.",
     },
   ],
   4: [
     {
       id: 401,
-      question: "What support options are available?",
+      question: "Quelles options d’accompagnement proposez-vous ?",
       answer:
-        "We offer billing support, patient assistance programs, and 24/7 customer service.",
+        "Le cabinet vous accompagne dans la prise de rendez-vous, la préparation de votre consultation et le suivi de votre dossier.",
     },
     {
       id: 402,
-      question: "How do I get financial assistance?",
+      question: "Comment obtenir une aide financière ?",
       answer:
-        "Financial assistance is available based on eligibility. Contact support to learn more.",
+        "Les modalités de prise en charge Varient selon les assurances et les situations. Contactez l’accueil pour en discuter.",
     },
   ],
 };
@@ -72,28 +72,28 @@ const categories = [
   {
     id: 1,
     icon: <FaQuestionCircle className="w-8 h-8 text-blue-900" />,
-    title: "General Questions",
+    title: "Questions générales",
     description:
-      "Answers to common inquiries about our healthcare services and policies.",
+      "Réponses aux questions courantes sur nos spécialités et notre organisation.",
   },
   {
     id: 2,
     icon: <FaUserMd className="w-8 h-8 text-blue-900" />,
-    title: "Appointments",
-    description: "How to book, reschedule or cancel your appointments with ease.",
+    title: "Rendez-vous",
+    description: "Comment réserver, modifier ou annuler un rendez-vous.",
   },
   {
     id: 3,
     icon: <FaFileMedical className="w-8 h-8 text-blue-900" />,
-    title: "Medical Records",
-    description: "Learn how to access, request, or update your medical records securely.",
+    title: "Dossier patient",
+    description: "Accéder, mettre à jour ou transmettre vos informations médicales en toute sécurité.",
   },
   {
     id: 4,
     icon: <FaHandsHelping className="w-8 h-8 text-blue-900" />,
-    title: "Support & Assistance",
+    title: "Accompagnement",
     description:
-      "Find out about support options, billing, and patient assistance programs.",
+      "Découvrez les modalités d’accueil, de facturation et d’accompagnement des patients.",
   },
 ];
 
@@ -120,7 +120,7 @@ export default function FaqsCategories() {
 
     setTimeout(() => {
       if (Math.random() < 0.1) {
-        setError("Failed to load FAQs. Please try again.");
+        setError("Impossible de charger la FAQ. Veuillez réessayer.");
         setLoading(false);
         setSelectedCategory(null);
       } else {
@@ -132,11 +132,11 @@ export default function FaqsCategories() {
 
   return (
     <section
-      aria-label="FAQ categories"
+      aria-label="Catégories de questions"
       className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-16"
     >
       <h2 className="text-3xl font-extrabold text-black mb-12 text-center select-text">
-        Explore <span className="text-blue-900">FAQ Categories</span>
+        Explorer les <span className="text-blue-900">catégories de FAQ</span>
       </h2>
 
       {/* Grid of perfectly square cards */}
@@ -195,7 +195,7 @@ export default function FaqsCategories() {
       <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-lg p-8 mt-12">
         {loading && (
           <p className="text-center text-blue-900 font-semibold animate-pulse select-none">
-            Loading FAQs...
+            Chargement de la FAQ…
           </p>
         )}
 

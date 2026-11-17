@@ -7,41 +7,41 @@ import { FaStar, FaRegStar, FaMapMarkerAlt } from "react-icons/fa";
 const testimonials = [
   {
     id: 1,
-    name: "Emily Carter",
-    role: "Marketing Specialist",
+    name: "Adjovi Hounsou",
+    role: "Assistante médicale",
     photo: "https://plus.unsplash.com/premium_photo-1664475543697-229156438e1e?q=80&w=1286&auto=format&fit=crop",
-    location: "New York, USA",
-    date: "July 15, 2025",
+    location: "Cotonou, Bénin",
+    date: "15 juillet 2025",
     rating: 5,
     text:
-      "Working with this team has been an absolute pleasure. Their passion and dedication really shine through in every project. They always deliver on time and exceed expectations.",
+      "Une équipe formidable, à l’écoute et très professionnelle. J’ai été suivie avec attention du début à la fin.",
   },
   {
     id: 2,
-    name: "James Anderson",
-    role: "Software Engineer",
+    name: "Benoît Sossou",
+    role: "Infirmier",
     photo: "https://plus.unsplash.com/premium_photo-1661688930817-025934217478?q=80&w=1287&auto=format&fit=crop",
-    location: "San Francisco, USA",
-    date: "August 1, 2025",
+    location: "Porto-Novo, Bénin",
+    date: "1er août 2025",
     rating: 4,
     text:
-      "Innovative, collaborative, and always aiming for excellence. I highly recommend them for any challenging projects. Communication was clear and effective throughout.",
+      "Des soins de qualité dans un cadre rassurant. Les explications sont claires et le suivi est excellent.",
   },
   {
     id: 3,
-    name: "Sofia Martinez",
-    role: "Product Designer",
+    name: "Estelle Agossou",
+    role: "Sage-femme",
     photo: "https://plus.unsplash.com/premium_photo-1675807264002-74250202f195?q=80&w=1170&auto=format&fit=crop",
-    location: "Madrid, Spain",
-    date: "June 20, 2025",
+    location: "Abomey-Calavi, Bénin",
+    date: "20 juin 2025",
     rating: 5,
     text:
-      "Their creative solutions and team spirit made all the difference in delivering a top-quality product. The design process was smooth and the final product is stunning.",
+      "Un accueil chaleureux et une vraie compétence. Je recommande vivement le Cabinet Médical EURÊKA.",
   },
 ];
 
 const StarRating = ({ rating }) => (
-  <div className="flex space-x-1" aria-label={`${rating} out of 5 stars`}>
+  <div className="flex space-x-1" aria-label={`${rating} étoiles sur 5`}>
     {[...Array(5)].map((_, i) =>
       i < rating ? (
         <FaStar key={i} className="text-yellow-500 w-5 h-5" aria-hidden="true" />
@@ -55,7 +55,7 @@ const StarRating = ({ rating }) => (
 export default function OurteamTestimonials() {
   return (
     <section
-      aria-label="Team testimonials"
+      aria-label="Témoignages de l’équipe"
       className="max-w-5xl mx-auto px-6 py-20 space-y-14 sm:space-y-20 my-[-30px]"
     >
       <motion.h2
@@ -65,7 +65,7 @@ export default function OurteamTestimonials() {
         viewport={{ once: true }}
         className="text-4xl font-extrabold text-blue-700 text-center mb-12"
       >
-        <span className="text-black">What Our Team</span> Members Say
+        <span className="text-black">Ce que dit</span> notre équipe
       </motion.h2>
 
       {testimonials.map(({ id, name, role, photo, location, date, rating, text }, index) => (
@@ -102,7 +102,7 @@ export default function OurteamTestimonials() {
                   <FaMapMarkerAlt className="w-4 h-4" aria-hidden="true" />
                   <span>{location}</span>
                 </div>
-                <time dateTime={new Date(date).toISOString()}>{date}</time>
+                <time>{date}</time>
               </div>
             </header>
 

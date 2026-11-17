@@ -9,32 +9,32 @@ const values = [
     icon: <FaHandsHelping className="text-blue-700 w-8 h-8" aria-hidden="true" />,
     title: "Passion",
     description:
-      "Our team is driven by a deep passion to make a positive impact every day.",
+      "Une équipe animée par l’envie de prendre soin de chaque patient, chaque jour.",
   },
   {
     icon: <FaUsers className="text-blue-700 w-8 h-8" aria-hidden="true" />,
     title: "Collaboration",
     description:
-      "We believe in teamwork and open communication to achieve outstanding results.",
+      "Le travail en équipe et la communication au service de votre santé.",
   },
   {
     icon: <FaLightbulb className="text-blue-700 w-8 h-8" aria-hidden="true" />,
     title: "Innovation",
     description:
-      "Constantly pushing boundaries to bring fresh ideas and creative solutions.",
+      "Un plateau technique moderne et des pratiques en constante amélioration.",
   },
   {
     icon: <FaStar className="text-blue-700 w-8 h-8" aria-hidden="true" />,
     title: "Excellence",
     description:
-      "Committed to delivering the highest quality work with integrity and care.",
+      "Une exigence de qualité et une attention sincère portées à chaque patient.",
   },
 ];
 
 export default function OurteamValues() {
   return (
     <section
-      aria-label="Our Team Values"
+      aria-label="Notre équipe Values"
       className="bg-white py-20 px-5 sm:px-8 md:px-12 max-w-7xl mx-auto"
     >
       <motion.h2
@@ -44,7 +44,7 @@ export default function OurteamValues() {
         viewport={{ once: true }}
         className="text-4xl font-extrabold text-blue-700 mb-12 text-center"
       >
-      What <span className="text-black">Drives Us</span>
+      Ce qui <span className="text-black">nous anime</span>
       </motion.h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">

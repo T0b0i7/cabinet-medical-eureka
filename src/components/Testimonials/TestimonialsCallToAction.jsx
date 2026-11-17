@@ -22,7 +22,7 @@ function FloatingCircle({ className, animationConfig }) {
 
 export default function TestimonialsCallToAction() {
   const handleTestimonialClick = () => {
-    alert("Redirecting to testimonial submission form");
+    alert("Vous pouvez partager votre témoignage via le formulaire de contact");
     // In a real app, navigate to the testimonial form page here
   };
 
@@ -57,7 +57,7 @@ export default function TestimonialsCallToAction() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-5"
         >
-          Ready to Share Your Experience?
+          Envie de partager votre expérience ?
         </motion.h2>
 
         <motion.p
@@ -67,21 +67,21 @@ export default function TestimonialsCallToAction() {
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
           className="max-w-2xl mx-auto text-lg sm:text-xl font-light text-gray-100 mb-8 leading-relaxed"
         >
-          Your story can inspire others. Join the hundreds of satisfied
-          customers who have already shared their feedback.
+          Votre témoignage peut inspirer d’autres patients. Rejoignez les
+          centaines de personnes qui ont déjà partagé leur avis.
         </motion.p>
 
         <motion.button
           type="button"
           onClick={handleTestimonialClick}
-          aria-label="Submit Your Testimonial"
+          aria-label="Envoyer votre témoignage"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, ease: "easeOut", delay: 0.2 }}
           className="inline-block px-8 py-3 bg-white text-blue-800 font-semibold rounded-full shadow-lg hover:shadow-xl hover:bg-gray-100 transition-all focus:outline-none focus:ring-4 focus:ring-white/50"
         >
-          Submit Your Testimonial
+          Envoyer votre témoignage
         </motion.button>
       </div>
     </section>

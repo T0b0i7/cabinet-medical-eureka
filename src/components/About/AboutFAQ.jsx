@@ -23,24 +23,24 @@ const faqItemAnimation = {
 // List of FAQ entries, could be extracted elsewhere if needed
 const faqEntries = [
   {
-    question: "What services does NovaHealth offer?",
+    question: "Quelles spécialités propose le Cabinet Médical EURÊKA ?",
     answer:
-      "NovaHealth provides general checkups, diagnostics, emergency care, specialist consultations, and online appointments with certified doctors.",
+      "Le cabinet propose des consultations d’ORL, de chirurgie cervico-faciale et de médecine générale, ainsi que des bilans de santé et la prise en charge des urgences légères.",
   },
   {
-    question: "Are your doctors certified and experienced?",
+    question: "Vos médecins sont-ils qualifiés et expérimentés ?",
     answer:
-      "Yes, all NovaHealth doctors are board-certified with proven clinical experience and a strong commitment to patient care.",
+      "Oui, tous les praticiens du cabinet sont diplômés et expérimentés dans leur spécialité, avec un engagement fort pour la qualité des soins.",
   },
   {
-    question: "Is online appointment booking available?",
+    question: "Peut-on prendre rendez-vous en ligne ?",
     answer:
-      "Yes, you can easily book appointments online through our website or mobile app. Same-day options are also available for urgent needs.",
+      "Oui, vous pouvez prendre rendez-vous en ligne depuis notre site ou directement par WhatsApp. Des créneaux sont disponibles 7j/7 de 08h00 à 18h00.",
   },
   {
-    question: "Do you accept insurance plans?",
+    question: "Acceptez-vous les assurances ?",
     answer:
-      "We accept a wide range of insurance providers. Please visit our insurance info page or contact us directly for more details.",
+      "Les modalités de prise en charge varient selon les assurances. Contactez l’accueil du cabinet pour vérifier votre couverture.",
   },
 ]
 
@@ -103,7 +103,7 @@ export default function AboutFAQ() {
   return (
     <section
       id="faq"
-      aria-label="Frequently Asked Questions"
+      aria-label="Questions fréquentes"
       className="bg-white py-20 px-6 sm:px-10 lg:px-20 my-[-50px]"
     >
       <motion.div

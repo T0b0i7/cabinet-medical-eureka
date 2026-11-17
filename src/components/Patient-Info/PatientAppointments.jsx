@@ -8,17 +8,17 @@ const defaultAppointments = [
     id: 1,
     date: "2025-09-15",
     time: "10:30",
-    doctor: "Dr. Sarah Connor",
-    department: "Cardiology",
-    status: "Confirmed",
+    doctor: "Dr Romuald Adjakpa",
+    department: "ORL",
+    status: "Confirmé",
   },
   {
     id: 2,
     date: "2025-09-25",
     time: "14:00",
-    doctor: "Dr. John Smith",
-    department: "Neurology",
-    status: "Pending",
+    doctor: "Dr Barthélémy Gnonlonfoun",
+    department: "Neurologie",
+    status: "En attente",
   },
 ];
 
@@ -27,17 +27,17 @@ function AppointmentList({ appointments, onCancelRequest }) {
   if (!appointments.length) {
     return (
       <p className="text-center text-gray-600 mb-10">
-        You have no scheduled appointments.
+        Vous n’avez aucun rendez-vous programmé.
       </p>
     );
   }
 
   // Helper to get status color classes
-  const getStatusColor = (status) => {
+  const getStatutColor = (status) => {
     switch (status) {
-      case "Confirmed":
+      case "Confirmé":
         return "text-green-600";
-      case "Pending":
+      case "En attente":
         return "text-yellow-600";
       default:
         return "text-gray-600";
@@ -51,10 +51,10 @@ function AppointmentList({ appointments, onCancelRequest }) {
         <thead>
           <tr className="bg-blue-100 text-blue-800 font-semibold">
             <th className="p-3 border border-blue-200 text-left rounded-tl-lg">Date</th>
-            <th className="p-3 border border-blue-200 text-left">Time</th>
-            <th className="p-3 border border-blue-200 text-left">Doctor</th>
-            <th className="p-3 border border-blue-200 text-left">Department</th>
-            <th className="p-3 border border-blue-200 text-left">Status</th>
+            <th className="p-3 border border-blue-200 text-left">Heure</th>
+            <th className="p-3 border border-blue-200 text-left">Médecin</th>
+            <th className="p-3 border border-blue-200 text-left">Spécialité</th>
+            <th className="p-3 border border-blue-200 text-left">Statut</th>
             <th className="p-3 border border-blue-200 text-center rounded-tr-lg">Actions</th>
           </tr>
         </thead>
@@ -68,7 +68,7 @@ function AppointmentList({ appointments, onCancelRequest }) {
               <td className="p-3 border border-blue-200">{time}</td>
               <td className="p-3 border border-blue-200">{doctor}</td>
               <td className="p-3 border border-blue-200">{department}</td>
-              <td className={`p-3 border border-blue-200 font-semibold ${getStatusColor(status)}`}>
+              <td className={`p-3 border border-blue-200 font-semibold ${getStatutColor(status)}`}>
                 {status}
               </td>
               <td className="p-3 border border-blue-200 text-center">
@@ -76,9 +76,9 @@ function AppointmentList({ appointments, onCancelRequest }) {
                   type="button"
                   onClick={() => onCancelRequest(id)}
                   className="text-red-600 hover:text-red-800 font-semibold focus:outline-none focus:ring-2 focus:ring-red-400 rounded"
-                  aria-label={`Cancel appointment on ${date} with ${doctor}`}
+                  aria-label={`Annuler appointment on ${date} with ${doctor}`}
                 >
-                  Cancel
+                  Annuler
                 </button>
               </td>
             </tr>
@@ -100,27 +100,27 @@ function AppointmentList({ appointments, onCancelRequest }) {
                 <p className="text-gray-700">{time}</p>
               </div>
               <div
-                className={`font-semibold ${getStatusColor(status)}`}
-                aria-label={`Status: ${status}`}
+                className={`font-semibold ${getStatutColor(status)}`}
+                aria-label={`Statut: ${status}`}
               >
                 {status}
               </div>
             </div>
             <p>
-              <span className="font-semibold">Doctor: </span>
+              <span className="font-semibold">Médecin : </span>
               {doctor}
             </p>
             <p>
-              <span className="font-semibold">Department: </span>
+              <span className="font-semibold">Spécialité : </span>
               {department}
             </p>
             <button
               type="button"
               onClick={() => onCancelRequest(id)}
-              aria-label={`Cancel appointment on ${date} with ${doctor}`}
+              aria-label={`Annuler appointment on ${date} with ${doctor}`}
               className="mt-3 w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded-lg focus:outline-none focus:ring-4 focus:ring-red-300 transition-colors duration-200"
             >
-              Cancel Appointment
+              Annuler rendez-vous
             </button>
           </article>
         ))}
@@ -177,10 +177,10 @@ function CancelConfirmModal({ onCancel, onDismiss }) {
     >
       <div className="bg-white rounded-lg max-w-md w-full p-6 shadow-lg relative">
         <h3 id="cancel-dialog-title" className="text-xl font-semibold mb-4 text-gray-900">
-          Cancel Appointment
+          Annuler rendez-vous
         </h3>
         <p id="cancel-dialog-desc" className="mb-6 text-gray-700">
-          Are you sure you want to cancel this appointment?
+          Voulez-vous vraiment annuler ce rendez-vous ?
         </p>
         <div className="flex justify-end gap-4">
           <button
@@ -188,19 +188,19 @@ function CancelConfirmModal({ onCancel, onDismiss }) {
             onClick={onDismiss}
             className="py-2 px-6 rounded-lg border border-gray-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            No, Keep
+            Non, conserver
           </button>
           <button
             type="button"
             onClick={onCancel}
             className="py-2 px-6 rounded-lg bg-red-600 text-white font-semibold hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400"
           >
-            Yes, Cancel
+            Oui, Annuler
           </button>
         </div>
         <button
           type="button"
-          aria-label="Close cancel confirmation"
+          aria-label="Fermer cancel confirmation"
           onClick={onDismiss}
           className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 focus:outline-none"
         >
@@ -238,21 +238,21 @@ export default function PatientAppointments() {
     const todayStr = new Date().toISOString().split("T")[0];
 
     if (!form.date) {
-      validationErrors.date = "Date is required";
+      validationErrors.date = "La date est requise";
     } else if (form.date < todayStr) {
-      validationErrors.date = "Date cannot be in the past";
+      validationErrors.date = "La date ne peut pas être dans le passé";
     }
 
     if (!form.time) {
-      validationErrors.time = "Time is required";
+      validationErrors.time = "L’heure est requise";
     }
 
     if (!form.doctor.trim()) {
-      validationErrors.doctor = "Doctor name is required";
+      validationErrors.doctor = "Le nom du médecin est requis";
     }
 
     if (!form.department.trim()) {
-      validationErrors.department = "Department is required";
+      validationErrors.department = "Le service est requis";
     }
 
     return validationErrors;
@@ -299,7 +299,7 @@ export default function PatientAppointments() {
         time: form.time,
         doctor: form.doctor.trim(),
         department: form.department.trim(),
-        status: "Pending",
+        status: "En attente",
       },
     ]);
 
@@ -333,8 +333,8 @@ export default function PatientAppointments() {
   return (
     <section className="max-w-6xl mx-auto p-6 bg-white rounded-xl shadow-md">
       <h2 className="text-3xl font-extrabold mb-8 text-center">
-        <span className="text-black">Your </span>
-        <span className="text-blue-700">Appointments</span>
+        <span className="text-black">Vos </span>
+        <span className="text-blue-700">rendez-vous</span>
       </h2>
 
       <AppointmentList appointments={appointments} onCancelRequest={requestCancel} />
@@ -342,7 +342,7 @@ export default function PatientAppointments() {
       {/* Booking form */}
       <div className="border-t border-gray-300 pt-10">
         <h3 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
-          Book a New Appointment
+          Prendre un nouveau rendez-vous
         </h3>
 
         <form
@@ -363,7 +363,7 @@ export default function PatientAppointments() {
           />
 
           <TextInput
-            label="Time"
+            label="Heure"
             id="time"
             name="time"
             type="time"
@@ -375,11 +375,11 @@ export default function PatientAppointments() {
             max="18:00"
           />
           <p className="text-xs text-gray-500 mt-1 select-none md:col-span-2">
-            Available hours: 08:00 AM - 06:00 PM
+            Horaires : 08h00 – 18h00, 7j/7
           </p>
 
           <TextInput
-            label="Doctor"
+            label="Médecin"
             id="doctor"
             name="doctor"
             type="text"
@@ -387,11 +387,11 @@ export default function PatientAppointments() {
             onChange={handleInputChange}
             error={errors.doctor}
             disabled={isSubmitting}
-            placeholder="Dr. Jane Doe"
+            placeholder="Dr Sylvie Dossou-Yovo"
           />
 
           <TextInput
-            label="Department"
+            label="Spécialité"
             id="department"
             name="department"
             type="text"
@@ -399,7 +399,7 @@ export default function PatientAppointments() {
             onChange={handleInputChange}
             error={errors.department}
             disabled={isSubmitting}
-            placeholder="Cardiology"
+            placeholder="ORL"
           />
 
           <div className="md:col-span-2 text-center mt-4">
@@ -433,7 +433,7 @@ export default function PatientAppointments() {
                   Booking...
                 </>
               ) : (
-                "Book Appointment"
+                "Prendre rendez-vous"
               )}
             </button>
           </div>

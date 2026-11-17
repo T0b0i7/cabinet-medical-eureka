@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 
-const STATUSES = ["All", "Confirmed", "Pending", "Cancelled"];
+const STATUSES = ["Tous", "Confirmé", "En attente", "Annulé"];
 
 const statusBadgeClasses = {
   Confirmed: "bg-green-100 text-green-800",
@@ -15,37 +15,37 @@ const sampleAppointments = [
   {
     id: "a1",
     datetime: new Date("2025-08-10T09:30"),
-    patientName: "John Doe",
+    patientName: "Koffi Zinsou",
     appointmentType: "Consultation",
-    status: "Confirmed",
+    status: "Confirmé",
   },
   {
     id: "a2",
     datetime: new Date("2025-08-10T11:00"),
-    patientName: "Alice Smith",
-    appointmentType: "Therapy",
-    status: "Pending",
+    patientName: "Akossiwa Amoussou",
+    appointmentType: "Thérapie",
+    status: "En attente",
   },
   {
     id: "a3",
     datetime: new Date("2025-08-11T14:00"),
-    patientName: "Michael Johnson",
-    appointmentType: "Check-up",
-    status: "Cancelled",
+    patientName: "Dodji Kpèdé",
+    appointmentType: "Bilan de santé",
+    status: "Annulé",
   },
   {
     id: "a4",
     datetime: new Date("2025-08-12T10:15"),
-    patientName: "Emma Brown",
-    appointmentType: "Surgery",
-    status: "Confirmed",
+    patientName: "Rachelle Sossou",
+    appointmentType: "Chirurgie",
+    status: "Confirmé",
   },
   {
     id: "a5",
     datetime: new Date("2025-08-13T08:45"),
-    patientName: "Liam Wilson",
-    appointmentType: "Emergency",
-    status: "Confirmed",
+    patientName: "Raoul Assogba",
+    appointmentType: "Urgence",
+    status: "Confirmé",
   },
 ];
 
@@ -54,7 +54,7 @@ function StatusBadge({ status }) {
   return (
     <span
       className={`ml-0 sm:ml-4 inline-block px-4 py-1.5 rounded-full text-xs font-semibold select-none ${classes}`}
-      aria-label={`Status: ${status}`}
+      aria-label={`Statut: ${status}`}
     >
       {status}
     </span>
@@ -64,14 +64,14 @@ function StatusBadge({ status }) {
 function AppointmentItem({ appointment, onSelect }) {
   const { datetime, patientName, appointmentType, status } = appointment;
 
-  const dateStr = datetime.toLocaleDateString(undefined, {
+  const dateStr = datetime.toLocaleDateString("fr-FR", {
     weekday: "short",
     year: "numeric",
     month: "short",
     day: "numeric",
   });
 
-  const timeStr = datetime.toLocaleTimeString(undefined, {
+  const timeStr = datetime.toLocaleTimeString("fr-FR", {
     hour: "2-digit",
     minute: "2-digit",
   });
@@ -90,14 +90,14 @@ function AppointmentItem({ appointment, onSelect }) {
       role="button"
       onClick={() => onSelect(appointment)}
       onKeyDown={handleKeyDown}
-      aria-label={`Appointment with ${patientName} on ${datetime.toLocaleString()}, status ${status}`}
+      aria-label={`rendez-vous with ${patientName} on ${datetime.toLocaleString("fr-FR")}, status ${status}`}
       className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-5 hover:bg-indigo-50 focus:bg-indigo-100 focus:outline-none cursor-pointer transition rounded-lg"
     >
       <div className="flex flex-col sm:flex-row sm:items-center gap-6 flex-1 min-w-0">
         <time
           dateTime={datetime.toISOString()}
           className="text-gray-700 font-mono text-sm whitespace-nowrap"
-          title={datetime.toLocaleString()}
+          title={datetime.toLocaleString("fr-FR")}
         >
           {dateStr} &bull; {timeStr}
         </time>
@@ -120,30 +120,30 @@ function AppointmentItem({ appointment, onSelect }) {
 }
 
 export default function AppointmentsList({ appointments = sampleAppointments }) {
-  const [selectedStatus, setSelectedStatus] = useState("All");
+  const [selectedStatus, setSelectedStatus] = useState("Tous");
 
   const visibleAppointments = useMemo(() => {
     return appointments
       .filter(
         (appointment) =>
-          selectedStatus === "All" || appointment.status === selectedStatus
+          selectedStatus === "Tous" || appointment.status === selectedStatus
       )
       .sort((a, b) => a.datetime - b.datetime);
   }, [appointments, selectedStatus]);
 
   function showDetails(appointment) {
     alert(
-      `Appointment Details:\n` +
+      `Détails du rendez-vous:\n` +
         `Patient: ${appointment.patientName}\n` +
-        `Type: ${appointment.appointmentType}\n` +
-        `Date & Time: ${appointment.datetime.toLocaleString()}\n` +
-        `Status: ${appointment.status}`
+        `Type : ${appointment.appointmentType}\n` +
+        `Date et heure : ${appointment.datetime.toLocaleString("fr-FR")}\n` +
+        `Statut : ${appointment.status}`
     );
   }
 
   return (
     <motion.section
-      aria-label="Appointments List"
+      aria-label="Liste des rendez-vous"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
@@ -152,9 +152,9 @@ export default function AppointmentsList({ appointments = sampleAppointments }) 
       {/* Title & Filter */}
       <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 gap-6">
         <h1 className="text-3xl font-extrabold text-gray-900">
-          Upcoming{" "}
+          Prochains{" "}
           <span className="text-blue-600" aria-hidden="true">
-            Appointments
+            rendez-vous
           </span>
         </h1>
 
@@ -163,7 +163,7 @@ export default function AppointmentsList({ appointments = sampleAppointments }) 
             htmlFor="filterStatus"
             className="font-semibold text-gray-700 whitespace-nowrap"
           >
-            Filter by Status:
+            Filtrer par statut :
           </label>
           <select
             id="filterStatus"
@@ -184,7 +184,7 @@ export default function AppointmentsList({ appointments = sampleAppointments }) 
       <ul className="divide-y divide-gray-200 max-h-[480px] overflow-y-auto rounded-lg">
         {visibleAppointments.length === 0 ? (
           <li className="py-8 text-center text-gray-500 italic select-text">
-            No appointments found.
+            Non appointments found.
           </li>
         ) : (
           visibleAppointments.map((appointment) => (

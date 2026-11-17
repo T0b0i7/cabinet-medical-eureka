@@ -5,19 +5,19 @@ import React, { useState } from "react";
 const defaultMedications = [
   {
     id: 1,
-    name: "Atorvastatin",
+    name: "Atorvastatine",
     dosage: "20 mg",
-    frequency: "Once daily",
-    prescribedBy: "Dr. Emily Clark",
+    frequency: "Une fois par jour",
+    prescribedBy: "Dr Chantal Houngbédji",
     startDate: "2024-06-01",
-    notes: "Take with food",
+    notes: "À prendre pendant les repas",
   },
   {
     id: 2,
-    name: "Metformin",
+    name: "Metformine",
     dosage: "500 mg",
     frequency: "Twice daily",
-    prescribedBy: "Dr. John Smith",
+    prescribedBy: "Dr Barthélémy Gnonlonfoun",
     startDate: "2023-11-15",
     notes: "",
   },
@@ -43,11 +43,11 @@ const PatientMedications = () => {
 
   const validateForm = () => {
     const errors = {};
-    if (!formValues.name.trim()) errors.name = "Medication name is required.";
-    if (!formValues.dosage.trim()) errors.dosage = "Dosage is required.";
-    if (!formValues.frequency.trim()) errors.frequency = "Frequency is required.";
-    if (!formValues.prescribedBy.trim()) errors.prescribedBy = "Prescriber is required.";
-    if (!formValues.startDate) errors.startDate = "Start date is required.";
+    if (!formValues.name.trim()) errors.name = "Le nom du traitement est requis.";
+    if (!formValues.dosage.trim()) errors.dosage = "La posologie est requise.";
+    if (!formValues.frequency.trim()) errors.frequency = "La fréquence est requise.";
+    if (!formValues.prescribedBy.trim()) errors.prescribedBy = "Le prescripteur est requis.";
+    if (!formValues.startDate) errors.startDate = "La date de début est requise.";
     return errors;
   };
 
@@ -116,7 +116,7 @@ const PatientMedications = () => {
 
   const removeMedication = (id) => {
     const confirmed = window.confirm(
-      "Are you sure you want to remove this medication from your list?"
+      "Voulez-vous vraiment retirer ce traitement de la liste ?"
     );
     if (!confirmed) return;
 
@@ -131,12 +131,12 @@ const PatientMedications = () => {
     <section className="max-w-5xl mx-auto p-6 bg-white rounded-xl shadow-md">
       <h2 className="text-3xl font-extrabold mb-8 text-center">
         <span className="text-black">Current </span>
-        <span className="text-blue-700">Medications</span>
+        <span className="text-blue-700">Traitements</span>
       </h2>
 
       {/* Medications Table */}
       {medList.length === 0 ? (
-        <p className="text-center text-gray-600 mb-10">No medications added yet.</p>
+        <p className="text-center text-gray-600 mb-10">Non medications added yet.</p>
       ) : (
         <div className="overflow-x-auto mb-12">
           <table className="w-full border-collapse text-left min-w-[600px]">
@@ -145,8 +145,8 @@ const PatientMedications = () => {
                 <th className="p-3 border border-blue-200 rounded-tl-lg">Medication</th>
                 <th className="p-3 border border-blue-200">Dosage</th>
                 <th className="p-3 border border-blue-200">Frequency</th>
-                <th className="p-3 border border-blue-200">Prescribed By</th>
-                <th className="p-3 border border-blue-200">Start Date</th>
+                <th className="p-3 border border-blue-200">Prescrit par</th>
+                <th className="p-3 border border-blue-200">Date de début</th>
                 <th className="p-3 border border-blue-200">Notes</th>
                 <th className="p-3 border border-blue-200 rounded-tr-lg text-center">Actions</th>
               </tr>
@@ -170,18 +170,18 @@ const PatientMedications = () => {
                       <button
                         type="button"
                         onClick={() => startEditing(id)}
-                        aria-label={`Edit medication ${name}`}
+                        aria-label={`Modifier medication ${name}`}
                         className="text-blue-600 hover:text-blue-800 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
                       >
-                        Edit
+                        Modifier
                       </button>
                       <button
                         type="button"
                         onClick={() => removeMedication(id)}
-                        aria-label={`Delete medication ${name}`}
+                        aria-label={`Supprimer medication ${name}`}
                         className="text-red-600 hover:text-red-800 font-semibold focus:outline-none focus:ring-2 focus:ring-red-400 rounded"
                       >
-                        Delete
+                        Supprimer
                       </button>
                     </td>
                   </tr>
@@ -195,7 +195,7 @@ const PatientMedications = () => {
       {/* Medication Form */}
       <div className="border-t border-gray-300 pt-8 max-w-3xl mx-auto">
         <h3 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
-          {currentlyEditingId !== null ? "Edit Medication" : "Add New Medication"}
+          {currentlyEditingId !== null ? "Modifier le traitement" : "Ajouter un nouveau traitement"}
         </h3>
 
         <form
@@ -203,14 +203,14 @@ const PatientMedications = () => {
           noValidate
           className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6"
         >
-          {/* Medication Name */}
+          {/* Nom du traitement */}
           <FormInput
             id="name"
-            label="Medication Name"
+            label="Nom du traitement"
             value={formValues.name}
             onChange={handleInputChange}
             error={formErrors.name}
-            placeholder="Atorvastatin"
+            placeholder="Atorvastatine"
             disabled={isSubmitting}
             required
           />
@@ -234,27 +234,27 @@ const PatientMedications = () => {
             value={formValues.frequency}
             onChange={handleInputChange}
             error={formErrors.frequency}
-            placeholder="Once daily"
+            placeholder="Une fois par jour"
             disabled={isSubmitting}
             required
           />
 
-          {/* Prescribed By */}
+          {/* Prescrit par */}
           <FormInput
             id="prescribedBy"
-            label="Prescribed By"
+            label="Prescrit par"
             value={formValues.prescribedBy}
             onChange={handleInputChange}
             error={formErrors.prescribedBy}
-            placeholder="Dr. John Doe"
+            placeholder="Dr Isidore Aholou"
             disabled={isSubmitting}
             required
           />
 
-          {/* Start Date */}
+          {/* Date de début */}
           <FormDateInput
             id="startDate"
-            label="Start Date"
+            label="Date de début"
             value={formValues.startDate}
             onChange={handleInputChange}
             error={formErrors.startDate}
@@ -275,7 +275,7 @@ const PatientMedications = () => {
               onChange={handleInputChange}
               disabled={isSubmitting}
               rows={3}
-              placeholder="Any additional info or instructions"
+              placeholder="Informationss ou consignes complémentaires"
               className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-gray-900 resize-none"
             />
           </div>
@@ -293,9 +293,9 @@ const PatientMedications = () => {
                   Saving...
                 </>
               ) : currentlyEditingId !== null ? (
-                "Update Medication"
+                "Mettre à jour le traitement"
               ) : (
-                "Add Medication"
+                "Ajouter un traitement"
               )}
             </button>
 
@@ -305,7 +305,7 @@ const PatientMedications = () => {
                 onClick={clearForm}
                 className="ml-4 py-3 px-6 rounded-lg bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400"
               >
-                Cancel
+                Annuler
               </button>
             )}
           </div>

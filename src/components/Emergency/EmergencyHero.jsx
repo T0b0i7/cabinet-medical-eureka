@@ -165,17 +165,17 @@ const EmergencyForm = ({ onSuccess }) => {
   const validateInputs = () => {
     const errs = {};
 
-    if (!inputs.name.trim()) errs.name = "Name is required";
+    if (!inputs.name.trim()) errs.name = "Le nom est requis";
 
     if (!inputs.phone.trim()) {
-      errs.phone = "Phone number is required";
+      errs.phone = "Le numéro de téléphone est requis";
     } else if (!/^\+?\d{7,15}$/.test(inputs.phone.trim())) {
-      errs.phone = "Enter a valid phone number";
+      errs.phone = "Saisissez un numéro de téléphone valide";
     }
 
-    if (!inputs.emergencyType) errs.emergencyType = "Please select emergency type";
+    if (!inputs.emergencyType) errs.emergencyType = "Veuillez choisir un motif";
 
-    if (!inputs.description.trim()) errs.description = "Please describe the emergency";
+    if (!inputs.description.trim()) errs.description = "Veuillez décrire la situation";
 
     return errs;
   };
@@ -227,7 +227,7 @@ const EmergencyForm = ({ onSuccess }) => {
 
       onSuccess();
     } catch (err) {
-      setSubmissionError("Failed to submit emergency request. Please try again.");
+      setSubmissionError("Échec de l’envoi de la demande. Veuillez réessayer.");
     } finally {
       setIsSubmitting(false);
     }
@@ -240,15 +240,15 @@ const EmergencyForm = ({ onSuccess }) => {
         tabIndex={-1}
         className="text-xl font-bold mb-4 text-blue-700"
       >
-        Emergency Contact Form
+        Demande de prise en charge urgente
       </h2>
 
       <p
         id="emergency-modal-desc"
         className="mb-5 text-gray-700 text-sm sm:text-base"
       >
-        Please provide accurate information so our emergency team can assist you
-        immediately.
+        Donnez des informations précises afin que notre équipe puisse vous
+        orienter au plus vite.
       </p>
 
       <form onSubmit={handleFormSubmit} noValidate>
@@ -258,7 +258,7 @@ const EmergencyForm = ({ onSuccess }) => {
             htmlFor="name"
             className="block font-semibold mb-1 text-gray-800 text-sm sm:text-base"
           >
-            Full Name<span className="text-red-600">*</span>
+            Nom complet<span className="text-red-600">*</span>
           </label>
           <input
             type="text"
@@ -271,7 +271,7 @@ const EmergencyForm = ({ onSuccess }) => {
             }`}
             aria-invalid={!!errors.name}
             aria-describedby={errors.name ? "name-error" : undefined}
-            placeholder="John Doe"
+            placeholder="Votre nom complet"
             disabled={isSubmitting}
             autoComplete="name"
             required
@@ -293,7 +293,7 @@ const EmergencyForm = ({ onSuccess }) => {
             htmlFor="phone"
             className="block font-semibold mb-1 text-gray-800 text-sm sm:text-base"
           >
-            Phone Number<span className="text-red-600">*</span>
+            Numéro de téléphone<span className="text-red-600">*</span>
           </label>
           <input
             type="tel"
@@ -343,11 +343,11 @@ const EmergencyForm = ({ onSuccess }) => {
             disabled={isSubmitting}
             required
           >
-            <option value="">Select Emergency Type</option>
-            <option value="medical">Medical</option>
-            <option value="fire">Fire</option>
-            <option value="police">Police</option>
-            <option value="other">Other</option>
+            <option value="">Choisir un motif</option>
+            <option value="medical">Urgence médicale</option>
+            <option value="fire">Accident / traumatisme</option>
+            <option value="police">Autre urgence</option>
+            <option value="other">Autre</option>
           </select>
           {errors.emergencyType && (
             <p
@@ -379,7 +379,7 @@ const EmergencyForm = ({ onSuccess }) => {
             }`}
             aria-invalid={!!errors.description}
             aria-describedby={errors.description ? "description-error" : undefined}
-            placeholder="Briefly describe the emergency..."
+            placeholder="Décrivez brièvement la situation…"
             disabled={isSubmitting}
             required
           />
@@ -415,7 +415,7 @@ const EmergencyForm = ({ onSuccess }) => {
               Sending...
             </>
           ) : (
-            "Send Request"
+            "Envoyer la demande"
           )}
         </button>
       </form>
@@ -451,7 +451,7 @@ const EmergencyHero = () => {
   return (
     <>
       <section
-        aria-label="Emergency Services Hero"
+        aria-label="Urgences du cabinet"
         className="bg-white text-black min-h-[440px] flex items-center px-5 sm:px-8 md:px-12 my-16 md:my-10"
       >
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center w-full gap-10 md:gap-16">
@@ -467,8 +467,8 @@ const EmergencyHero = () => {
               variants={staggerTextVariants}
               className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight"
             >
-              <span className="text-blue-700">Immediate</span>{" "}
-              <span className="text-black">Emergency Assistance</span>
+              <span className="text-blue-700">Assistance</span>{" "}
+              <span className="text-black">en cas d’urgence</span>
             </motion.h1>
 
             <motion.p
@@ -476,8 +476,9 @@ const EmergencyHero = () => {
               variants={staggerTextVariants}
               className="mt-4 text-base sm:text-lg md:text-xl font-light max-w-lg mx-auto md:mx-0 leading-relaxed"
             >
-              If you are facing an emergency, please fill out the form below so
-              our team can respond quickly and effectively.
+              En cas d’urgence légère, remplissez le formulaire ci-dessous : notre
+              équipe vous rappelle rapidement. Pour une urgence vitale, appelez
+              directement le cabinet.
             </motion.p>
 
             <motion.button
@@ -486,9 +487,9 @@ const EmergencyHero = () => {
               type="button"
               onClick={() => setIsModalVisible(true)}
               className="mt-7 px-8 py-2.5 bg-blue-700 text-white font-semibold rounded-lg shadow-md hover:bg-blue-800 transition-colors focus:outline-none focus:ring-4 focus:ring-blue-300"
-              aria-label="Open Emergency Contact Form"
+              aria-label="Ouvrir le formulaire d’urgence"
             >
-              Request Help Now
+              Demander de l’aide
             </motion.button>
           </motion.div>
 
@@ -501,7 +502,7 @@ const EmergencyHero = () => {
           >
             <img
               src="https://images.unsplash.com/photo-1612574935301-af13ccce9258?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Emergency medical responders assisting patient"
+              alt="Prise en charge d’un patient aux urgences"
               className="rounded-xl shadow-xl w-full object-cover"
               loading="lazy"
               decoding="async"
@@ -517,7 +518,7 @@ const EmergencyHero = () => {
             role="alert"
             className="text-green-600 font-semibold text-center my-5 animate-fadeIn text-sm sm:text-base"
           >
-            Your request has been received. Help is on the way.
+            Votre demande a bien été reçue. Les secours arrivent.
           </div>
         ) : (
           <EmergencyForm onSuccess={onFormSuccess} />
@@ -527,7 +528,7 @@ const EmergencyHero = () => {
           type="button"
           onClick={closeModalHandler}
           className="absolute top-3 right-3 text-gray-600 hover:text-gray-900 focus:outline-none"
-          aria-label="Close emergency contact form"
+          aria-label="Fermer le formulaire d’urgence"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

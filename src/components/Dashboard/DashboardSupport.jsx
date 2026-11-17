@@ -4,21 +4,21 @@ import React, { useState } from "react";
 const initialTickets = [
   {
     id: 1,
-    subject: "Unable to login",
-    category: "Account",
-    status: "Open",
+    subject: "Connexion impossible",
+    category: "Compte",
+    status: "Ouvert",
     createdAt: new Date(Date.now() - 86400000 * 2), // 2 days ago
   },
   {
     id: 2,
-    subject: "Billing discrepancy",
-    category: "Billing",
-    status: "Closed",
+    subject: "Écart de facturation",
+    category: "Facturation",
+    status: "Clôturé",
     createdAt: new Date(Date.now() - 86400000 * 10), // 10 days ago
   },
 ];
 
-const categories = ["Account", "Billing", "Technical", "Other"];
+const categories = ["Compte", "Facturation", "Technique", "Autre"];
 
 const DashboardSupport = () => {
   const [tickets, setTickets] = useState(initialTickets);
@@ -37,8 +37,8 @@ const DashboardSupport = () => {
 
   const validate = () => {
     let errs = {};
-    if (!form.subject.trim()) errs.subject = "Subject is required";
-    if (!form.description.trim()) errs.description = "Description is required";
+    if (!form.subject.trim()) errs.subject = "L’objet est requis";
+    if (!form.description.trim()) errs.description = "La description est requise";
     return errs;
   };
 
@@ -54,17 +54,17 @@ const DashboardSupport = () => {
       id: tickets.length + 1,
       subject: form.subject.trim(),
       category: form.category,
-      status: "Open",
+      status: "Ouvert",
       createdAt: new Date(),
     };
     setTickets((prev) => [newTicket, ...prev]);
-    alert("Support ticket submitted successfully!");
+    alert("Votre demande d’assistance a bien été envoyée !");
     setForm({ subject: "", description: "", category: categories[0] });
   };
 
   // Format date to readable string
   const formatDate = (d) =>
-    d.toLocaleDateString(undefined, {
+    d.toLocaleDateString("fr-FR", {
       year: "numeric",
       month: "short",
       day: "numeric",
@@ -81,7 +81,7 @@ const DashboardSupport = () => {
       }}
     >
       <h2 style={{ fontSize: 28, fontWeight: "700", marginBottom: 24 }}>
-        Support Center
+        Centre d’assistance
       </h2>
 
       <form
@@ -102,7 +102,7 @@ const DashboardSupport = () => {
             htmlFor="subject"
             style={{ display: "block", marginBottom: 6, fontWeight: "700" }}
           >
-            Subject
+            Objet
           </label>
           <input
             id="subject"
@@ -110,7 +110,7 @@ const DashboardSupport = () => {
             type="text"
             value={form.subject}
             onChange={handleChange}
-            placeholder="Brief summary of your issue"
+            placeholder="Résumé de votre demande"
             style={{
               width: "100%",
               padding: 12,
@@ -126,13 +126,13 @@ const DashboardSupport = () => {
           )}
         </div>
 
-        {/* Category */}
+        {/* Catégorie */}
         <div style={{ marginBottom: 20 }}>
           <label
             htmlFor="category"
             style={{ display: "block", marginBottom: 6, fontWeight: "700" }}
           >
-            Category
+            Catégorie
           </label>
           <select
             id="category"
@@ -171,7 +171,7 @@ const DashboardSupport = () => {
             name="description"
             value={form.description}
             onChange={handleChange}
-            placeholder="Explain your issue in detail"
+            placeholder="Décrivez votre demande en détail"
             rows={5}
             style={{
               width: "100%",
@@ -208,13 +208,13 @@ const DashboardSupport = () => {
           onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#0056b3")}
           onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#007bff")}
         >
-          Submit Ticket
+          Envoyer la demande
         </button>
       </form>
 
       <section>
         <h3 style={{ fontSize: 22, fontWeight: "700", marginBottom: 20 }}>
-          Recent Support Tickets
+          Demandes d’assistance récentes
         </h3>
 
         {tickets.length === 0 ? (
@@ -225,7 +225,7 @@ const DashboardSupport = () => {
               userSelect: "none",
             }}
           >
-            No support tickets found.
+            Non support tickets found.
           </p>
         ) : (
           <ul
@@ -258,13 +258,13 @@ const DashboardSupport = () => {
                   <strong>{subject}</strong> <em>({category})</em>
                   <br />
                   <small style={{ color: "#666" }}>
-                    Created on: {formatDate(createdAt)}
+                    Créée le : {formatDate(createdAt)}
                   </small>
                 </div>
                 <div
                   style={{
                     fontWeight: "700",
-                    color: status === "Open" ? "#d32f2f" : "#388e3c",
+                    color: status === "Ouvert" ? "#d32f2f" : "#388e3c",
                     userSelect: "none",
                   }}
                 >

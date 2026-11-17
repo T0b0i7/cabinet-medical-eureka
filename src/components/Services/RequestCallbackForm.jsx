@@ -28,7 +28,7 @@ const RequestCallbackForm = () => {
       !formData.callbackDate ||
       !formData.callbackTime
     ) {
-      alert("Please fill in all required fields.");
+      alert("Veuillez remplir tous les champs obligatoires.");
       return;
     }
 
@@ -54,7 +54,7 @@ const RequestCallbackForm = () => {
         id="callback-form-title"
         className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6 text-center"
       >
-        Request a <span className="text-blue-600">Callback</span>
+        Demander <span className="text-blue-600">un rappel</span>
       </h2>
 
       {submitted && (
@@ -62,7 +62,7 @@ const RequestCallbackForm = () => {
           role="alert"
           className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md text-center"
         >
-          Thank you! Your callback request has been submitted.
+          Merci ! Votre demande de rappel a bien été envoyée.
         </div>
       )}
 
@@ -71,13 +71,13 @@ const RequestCallbackForm = () => {
           {/* Name */}
           <div className="flex flex-col">
             <label htmlFor="name" className="mb-2 font-medium text-gray-700">
-              Full Name <span aria-hidden="true" className="text-red-600">*</span>
+              Nom complet <span aria-hidden="true" className="text-red-600">*</span>
             </label>
             <input
               type="text"
               id="name"
               name="name"
-              placeholder="John Doe"
+              placeholder="Votre nom complet"
               value={formData.name}
               onChange={handleChange}
               required
@@ -89,18 +89,18 @@ const RequestCallbackForm = () => {
           {/* Phone */}
           <div className="flex flex-col">
             <label htmlFor="phone" className="mb-2 font-medium text-gray-700">
-              Phone Number <span aria-hidden="true" className="text-red-600">*</span>
+              Numéro de téléphone <span aria-hidden="true" className="text-red-600">*</span>
             </label>
             <input
               type="tel"
               id="phone"
               name="phone"
-              placeholder="+1 234 567 8900"
+              placeholder="+229 01 00 00 00 00"
               value={formData.phone}
               onChange={handleChange}
               required
               pattern="^\+?[0-9\s\-()]{7,}$"
-              title="Please enter a valid phone number"
+              title="Saisissez un numéro de téléphone valide"
               autoComplete="tel"
               className="rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 p-3 text-gray-900 outline-none transition"
             />
@@ -112,7 +112,7 @@ const RequestCallbackForm = () => {
               htmlFor="callbackDate"
               className="mb-2 font-medium text-gray-700"
             >
-              Preferred Callback Date{" "}
+              Date de rappel souhaitée{" "}
               <span aria-hidden="true" className="text-red-600">
                 *
               </span>
@@ -135,7 +135,7 @@ const RequestCallbackForm = () => {
               htmlFor="callbackTime"
               className="mb-2 font-medium text-gray-700"
             >
-              Preferred Callback Time{" "}
+              Heure de rappel souhaitée{" "}
               <span aria-hidden="true" className="text-red-600">
                 *
               </span>
@@ -158,13 +158,13 @@ const RequestCallbackForm = () => {
             htmlFor="message"
             className="mb-2 font-medium text-gray-700"
           >
-            Additional Message (Optional)
+            Message complémentaire (facultatif)
           </label>
           <textarea
             id="message"
             name="message"
             rows="4"
-            placeholder="Write any details or questions here..."
+            placeholder="Précisez votre demande ou vos questions…"
             value={formData.message}
             onChange={handleChange}
             className="rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 p-3 text-gray-900 outline-none transition resize-none"
@@ -177,7 +177,7 @@ const RequestCallbackForm = () => {
             type="submit"
             className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-10 py-3 rounded-xl shadow-md focus:outline-none focus:ring-4 focus:ring-blue-300 transition"
           >
-            Request Callback
+            Demander un rappel
           </button>
         </div>
       </form>

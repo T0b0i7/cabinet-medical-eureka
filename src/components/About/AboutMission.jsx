@@ -20,7 +20,7 @@ const itemAnim = {
 export default function AboutMission() {
   // Click handler for button — simple feedback alert for now
   const handleLearnMoreClick = () => {
-    alert("Thank you for your interest in our mission!");
+    alert("Merci de l’intérêt porté à notre mission !");
   };
 
   return (
@@ -43,7 +43,7 @@ export default function AboutMission() {
         >
           <img
             src="https://plus.unsplash.com/premium_photo-1673953510107-d5aee40d80a7?w=600&auto=format&fit=crop&q=80"
-            alt="Healthcare mission illustration"
+            alt="Illustration de la mission du cabinet"
             className="w-full h-auto object-cover rounded-2xl"
             loading="lazy"
             decoding="async"
@@ -60,7 +60,7 @@ export default function AboutMission() {
             id="about-mission-title"
             className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-gray-900 drop-shadow-sm mb-8"
           >
-            About Our <span className="text-blue-700">Mission</span>
+            Notre <span className="text-blue-700">mission</span>
           </motion.h1>
 
           <motion.p
@@ -69,10 +69,7 @@ export default function AboutMission() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
           >
-            Our mission is to provide exceptional healthcare with compassion,
-            innovation, and dedication. We aim to improve the quality of life
-            for every patient through personalized care and advanced
-            technology.
+            Notre mission est d’offrir des soins de qualité, accessibles et humains aux familles de Porto-Novo et de ses environs. Nous mettons le plateau technique et l’écoute au service de chaque patient.
           </motion.p>
 
           <motion.ul
@@ -81,10 +78,10 @@ export default function AboutMission() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
           >
-            <li>Patient-centered approach for tailored treatment plans.</li>
-            <li>Use of cutting-edge medical technology and research.</li>
-            <li>Committed to community wellness and education.</li>
-            <li>Continuous improvement through feedback and innovation.</li>
+            <li>Une écoute attentive et des soins adaptés à chaque patient.</li>
+            <li>Un plateau technique moderne pour des diagnostics fiables.</li>
+            <li>Un engagement constant pour la santé de la communauté.</li>
+            <li>Une amélioration continue de la qualité de la prise en charge.</li>
           </motion.ul>
 
           <motion.button
@@ -95,9 +92,9 @@ export default function AboutMission() {
             }}
             whileTap={{ scale: 0.95 }}
             onClick={handleLearnMoreClick}
-            aria-label="Learn more about our mission"
+            aria-label="En savoir plus sur notre mission"
           >
-            Learn More
+            En savoir plus
           </motion.button>
         </motion.div>
       </motion.div>

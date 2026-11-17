@@ -54,20 +54,20 @@ function createMockRealtimeService() {
   };
 
   let growth = [
-    { name: "Jan", Patients: 400 },
-    { name: "Feb", Patients: 300 },
-    { name: "Mar", Patients: 500 },
-    { name: "Apr", Patients: 450 },
-    { name: "May", Patients: 600 },
-    { name: "Jun", Patients: 700 },
+    { name: "Janv.", Patients: 400 },
+    { name: "Févr.", Patients: 300 },
+    { name: "Mars", Patients: 500 },
+    { name: "Avr.", Patients: 450 },
+    { name: "Mai", Patients: 600 },
+    { name: "Juin", Patients: 700 },
   ];
 
   let dept = [
-    { name: "General", Appointments: 240 },
-    { name: "Dental", Appointments: 139 },
-    { name: "Cardiology", Appointments: 98 },
-    { name: "Orthopedics", Appointments: 120 },
-    { name: "Pediatrics", Appointments: 180 },
+    { name: "Médecine générale", Appointments: 240 },
+    { name: "Dentaire", Appointments: 139 },
+    { name: "ORL", Appointments: 98 },
+    { name: "Orthopédie", Appointments: 120 },
+    { name: "Pédiatrie", Appointments: 180 },
   ];
 
   let notificationId = 100;
@@ -105,8 +105,8 @@ function createMockRealtimeService() {
       notificationId++;
       const n = {
         id: notificationId,
-        title: ["New patient registered", "Appointment confirmed", "Billing issue detected", "Lab result ready"][Math.floor(Math.random() * 4)],
-        body: ["A new patient signed up.", "A patient confirmed their appointment.", "A billing discrepancy was found.", "A lab result is available."][Math.floor(Math.random() * 4)],
+        title: ["Nouveau patient inscrit", "rendez-vous confirmé", "Problème de facturation détecté", "Résultat d’analyse prêt"][Math.floor(Math.random() * 4)],
+        body: ["Un nouveau patient s’est inscrit.", "Un patient a confirmé son rendez-vous.", "Un écart de facturation a été détecté.", "Un résultat d’analyse est disponible."][Math.floor(Math.random() * 4)],
         time: new Date().toLocaleString(),
         read: false,
         iconIndex: Math.floor(Math.random() * 3),
@@ -143,24 +143,24 @@ const mockRealtimeService = createMockRealtimeService();
 const INITIAL_NOTIFICATIONS = [
   {
     id: 1,
-    title: "New patient registered",
-    body: "John Doe has registered as a new patient.",
+    title: "Nouveau patient inscrit",
+    body: "Koffi Zinsou s’est inscrit comme nouveau patient.",
     time: new Date().toLocaleString(),
     icon: <HiUserGroup className="w-6 h-6 text-blue-600" aria-hidden="true" />,
     read: false,
   },
   {
     id: 2,
-    title: "Appointment confirmed",
-    body: "Jane Smith - Cardiology appointment confirmed.",
+    title: "rendez-vous confirmed",
+    body: "Rendez-vous ORL confirmé pour Grâce Ahouandjinou.",
     time: new Date().toLocaleString(),
     icon: <HiCalendar className="w-6 h-6 text-green-600" aria-hidden="true" />,
     read: false,
   },
   {
     id: 3,
-    title: "Revenue report ready",
-    body: "Monthly revenue report has been generated.",
+    title: "Rapport des recettes prêt",
+    body: "Le rapport mensuel des recettes a été généré.",
     time: new Date().toLocaleString(),
     icon: <HiCurrencyDollar className="w-6 h-6 text-yellow-600" aria-hidden="true" />,
     read: true,
@@ -173,7 +173,7 @@ const INITIAL_NOTIFICATIONS = [
 
 function Spinner() {
   return (
-    <div role="status" aria-label="Loading" className="flex justify-center py-10">
+    <div role="status" aria-label="Chargement" className="flex justify-center py-10">
       <svg
         className="animate-spin h-10 w-10 text-indigo-600"
         xmlns="http://www.w3.org/2000/svg"
@@ -205,7 +205,7 @@ function InlineError({ children }) {
    - supports dismissing single, mark all read, keyboard nav
    ------------------------- */
 
-function NotificationsModal({ open, onClose, items, onDismiss, onMarkAllRead }) {
+function NotificationsModal({ open, onClose, items, onDismiss, onMarkAllLu }) {
   // close on escape
   useEffect(() => {
     if (!open) return;
@@ -239,14 +239,14 @@ function NotificationsModal({ open, onClose, items, onDismiss, onMarkAllRead }) 
           </h3>
           <div className="flex items-center gap-2">
             <button
-              onClick={onMarkAllRead}
+              onClick={onMarkAllLu}
               className="text-sm px-3 py-1 rounded bg-gray-100 hover:bg-gray-200 focus:outline focus:outline-indigo-500"
             >
-              Mark all read
+              Tout marquer comme lu
             </button>
             <button
               onClick={onClose}
-              aria-label="Close notifications"
+              aria-label="Fermer notifications"
               className="text-gray-600 hover:text-gray-900 rounded focus:outline focus:outline-indigo-600 focus:ring-2 focus:ring-indigo-600"
             >
               <HiXMark className="w-5 h-5" />
@@ -255,7 +255,7 @@ function NotificationsModal({ open, onClose, items, onDismiss, onMarkAllRead }) 
         </header>
 
         {items.length === 0 ? (
-          <p className="text-center text-gray-500 py-6">You're all caught up.</p>
+          <p className="text-center text-gray-500 py-6">Vous êtes à jour.</p>
         ) : (
           <ul className="divide-y divide-gray-200">
             {items.map((n) => (
@@ -273,7 +273,7 @@ function NotificationsModal({ open, onClose, items, onDismiss, onMarkAllRead }) 
                         onClick={() => onDismiss(n.id)}
                         className="text-xs mt-2 text-indigo-600 hover:underline focus:outline focus:outline-indigo-500"
                       >
-                        Dismiss
+                        Masquer
                       </button>
                     </div>
                   </div>
@@ -334,14 +334,14 @@ function AccountSidebar({ open, onClose, userName }) {
   return (
     <aside
       ref={elRef}
-      aria-label="Account panel"
+      aria-label="Panneau du compte"
       className={`fixed top-0 right-0 z-50 h-full w-80 max-w-full bg-white shadow-xl transform transition-transform flex flex-col ${open ? "translate-x-0" : "translate-x-full"}`}
     >
       <header className="flex items-center justify-between p-6 border-b border-gray-200">
-        <h3 className="text-xl font-semibold text-gray-900 select-none">Account</h3>
+        <h3 className="text-xl font-semibold text-gray-900 select-none">Compte</h3>
         <button
           onClick={onClose}
-          aria-label="Close account sidebar"
+          aria-label="Fermer le panneau du compte"
           className="text-gray-600 hover:text-gray-900 rounded focus:outline focus:outline-indigo-600 focus:ring-2 focus:ring-indigo-600"
         >
           <HiXMark className="w-6 h-6" />
@@ -350,15 +350,15 @@ function AccountSidebar({ open, onClose, userName }) {
 
       <div className="flex-1 overflow-y-auto p-6 space-y-6">
         <div>
-          <h4 className="text-lg font-semibold text-gray-800 mb-2 select-none">Profile</h4>
+          <h4 className="text-lg font-semibold text-gray-800 mb-2 select-none">Profil</h4>
           <p className="text-gray-700">
             Name: <span className="font-medium">{userName}</span>
           </p>
           <p className="text-gray-700">
-            Email: <span className="font-medium">dr.admin@novahealth.com</span>
+            E-mail: <span className="font-medium">admin@cabinet-eureka.bj</span>
           </p>
           <p className="text-gray-700">
-            Role: <span className="font-medium">Administrator</span>
+            Role: <span className="font-medium">Administrateur</span>
           </p>
         </div>
 
@@ -368,7 +368,7 @@ function AccountSidebar({ open, onClose, userName }) {
             className="w-full flex items-center gap-2 px-4 py-3 rounded-md text-indigo-700 font-semibold hover:bg-indigo-50 focus:outline focus:outline-indigo-600 "
           >
             <HiCog6Tooth className="w-5 h-5" aria-hidden="true" />
-            Account settings
+            Paramètres du compte
           </button>
         </div>
 
@@ -377,13 +377,13 @@ function AccountSidebar({ open, onClose, userName }) {
             type="button"
             onClick={() => {
               // realistic placeholder for logout
-              alert("Logged out successfully.");
+              alert("Déconnexion réussie.");
               onClose();
             }}
             className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold rounded-md px-4 py-3 focus:outline focus:outline-red-500  flex items-center justify-center gap-2"
           >
             <HiArrowRightOnRectangle className="w-5 h-5" aria-hidden="true" />
-            Logout
+            Déconnexion
           </button>
         </div>
       </div>
@@ -392,7 +392,7 @@ function AccountSidebar({ open, onClose, userName }) {
 }
 
 /* -------------------------
-   Main Dashboard
+   Main Tableau de bord
    - uses mockRealtimeService for live updates
    - handles errors with retry/backoff
    ------------------------- */
@@ -405,7 +405,7 @@ export default function DashboardHeroFull() {
   const [notifications, setNotifications] = useState(INITIAL_NOTIFICATIONS);
 
   // UI state
-  const [loading, setLoading] = useState(true);
+  const [loading, setChargement] = useState(true);
   const [error, setError] = useState(null);
 
   const [notificationsOpen, setNotificationsOpen] = useState(false);
@@ -428,28 +428,28 @@ export default function DashboardHeroFull() {
             setKpiCards([
               {
                 id: 1,
-                label: "Total Patients",
+                label: "Patients au total",
                 value: stats.totalPatients,
                 icon: <HiUserGroup className="text-indigo-600 w-6 h-6" aria-hidden="true" />,
                 bgClass: "bg-blue-50",
               },
               {
                 id: 2,
-                label: "Appointments Today",
+                label: "Rendez-vous du jour",
                 value: stats.appointmentsToday,
                 icon: <HiCalendar className="text-green-600 w-6 h-6" aria-hidden="true" />,
                 bgClass: "bg-green-50",
               },
               {
                 id: 3,
-                label: "Revenue (Monthly)",
-                value: `$${stats.revenueMonthly.toLocaleString()}`,
+                label: "Recettes (mensuelles)",
+                value: `${stats.revenueMonthly.toLocaleString("fr-FR")} FCFA`,
                 icon: <HiCurrencyDollar className="text-yellow-600 w-6 h-6" aria-hidden="true" />,
                 bgClass: "bg-yellow-50",
               },
               {
                 id: 4,
-                label: "New Registrations",
+                label: "Nouvelles inscriptions",
                 value: stats.newRegistrations,
                 icon: <HiUserGroup className="text-pink-600 w-6 h-6" aria-hidden="true" />,
                 bgClass: "bg-pink-50",
@@ -457,17 +457,17 @@ export default function DashboardHeroFull() {
             ]);
             setGrowthData(growth);
             setDeptData(dept);
-            setLoading(false);
+            setChargement(false);
             // reset retry attempts
             retryRef.current.attempts = 0;
           } else if (event.type === "stats") {
             // update KPIs (optimistic)
             setKpiCards((prev) =>
               prev.map((c) => {
-                if (c.label === "Total Patients") return { ...c, value: event.payload.totalPatients };
-                if (c.label === "Appointments Today") return { ...c, value: event.payload.appointmentsToday };
-                if (c.label === "Revenue (Monthly)") return { ...c, value: `$${event.payload.revenueMonthly.toLocaleString()}` };
-                if (c.label === "New Registrations") return { ...c, value: event.payload.newRegistrations };
+                if (c.label === "Patients au total") return { ...c, value: event.payload.totalPatients };
+                if (c.label === "Rendez-vous du jour") return { ...c, value: event.payload.appointmentsToday };
+                if (c.label === "Recettes (mensuelles)") return { ...c, value: `${event.payload.revenueMonthly.toLocaleString("fr-FR")} FCFA` };
+                if (c.label === "Nouvelles inscriptions") return { ...c, value: event.payload.newRegistrations };
                 return c;
               })
             );
@@ -491,7 +491,7 @@ export default function DashboardHeroFull() {
         });
       } catch (err) {
         failed = true;
-        setError("Connection failed. Retrying...");
+        setError("Connexion échouée. Nouvelle tentative…");
         // backoff retry
         retryRef.current.attempts++;
         const backoff = Math.min(30000, 1000 * 2 ** retryRef.current.attempts);
@@ -510,15 +510,15 @@ export default function DashboardHeroFull() {
 
   // manual refresh (rebuild state from simulated snapshot)
   const fetchAllData = useCallback(() => {
-    setLoading(true);
+    setChargement(true);
     setError(null);
 
     // simulate a "fetch" by reading the latest snapshot via a short timeout
     setTimeout(() => {
       // rogue simulation of occasional failure (10%)
       if (Math.random() < 0.08) {
-        setError("Temporary network error — please try again.");
-        setLoading(false);
+        setError("Erreur réseau temporaire — veuillez réessayer.");
+        setChargement(false);
         return;
       }
 
@@ -529,28 +529,28 @@ export default function DashboardHeroFull() {
           : [
               {
                 id: 1,
-                label: "Total Patients",
+                label: "Patients au total",
                 value: 1245,
                 icon: <HiUserGroup className="text-indigo-600 w-6 h-6" aria-hidden="true" />,
                 bgClass: "bg-blue-50",
               },
               {
                 id: 2,
-                label: "Appointments Today",
+                label: "Rendez-vous du jour",
                 value: 38,
                 icon: <HiCalendar className="text-green-600 w-6 h-6" aria-hidden="true" />,
                 bgClass: "bg-green-50",
               },
               {
                 id: 3,
-                label: "Revenue (Monthly)",
-                value: "$52,340",
+                label: "Recettes (mensuelles)",
+                value: "52 340 FCFA",
                 icon: <HiCurrencyDollar className="text-yellow-600 w-6 h-6" aria-hidden="true" />,
                 bgClass: "bg-yellow-50",
               },
               {
                 id: 4,
-                label: "New Registrations",
+                label: "Nouvelles inscriptions",
                 value: 14,
                 icon: <HiUserGroup className="text-pink-600 w-6 h-6" aria-hidden="true" />,
                 bgClass: "bg-pink-50",
@@ -559,23 +559,23 @@ export default function DashboardHeroFull() {
       );
 
       setGrowthData((g) => (g.length ? g : [
-        { name: "Jan", Patients: 400 },
-        { name: "Feb", Patients: 300 },
-        { name: "Mar", Patients: 500 },
-        { name: "Apr", Patients: 450 },
-        { name: "May", Patients: 600 },
-        { name: "Jun", Patients: 700 },
+        { name: "Janv.", Patients: 400 },
+        { name: "Févr.", Patients: 300 },
+        { name: "Mars", Patients: 500 },
+        { name: "Avr.", Patients: 450 },
+        { name: "Mai", Patients: 600 },
+        { name: "Juin", Patients: 700 },
       ]));
 
       setDeptData((d) => (d.length ? d : [
-        { name: "General", Appointments: 240 },
-        { name: "Dental", Appointments: 139 },
-        { name: "Cardiology", Appointments: 98 },
-        { name: "Orthopedics", Appointments: 120 },
-        { name: "Pediatrics", Appointments: 180 },
+        { name: "Médecine générale", Appointments: 240 },
+        { name: "Dentaire", Appointments: 139 },
+        { name: "ORL", Appointments: 98 },
+        { name: "Orthopédie", Appointments: 120 },
+        { name: "Pédiatrie", Appointments: 180 },
       ]));
 
-      setLoading(false);
+      setChargement(false);
     }, 700);
   }, []);
 
@@ -589,7 +589,7 @@ export default function DashboardHeroFull() {
     setNotifications((prev) => prev.filter((n) => n.id !== id));
   };
 
-  const markAllNotificationsRead = () => {
+  const markAllNotificationsLu = () => {
     setNotifications((prev) => prev.map((n) => ({ ...n, read: true })));
   };
 
@@ -611,10 +611,10 @@ export default function DashboardHeroFull() {
         {/* Header */}
         <header className="flex justify-between items-center max-w-5xl mx-auto">
           <h1 tabIndex={-1} className="text-3xl font-extrabold tracking-tight text-gray-900 select-none leading-tight">
-            NovaHealth Dashboard
+            Tableau de bord — Cabinet Médical EURÊKA
           </h1>
 
-          <nav className="flex items-center space-x-6" aria-label="User navigation">
+          <nav className="flex items-center space-x-6" aria-label="Navigation utilisateur">
             <button
               onClick={() => {
                 setNotificationsOpen((s) => !s);
@@ -624,7 +624,7 @@ export default function DashboardHeroFull() {
               aria-expanded={notificationsOpen}
               className="relative p-2 rounded-full hover:bg-gray-200 transition focus:outline focus:outline-indigo-500 "
               type="button"
-              title="Notifications (press 'n')"
+              title="Notifications (touche n)"
             >
               <HiOutlineBell className="w-6 h-6 text-gray-700" aria-hidden="true" />
               <span className="absolute top-0.5 right-0.5 bg-red-600 text-white text-xs font-semibold rounded-full px-1.5" aria-live="polite">
@@ -637,11 +637,11 @@ export default function DashboardHeroFull() {
                 setAccountOpen((s) => !s);
                 setNotificationsOpen(false);
               }}
-              aria-label="Account"
+              aria-label="Compte"
               aria-expanded={accountOpen}
               className="p-2 rounded-full hover:bg-gray-200 transition focus:outline focus:outline-indigo-500 "
               type="button"
-              title="Account (press 'a')"
+              title="Compte (touche a)"
             >
               <HiOutlineUserCircle className="w-8 h-8 text-gray-700" aria-hidden="true" />
             </button>
@@ -651,17 +651,17 @@ export default function DashboardHeroFull() {
         {/* Welcome card */}
         <section className="bg-white rounded-xl shadow-lg p-6 max-w-5xl mx-auto" aria-labelledby="welcome">
           <h2 id="welcome" className="text-xl sm:text-2xl font-semibold text-gray-800 mb-2 leading-snug">
-            Welcome back, Dr. Admin!
+            Bon retour, Dr Administrateur!
           </h2>
           <p className="text-gray-600 text-sm sm:text-base max-w-xl leading-relaxed">
-            Here’s a quick overview of real-time activities and statistics. This demo simulates live updates — you can interact with notifications, refresh, or open the account panel.
+            Voici un aperçu de l’activité et des statistiques en temps réel. Cette démonstration simule des mises à jour — vous pouvez utiliser les notifications, actualiser les données ou ouvrir le panneau du compte.
           </p>
         </section>
 
         {error && <InlineError>{error}</InlineError>}
 
         {/* KPI grid */}
-        <section aria-label="Key performance indicators" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <section aria-label="Indicateurs de performance" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {loading && !error
             ? Array.from({ length: 4 }).map((_, i) => (
                 <div key={i} className="animate-pulse flex items-center gap-4 rounded-xl shadow-md p-5 bg-gray-100" aria-hidden="true">
@@ -694,17 +694,17 @@ export default function DashboardHeroFull() {
               ))}
         </section>
 
-        {/* Charts */}
-        <section className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10" aria-label="Charts">
+        {/* Graphiques */}
+        <section className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10" aria-label="Graphiques">
           <article className="bg-white rounded-xl shadow-lg p-6" aria-labelledby="growth-title">
             <h3 id="growth-title" className="text-gray-800 font-semibold mb-4 text-xl select-none">
-              Patient Growth (Recent)
+              Croissance des patients (récent)
             </h3>
 
             {loading && !growthData.length ? (
               <Spinner />
             ) : growthData.length === 0 && !error ? (
-              <p className="text-center text-gray-500">No patient data available.</p>
+              <p className="text-center text-gray-500">Aucune donnée patient disponible.</p>
             ) : (
               <ResponsiveContainer width="100%" height={260}>
                 <LineChart data={growthData} margin={{ top: 15, right: 30, bottom: 15, left: 0 }}>
@@ -715,7 +715,7 @@ export default function DashboardHeroFull() {
                     contentStyle={{ backgroundColor: "#f9fafb", borderRadius: 8, borderColor: "#ddd", fontSize: 14 }}
                     cursor={{ stroke: "#6366f1", strokeWidth: 2 }}
                   />
-                  <Line type="monotone" dataKey="Patients" stroke="#6366f1" strokeWidth={3} activeDot={{ r: 7 }} dot={{ r: 4 }} isAnimationActive animationDuration={800} />
+                  <Line type="monotone" dataKey="Patients" stroke="#6366f1" strokeWidth={3} activeDot={{ r: 7 }} dot={{ r: 4 }} isAnimationActif animationDuration={800} />
                 </LineChart>
               </ResponsiveContainer>
             )}
@@ -723,13 +723,13 @@ export default function DashboardHeroFull() {
 
           <article className="bg-white rounded-xl shadow-lg p-6" aria-labelledby="dept-title">
             <h3 id="dept-title" className="text-gray-800 font-semibold mb-4 text-xl select-none">
-              Appointments by Department (Live)
+              Rendez-vous par spécialité
             </h3>
 
             {loading && !deptData.length ? (
               <Spinner />
             ) : deptData.length === 0 && !error ? (
-              <p className="text-center text-gray-500">No appointment data available.</p>
+              <p className="text-center text-gray-500">Aucun rendez-vous disponible.</p>
             ) : (
               <ResponsiveContainer width="100%" height={260}>
                 <BarChart data={deptData} margin={{ top: 15, right: 30, bottom: 15, left: 0 }}>
@@ -738,29 +738,29 @@ export default function DashboardHeroFull() {
                   <YAxis stroke="#555" tickLine={false} tick={{ fontSize: 13 }} allowDecimals={false} />
                   <Tooltip contentStyle={{ backgroundColor: "#f9fafb", borderRadius: 8, borderColor: "#ddd", fontSize: 14 }} />
                   <Legend verticalAlign="top" height={36} wrapperStyle={{ fontSize: 14, fontWeight: "600" }} />
-                  <Bar dataKey="Appointments" fill="#10b981" radius={[6, 6, 0, 0]} isAnimationActive animationDuration={800} />
+                  <Bar dataKey="Rendez-vous" fill="#10b981" radius={[6, 6, 0, 0]} isAnimationActif animationDuration={800} />
                 </BarChart>
               </ResponsiveContainer>
             )}
           </article>
         </section>
 
-        {/* Refresh */}
+        {/* Actualiser */}
         <section className="max-w-6xl mx-auto flex justify-center">
           <button
             onClick={fetchAllData}
             disabled={loading}
             type="button"
             className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-5 py-3 text-white font-semibold hover:bg-indigo-700 focus:outline focus:outline-indigo-500  transition"
-            aria-label="Refresh dashboard data"
+            aria-label="Actualiser le tableau de bord"
           >
             {loading ? (
               <>
                 <HiArrowPath className="w-5 h-5 animate-spin" aria-hidden="true" />
-                Refreshing...
+                Actualisering...
               </>
             ) : (
-              "Refresh Data"
+              "Actualiser les données"
             )}
           </button>
         </section>
@@ -771,11 +771,11 @@ export default function DashboardHeroFull() {
           onClose={() => setNotificationsOpen(false)}
           items={notifications}
           onDismiss={dismissNotification}
-          onMarkAllRead={markAllNotificationsRead}
+          onMarkAllLu={markAllNotificationsLu}
         />
 
         {/* Sidebar slides in, but does NOT render a blocking backdrop */}
-        <AccountSidebar open={accountOpen} onClose={() => setAccountOpen(false)} userName="Dr. Admin" />
+        <AccountSidebar open={accountOpen} onClose={() => setAccountOpen(false)} userName="Dr Administrateur" />
       </main>
     </div>
   );

@@ -73,7 +73,7 @@ export default function AboutHero() {
 
   return (
     <section
-      aria-label="About Hero Section"
+      aria-label="Section À propos"
       role="region"
       className="bg-white overflow-hidden"
       ref={sectionRef}
@@ -94,9 +94,9 @@ export default function AboutHero() {
             tabIndex={-1}
             className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-gray-900 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-500 rounded"
           >
-            About{" "}
+            À propos de{" "}
             <span className="text-blue-700 underline decoration-blue-300 decoration-4 underline-offset-4">
-              Us
+              nous
             </span>
           </motion.h1>
 
@@ -104,21 +104,19 @@ export default function AboutHero() {
             className="mt-6 max-w-xl mx-auto md:mx-0 text-lg sm:text-xl md:text-2xl font-light leading-relaxed text-gray-700 tracking-wide"
             variants={fadeInItem}
           >
-            We provide exceptional healthcare services with integrity,
-            innovation, and empathy — ensuring your well-being every step of the
-            way.
+            Le Cabinet Médical EURÊKA met à votre service une équipe expérimentée en ORL, chirurgie cervico-faciale et médecine générale, avec une attention particulière au confort de chaque patient.
           </motion.p>
 
           <motion.button
             type="button"
             onClick={scrollToLearnMore}
-            aria-label="Learn more about us"
+            aria-label="En savoir plus sur nous"
             className="mt-10 inline-block bg-indigo-600 hover:bg-indigo-700 focus-visible:ring-indigo-400 focus:outline-none focus:ring-4 text-white font-semibold px-10 py-4 rounded-lg shadow-lg select-none tracking-wide"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             variants={fadeInItem}
           >
-            Learn More
+            En savoir plus
           </motion.button>
         </motion.div>
 
@@ -129,7 +127,7 @@ export default function AboutHero() {
         >
           <motion.img
             src="https://media.istockphoto.com/id/1993451390/photo/medicine-doctor-touching-medical-symbol-network-connection-interface-3d-rendering-interface.webp?a=1&b=1&s=612x612&w=0&k=20&c=DXdL8_ZbJ-lavgPiVzliVTiDIOXkgfLADmLABr6hSDE="
-            alt="Medical team collaborating"
+            alt="Équipe médicale en concertation"
             loading="lazy"
             decoding="async"
             draggable={false}

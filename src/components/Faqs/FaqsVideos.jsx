@@ -6,25 +6,25 @@ import { motion, AnimatePresence } from "framer-motion";
 const videos = [
   {
     id: 1,
-    title: "How to Book an Appointment",
+    title: "Comment prendre rendez-vous",
     youtubeId: "dQw4w9WgXcQ", // Replace with actual video ID
     thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
   },
   {
     id: 2,
-    title: "Accessing Your Medical Records",
+    title: "Accéder à votre dossier patient",
     youtubeId: "eVTXPUF4Oz4",
     thumbnail: "https://img.youtube.com/vi/eVTXPUF4Oz4/hqdefault.jpg",
   },
   {
     id: 3,
-    title: "Patient Support & Assistance Explained",
+    title: "L’accompagnement des patients expliqué",
     youtubeId: "M7lc1UVf-VE",
     thumbnail: "https://img.youtube.com/vi/M7lc1UVf-VE/hqdefault.jpg",
   },
   {
     id: 4,
-    title: "General FAQ Overview",
+    title: "Présentation de la FAQ",
     youtubeId: "V-_O7nl0Ii0",
     thumbnail: "https://img.youtube.com/vi/V-_O7nl0Ii0/hqdefault.jpg",
   },
@@ -48,7 +48,7 @@ export default function FaqsVideos() {
 
   return (
     <section
-      aria-label="FAQ related videos"
+      aria-label="Vidéos utiles"
       className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-16"
     >
       <h2 className="text-3xl font-extrabold text-black mb-12 text-center select-text">
@@ -113,7 +113,7 @@ export default function FaqsVideos() {
             >
               <button
                 onClick={closeModal}
-                aria-label="Close video modal"
+                aria-label="Fermer video modal"
                 className="absolute top-3 right-3 text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-700 rounded"
               >
                 <svg

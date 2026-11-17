@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 
-const WEEK_DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const WEEK_DAYS = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
 
 // Helpers for date calculations
 function getDaysInMonth(year, month) {
@@ -55,7 +55,7 @@ function DateCell({ day, isSelected, isToday, isDisabled, onSelect }) {
       tabIndex={isSelected ? 0 : -1}
       aria-disabled={isDisabled}
       role="gridcell"
-      aria-label={`${day.date.toLocaleDateString(undefined, {
+      aria-label={`${day.date.toLocaleDateString("fr-FR", {
         weekday: "long",
         month: "long",
         day: "numeric",
@@ -208,13 +208,13 @@ const AppointmentsCalendar = ({ onDateSelect }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={animationControls}
       className="max-w-md mx-auto p-6 bg-white rounded-xl shadow-lg select-none mb-10 border border-gray-200"
-      aria-label="Appointments Calendar"
+      aria-label="Calendrier des rendez-vous"
     >
       {/* Calendar Header with month navigation */}
       <header className="flex items-center justify-between mb-6">
         <button
           onClick={goToPreviousMonth}
-          aria-label="Previous Month"
+          aria-label="Mois précédent"
           className="p-2 rounded-full hover:bg-indigo-100 transition"
         >
           <svg
@@ -234,12 +234,12 @@ const AppointmentsCalendar = ({ onDateSelect }) => {
           className="text-lg font-semibold text-gray-900 select-none"
           aria-live="polite"
         >
-          {displayDate.toLocaleString("default", { month: "long" })} {year}
+          {displayDate.toLocaleString("fr-FR", { month: "long" })} {year}
         </h2>
 
         <button
           onClick={goToNextMonth}
-          aria-label="Next Month"
+          aria-label="Mois suivant"
           className="p-2 rounded-full hover:bg-indigo-100 transition"
         >
           <svg
@@ -272,7 +272,7 @@ const AppointmentsCalendar = ({ onDateSelect }) => {
         role="grid"
         tabIndex={0}
         onKeyDown={onGridKeyDown}
-        aria-label="Calendar dates"
+        aria-label="Dates du calendrier"
       >
         {calendarDays.map((day, index) => {
           const isToday = areDatesEqual(day.date, today);

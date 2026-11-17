@@ -33,8 +33,8 @@ const healthTipsData = [
         <path d="M12 8v4l3 3" />
       </svg>
     ),
-    title: "Stay Hydrated",
-    description: "Drink at least 8 glasses of water daily to keep your body healthy.",
+    title: "Bien s’hydrater",
+    description: "Buvez au moins 8 verres d’eau par jour pour rester en bonne santé.",
   },
   {
     id: 2,
@@ -52,8 +52,8 @@ const healthTipsData = [
         <path d="M12 5v14" />
       </svg>
     ),
-    title: "Balanced Diet",
-    description: "Include fruits, vegetables, and proteins in your daily meals.",
+    title: "Alimentation équilibrée",
+    description: "Intégrez fruits, légumes et protéines à chaque repas.",
   },
   {
     id: 3,
@@ -71,8 +71,8 @@ const healthTipsData = [
         <path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364-6.364l-1.414 1.414M6.05 17.95l-1.414 1.414M17.95 17.95l1.414 1.414M6.05 6.05L4.636 4.636" />
       </svg>
     ),
-    title: "Regular Exercise",
-    description: "Engage in at least 30 minutes of moderate exercise daily.",
+    title: "Activité physique régulière",
+    description: "Bougez au moins 30 minutes par jour à intensité modérée.",
   },
   {
     id: 4,
@@ -90,8 +90,8 @@ const healthTipsData = [
         <path d="M21 12c0-4.418-3.582-8-8-8" />
       </svg>
     ),
-    title: "Get Enough Sleep",
-    description: "Aim for 7-9 hours of quality sleep every night.",
+    title: "Bien dormir",
+    description: "Visez 7 à 9 heures de sommeil de qualité chaque nuit.",
   },
   {
     id: 5,
@@ -109,8 +109,8 @@ const healthTipsData = [
         <path d="M12 14v7" />
       </svg>
     ),
-    title: "Manage Stress",
-    description: "Practice mindfulness and relaxation techniques daily.",
+    title: "Gérer le stress",
+    description: "Pratiquez chaque jour la pleine conscience ou la relaxation.",
   },
   {
     id: 6,
@@ -128,8 +128,8 @@ const healthTipsData = [
         <path d="M12 2a7 7 0 100 14 7 7 0 000-14z" />
       </svg>
     ),
-    title: "Regular Checkups",
-    description: "Visit your healthcare provider for regular screenings.",
+    title: "Consultations régulières",
+    description: "Consultez régulièrement pour un suivi et un dépistage adaptés.",
   },
 ];
 
@@ -143,8 +143,8 @@ export default function BlogHealthTips() {
         id="health-tips-heading"
         className="text-3xl font-extrabold text-center mb-10"
       >
-        <span className="text-black">Health Tips </span>
-        <span className="text-blue-700">for a Better Life</span>
+        <span className="text-black">Conseils </span>
+        <span className="text-blue-700">pour mieux vivre</span>
       </h2>
 
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

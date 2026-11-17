@@ -30,7 +30,7 @@ const ServicesIntro = () => {
   return (
     <section
       role="region"
-      aria-label="Services Intro Section"
+      aria-label="Introduction aux spécialités"
       className="bg-gray-50 py-20 px-6 md:px-12 overflow-hidden my-[-50px]"
     >
       <motion.div
@@ -46,25 +46,27 @@ const ServicesIntro = () => {
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-500 rounded"
           variants={itemVariants}
         >
-          Comprehensive{" "}
+          Des{" "}
           <span className="text-blue-700 underline decoration-blue-300 decoration-4 underline-offset-4">
-            Medical Services
+            soins spécialisés
           </span>{" "}
-          Tailored for You
+          adaptés à vos besoins
         </motion.h2>
 
         <motion.p
           className="mt-6 text-base sm:text-lg md:text-xl text-gray-700 font-light leading-relaxed tracking-wide"
           variants={itemVariants}
         >
-          We believe healthcare should be accessible, compassionate, and personalized. Whether you're here for a routine checkup, preventive care, or specialized treatment — our team of professionals is ready to serve you with expertise and empathy.
+          Nous croyons en une santé accessible, humaine et personnalisée. Que vous veniez
+          pour un contrôle de routine, une prévention ou un traitement spécialisé,
+          notre équipe est à votre écoute avec compétence et bienveillance.
         </motion.p>
 
         <motion.p
           className="mt-4 text-base sm:text-lg text-gray-600 font-light leading-relaxed"
           variants={itemVariants}
         >
-          Our goal is not just treatment — it’s your total well-being. Experience healthcare that puts you first.
+          Notre objectif dépasse le simple traitement : c’est votre bien-être global. Une expérience de soins centrée sur vous.
         </motion.p>
       </motion.div>
     </section>

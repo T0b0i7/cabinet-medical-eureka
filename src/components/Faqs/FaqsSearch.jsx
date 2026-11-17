@@ -6,106 +6,60 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const faqs = [
   {
-    question: "What is NovaHealth?",
+    question: "Qu’est-ce que le Cabinet Médical EURÊKA ?",
     answer:
-      "NovaHealth is a comprehensive healthcare platform providing personalized medical services with state-of-the-art technology and compassionate care.",
+      "Le Cabinet Médical EURÊKA est un cabinet de proximité à Porto-Novo proposant l’ORL, la chirurgie cervico-faciale et la médecine générale, avec un accueil 7j/7 de 08h00 à 18h00.",
   },
   {
-    question: "How can I book an appointment with NovaHealth?",
+    question: "Comment prendre rendez-vous au cabinet ?",
     answer:
-      "You can book an appointment easily through our website or mobile app by selecting your preferred doctor and time slot.",
+      "Réservez en ligne depuis notre site, par téléphone au +229 01 41 60 83 39 ou par WhatsApp. Choisissez la spécialité, la date et le créneau souhaités.",
   },
   {
-    question: "Does NovaHealth offer telehealth consultations?",
+    question: "Le cabinet propose-t-il des téléconsultations ?",
     answer:
-      "Yes, NovaHealth offers secure telehealth consultations so you can consult with our medical professionals from the comfort of your home.",
+      "Certaines situations peuvent être abordées en téléconsultation. Contactez le secrétariat pour vérifier si votre demande s’y prête.",
   },
   {
-    question: "What insurance plans does NovaHealth accept?",
+    question: "Quelles assurances sont acceptées ?",
     answer:
-      "NovaHealth accepts a wide range of insurance plans. Please check our Insurance page or contact support for details about your specific plan.",
+      "Le cabinet travaille avec plusieurs assurances et mutuelles. Vérifiez votre prise en charge auprès de l’accueil avant votre consultation.",
   },
   {
-    question: "Are the NovaHealth doctors licensed and experienced?",
+    question: "Les médecins du cabinet sont-ils qualifiés ?",
     answer:
-      "Absolutely! All NovaHealth doctors are fully licensed, certified, and have extensive experience in their respective fields.",
+      "Oui, tous nos praticiens sont diplômés et expérimentés dans leur spécialité.",
   },
   {
-    question: "Can I access my medical records on NovaHealth?",
+    question: "Puis-je accéder à mon dossier patient ?",
     answer:
-      "Yes, NovaHealth provides a secure patient portal where you can view your medical history, test results, and treatment plans anytime.",
+      "Oui, vos informations médicales sont accessibles de manière sécurisée depuis votre espace patient.",
   },
   {
-    question: "What specialties are covered by NovaHealth?",
+    question: "Quelles spécialités sont couvertes ?",
     answer:
-      "We cover a broad range of specialties including cardiology, dermatology, pediatrics, orthopedics, mental health, and more.",
+      "ORL, chirurgie cervico-faciale, médecine générale et suivi, ainsi que des bilans de santé et les urgences légères.",
   },
   {
-    question: "Is NovaHealth available 24/7?",
+    question: "Le cabinet est-il ouvert le week-end ?",
     answer:
-      "Our platform is accessible 24/7 for appointment booking and patient portal access. Emergency services are also available through our partner facilities.",
+      "Oui, le cabinet accueille les patients 7 jours sur 7, de 08h00 à 18h00.",
   },
   {
-    question: "How does NovaHealth ensure patient privacy?",
+    question: "Comment sont protégées mes données ?",
     answer:
-      "NovaHealth uses advanced encryption and strict privacy policies to protect your personal and medical information.",
+      "Nous appliquons des mesures de sécurité strictes et ne partageons vos informations qu’avec les professionnels impliqués dans votre prise en charge.",
   },
   {
-    question: "Can I get prescription refills through NovaHealth?",
+    question: "Puis-je annuler ou modifier mon rendez-vous ?",
     answer:
-      "Yes, you can request prescription refills through our platform, which will be reviewed by your doctor before approval.",
+      "Oui, prévenez-nous au moins 24 heures avant par téléphone ou WhatsApp afin de libérer le créneau.",
   },
   {
-    question: "Does NovaHealth provide wellness and preventive care?",
+    question: "Que faire en cas d’urgence vitale ?",
     answer:
-      "We offer a variety of wellness programs and preventive care services to help you maintain optimal health.",
+      "En cas d’urgence vitale, contactez immédiatement les secours. Le cabinet prend en charge les urgences légères pendant ses horaires d’ouverture.",
   },
-  {
-    question: "How do I contact NovaHealth customer support?",
-    answer:
-      "You can contact our support team via phone, email, or live chat available on our website during business hours.",
-  },
-  {
-    question: "Is there a mobile app for NovaHealth?",
-    answer:
-      "Yes, the NovaHealth app is available on both iOS and Android for easy access to your health records and appointments.",
-  },
-  {
-    question: "Can I manage family members’ accounts on NovaHealth?",
-    answer:
-      "Our platform allows you to manage accounts for your dependents or family members with appropriate permissions.",
-  },
-  {
-    question: "What measures does NovaHealth take against COVID-19?",
-    answer:
-      "NovaHealth follows all CDC guidelines, offers COVID-19 testing, and provides virtual consultation options to ensure safety.",
-  },
-  {
-    question: "Are there any discounts or loyalty programs?",
-    answer:
-      "We occasionally offer special discounts and loyalty programs. Please subscribe to our newsletter to stay updated.",
-  },
-  {
-    question: "How do I update my personal information on NovaHealth?",
-    answer:
-      "You can update your profile information anytime through the patient portal under account settings.",
-  },
-  {
-    question: "Does NovaHealth support multi-language services?",
-    answer:
-      "Yes, our platform supports multiple languages to serve our diverse patient community.",
-  },
-  {
-    question: "Can I cancel or reschedule my appointments?",
-    answer:
-      "Appointments can be canceled or rescheduled up to 24 hours in advance via the patient portal or app.",
-  },
-  {
-    question: "What if I have a medical emergency?",
-    answer:
-      "In case of emergency, please call your local emergency services immediately. NovaHealth is for non-emergency healthcare needs.",
-  },
-  // Add more FAQs as needed
 ];
 
 const FAQItem = ({ faq, isOpen, onClick }) => {
@@ -152,7 +106,7 @@ const FAQItem = ({ faq, isOpen, onClick }) => {
   );
 };
 
-export default function NovaHealthFAQs() {
+export default function FaqsSearch() {
   const [visibleCount, setVisibleCount] = useState(5);
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -168,7 +122,7 @@ export default function NovaHealthFAQs() {
   return (
     <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h2 className="text-3xl font-extrabold text-gray-900 mb-8 text-center">
-        Frequently Asked Questions about <span className="text-blue-700">NovaHealth</span>
+        Questions fréquentes about <span className="text-blue-700">Cabinet Médical EURÊKA</span>
       </h2>
 
       <div>
@@ -188,7 +142,7 @@ export default function NovaHealthFAQs() {
           className="inline-flex items-center px-6 py-3 border border-gray-300 rounded-md shadow-sm text-base font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition"
           aria-expanded={visibleCount !== 5}
         >
-          {visibleCount === 5 ? "Show More" : "Show Less"}
+          {visibleCount === 5 ? "Voir plus" : "Voir moins"}
           <span className="ml-2">
             {visibleCount === 5 ? <FaChevronDown /> : <FaChevronUp />}
           </span>

@@ -53,21 +53,21 @@ const icons = {
 const infoCards = [
   {
     icon: icons.location,
-    title: "Secure Data Handling",
+    title: "Données sécurisées",
     description:
-      "Your personal information is encrypted and stored securely, ensuring full privacy and compliance with healthcare regulations.",
+      "Vos informations personnelles sont chiffrées et conservées de manière sécurisée, dans le respect du secret médical.",
   },
   {
     icon: icons.profile,
-    title: "Comprehensive Patient Profile",
+    title: "Dossier patient complet",
     description:
-      "Collect essential details like your medical history, allergies, and emergency contacts for personalized healthcare.",
+      "Renseignez vos antécédents, allergies et contacts d’urgence pour une prise en charge personnalisée.",
   },
   {
     icon: icons.clock,
-    title: "Easy & Quick Process",
+    title: "Démarche simple et rapide",
     description:
-      "Our streamlined forms and clear instructions make submitting your patient info hassle-free and efficient.",
+      "Nos formulaires simples et nos consignes claires facilitent la transmission de vos informations.",
   },
 ];
 
@@ -92,11 +92,11 @@ const PatientInfoOverview = () => (
         className="text-4xl font-extrabold mb-4 sm:text-5xl"
       >
         <span className="text-black">Patient </span>
-        <span className="text-blue-700">Information Overview</span>
+        <span className="text-blue-700">Informations Vue d’ensemble</span>
       </h2>
 
       <p className="text-lg sm:text-xl font-light max-w-3xl mx-auto text-gray-900">
-        Understanding the importance of accurate patient information is crucial for delivering effective healthcare. Here’s how we make it simple and secure:
+        Des informations exactes sont essentielles pour une prise en charge efficace. Voici comment nous rendons la démarche simple et sécurisée :
       </p>
     </div>
 

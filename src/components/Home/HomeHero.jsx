@@ -4,54 +4,67 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaCheckCircle,
-  FaTimesCircle,
-  FaCalendarAlt,
   FaClock,
+  FaCalendarAlt,
   FaPhoneAlt,
-  FaShieldAlt,
+  FaParking,
+  FaBaby,
+  FaWhatsapp,
 } from "react-icons/fa";
+import { useSiteConfig } from "../SiteConfigProvider";
+import {
+  SPECIALTIES,
+  TIME_SLOTS,
+  appointmentMessage,
+  whatsappUrl,
+} from "@/lib/siteConfig";
 
 const FEATURES = [
   {
-    icon: <FaShieldAlt className="text-blue-600 w-6 h-6" />,
-    title: "Trusted Care",
-    description: "Certified medical professionals you can rely on.",
-  },
-  {
     icon: <FaCalendarAlt className="text-blue-600 w-6 h-6" />,
-    title: "Flexible Scheduling",
-    description: "Book appointments at your convenience, anytime.",
+    title: "Ouvert 7j/7",
+    description: "Du lundi au dimanche, de 08h00 à 18h00, sans interruption.",
   },
   {
     icon: <FaClock className="text-blue-600 w-6 h-6" />,
-    title: "Extended Hours",
-    description: "Open weekdays 8:00 AM - 6:00 PM & weekends by request.",
+    title: "Rendez-vous rapides",
+    description: "Prise de rendez-vous en ligne ou directement par WhatsApp.",
   },
   {
-    icon: <FaPhoneAlt className="text-blue-600 w-6 h-6" />,
-    title: "24/7 Support",
-    description: "Reach out anytime with our dedicated support line.",
+    icon: <FaParking className="text-blue-600 w-6 h-6" />,
+    title: "Parking sécurisé",
+    description: "Un parking privé et surveillé pour stationner sereinement.",
+  },
+  {
+    icon: <FaBaby className="text-blue-600 w-6 h-6" />,
+    title: "Salle d’allaitement",
+    description: "Un espace dédié au confort des mamans et de leurs nourrissons.",
   },
 ];
 
+const EMPTY_FORM = {
+  name: "",
+  phone: "",
+  specialty: "",
+  date: "",
+  time: "",
+  message: "",
+};
+
 export default function HomeHero() {
+  const site = useSiteConfig();
   const modalRef = useRef(null);
   const firstInputRef = useRef(null);
   const lastFocusRef = useRef(null);
 
   const [modalOpen, setModalOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    date: "",
-    time: "",
-  });
+  const [formData, setFormData] = useState(EMPTY_FORM);
   const [formErrors, setFormErrors] = useState({});
-  const [submitting, setSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState("");
+  const [submitting, setEnvoyerting] = useState(false);
+  const [submitSuccess, setEnvoyerSuccess] = useState(false);
+  const [submitError, setEnvoyerError] = useState("");
 
-  // Manage modal open/close focus and keyboard trap
+  // Gestion du focus et du clavier dans la fenêtre modale
   useEffect(() => {
     if (!modalOpen) return;
 
@@ -100,21 +113,20 @@ export default function HomeHero() {
     };
   }, [modalOpen]);
 
-  // Simple form validation function
   function validate() {
     const errors = {};
-    if (!formData.name.trim()) errors.name = "Full Name is required";
-    if (!formData.email.trim()) {
-      errors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      errors.email = "Invalid email address";
+    if (!formData.name.trim()) errors.name = "Votre nom complet est requis";
+    if (!formData.phone.trim()) {
+      errors.phone = "Votre numéro de téléphone est requis";
+    } else if (!/^\+?[\d\s-]{8,20}$/.test(formData.phone.trim())) {
+      errors.phone = "Numéro de téléphone invalide";
     }
-    if (!formData.date) errors.date = "Please select a date";
-    if (!formData.time) errors.time = "Please select a time";
+    if (!formData.specialty) errors.specialty = "Veuillez choisir une spécialité";
+    if (!formData.date) errors.date = "Veuillez choisir une date";
+    if (!formData.time) errors.time = "Veuillez choisir un créneau";
     return errors;
   }
 
-  // Handle input changes & clear related errors
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -126,42 +138,42 @@ export default function HomeHero() {
         return copy;
       });
     }
-    setSubmitError("");
+    setEnvoyerError("");
   };
 
-  // Handle form submission with simulated delay & random failure
-  const handleSubmit = async (e) => {
+  const handleEnvoyer = async (e) => {
     e.preventDefault();
     setFormErrors({});
-    setSubmitError("");
-    setSubmitSuccess(false);
+    setEnvoyerError("");
+    setEnvoyerSuccess(false);
 
     const errors = validate();
     if (Object.keys(errors).length) return setFormErrors(errors);
 
-    setSubmitting(true);
+    setEnvoyerting(true);
     try {
-      await new Promise((res) => setTimeout(res, 1800));
-      if (Math.random() < 0.3) throw new Error("Simulated failure");
-      setSubmitSuccess(true);
-      setFormData({ name: "", email: "", date: "", time: "" });
+      const message = appointmentMessage(site, formData);
+      // Ouverture immédiate de WhatsApp avec le récapitulatif pré-rempli
+      window.open(whatsappUrl(site, message), "_blank", "noopener,noreferrer");
+      await new Promise((res) => setTimeout(res, 600));
+      setEnvoyerSuccess(true);
     } catch {
-      setSubmitError("Oops! Something went wrong. Please try again later.");
+      setEnvoyerError(
+        "Une erreur est survenue. Veuillez réessayer ou nous appeler directement."
+      );
     } finally {
-      setSubmitting(false);
+      setEnvoyerting(false);
     }
   };
 
-  // Close modal and reset all form & state
   const closeModal = () => {
     setModalOpen(false);
     setFormErrors({});
-    setSubmitError("");
-    setSubmitSuccess(false);
-    setFormData({ name: "", email: "", date: "", time: "" });
+    setEnvoyerError("");
+    setEnvoyerSuccess(false);
+    setFormData(EMPTY_FORM);
   };
 
-  // Animation variants for hero texts, features, and modal
   const heroTextVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i) => ({
@@ -199,13 +211,13 @@ export default function HomeHero() {
 
   return (
     <>
-      {/* Hero Section */}
+      {/* Section d’accueil */}
       <section
-        aria-label="Healthcare Hero Section"
+        aria-label="Accueil du cabinet médical"
         className="relative bg-white w-full flex flex-col justify-center"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-20 flex flex-col lg:flex-row items-center gap-12">
-          {/* Text Content */}
+          {/* Contenu texte */}
           <motion.div
             className="flex-1 text-center lg:text-left max-w-lg"
             initial="hidden"
@@ -213,44 +225,66 @@ export default function HomeHero() {
             aria-labelledby="hero-heading"
             aria-describedby="hero-subtext"
           >
-            <motion.h1
-              id="hero-heading"
-              className="text-[clamp(2.75rem,6vw,4.25rem)] font-extrabold leading-tight tracking-tight text-blue-700 select-text"
+            <motion.p
+              className="mb-4 inline-block rounded-full bg-blue-50 px-4 py-1 text-xs sm:text-sm font-semibold text-blue-700"
               custom={0}
               variants={heroTextVariants}
             >
-              Your Health,
+              {site.city} · {site.hoursShort}
+            </motion.p>
+            <motion.h1
+              id="hero-heading"
+              className="text-[clamp(2.5rem,6vw,4.25rem)] font-extrabold leading-tight tracking-tight text-blue-700 select-text"
+              custom={1}
+              variants={heroTextVariants}
+            >
+              Votre santé,
               <br />
-              <span className="text-black" aria-label="Our Priority" role="text">
-                Our Priority
+              <span className="text-black" aria-label="Notre priorité" role="text">
+                notre priorité
               </span>
             </motion.h1>
             <motion.p
               id="hero-subtext"
               className="mt-6 text-lg sm:text-xl font-light text-gray-900 max-w-3xl mx-auto lg:mx-0"
-              custom={1}
-              variants={heroTextVariants}
-            >
-              At NovaHealth, we know that everyone’s health journey is different. Our caring team
-              listens closely and combines genuine compassion with the latest technology to give
-              you care you can trust. Whether it’s a routine checkup or specialized advice, we’re
-              here to help you feel comfortable and supported. Because for us, healthcare is about
-              treating you like family.
-            </motion.p>
-
-            <motion.button
               custom={2}
               variants={heroTextVariants}
-              onClick={() => setModalOpen(true)}
-              className="mt-10 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-colors w-full sm:w-auto"
-              aria-haspopup="dialog"
-              aria-controls="appointment-modal"
             >
-              Schedule Appointment
-            </motion.button>
+              Bienvenue au {site.clinic}, à {site.city}. Notre équipe vous
+              accompagne en oto-rhino-laryngologie, chirurgie cervico-faciale et
+              médecine générale, avec un plateau technique moderne et une prise
+              en charge attentive, 7 jours sur 7 de 08h00 à 18h00.
+            </motion.p>
+
+            <motion.div
+              className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              custom={3}
+              variants={heroTextVariants}
+            >
+              <button
+                onClick={() => setModalOpen(true)}
+                className="bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-colors w-full sm:w-auto"
+                aria-haspopup="dialog"
+                aria-controls="appointment-modal"
+              >
+                Prendre rendez-vous
+              </button>
+              <a
+                href={whatsappUrl(
+                  site,
+                  `Bonjour ${site.clinic}, je souhaite prendre rendez-vous.`
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 border-2 border-green-600 text-green-700 hover:bg-green-50 font-semibold px-8 py-4 rounded-lg transition-colors w-full sm:w-auto"
+              >
+                <FaWhatsapp className="w-5 h-5" aria-hidden="true" />
+                WhatsApp
+              </a>
+            </motion.div>
           </motion.div>
 
-          {/* Hero Image */}
+          {/* Image d’accueil (inchangée) */}
           <motion.div
             className="flex-1 flex justify-center lg:justify-end max-w-xl w-full"
             initial="hidden"
@@ -259,7 +293,7 @@ export default function HomeHero() {
           >
             <img
               src="https://images.unsplash.com/photo-1597807037496-c56a1d8bc29a?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Healthcare professional assisting a patient"
+              alt="Professionnel de santé accompagnant une patiente"
               className="rounded-3xl shadow-2xl w-full max-w-[540px] h-auto object-cover select-none"
               loading="lazy"
               draggable={false}
@@ -267,12 +301,12 @@ export default function HomeHero() {
           </motion.div>
         </div>
 
-        {/* Features Row */}
+        {/* Atouts du cabinet */}
         <motion.div
           className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center"
           initial="hidden"
           animate="visible"
-          aria-label="Key features of our healthcare services"
+          aria-label="Les atouts du cabinet médical"
         >
           {FEATURES.map(({ icon, title, description }, i) => (
             <motion.div
@@ -289,7 +323,7 @@ export default function HomeHero() {
         </motion.div>
       </section>
 
-      {/* Appointment Modal */}
+      {/* Fenêtre modale de rendez-vous */}
       <AnimatePresence>
         {modalOpen && (
           <motion.div
@@ -311,76 +345,93 @@ export default function HomeHero() {
               className="bg-white rounded-2xl w-full max-w-4xl p-8 relative shadow-2xl max-h-[90vh] overflow-y-auto grid grid-cols-1 md:grid-cols-2 gap-8"
               variants={modalContentVariants}
             >
-              {/* Close Button */}
               <button
                 onClick={closeModal}
                 className="absolute top-6 right-6 text-gray-500 hover:text-gray-900 text-2xl font-semibold focus:outline-none"
-                aria-label="Close appointment form"
+                aria-label="Fermer le formulaire de rendez-vous"
               >
                 ×
               </button>
 
-              {/* Left: Image + Info */}
+              {/* Colonne gauche : visuel et informations */}
               <div className="flex flex-col justify-center items-center rounded-xl overflow-hidden shadow-lg bg-blue-50 p-6 select-none">
                 <img
                   src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?q=80&w=1094&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Doctor consulting patient"
+                  alt="Médecin en consultation avec un patient"
                   className="rounded-xl mb-6 object-cover w-full max-w-sm shadow-lg"
                   loading="lazy"
                   draggable={false}
                 />
                 <h3 className="text-2xl font-bold text-blue-700 mb-3 text-center">
-                  Book Your Appointment
+                  Réservez votre consultation
                 </h3>
                 <p className="text-gray-700 text-center font-light max-w-xs">
-                  Choose a date and time convenient for you. Our team is ready to assist you with
-                  expert healthcare services.
+                  Choisissez la spécialité, la date et l’heure qui vous
+                  conviennent. Notre équipe vous confirme le rendez-vous par
+                  WhatsApp.
+                </p>
+                <p className="mt-4 text-sm font-semibold text-gray-800">
+                  {site.phone} · {site.hours}
                 </p>
               </div>
 
-              {/* Right: Form */}
+              {/* Colonne droite : formulaire */}
               <div className="flex flex-col">
                 {submitSuccess ? (
                   <div
-                    className="flex flex-col items-center justify-center gap-3 text-green-700 p-8 border border-green-300 rounded-lg"
+                    className="flex flex-col items-center justify-center gap-3 text-green-700 p-6 border border-green-300 rounded-lg"
                     role="alert"
                     tabIndex={0}
                   >
                     <FaCheckCircle className="w-12 h-12" aria-hidden="true" />
-                    <p className="text-lg font-semibold">
-                      Your appointment request has been sent successfully!
+                    <p className="text-lg font-semibold text-center">
+                      Votre demande a été préparée pour WhatsApp !
                     </p>
+                    <p className="text-center text-sm text-gray-600">
+                      Si WhatsApp ne s’est pas ouvert automatiquement, cliquez
+                      sur le bouton ci-dessous pour envoyer le récapitulatif.
+                    </p>
+                    <a
+                      href={whatsappUrl(site, appointmentMessage(site, formData))}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-200"
+                    >
+                      <FaWhatsapp className="w-5 h-5" aria-hidden="true" />
+                      Envoyer sur WhatsApp
+                    </a>
                     <button
                       onClick={closeModal}
-                      className="mt-4 px-6 py-3 bg-blue-700 text-white rounded-lg font-semibold hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
+                      className="mt-2 px-6 py-2 border border-gray-300 rounded-lg font-semibold text-gray-700 hover:bg-gray-50"
                     >
-                      Close
+                      Fermer
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-                    <h2 id="modal-title" className="text-3xl font-extrabold text-blue-700 mb-2">
-                      Schedule an Appointment
+                  <form onEnvoyer={handleEnvoyer} className="space-y-5" noValidate>
+                    <h2 id="modal-title" className="text-2xl font-extrabold text-blue-700 mb-1">
+                      Prendre rendez-vous
                     </h2>
-                    <p id="modal-desc" className="text-gray-600 mb-6 font-light">
-                      Fill out the form below, and we’ll contact you to confirm your appointment.
+                    <p id="modal-desc" className="text-gray-600 mb-3 font-light text-sm">
+                      Remplissez le formulaire : le récapitulatif sera envoyé
+                      directement au cabinet via WhatsApp.
                     </p>
 
-                    {/* Name */}
+                    {/* Nom */}
                     <div>
                       <label htmlFor="name" className="block text-sm font-semibold mb-1">
-                        Full Name <span className="text-red-600">*</span>
+                        Nom complet <span className="text-red-600">*</span>
                       </label>
                       <input
                         id="name"
                         name="name"
                         type="text"
-                        placeholder="John Doe"
+                        placeholder="Ex. : Adjovi Sossou"
                         value={formData.name}
                         onChange={handleChange}
                         ref={firstInputRef}
                         disabled={submitting}
-                        className={`w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 ${
+                        className={`w-full px-4 py-2.5 rounded-lg border focus:outline-none focus:ring-2 ${
                           formErrors.name
                             ? "border-red-500 focus:ring-red-400"
                             : "border-gray-300 focus:ring-blue-400"
@@ -397,114 +448,161 @@ export default function HomeHero() {
                       )}
                     </div>
 
-                    {/* Email */}
+                    {/* Téléphone */}
                     <div>
-                      <label htmlFor="email" className="block text-sm font-semibold mb-1">
-                        Email Address <span className="text-red-600">*</span>
+                      <label htmlFor="phone" className="block text-sm font-semibold mb-1">
+                        Téléphone / WhatsApp <span className="text-red-600">*</span>
                       </label>
                       <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="john@example.com"
-                        value={formData.email}
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="+229 01 41 60 83 39"
+                        value={formData.phone}
                         onChange={handleChange}
                         disabled={submitting}
-                        className={`w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 ${
-                          formErrors.email
+                        className={`w-full px-4 py-2.5 rounded-lg border focus:outline-none focus:ring-2 ${
+                          formErrors.phone
                             ? "border-red-500 focus:ring-red-400"
                             : "border-gray-300 focus:ring-blue-400"
                         }`}
-                        aria-invalid={!!formErrors.email}
-                        aria-describedby={formErrors.email ? "email-error" : undefined}
+                        aria-invalid={!!formErrors.phone}
+                        aria-describedby={formErrors.phone ? "phone-error" : undefined}
                         required
-                        autoComplete="email"
+                        autoComplete="tel"
                       />
-                      {formErrors.email && (
-                        <p id="email-error" className="mt-1 text-xs text-red-600" role="alert">
-                          {formErrors.email}
+                      {formErrors.phone && (
+                        <p id="phone-error" className="mt-1 text-xs text-red-600" role="alert">
+                          {formErrors.phone}
                         </p>
                       )}
                     </div>
 
-                    {/* Date */}
+                    {/* Spécialité */}
                     <div>
-                      <label htmlFor="date" className="block text-sm font-semibold mb-1">
-                        Preferred Date <span className="text-red-600">*</span>
+                      <label htmlFor="specialty" className="block text-sm font-semibold mb-1">
+                        Spécialité <span className="text-red-600">*</span>
                       </label>
-                      <input
-                        id="date"
-                        name="date"
-                        type="date"
-                        value={formData.date}
+                      <select
+                        id="specialty"
+                        name="specialty"
+                        value={formData.specialty}
                         onChange={handleChange}
                         disabled={submitting}
-                        min={new Date().toISOString().split("T")[0]}
-                        className={`w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 ${
-                          formErrors.date
+                        className={`w-full px-4 py-2.5 rounded-lg border bg-white focus:outline-none focus:ring-2 ${
+                          formErrors.specialty
                             ? "border-red-500 focus:ring-red-400"
                             : "border-gray-300 focus:ring-blue-400"
                         }`}
-                        aria-invalid={!!formErrors.date}
-                        aria-describedby={formErrors.date ? "date-error" : undefined}
+                        aria-invalid={!!formErrors.specialty}
                         required
-                      />
-                      {formErrors.date && (
-                        <p id="date-error" className="mt-1 text-xs text-red-600" role="alert">
-                          {formErrors.date}
+                      >
+                        <option value="">Choisir une spécialité</option>
+                        {SPECIALTIES.map((s) => (
+                          <option key={s.id} value={s.label}>
+                            {s.label}
+                          </option>
+                        ))}
+                      </select>
+                      {formErrors.specialty && (
+                        <p className="mt-1 text-xs text-red-600" role="alert">
+                          {formErrors.specialty}
                         </p>
                       )}
                     </div>
 
-                    {/* Time */}
-                    <div>
-                      <label htmlFor="time" className="block text-sm font-semibold mb-1">
-                        Preferred Time <span className="text-red-600">*</span>
-                      </label>
-                      <input
-                        id="time"
-                        name="time"
-                        type="time"
-                        value={formData.time}
-                        onChange={handleChange}
-                        disabled={submitting}
-                        min="08:00"
-                        max="18:00"
-                        className={`w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 ${
-                          formErrors.time
-                            ? "border-red-500 focus:ring-red-400"
-                            : "border-gray-300 focus:ring-blue-400"
-                        }`}
-                        aria-invalid={!!formErrors.time}
-                        aria-describedby={formErrors.time ? "time-error" : undefined}
-                        required
-                      />
-                      <p className="mt-1 text-xs text-gray-500 select-none">
-                        Available between 08:00 and 18:00
-                      </p>
-                      {formErrors.time && (
-                        <p id="time-error" className="mt-1 text-xs text-red-600" role="alert">
-                          {formErrors.time}
-                        </p>
-                      )}
+                    {/* Date et créneau */}
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <label htmlFor="date" className="block text-sm font-semibold mb-1">
+                          Date <span className="text-red-600">*</span>
+                        </label>
+                        <input
+                          id="date"
+                          name="date"
+                          type="date"
+                          value={formData.date}
+                          onChange={handleChange}
+                          disabled={submitting}
+                          min={new Date().toISOString().split("T")[0]}
+                          className={`w-full px-3 py-2.5 rounded-lg border focus:outline-none focus:ring-2 ${
+                            formErrors.date
+                              ? "border-red-500 focus:ring-red-400"
+                              : "border-gray-300 focus:ring-blue-400"
+                          }`}
+                          aria-invalid={!!formErrors.date}
+                          required
+                        />
+                        {formErrors.date && (
+                          <p className="mt-1 text-xs text-red-600" role="alert">
+                            {formErrors.date}
+                          </p>
+                        )}
+                      </div>
+                      <div>
+                        <label htmlFor="time" className="block text-sm font-semibold mb-1">
+                          Créneau <span className="text-red-600">*</span>
+                        </label>
+                        <select
+                          id="time"
+                          name="time"
+                          value={formData.time}
+                          onChange={handleChange}
+                          disabled={submitting}
+                          className={`w-full px-3 py-2.5 rounded-lg border bg-white focus:outline-none focus:ring-2 ${
+                            formErrors.time
+                              ? "border-red-500 focus:ring-red-400"
+                              : "border-gray-300 focus:ring-blue-400"
+                          }`}
+                          aria-invalid={!!formErrors.time}
+                          required
+                        >
+                          <option value="">Choisir</option>
+                          {TIME_SLOTS.map((slot) => (
+                            <option key={slot} value={slot}>
+                              {slot.replace(":", "h")}
+                            </option>
+                          ))}
+                        </select>
+                        {formErrors.time && (
+                          <p className="mt-1 text-xs text-red-600" role="alert">
+                            {formErrors.time}
+                          </p>
+                        )}
+                      </div>
                     </div>
 
-                    {/* Submission Error */}
+                    {/* Motif */}
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-semibold mb-1">
+                        Motif de consultation (facultatif)
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={2}
+                        placeholder="Ex. : douleurs d’oreille, vertiges, bilan de santé…"
+                        value={formData.message}
+                        onChange={handleChange}
+                        disabled={submitting}
+                        className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 resize-vertical"
+                      />
+                    </div>
+
                     {submitError && (
                       <div
                         className="flex items-center gap-2 text-red-600 font-semibold justify-center"
                         role="alert"
                       >
-                        <FaTimesCircle aria-hidden="true" className="w-5 h-5" />
+                        <FaClock aria-hidden="true" className="w-5 h-5" />
                         <span>{submitError}</span>
                       </div>
                     )}
 
-                    {/* Submit Button */}
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="w-full bg-blue-700 hover:bg-blue-800 disabled:opacity-60 transition-colors text-white font-semibold py-4 rounded-lg flex justify-center items-center gap-2 focus:outline-none focus:ring-4 focus:ring-blue-300"
+                      className="w-full bg-blue-700 hover:bg-blue-800 disabled:opacity-60 transition-colors text-white font-semibold py-3.5 rounded-lg flex justify-center items-center gap-2 focus:outline-none focus:ring-4 focus:ring-blue-300"
                       aria-live="polite"
                     >
                       {submitting ? (
@@ -530,12 +628,21 @@ export default function HomeHero() {
                               d="M4 12a8 8 0 018-8v8H4z"
                             ></path>
                           </svg>
-                          Scheduling...
+                          Envoi en cours…
                         </>
                       ) : (
-                        "Confirm Appointment"
+                        <>
+                          <FaWhatsapp className="w-5 h-5" aria-hidden="true" />
+                          Confirmer et envoyer sur WhatsApp
+                        </>
                       )}
                     </button>
+                    <p className="text-[11px] text-gray-500 text-center flex items-center justify-center gap-1">
+                      <FaPhoneAlt aria-hidden="true" /> Ou appelez le{" "}
+                      <a href={`tel:${site.phoneRaw}`} className="font-semibold text-blue-700">
+                        {site.phone}
+                      </a>
+                    </p>
                   </form>
                 )}
               </div>

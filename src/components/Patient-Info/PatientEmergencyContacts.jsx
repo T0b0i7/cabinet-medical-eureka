@@ -5,24 +5,24 @@ import React from "react";
 const emergencyContactsData = [
   {
     id: 1,
-    name: "Jane Doe",
-    relationship: "Spouse",
-    phone: "+1 (555) 123-4567",
-    email: "jane.doe@example.com",
+    name: "Adjovi Hounsou",
+    relationship: "Conjoint(e)",
+    phone: "+229 01 41 60 83 39",
+    email: "adjovi.hounsou@example.bj",
   },
   {
     id: 2,
-    name: "Michael Smith",
-    relationship: "Brother",
-    phone: "+1 (555) 987-6543",
-    email: "michael.smith@example.com",
+    name: "Isidore Aholou",
+    relationship: "Frère",
+    phone: "+229 01 97 12 45 67",
+    email: "isidore.aholou@example.bj",
   },
   {
     id: 3,
-    name: "Emily Johnson",
-    relationship: "Friend",
-    phone: "+1 (555) 555-7890",
-    email: "emily.johnson@example.com",
+    name: "Estelle Agossou",
+    relationship: "Ami(e)",
+    phone: "+229 01 95 33 21 08",
+    email: "estelle.agossou@example.bj",
   },
 ];
 
@@ -34,14 +34,14 @@ function ContactCard({ name, relationship, phone, email }) {
   return (
     <li
       className="border border-gray-300 rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow"
-      aria-label={`Emergency contact: ${name}, relationship: ${relationship}`}
+      aria-label={`Contact d’urgence : ${name}, lien : ${relationship}`}
     >
       <h3 className="text-xl font-semibold text-gray-900">{name}</h3>
       <p className="text-gray-700 mb-2">
-        <span className="font-semibold">Relationship:</span> {relationship}
+        <span className="font-semibold">Lien :</span> {relationship}
       </p>
       <p className="text-gray-700 mb-1">
-        <span className="font-semibold">Phone:</span>{" "}
+        <span className="font-semibold">Téléphone:</span>{" "}
         <a
           href={telLink}
           className="text-blue-700 underline hover:text-blue-800"
@@ -50,7 +50,7 @@ function ContactCard({ name, relationship, phone, email }) {
         </a>
       </p>
       <p className="text-gray-700">
-        <span className="font-semibold">Email:</span>{" "}
+        <span className="font-semibold">E-mail:</span>{" "}
         <a
           href={`mailto:${email}`}
           className="text-blue-700 underline hover:text-blue-800"
@@ -72,7 +72,7 @@ export default function PatientEmergencyContacts() {
         id="emergency-contacts-heading"
         className="text-3xl font-extrabold text-blue-700 mb-6 text-center"
       >
-        Emergency Contacts
+        Contacts d’urgence
       </h2>
 
       <ul className="space-y-6">

@@ -5,44 +5,44 @@ import React from "react";
 const faqData = [
   {
     id: 1,
-    question: "What healthcare services do you provide?",
+    question: "Quels services propose le Cabinet Médical EURÊKA ?",
     answer:
-      "We provide a comprehensive range of healthcare services including general check-ups, specialized treatments, diagnostics, emergency care, and telemedicine services tailored to meet your needs.",
+      "Le cabinet propose des consultations d’ORL, de chirurgie cervico-faciale et de médecine générale, des bilans de santé, le suivi des maladies chroniques et la prise en charge des urgences légères.",
   },
   {
     id: 2,
-    question: "How do I book or reschedule an appointment?",
+    question: "Comment prendre ou modifier un rendez-vous ?",
     answer:
-      "Booking or rescheduling can be done easily through our online scheduling system or by contacting our support team via phone or email at your convenience.",
+      "Vous pouvez réserver ou modifier un rendez-vous en ligne, par téléphone au +229 01 41 60 83 39 ou par WhatsApp, 7j/7 de 08h00 à 18h00.",
   },
   {
     id: 3,
-    question: "Can I access my medical records online?",
+    question: "Puis-je accéder à mon dossier patient en ligne ?",
     answer:
-      "Yes, you can securely access your medical records anytime through our patient portal, where you can view, download, and request updates to your records.",
+      "Oui, vos informations médicales sont accessibles de façon sécurisée depuis votre espace patient après connexion.",
   },
   {
     id: 4,
-    question: "What payment and insurance options do you accept?",
+    question: "Quels moyens de paiement et assurances acceptez-vous ?",
     answer:
-      "We accept most major insurance providers and offer flexible payment options. For detailed information about coverage and billing, please contact our billing department.",
+      "Le cabinet accepte les paiements en espèces et par mobile money, ainsi que plusieurs assurances et mutuelles. Contactez l’accueil pour vérifier votre prise en charge.",
   },
   {
     id: 5,
-    question: "How can I get support or assistance with billing?",
+    question: "Comment obtenir de l’aide pour la facturation ?",
     answer:
-      "Our dedicated billing support team is available 24/7 to assist you with any questions or concerns regarding your bills, insurance claims, or patient assistance programs.",
+      "Notre équipe d’accueil vous accompagne pour toute question relative aux factures, aux remboursements et aux modalités de prise en charge.",
   },
 ];
 
 export default function FaqsAccordion() {
   return (
     <section
-      aria-label="Frequently Asked Questions"
+      aria-label="Questions fréquentes"
       className="max-w-3xl mx-auto px-6 py-16 my-[-30px]"
     >
       <h2 className="text-4xl font-extrabold text-gray-900 mb-14 text-center select-text">
-        Frequently Asked <span className="text-blue-700">Questions</span>
+        <span className="text-blue-700">Questions</span> fréquentes
       </h2>
 
       <div className="divide-y divide-gray-300">

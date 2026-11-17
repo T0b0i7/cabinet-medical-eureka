@@ -15,16 +15,16 @@ export default function FaqsContactSupport() {
 
   const validate = () => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Name is required.";
+    if (!formData.name.trim()) newErrors.name = "Le nom est requis.";
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required.";
+      newErrors.email = "L’adresse e-mail est requise.";
     } else if (
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email.trim())
     ) {
-      newErrors.email = "Invalid email address.";
+      newErrors.email = "Adresse e-mail invalide.";
     }
-    if (!formData.subject.trim()) newErrors.subject = "Subject is required.";
-    if (!formData.message.trim()) newErrors.message = "Message is required.";
+    if (!formData.subject.trim()) newErrors.subject = "L’objet est requis.";
+    if (!formData.message.trim()) newErrors.message = "Le message est requis.";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -58,17 +58,17 @@ export default function FaqsContactSupport() {
 
   return (
     <section
-      aria-label="Contact support section"
+      aria-label="Contacter le cabinet"
       className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-16"
     >
       <h2 className="text-3xl font-extrabold text-black mb-8 text-center select-text">
-        Need More Help? <span className="text-blue-700">Contact Support</span>
+        Besoin d’aide ? <span className="text-blue-700">Contactez le cabinet</span>
       </h2>
 
       <p className="text-center text-gray-700 mb-12 max-w-xl mx-auto">
-        Our dedicated support team is here to assist you with any questions or
-        concerns. Fill out the form below or reach us directly via phone or
-        email.
+        Notre équipe est à votre disposition pour répondre à vos questions.
+        Remplissez le formulaire ci-dessous ou contactez-nous directement par
+        téléphone ou e-mail.
       </p>
 
       <div className="flex flex-col md:flex-row gap-12">
@@ -76,10 +76,10 @@ export default function FaqsContactSupport() {
         <div className="flex-1 flex flex-col bg-blue-50 rounded-xl p-8 shadow-md select-text">
           <div>
             <h3 className="text-xl font-semibold text-blue-700 mb-6">
-              Contact Information
+              Coordonnées
             </h3>
             <p className="mb-4 text-gray-700 leading-relaxed">
-              <strong>Phone:</strong>{" "}
+              <strong>Téléphone:</strong>{" "}
               <a
                 href="tel:+1234567890"
                 className="text-blue-700 hover:underline"
@@ -89,39 +89,39 @@ export default function FaqsContactSupport() {
               </a>
             </p>
             <p className="mb-4 text-gray-700 leading-relaxed">
-              <strong>Email:</strong>{" "}
+              <strong>E-mail:</strong>{" "}
               <a
                 href="mailto:support@yourhealthcare.com"
                 className="text-blue-700 hover:underline"
-                aria-label="Send email to support"
+                aria-label="Envoyer un e-mail au cabinet"
               >
                 support@yourhealthcare.com
               </a>
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              <strong>Live Chat:</strong>{" "}
+              <strong>WhatsApp :</strong>{" "}
               <a
                 href="#"
                 className="text-blue-700 hover:underline"
                 aria-label="Open live chat support"
                 onClick={(e) => {
                   e.preventDefault();
-                  alert("Live chat feature coming soon!");
+                  alert("La messagerie en direct arrive bientôt !");
                 }}
               >
-                Start a live chat
+                Discuter sur WhatsApp
               </a>
             </p>
           </div>
 
           <p className="text-gray-600 italic mb-6">
-            Our support team is available 24/7 to assist you.
+            Notre équipe est disponible 24h/24 pour vous accompagner.
           </p>
 
           {/* Map */}
           <div className="w-full aspect-[4/3] rounded-md overflow-hidden shadow-inner">
             <iframe
-              title="Support Location Map"
+              title="Localisation du cabinet"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0193981155386!2d-122.41941538468132!3d37.77492927975985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064a1a4f2eb%3A0x8f63db167c38bbd1!2sSan%20Francisco%20City%20Hall!5e0!3m2!1sen!2sus!4v1691660000000!5m2!1sen!2sus"
               width="100%"
               height="100%"
@@ -144,7 +144,7 @@ export default function FaqsContactSupport() {
               className="mb-6 p-4 bg-green-100 text-green-800 rounded border border-green-300 select-text"
               role="alert"
             >
-              Thank you for contacting us! We will get back to you shortly.
+              Merci de nous avoir écrit ! Nous vous répondrons sous peu.
             </div>
           )}
 
@@ -168,7 +168,7 @@ export default function FaqsContactSupport() {
               className={`w-full rounded-md border px-3 py-2 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-transparent transition ${
                 errors.name ? "border-red-500" : "border-gray-300"
               }`}
-              placeholder="Your full name"
+              placeholder="Votre nom complet"
               aria-invalid={!!errors.name}
               aria-describedby={errors.name ? "name-error" : undefined}
             />
@@ -188,7 +188,7 @@ export default function FaqsContactSupport() {
               htmlFor="email"
               className="block text-sm font-medium text-gray-900 mb-1 select-text"
             >
-              Email<span className="text-red-600">*</span>
+              E-mail<span className="text-red-600">*</span>
             </label>
             <input
               id="email"
@@ -203,7 +203,7 @@ export default function FaqsContactSupport() {
               className={`w-full rounded-md border px-3 py-2 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-transparent transition ${
                 errors.email ? "border-red-500" : "border-gray-300"
               }`}
-              placeholder="you@example.com"
+              placeholder="vous@exemple.com"
               aria-invalid={!!errors.email}
               aria-describedby={errors.email ? "email-error" : undefined}
             />
@@ -223,7 +223,7 @@ export default function FaqsContactSupport() {
               htmlFor="subject"
               className="block text-sm font-medium text-gray-900 mb-1 select-text"
             >
-              Subject<span className="text-red-600">*</span>
+              Objet<span className="text-red-600">*</span>
             </label>
             <input
               id="subject"
@@ -238,7 +238,7 @@ export default function FaqsContactSupport() {
               className={`w-full rounded-md border px-3 py-2 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-transparent transition ${
                 errors.subject ? "border-red-500" : "border-gray-300"
               }`}
-              placeholder="Brief summary"
+              placeholder="Résumé de votre demande"
               aria-invalid={!!errors.subject}
               aria-describedby={errors.subject ? "subject-error" : undefined}
             />
@@ -273,7 +273,7 @@ export default function FaqsContactSupport() {
               className={`w-full rounded-md border px-3 py-2 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-transparent transition resize-none ${
                 errors.message ? "border-red-500" : "border-gray-300"
               }`}
-              placeholder="Write your detailed message here..."
+              placeholder="Décrivez votre demande en détail…"
               aria-invalid={!!errors.message}
               aria-describedby={errors.message ? "message-error" : undefined}
             />
@@ -292,7 +292,7 @@ export default function FaqsContactSupport() {
             type="submit"
             className="w-full bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-md py-3 transition focus:outline-none focus:ring-4 focus:ring-blue-400"
           >
-            Send Message
+            Envoyer le message
           </button>
         </form>
       </div>

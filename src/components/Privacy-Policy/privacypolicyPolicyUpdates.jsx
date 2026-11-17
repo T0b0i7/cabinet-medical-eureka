@@ -11,16 +11,12 @@ function PolicyUpdatesSection() {
           id="policy-updates-heading"
           className="mb-6 text-3xl font-extrabold text-blue-700"
         >
-          Policy Updates
+          Mises à jour de la politique
         </h2>
 
-        <p className="mb-6 leading-relaxed text-gray-800 text-lg">
-          We may update this Privacy Policy occasionally to reflect changes in our practices or legal obligations. When updates occur, we will revise the effective date at the bottom of this policy.
-        </p>
+        <p className="mb-6 leading-relaxed text-gray-800 text-lg">Nous pouvons mettre à jour cette politique de confidentialité afin de tenir compte de l’évolution de nos pratiques ou de nos obligations légales. La date de dernière mise à jour sera alors modifiée.</p>
 
-        <p className="leading-relaxed text-gray-800 text-lg">
-          We encourage you to check this policy regularly to stay informed about how we protect your information. Continued use of our services after any updates constitutes your acceptance of the revised policy.
-        </p>
+        <p className="leading-relaxed text-gray-800 text-lg">Nous vous invitons à consulter régulièrement cette page pour rester informé de la manière dont nous protégeons vos informations. L’utilisation continue de nos services vaut acceptation des mises à jour.</p>
       </div>
     </section>
   );

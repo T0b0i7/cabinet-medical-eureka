@@ -15,38 +15,38 @@ const steps = [
   {
     id: 1,
     icon: <FaClipboardList className="text-blue-600" size={28} aria-hidden="true" />,
-    title: "Step 1: Registration",
-    description: "Provide personal details and medical history at the reception.",
+    title: "Étape 1 : Accueil",
+    description: "Présentez-vous à l’accueil avec vos informations et vos antécédents médicaux.",
   },
   {
     id: 2,
     icon: <FaUserCheck className="text-blue-600" size={28} aria-hidden="true" />,
-    title: "Step 2: Initial Screening",
-    description: "Vitals are checked and symptoms reviewed by our nursing staff.",
+    title: "Étape 2 : Pré-consultation",
+    description: "Les constantes vitales sont relevées et vos symptômes sont notés par l’équipe soignante.",
   },
   {
     id: 3,
     icon: <FaStethoscope className="text-blue-600" size={28} aria-hidden="true" />,
-    title: "Step 3: Doctor Consultation",
-    description: "Meet your assigned doctor for detailed diagnosis and advice.",
+    title: "Étape 3 : Consultation",
+    description: "Le praticien vous reçoit pour un examen détaillé et vous explique son diagnostic.",
   },
   {
     id: 4,
     icon: <FaFileMedical className="text-blue-600" size={28} aria-hidden="true" />,
-    title: "Step 4: Diagnostic Tests",
-    description: "Undergo lab tests, scans, or imaging as recommended.",
+    title: "Étape 4 : Examens complémentaires",
+    description: "Les examens nécessaires sont réalisés ou prescrits selon votre situation.",
   },
   {
     id: 5,
     icon: <FaNotesMedical className="text-blue-600" size={28} aria-hidden="true" />,
-    title: "Step 5: Prescription & Plan",
-    description: "Receive your medication and a personalized care plan.",
+    title: "Étape 5 : Ordonnance et plan de soins",
+    description: "Vous recevez votre ordonnance et un plan de suivi adapté.",
   },
   {
     id: 6,
     icon: <FaHome className="text-blue-600" size={28} aria-hidden="true" />,
-    title: "Step 6: Discharge & Follow-up",
-    description: "Return home with aftercare guidance and follow-up schedule.",
+    title: "Étape 6 : Suivi",
+    description: "Vous repartez avec les conseils nécessaires et une date de suivi si besoin.",
   },
 ];
 
@@ -72,19 +72,19 @@ const PatientCareProcess = () => {
   return (
     <section
       role="region"
-      aria-label="Patient Care Process"
+      aria-label="Parcours de soins"
       className="bg-white py-20 px-6 md:px-12 my-[-30px]"
     >
       <div className="max-w-7xl mx-auto">
         <header className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
-            Patient Care{" "}
+            Parcours{" "}
             <span className="text-blue-700 underline decoration-blue-300 decoration-4 underline-offset-4">
-              Process
+              de soins
             </span>
           </h2>
           <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-light">
-            A step-by-step care system designed to ensure quality, comfort, and efficiency for every patient.
+            Un parcours simple et organisé pour garantir qualité, confort et rapidité à chaque patient.
           </p>
         </header>
 

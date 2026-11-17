@@ -7,33 +7,33 @@ import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 const testimonials = [
   {
     id: 1,
-    name: "Emily Carter",
+    name: "Adjovi Hounsou",
     role: "Patient",
     avatar:
       "https://images.unsplash.com/photo-1659353887871-b0ba4b84dad5?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8",
     rating: 5,
     feedback:
-      "The care I received was exceptional. The doctors were attentive and truly cared about my recovery.",
+      "J’ai été reçue avec beaucoup d’attention. Le médecin a pris le temps de m’expliquer mon traitement et j’ai rapidement constaté une amélioration.",
   },
   {
     id: 2,
-    name: "James Wilson",
+    name: "Koffi Zinsou",
     role: "Patient",
     avatar:
       "https://images.unsplash.com/photo-1620293023555-272e1a661b26?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHx8",
     rating: 4.5,
     feedback:
-      "Amazing staff and facilities. The process was smooth and I felt supported every step of the way.",
+      "Le cabinet est propre, bien organisé et le personnel est très accueillant. La prise de rendez-vous par WhatsApp est très pratique.",
   },
   {
     id: 3,
-    name: "Sophia Lee",
+    name: "Grâce Ahouandjinou",
     role: "Patient",
     avatar:
       "https://plus.unsplash.com/premium_photo-1674499074395-5277fdd707ee?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8",
     rating: 4,
     feedback:
-      "Professional, caring, and knowledgeable team. Highly recommend their services for anyone seeking quality healthcare.",
+      "Une équipe professionnelle et à l’écoute. Je recommande vivement le Cabinet Médical EURÊKA à Porto-Novo.",
   },
 ];
 
@@ -70,7 +70,7 @@ const renderStars = (rating) => {
 const AboutTestimonials = () => {
   return (
     <section
-      aria-label="Client Testimonials"
+      aria-label="Témoignages des patients"
       className="bg-white py-20 px-6 sm:px-12 max-w-7xl mx-auto my-[-30px]"
     >
       <motion.div
@@ -81,10 +81,10 @@ const AboutTestimonials = () => {
         className="max-w-3xl mx-auto text-center mb-16"
       >
         <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
-          What Our <span className="text-blue-600">Clients Say</span>
+          Ce que disent <span className="text-blue-600">nos patients</span>
         </h2>
         <p className="mt-4 text-gray-600 text-lg sm:text-xl font-light">
-          Hear from some of the patients who trusted us for their care.
+          Découvrez les retours de patients qui nous ont confié leur santé.
         </p>
       </motion.div>
 

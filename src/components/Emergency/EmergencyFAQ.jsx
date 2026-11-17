@@ -5,29 +5,29 @@ import { motion } from "framer-motion";
 
 const faqItems = [
   {
-    question: "What should I do if I witness an emergency?",
+    question: "Que faire en cas d’urgence ?",
     answer:
-      "Stay calm, assess the situation carefully, call emergency services immediately, and provide clear details about the location and nature of the emergency.",
+      "Restez calme, évaluez la situation, appelez immédiatement le cabinet au +229 01 41 60 83 39 et donnez des informations précises sur le lieu et la nature de l’urgence.",
   },
   {
-    question: "When should I call emergency services?",
+    question: "Quand faut-il appeler le cabinet ?",
     answer:
-      "Call emergency services whenever there is an immediate threat to life, health, property, or environment requiring urgent assistance.",
+      "Appelez immédiatement les secours en cas de menace vitale ou de danger immédiat pour votre santé ou celle d’autrui.",
   },
   {
-    question: "How do I provide accurate information to responders?",
+    question: "Comment donner des informations précises aux secours ?",
     answer:
-      "Give your exact location, describe the emergency clearly, mention the number of people involved and any injuries, and stay on the line until help arrives.",
+      "Indiquez votre emplacement exact, décrivez clairement la situation, le nombre de personnes concernées et les symptômes observés.",
   },
   {
-    question: "Can I help before emergency responders arrive?",
+    question: "Puis-je aider avant l’arrivée des secours ?",
     answer:
-      "Only if it is safe to do so. Avoid putting yourself or others at risk. Follow instructions from emergency personnel once they arrive.",
+      "Uniquement si cela ne présente aucun danger. Ne mettez personne en risque et suivez les consignes des professionnels.",
   },
   {
-    question: "What information should I have ready when calling emergency services?",
+    question: "Quelles informations préparer avant d’appeler ?",
     answer:
-      "Your location, the nature of the emergency, number of people involved, any immediate dangers, and your contact information if asked.",
+      "Votre emplacement, la nature de l’urgence, le nombre de personnes concernées, les dangers immédiats et vos coordonnées.",
   },
 ];
 
@@ -90,7 +90,7 @@ const EmergencyFAQ = () => {
 
   return (
     <section
-      aria-label="Emergency Frequently Asked Questions"
+      aria-label="Questions fréquentes sur les urgences"
       className="max-w-4xl mx-auto p-6 sm:p-10 bg-white rounded-xl shadow-lg text-black my-5"
     >
       <h2 className="text-3xl font-extrabold text-blue-700 mb-8 text-center">

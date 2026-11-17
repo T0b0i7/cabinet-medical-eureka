@@ -11,34 +11,24 @@ function CookiesPolicySection() {
           id="cookies-policy-heading"
           className="text-3xl font-extrabold text-blue-700 mb-6"
         >
-          Cookies and Tracking Technologies
+          Cookies et technologies de suivi
         </h2>
 
-        <p className="text-gray-800 text-lg leading-relaxed mb-6">
-          We use cookies and similar tracking technologies to enhance your experience, analyze site traffic, and deliver personalized content. Cookies are small text files stored on your device that help us recognize you and remember your preferences.
-        </p>
+        <p className="text-gray-800 text-lg leading-relaxed mb-6">Nous utilisons des cookies et technologies similaires pour améliorer votre expérience, analyser la fréquentation du site et proposer un contenu adapté. Un cookie est un petit fichier texte stocké sur votre appareil.</p>
 
         <h3 className="text-xl font-semibold text-blue-600 mb-3">
-          Types of Cookies We Use:
+          Types de cookies utilisés :
         </h3>
 
         <ul className="max-w-xl list-disc list-inside space-y-3 text-gray-800 text-lg">
-          <li>
-            <strong>Essential Cookies:</strong> Required for the basic functioning of the website.
-          </li>
-          <li>
-            <strong>Performance Cookies:</strong> Help us understand how visitors interact with our site.
-          </li>
-          <li>
-            <strong>Functional Cookies:</strong> Remember your preferences and settings.
-          </li>
-          <li>
-            <strong>Advertising Cookies:</strong> Used to deliver relevant ads based on your interests.
-          </li>
+          <li>Nécessaires au fonctionnement de base du site.</li>
+          <li>Nous aident à comprendre comment les visiteurs utilisent le site.</li>
+          <li>Mémorisent vos préférences et vos paramètres.</li>
+          <li>Utilisés pour vous proposer des contenus pertinents selon vos intérêts.</li>
         </ul>
 
         <p className="mt-6 text-gray-800 text-lg leading-relaxed">
-          You can control or disable cookies through your browser settings, but this may affect the functionality of the website.
+          Vous pouvez gérer ou désactiver les cookies depuis les paramètres de votre navigateur, ce qui peut toutefois affecter certaines fonctionnalités du site.
         </p>
       </div>
     </section>

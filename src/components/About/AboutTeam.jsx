@@ -27,8 +27,8 @@ const cardVariants = {
 const teamMembers = [
   {
     id: 1,
-    name: "Dr. Emma Johnson",
-    role: "Chief Medical Officer",
+    name: "Dr Romuald Adjakpa",
+    role: "Médecin-chef",
     image:
       "https://plus.unsplash.com/premium_photo-1661700176531-c8bd4603030f?w=400&auto=format&fit=crop&q=60",
     socials: {
@@ -39,8 +39,8 @@ const teamMembers = [
   },
   {
     id: 2,
-    name: "Dr. Michael Lee",
-    role: "Cardiologist",
+    name: "Dr Chantal Houngbédji",
+    role: "Oto-Rhino-Laryngologiste (ORL)",
     image:
       "https://plus.unsplash.com/premium_photo-1658506671316-0b293df7c72b?q=80&w=1170&auto=format&fit=crop",
     socials: {
@@ -51,8 +51,8 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: "Dr. Sophia Patel",
-    role: "Neurologist",
+    name: "Dr Barthélémy Gnonlonfoun",
+    role: "Chirurgien cervico-facial",
     image:
       "https://plus.unsplash.com/premium_photo-1681996426446-cd17659b35b7?w=400&auto=format&fit=crop&q=60",
     socials: {
@@ -63,8 +63,8 @@ const teamMembers = [
   },
   {
     id: 4,
-    name: "Dr. James Smith",
-    role: "Pediatrician",
+    name: "Dr Isidore Aholou",
+    role: "Médecin généraliste",
     image:
       "https://plus.unsplash.com/premium_photo-1661596987649-15ef3388e6a0?w=400&auto=format&fit=crop&q=60",
     socials: {
@@ -78,7 +78,7 @@ const teamMembers = [
 const AboutTeam = () => {
   return (
     <section
-      aria-label="Meet Our Team"
+      aria-label="Notre équipe"
       className="bg-white py-20 px-6 sm:px-12 max-w-7xl mx-auto"
     >
       {/* Section header */}
@@ -97,7 +97,7 @@ const AboutTeam = () => {
           tabIndex={-1}
           className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900"
         >
-          Meet Our <span className="text-blue-600">Team</span>
+          Notre <span className="text-blue-600">équipe</span>
         </motion.h2>
 
         <motion.p
@@ -111,8 +111,8 @@ const AboutTeam = () => {
           }}
           className="mt-4 text-gray-600 text-lg sm:text-xl font-light"
         >
-          Our dedicated experts are committed to providing the highest quality
-          care and innovation.
+          Des praticiens engagés pour vous offrir des soins de la plus haute
+          qualité, dans un esprit d’écoute et d’innovation.
         </motion.p>
       </motion.div>
 

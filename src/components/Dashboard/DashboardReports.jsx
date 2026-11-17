@@ -6,24 +6,24 @@ import { HiDownload, HiChartBar, HiUsers, HiCalendar } from 'react-icons/hi';
 const reportStats = [
   {
     id: 'revenue',
-    name: 'Revenue',
-    value: '$43,707',
+    name: 'Recettes',
+    value: '43 707 FCFA',
     icon: <HiDownload className="w-8 h-8 text-green-600" />,
-    description: 'Total revenue generated',
+    description: 'Recettes totales générées',
   },
   {
     id: 'users',
-    name: 'Users',
+    name: 'Patients actifs',
     value: '3,622',
     icon: <HiUsers className="w-8 h-8 text-blue-600" />,
-    description: 'Active users this month',
+    description: 'Patients actifs ce mois-ci',
   },
   {
     id: 'appointments',
-    name: 'Appointments',
+    name: 'Rendez-vous',
     value: '235',
     icon: <HiCalendar className="w-8 h-8 text-indigo-600" />,
-    description: 'Scheduled appointments',
+    description: 'Rendez-vous programmés',
   },
 ];
 
@@ -35,7 +35,7 @@ const DashboardReports = () => {
     setDownloading(true);
     // Simulate report download delay
     setTimeout(() => {
-      alert('Report downloaded successfully!');
+      alert('Rapport téléchargé avec succès !');
       setDownloading(false);
     }, 2000);
   };
@@ -52,12 +52,12 @@ const DashboardReports = () => {
           id="reports-title"
           className="text-3xl font-extrabold tracking-tight text-gray-900 select-none"
         >
-          Reports Overview
+          Rapports Vue d’ensemble
         </h2>
         <button
           onClick={handleDownloadReport}
           disabled={downloading}
-          aria-label="Download latest report"
+          aria-label="Télécharger latest report"
           className={`mt-4 sm:mt-0 inline-flex items-center gap-2 px-5 py-3 rounded-md font-semibold focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-1 transition
             ${
               downloading
@@ -90,7 +90,7 @@ const DashboardReports = () => {
           ) : (
             <HiDownload className="w-6 h-6" aria-hidden="true" />
           )}
-          Download Report
+          Télécharger le rapport
         </button>
       </header>
 
@@ -115,19 +115,19 @@ const DashboardReports = () => {
 
       {/* Chart Area */}
       <section
-        aria-label="Appointments and revenue trend chart"
+        aria-label="Évolution des rendez-vous et des recettes"
         className="bg-gray-50 rounded-xl p-8 shadow-md"
         style={{ minHeight: 280 }}
       >
         <h3 className="text-xl font-semibold text-gray-900 mb-6 select-none">
-          Monthly Appointments & Revenue
+          Rendez-vous et recettes du mois
         </h3>
 
         {/* Placeholder Chart (You can replace with real chart lib) */}
         <svg
           viewBox="0 0 600 250"
           role="img"
-          aria-label="Line chart showing appointments and revenue over months"
+          aria-label="Graphique des rendez-vous et des recettes par mois"
           className="w-full h-56"
           style={{ maxWidth: '100%' }}
         >
@@ -147,7 +147,7 @@ const DashboardReports = () => {
           {/* Y Axis */}
           <line x1="40" y1="20" x2="40" y2="220" stroke="#ccc" strokeWidth="1" />
 
-          {/* Revenue Line */}
+          {/* Recettes Line */}
           <path
             fill="url(#gradient-revenue)"
             stroke="#10b981"
@@ -156,7 +156,7 @@ const DashboardReports = () => {
             strokeLinecap="round"
           />
 
-          {/* Appointments Line */}
+          {/* Rendez-vous Line */}
           <path
             fill="url(#gradient-appointments)"
             stroke="#3b82f6"
@@ -166,7 +166,7 @@ const DashboardReports = () => {
           />
 
           {/* Labels */}
-          {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'].map(
+          {['Janv.', 'Févr.', 'Mars', 'Avr.', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.'].map(
             (month, i) => (
               <text
                 key={month}

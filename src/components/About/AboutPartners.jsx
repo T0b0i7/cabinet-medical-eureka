@@ -7,40 +7,40 @@ import { motion } from "framer-motion";
 const partnerList = [
   {
     id: 1,
-    name: "Global Health Inc.",
+    name: "CHU de Porto-Novo",
     logo: "https://globalhealth.co/wp-content/uploads/2023/05/global-health.png",
     website: "https://globalhealth.example.com",
   },
   {
     id: 2,
-    name: "MediCorp",
+    name: "Ordre des Médecins du Bénin",
     logo:
       "https://upload.wikimedia.org/wikipedia/commons/7/7d/Mediacorp_flat_logo_%282015%29.svg",
     website: "https://medicorp.example.com",
   },
   {
     id: 3,
-    name: "Wellness Partners",
+    name: "Laboratoire Santé Plus",
     logo:
       "https://wellnesspartnershealth.org/wp-content/uploads/2023/05/WELLNESS_copy-removebg-preview-1.png",
     website: "https://wellnesspartners.example.com",
   },
   {
     id: 4,
-    name: "HealthPlus",
+    name: "Pharmacie de la Paix",
     logo: "https://www.healthplus.co.uk/images/simplecms/logo_healthpluslogo.png",
     website: "https://healthplus.example.com",
   },
   {
     id: 5,
-    name: "CareConnect",
+    name: "Réseau des cliniques du Ouémé",
     logo:
       "https://images.squarespace-cdn.com/content/v1/607d8d759f6f9a4d163f12c4/1621958541204-7NS60OZ2DMEHJVKC0921/logo.png",
     website: "https://careconnect.example.com",
   },
   {
     id: 6,
-    name: "LifeLine",
+    name: "Croix-Rouge Bénin",
     logo: "https://www.seniorliving.org/app/uploads/2019/01/Lifeline-Logo.png",
     website: "https://lifeline.example.com",
   },
@@ -67,7 +67,7 @@ const partnerAnimation = {
 export default function AboutPartners() {
   return (
     <section
-      aria-label="Our Partners"
+      aria-label="Nos partenaires"
       className="bg-white py-20 px-6 sm:px-12 max-w-7xl mx-auto"
     >
       {/* Heading and intro */}
@@ -79,10 +79,10 @@ export default function AboutPartners() {
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
         <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
-          Trusted <span className="text-blue-600">Partners</span>
+          Nos <span className="text-blue-600">partenaires</span>
         </h2>
         <p className="mt-4 text-gray-600 text-lg sm:text-xl font-light">
-          Collaborating with industry leaders to deliver excellence.
+          Des partenaires de confiance pour des soins d’excellence.
         </p>
       </motion.div>
 

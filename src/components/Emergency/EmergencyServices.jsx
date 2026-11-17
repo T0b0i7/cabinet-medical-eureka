@@ -5,19 +5,20 @@ const EmergencyServices = () => {
   // Emergency services section with details and call-to-action button
   return (
     <section
-      aria-label="Overview of Emergency Services"
+      aria-label="Prise en charge des urgences légères"
       className="bg-white text-black py-12 px-6 sm:px-12 md:px-20 lg:px-32 my-10"
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 md:gap-24">
         {/* Left side content: heading, description, services list and button */}
         <div className="md:flex-1 max-w-lg">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-blue-700 mb-6 leading-tight">
-            <span className="text-black">Our Emergency</span> Services
+            <span className="text-black">Nos urgences</span> légères
           </h2>
 
           <p className="text-gray-800 text-base sm:text-lg mb-8 leading-relaxed">
-            We provide round-the-clock emergency care with a dedicated team ready
-            to assist you in critical situations. Our services include:
+            Le cabinet prend en charge les urgences légères 7 jours sur 7, de
+            08h00 à 18h00. Pour toute situation grave, contactez les secours.
+            Notre prise en charge comprend :
           </p>
 
           <ul className="space-y-5 text-gray-700 text-sm sm:text-base">
@@ -38,7 +39,7 @@ const EmergencyServices = () => {
                     <circle cx="12" cy="12" r="10" />
                   </svg>
                 ),
-                label: "24/7 Emergency Room Access",
+                label: "Accueil 7j/7 de 08h00 à 18h00",
               },
               {
                 icon: (
@@ -57,7 +58,7 @@ const EmergencyServices = () => {
                     <path d="M3 10a1 1 0 001 1h16a1 1 0 001-1" />
                   </svg>
                 ),
-                label: "Ambulance and Medical Transport",
+                label: "Orientation vers les structures adaptées",
               },
               {
                 icon: (
@@ -75,7 +76,7 @@ const EmergencyServices = () => {
                     <path d="M5.5 21a8.38 8.38 0 0113 0" />
                   </svg>
                 ),
-                label: "Trauma and Critical Care",
+                label: "Petits traumatismes et soins courants",
               },
               {
                 icon: (
@@ -92,7 +93,7 @@ const EmergencyServices = () => {
                     <path d="M12 12v6m0 0v-6m0 0a4 4 0 114 4" />
                   </svg>
                 ),
-                label: "Cardiac and Stroke Care",
+                label: "Évaluation rapide et orientation médicale",
               },
             ].map(({ icon, label }, idx) => (
               <li key={idx} className="flex items-center gap-3">
@@ -105,10 +106,10 @@ const EmergencyServices = () => {
           <button
             type="button"
             className="mt-10 px-8 py-3 bg-blue-700 text-white font-semibold rounded-lg shadow-md hover:bg-blue-800 transition-colors focus:outline-none focus:ring-4 focus:ring-blue-300"
-            aria-label="Call Emergency Services"
-            onClick={() => window.open("tel:911")}
+            aria-label="Appeler le cabinet"
+            onClick={() => window.open("tel:+2290141608339")}
           >
-            Contact Emergency Services
+            Contacter les urgences
           </button>
         </div>
 
@@ -116,7 +117,7 @@ const EmergencyServices = () => {
         <div className="md:flex-1 flex justify-center md:justify-end">
           <img
             src="https://images.unsplash.com/photo-1619719341796-44c4d2e0eb5a?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Emergency responders assisting a patient"
+            alt="Équipe soignante prenant en charge un patient"
             className="rounded-xl shadow-lg object-cover h-auto max-w-full"
             loading="lazy"
             decoding="async"

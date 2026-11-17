@@ -5,18 +5,18 @@ import React, { useState } from "react";
 const initialVitals = [
   {
     id: 1,
-    type: "Blood Pressure",
+    type: "Tension artérielle",
     unit: "mmHg",
     values: [
       { date: "2024-08-01", value: "120/80" }, // Normal
       { date: "2024-07-25", value: "130/85" }, // Slightly elevated
-      { date: "2024-07-18", value: "140/90" }, // High
+      { date: "2024-07-18", value: "140/90" }, // Élevée
     ],
     normalRange: "90/60 - 120/80",
   },
   {
     id: 2,
-    type: "Heart Rate",
+    type: "Fréquence cardiaque",
     unit: "bpm",
     values: [
       { date: "2024-08-01", value: 72 },
@@ -27,7 +27,7 @@ const initialVitals = [
   },
   {
     id: 3,
-    type: "Body Temperature",
+    type: "Température corporelle",
     unit: "°C",
     values: [
       { date: "2024-08-01", value: 36.6 },
@@ -38,7 +38,7 @@ const initialVitals = [
   },
   {
     id: 4,
-    type: "Respiratory Rate",
+    type: "Fréquence respiratoire",
     unit: "breaths/min",
     values: [
       { date: "2024-08-01", value: 16 },
@@ -49,23 +49,23 @@ const initialVitals = [
   },
   {
     id: 5,
-    type: "Oxygen Saturation",
+    type: "Saturation en oxygène",
     unit: "%",
     values: [
       { date: "2024-08-01", value: 98 },
       { date: "2024-07-25", value: 95 },
-      { date: "2024-07-18", value: 92 }, // Low
+      { date: "2024-07-18", value: 92 }, // Faible
     ],
     normalRange: "95 - 100",
   },
   {
     id: 6,
-    type: "Blood Glucose",
+    type: "Glycémie",
     unit: "mg/dL",
     values: [
       { date: "2024-08-01", value: 95 },
       { date: "2024-07-25", value: 105 }, // Slightly elevated
-      { date: "2024-07-18", value: 140 }, // High
+      { date: "2024-07-18", value: 140 }, // Élevée
     ],
     normalRange: "70 - 110",
   },
@@ -73,28 +73,28 @@ const initialVitals = [
 
 // Check abnormality of a given vital sign value
 const isAbnormal = (type, value) => {
-  if (type === "Blood Pressure") {
+  if (type === "Tension artérielle") {
     // Format: "systolic/diastolic"
     const [sys, dia] = value.split("/").map(Number);
     if (isNaN(sys) || isNaN(dia)) return false;
-    // High BP thresholds
+    // Élevée BP thresholds
     if (sys > 130 || dia > 85) return true;
-    // Low BP thresholds
+    // Faible BP thresholds
     if (sys < 90 || dia < 60) return true;
     return false;
   }
 
   if (typeof value === "number") {
     switch (type) {
-      case "Heart Rate":
+      case "Fréquence cardiaque":
         return value < 60 || value > 100;
-      case "Body Temperature":
+      case "Température corporelle":
         return value < 36.1 || value > 37.2;
-      case "Respiratory Rate":
+      case "Fréquence respiratoire":
         return value < 12 || value > 20;
-      case "Oxygen Saturation":
+      case "Saturation en oxygène":
         return value < 95;
-      case "Blood Glucose":
+      case "Glycémie":
         return value < 70 || value > 110;
       default:
         return false;
@@ -109,7 +109,7 @@ const PatientVitals = () => {
   return (
     <section
       className="max-w-5xl mx-auto p-6 bg-white rounded-xl shadow-md"
-      aria-label="Patient vital signs summary"
+      aria-label="Résumé des constantes vitales"
     >
       <h2 className="text-3xl font-extrabold mb-8 text-center">
         <span className="text-black">Patient </span>
@@ -148,10 +148,10 @@ const VitalItem = ({ type, unit, values, normalRange }) => (
           <div
             key={idx}
             className="flex justify-between items-center"
-            title={`Recorded on ${new Date(date).toLocaleDateString()}`}
+            title={`Relevé du ${new Date(date).toLocaleDateString("fr-FR")}`}
           >
             <time className="text-gray-500 text-sm min-w-[90px]">
-              {new Date(date).toLocaleDateString(undefined, {
+              {new Date(date).toLocaleDateString("fr-FR", {
                 year: "numeric",
                 month: "short",
                 day: "numeric",

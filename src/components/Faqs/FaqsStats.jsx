@@ -8,36 +8,36 @@ const statsData = [
     id: 1,
     icon: <FaUsers className="text-blue-700 w-10 h-10" />,
     value: "25K+",
-    label: "Patients Served",
+    label: "Patients reçus",
   },
   {
     id: 2,
     icon: <FaHeadset className="text-blue-700 w-10 h-10" />,
     value: "24/7",
-    label: "Support Availability",
+    label: "Disponibilité",
   },
   {
     id: 3,
     icon: <FaCheckCircle className="text-blue-700 w-10 h-10" />,
     value: "98%",
-    label: "Satisfaction Rate",
+    label: "Taux de satisfaction",
   },
   {
     id: 4,
     icon: <FaClock className="text-blue-700 w-10 h-10" />,
-    value: "15+ Years",
-    label: "Experience",
+    value: "15+ ans",
+    label: "Expérience",
   },
 ];
 
 export default function FaqsStats() {
   return (
     <section
-      aria-label="FAQ statistics"
+      aria-label="Chiffres clés"
       className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-16 bg-white"
     >
       <h2 className="text-center text-3xl font-extrabold mb-12 text-gray-900 select-text">
-        Trusted by Thousands – <span className="text-blue-700">Our Stats</span>
+        La confiance de nos patients – <span className="text-blue-700">Nos chiffres</span>
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center">

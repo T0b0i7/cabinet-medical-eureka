@@ -21,33 +21,33 @@ const PatientPersonalDetails = () => {
     const errs = {};
 
     if (!data.fullName.trim()) {
-      errs.fullName = "Full Name is required";
+      errs.fullName = "Votre nom complet est requis";
     }
 
     if (!data.email.trim()) {
-      errs.email = "Email is required";
+      errs.email = "L’adresse e-mail est requise";
     } else if (
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(data.email)
     ) {
-      errs.email = "Invalid email address";
+      errs.email = "Adresse e-mail invalide";
     }
 
     if (!data.phone.trim()) {
-      errs.phone = "Phone number is required";
+      errs.phone = "Le numéro de téléphone est requis";
     } else if (!/^\+?\d{7,15}$/.test(data.phone.trim())) {
-      errs.phone = "Enter a valid phone number";
+      errs.phone = "Saisissez un numéro de téléphone valide";
     }
 
     if (!data.dob) {
-      errs.dob = "Date of Birth is required";
+      errs.dob = "La date de naissance est requise";
     }
 
     if (!data.gender) {
-      errs.gender = "Please select your gender";
+      errs.gender = "Veuillez choisir votre sexe";
     }
 
     if (!data.address.trim()) {
-      errs.address = "Address is required";
+      errs.address = "L’adresse est requise";
     }
 
     return errs;
@@ -90,7 +90,7 @@ const PatientPersonalDetails = () => {
         address: "",
       });
     } catch {
-      setErrors({ submit: "Submission failed. Please try again." });
+      setErrors({ submit: "Envoi échoué. Veuillez réessayer." });
     } finally {
       setSubmitting(false);
     }
@@ -105,40 +105,40 @@ const PatientPersonalDetails = () => {
         id="personal-details-title"
         className="text-3xl font-bold mb-6 text-center"
       >
-        <span className="text-black">Patient </span>
-        <span className="text-blue-700">Personal Details</span>
+        <span className="text-black">Informations </span>
+        <span className="text-blue-700">personnelles</span>
       </h2>
 
       <form onSubmit={handleSubmit} noValidate>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FormField
-            label="Full Name"
+            label="Nom complet"
             id="fullName"
             name="fullName"
             value={formData.fullName}
             onChange={handleChange}
             error={errors.fullName}
             type="text"
-            placeholder="Jane Doe"
+            placeholder="Adjovi Hounsou"
             required
             disabled={submitting}
             autoComplete="name"
           />
           <FormField
-            label="Email Address"
+            label="Adresse e-mail"
             id="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
             error={errors.email}
             type="email"
-            placeholder="jane@example.com"
+            placeholder="vous@exemple.com"
             required
             disabled={submitting}
             autoComplete="email"
           />
           <FormField
-            label="Phone Number"
+            label="Numéro de téléphone"
             id="phone"
             name="phone"
             value={formData.phone}
@@ -151,7 +151,7 @@ const PatientPersonalDetails = () => {
             autoComplete="tel"
           />
           <FormField
-            label="Date of Birth"
+            label="Date de naissance"
             id="dob"
             name="dob"
             value={formData.dob}
@@ -172,22 +172,22 @@ const PatientPersonalDetails = () => {
             disabled={submitting}
             required
             options={[
-              { value: "", label: "Select Gender" },
-              { value: "female", label: "Female" },
-              { value: "male", label: "Male" },
-              { value: "nonbinary", label: "Non-binary" },
-              { value: "other", label: "Other" },
-              { value: "preferNotToSay", label: "Prefer not to say" },
+              { value: "", label: "Sélectionner Gender" },
+              { value: "female", label: "Femme" },
+              { value: "male", label: "Homme" },
+              { value: "nonbinary", label: "Non binaire" },
+              { value: "other", label: "Autre" },
+              { value: "preferNotToSay", label: "Je préfère ne pas préciser" },
             ]}
           />
           <TextAreaField
-            label="Address"
+            label="Adresse"
             id="address"
             name="address"
             value={formData.address}
             onChange={handleChange}
             error={errors.address}
-            placeholder="123 Main St, City, Country"
+            placeholder="Porto-Novo, Bénin"
             required
             disabled={submitting}
             rows={3}
@@ -203,7 +203,7 @@ const PatientPersonalDetails = () => {
 
         {success && (
           <p className="mt-4 text-green-600 font-semibold text-center" role="alert">
-            Details submitted successfully!
+            Informations enregistrées avec succès !
           </p>
         )}
 
@@ -219,7 +219,7 @@ const PatientPersonalDetails = () => {
               <span className="ml-2">Submitting...</span>
             </>
           ) : (
-            "Submit Details"
+            "Enregistrer les informations"
           )}
         </button>
       </form>

@@ -14,16 +14,9 @@ const IntellectualProperty = () => {
         Intellectual Property
       </h2>
 
-      <p className="mb-6 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-light text-gray-800">
-        All content, trademarks, logos, and other intellectual property featured on NovaHealth
-        are either owned or properly licensed by NovaHealth. You may not reproduce, distribute,
-        modify, or use any of this material without obtaining prior written permission.
-      </p>
+      <p className="mb-6 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-light text-gray-800">L’ensemble des contenus, marques, logos et éléments de propriété intellectuelle présents sur le site du Cabinet Médical EURÊKA sont détenus ou dûment licenciés par le cabinet.</p>
 
-      <p className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-light text-gray-800">
-        Unauthorized use of our intellectual property could infringe copyright, trademark, or
-        other laws and may result in legal consequences.
-      </p>
+      <p className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-light text-gray-800">Toute utilisation non autorisée de notre propriété intellectuelle peut enfreindre le droit d’auteur ou d’autres lois et entraîner des conséquences juridiques.</p>
     </section>
   );
 };

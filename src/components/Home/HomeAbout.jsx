@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const staggerContainer = {
@@ -33,10 +34,10 @@ const scaleFade = {
 
 export default function HomeAbout() {
   const featuresList = [
-    "Trusted by 50,000+ patients worldwide",
-    "Award-winning diagnostic labs",
-    "Multi-language care & support staff",
-    "Fully integrated online booking system",
+    "Ouvert 7 jours sur 7, de 08h00 à 18h00",
+    "Parking privé sécurisé pour les patients",
+    "Salle d’allaitement dédiée aux mamans et nourrissons",
+    "Plateau technique moderne et prise en charge sur rendez-vous",
   ];
 
   return (
@@ -67,17 +68,17 @@ export default function HomeAbout() {
             variants={fadeUp}
             className="text-4xl font-extrabold text-blue-700 mb-6"
           >
-            Dedicated to <span className="text-black">Exceptional Care</span>
+            Engagés pour <span className="text-black">des soins d’exception</span>
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
             className="max-w-lg text-gray-900 text-base sm:text-lg font-light mb-8"
           >
-            At our core, we blend technology with empathy—ensuring every
-            patient receives the attention they deserve. From telehealth to
-            in-person consultations, our facilities and staff are tailored for
-            you.
+            Au Cabinet Médical EURÊKA, chaque patient bénéficie d’une écoute
+            attentive et de soins adaptés. Nos spécialités ORL, chirurgie
+            cervico-faciale et médecine générale sont proposées dans un cadre
+            moderne, à Porto-Novo.
           </motion.p>
 
           <motion.ul
@@ -97,12 +98,12 @@ export default function HomeAbout() {
           </motion.ul>
 
           <motion.div variants={fadeUp} className="mt-10">
-            <a
+            <Link
               href="/services"
               className="inline-block bg-blue-700 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
             >
-              Explore Our Services
-            </a>
+              Découvrir nos spécialités
+            </Link>
           </motion.div>
         </motion.div>
       </motion.div>

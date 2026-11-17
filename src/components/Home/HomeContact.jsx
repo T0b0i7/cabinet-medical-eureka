@@ -22,19 +22,19 @@ export default function HomeContact() {
   // Simple validation
   const validate = () => {
     const errs = {};
-    if (!formData.name.trim()) errs.name = "Full name is required";
+    if (!formData.name.trim()) errs.name = "Votre nom complet est requis";
     if (!formData.email.trim()) {
-      errs.email = "Email is required";
+      errs.email = "L’adresse e-mail est requise";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      errs.email = "Invalid email address";
+      errs.email = "Adresse e-mail invalide";
     }
     if (!formData.phone.trim()) {
-      errs.phone = "Phone number is required";
+      errs.phone = "Le numéro de téléphone est requis";
     } else if (!/^\+?[\d\s-]{7,15}$/.test(formData.phone)) {
-      errs.phone = "Invalid phone number";
+      errs.phone = "Numéro de téléphone invalide";
     }
-    if (!formData.subject.trim()) errs.subject = "Subject is required";
-    if (!formData.message.trim()) errs.message = "Message cannot be empty";
+    if (!formData.subject.trim()) errs.subject = "L’objet est requis";
+    if (!formData.message.trim()) errs.message = "Le message ne peut pas être vide";
     return errs;
   };
 
@@ -74,7 +74,7 @@ export default function HomeContact() {
       });
       setErrors({});
     } catch {
-      setErrorMsg("Oops! Something went wrong. Please try again later.");
+      setErrorMsg("Oups ! Une erreur est survenue. Veuillez réessayer.");
     } finally {
       setIsSubmitting(false);
     }
@@ -128,7 +128,7 @@ export default function HomeContact() {
         variants={item}
         className="text-3xl font-extrabold text-gray-900 mb-8 text-center"
       >
-        Get In <span className="text-blue-700">Touch</span>
+        Contactez- <span className="text-blue-700">nous</span>
       </motion.h2>
 
       <AnimatePresence>
@@ -141,7 +141,7 @@ export default function HomeContact() {
             transition={{ duration: 0.3 }}
             className="mb-8 bg-green-100 border border-green-400 text-green-700 px-5 py-3 rounded-md text-center font-semibold"
           >
-            Thank you! Your message has been sent successfully.
+            Merci ! Votre message a bien été envoyé.
           </motion.div>
         )}
       </AnimatePresence>
@@ -170,13 +170,13 @@ export default function HomeContact() {
         {/* Name */}
         <motion.div variants={item}>
           <label htmlFor="name" className="block mb-2 font-semibold text-gray-700">
-            Full Name <span className="text-red-600">*</span>
+            Nom complet <span className="text-red-600">*</span>
           </label>
           <input
             id="name"
             name="name"
             type="text"
-            placeholder="Your full name"
+            placeholder="Votre nom complet"
             value={formData.name}
             onChange={handleChange}
             disabled={isSubmitting}
@@ -197,13 +197,13 @@ export default function HomeContact() {
         {/* Email */}
         <motion.div variants={item}>
           <label htmlFor="email" className="block mb-2 font-semibold text-gray-700">
-            Email Address <span className="text-red-600">*</span>
+            Adresse e-mail <span className="text-red-600">*</span>
           </label>
           <input
             id="email"
             name="email"
             type="email"
-            placeholder="you@example.com"
+            placeholder="vous@exemple.com"
             value={formData.email}
             onChange={handleChange}
             disabled={isSubmitting}
@@ -224,13 +224,13 @@ export default function HomeContact() {
         {/* Phone */}
         <motion.div className="sm:col-span-2" variants={item}>
           <label htmlFor="phone" className="block mb-2 font-semibold text-gray-700">
-            Phone Number <span className="text-red-600">*</span>
+            Numéro de téléphone <span className="text-red-600">*</span>
           </label>
           <input
             id="phone"
             name="phone"
             type="tel"
-            placeholder="+1234567890"
+            placeholder="+229 01 41 60 83 39"
             value={formData.phone}
             onChange={handleChange}
             disabled={isSubmitting}
@@ -251,13 +251,13 @@ export default function HomeContact() {
         {/* Subject */}
         <motion.div className="sm:col-span-2" variants={item}>
           <label htmlFor="subject" className="block mb-2 font-semibold text-gray-700">
-            Subject <span className="text-red-600">*</span>
+            Objet <span className="text-red-600">*</span>
           </label>
           <input
             id="subject"
             name="subject"
             type="text"
-            placeholder="Brief subject"
+            placeholder="Objet de votre message"
             value={formData.subject}
             onChange={handleChange}
             disabled={isSubmitting}
@@ -284,7 +284,7 @@ export default function HomeContact() {
             id="message"
             name="message"
             rows={5}
-            placeholder="Write your message here..."
+            placeholder="Écrivez votre message ici…"
             value={formData.message}
             onChange={handleChange}
             disabled={isSubmitting}
@@ -313,7 +313,7 @@ export default function HomeContact() {
             whileTap={{ scale: 0.97 }}
             whileFocus={{ scale: 1.03 }}
           >
-            {isSubmitting ? "Sending..." : "Send Message"}
+            {isSubmitting ? "Envoi en cours…" : "Envoyer le message"}
           </motion.button>
         </motion.div>
       </motion.form>

@@ -7,33 +7,33 @@ import { FaStar, FaQuoteLeft } from "react-icons/fa";
 const testimonials = [
   {
     id: 1,
-    name: "Emily Carter",
-    role: "Patient - Cardiology",
+    name: "Adjovi Hounsou",
+    role: "Patient - ORL",
     rating: 5,
     image:
       "https://plus.unsplash.com/premium_photo-1664475543697-229156438e1e?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFkeSUyMGRvY3RvcmV8ZW58MHx8MHx8fDA%3D",
     message:
-      "The staff was so kind and professional. My diagnosis was explained clearly, and I felt genuinely cared for. Highly recommended!",
+      "Le personnel a été très attentionné et professionnel. Mon diagnostic m’a été expliqué clairement, je me suis sentie vraiment prise en charge.",
   },
   {
     id: 2,
-    name: "Dr. Kevin Moore",
-    role: "Family Member - Surgery",
+    name: "Dr Isidore Aholou",
+    role: "Family Member - Chirurgie",
     rating: 4,
     image:
       "https://plus.unsplash.com/premium_photo-1661578535048-7a30e3a71d25?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG1hbiUyMGRvY3RvcmV8ZW58MHx8MHx8fDA%3D",
     message:
-      "From admission to discharge, everything was smooth and stress-free. The facility is top-notch and very clean.",
+      "De l’accueil au départ, tout s’est déroulé simplement. Le cabinet est propre et bien organisé.",
   },
   {
     id: 3,
-    name: "Sara Lopez",
-    role: "Mother - Pediatrics",
+    name: "Mireille Zinsou",
+    role: "Mother - Pédiatrie",
     rating: 5,
     image:
       "https://plus.unsplash.com/premium_photo-1664392363342-47dcc1c5e631?q=80&w=1068&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     message:
-      "They took excellent care of my daughter. The pediatricians are incredibly warm and understanding brelliant.",
+      "Ils ont pris grand soin de ma fille. Toute l’équipe s’est montrée chaleureuse et rassurante.",
   },
 ];
 
@@ -59,20 +59,20 @@ const ServiceTestimonials = () => {
   return (
     <section
       role="region"
-      aria-label="Service Testimonials"
+      aria-label="Témoignages"
       className="bg-white py-20 px-6 md:px-12"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <header className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
-            What{" "}
+            Ce que disent{" "}
             <span className="text-blue-700 underline decoration-blue-300 decoration-4 underline-offset-4">
-              People Say
+              nos patients
             </span>
           </h2>
           <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-light">
-            Real stories from patients and their families sharing their care experiences.
+            Des témoignages de patients et de leurs proches sur leur parcours de soins.
           </p>
         </header>
 

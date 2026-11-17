@@ -6,24 +6,34 @@ import { FaChevronDown } from "react-icons/fa";
 
 const faqItems = [
   {
-    question: "What services does NovaHealth offer?",
+    question: "Quels services propose le Cabinet Médical EURÊKA ?",
     answer:
-      "NovaHealth provides general checkups, diagnostics, emergency care, specialist consultations, and online appointments with certified doctors.",
+      "Le cabinet propose des consultations d’ORL, de chirurgie cervico-faciale et de médecine générale, ainsi que des bilans de santé, le suivi des maladies chroniques et la prise en charge des urgences légères.",
   },
   {
-    question: "Are your doctors certified and experienced?",
+    question: "Vos médecins sont-ils qualifiés et expérimentés ?",
     answer:
-      "Yes, all NovaHealth doctors are board-certified with proven clinical experience and a strong commitment to patient care.",
+      "Oui, tous les praticiens du cabinet sont diplômés et justifient d’une expérience clinique solide, avec un engagement constant pour la qualité des soins.",
   },
   {
-    question: "Is online appointment booking available?",
+    question: "Peut-on prendre rendez-vous en ligne ?",
     answer:
-      "Yes, you can easily book appointments online through our website or mobile app. Same-day options are also available for urgent needs.",
+      "Oui, vous pouvez réserver votre rendez-vous en ligne depuis notre site, par téléphone au +229 01 41 60 83 39 ou directement par WhatsApp. Des créneaux sont disponibles le jour même selon les possibilités.",
   },
   {
-    question: "Do you accept insurance plans?",
+    question: "Acceptez-vous les assurances santé ?",
     answer:
-      "We accept a wide range of insurance providers. Please visit our insurance info page or contact us directly for more details.",
+      "Le cabinet travaille avec plusieurs assurances et mutuelles. Contactez l’accueil pour vérifier votre prise en charge avant votre consultation.",
+  },
+  {
+    question: "Quels sont les horaires d’ouverture ?",
+    answer:
+      "Le cabinet est ouvert 7 jours sur 7, de 08h00 à 18h00. Un parking privé sécurisé et une salle d’allaitement sont à votre disposition.",
+  },
+  {
+    question: "Comment se déroule une première consultation ?",
+    answer:
+      "Vous êtes accueilli par notre équipe, puis reçu par le praticien adapté à votre motif. Apportez vos ordonnances, résultats d’examens et carte d’assurance si vous en avez une.",
   },
 ];
 
@@ -52,7 +62,7 @@ export default function AppointmentsFAQ() {
   return (
     <section
       id="faq"
-      aria-label="Frequently Asked Questions"
+      aria-label="Questions fréquentes"
       className="my-[-30px] bg-white py-20 px-6 sm:px-10 lg:px-20"
     >
       <motion.div

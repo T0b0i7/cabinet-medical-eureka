@@ -1,38 +1,38 @@
 'use client'
 import React, { useState } from "react";
 
-const initialTasks = [
+const initialTâches = [
   {
     id: 1,
-    title: "Finish quarterly report",
+    title: "Terminer le rapport trimestriel",
     due: "2025-08-15",
     completed: false,
   },
   {
     id: 2,
-    title: "Update client on project status",
+    title: "Mettre à jour le statut du dossier patient",
     due: "2025-08-12",
     completed: true,
   },
   {
     id: 3,
-    title: "Plan team meeting agenda",
+    title: "Préparer l’ordre du jour de la réunion d’équipe",
     due: "2025-08-18",
     completed: false,
   },
   {
     id: 4,
-    title: "Review budget proposals",
+    title: "Réviser les propositions budgétaires",
     due: "2025-08-20",
     completed: false,
   },
 ];
 
 const DashboardTasks = () => {
-  const [tasks, setTasks] = useState(initialTasks);
+  const [tasks, setTâches] = useState(initialTâches);
 
   const toggleComplete = (id) => {
-    setTasks((prev) =>
+    setTâches((prev) =>
       prev.map((task) =>
         task.id === id ? { ...task, completed: !task.completed } : task
       )
@@ -40,7 +40,7 @@ const DashboardTasks = () => {
   };
 
   const deleteTask = (id) => {
-    setTasks((prev) => prev.filter((task) => task.id !== id));
+    setTâches((prev) => prev.filter((task) => task.id !== id));
   };
 
   // Calculate progress % of completed tasks
@@ -68,7 +68,7 @@ const DashboardTasks = () => {
           userSelect: "none",
         }}
       >
-        Your Tasks
+        Vos tâches
       </h2>
 
       {/* Progress Bar */}
@@ -81,7 +81,7 @@ const DashboardTasks = () => {
           marginBottom: 30,
           boxShadow: "inset 0 2px 5px rgba(0,0,0,0.1)",
         }}
-        aria-label={`Tasks progress: ${progressPercent}% completed`}
+        aria-label={`Tâches progress: ${progressPercent}% completed`}
       >
         <div
           style={{
@@ -114,7 +114,7 @@ const DashboardTasks = () => {
               userSelect: "none",
             }}
           >
-            No tasks remaining! 🎉
+            Non tasks remaining! 🎉
           </li>
         )}
 
@@ -154,7 +154,7 @@ const DashboardTasks = () => {
                   display: "inline-block",
                 }}
               >
-                Due: {new Date(due).toLocaleDateString()}
+                Dû: {new Date(due).toLocaleDateString("fr-FR")}
               </small>
             </div>
 
@@ -167,7 +167,7 @@ const DashboardTasks = () => {
             >
               <button
                 onClick={() => toggleComplete(id)}
-                aria-label={completed ? "Mark as incomplete" : "Mark as complete"}
+                aria-label={completed ? "Marquer comme non terminé" : "Marquer comme terminé"}
                 style={{
                   padding: "8px 14px",
                   background: completed ? "#f44336" : "#4caf50",
@@ -190,12 +190,12 @@ const DashboardTasks = () => {
                     : "#4caf50")
                 }
               >
-                {completed ? "Undo" : "Done"}
+                {completed ? "Annuler" : "Terminé"}
               </button>
 
               <button
                 onClick={() => deleteTask(id)}
-                aria-label="Delete task"
+                aria-label="Supprimer la tâche"
                 style={{
                   padding: "8px 14px",
                   background: "#bbb",
@@ -214,7 +214,7 @@ const DashboardTasks = () => {
                   (e.currentTarget.style.backgroundColor = "#bbb")
                 }
               >
-                Delete
+                Supprimer
               </button>
             </div>
           </li>

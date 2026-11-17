@@ -204,10 +204,10 @@ export default function PatientDocumentsUpload() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M7 16v4h10v-4M7 12l5-5 5 5M12 3v9" />
         </svg>
         <p className="text-lg font-medium text-blue-700 mb-1">
-          Drag &amp; drop files here, or click to select files
+          Glissez-déposez vos fichiers ici ou cliquez pour les sélectionner
         </p>
         <p id="upload-section-desc" className="text-sm text-gray-600 select-none">
-          Supported formats: PDF, JPG, PNG, DOC, DOCX. Max file size: {MAX_SIZE_MB}MB
+          Formats acceptés : PDF, JPG, PNG, DOC, DOCX. Taille maximale : {MAX_SIZE_MB} Mo
         </p>
       </div>
 

@@ -6,63 +6,63 @@ import { motion, useAnimation } from "framer-motion";
 const BLOG_POSTS = [
   {
     id: 1,
-    title: "How to Maintain a Healthy Lifestyle",
+    title: "Comment garder un mode de vie sain",
     summary:
-      "Discover practical tips and strategies to keep your body and mind in top shape every day.",
+      "Des conseils simples pour prendre soin de votre corps et de votre esprit au quotidien.",
     image:
       "https://images.unsplash.com/photo-1535914254981-b5012eebbd15?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     url: "https://www.healthline.com/health/how-to-maintain-a-healthy-lifestyle",
-    date: "Aug 1, 2025",
+    date: "1 août 2025",
   },
   {
     id: 2,
-    title: "Understanding Your Heart Health",
+    title: "Mieux comprendre sa santé cardiovasculaire",
     summary:
-      "Learn the signs of heart disease and how to keep your cardiovascular system strong and healthy.",
+      "Reconnaître les signes d’alerte et adopter les bons réflexes pour votre cœur.",
     image:
       "https://plus.unsplash.com/premium_photo-1701075032615-1b6867a46d3c?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VW5kZXJzdGFuZGluZyUyMFlvdXIlMjBIZWFydCUyMEhlYWx0aHxlbnwwfHwwfHx8MA%3D%3D",
     url: "https://www.baker.edu.au/health-hub/fact-sheets/healthy-heart?gad_source=1&gad_campaignid=1042082331&gbraid=0AAAAAD2MqSnEPtWAIK8qMGunMgWZn5NdB&gclid=CjwKCAjwwNbEBhBpEiwAFYLtGH6nFZMH_ojVTSU-TmVpB1Naxh8D-lE6-WBQHtqf2xP8SvX3U811-hoC7xwQAvD_BwE",
-    date: "Jul 20, 2025",
+    date: "20 juil. 2025",
   },
   {
     id: 3,
-    title: "The Importance of Mental Wellness",
+    title: "L’importance du bien-être mental",
     summary:
-      "Explore techniques and habits that promote mental well-being and emotional balance.",
+      "Des habitudes et techniques pour cultiver l’équilibre émotionnel.",
     image:
       "https://plus.unsplash.com/premium_photo-1666264200751-8a013663a89b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     url: "https://www.planstreet.com/top-ten-reasons-why-mental-health-is-so-important",
-    date: "Jul 15, 2025",
+    date: "15 juil. 2025",
   },
   {
     id: 4,
-    title: "Nutrition Tips for a Better You",
+    title: "Conseils nutrition pour prendre soin de soi",
     summary:
-      "Simple and effective nutrition advice to improve your daily diet and health.",
+      "Une alimentation équilibrée, adaptée à votre quotidien et à votre santé.",
     image:
       "https://media.istockphoto.com/id/1216723436/photo/how-to-boost-your-immune-system.webp?a=1&b=1&s=612x612&w=0&k=20&c=ZElex50Y0_JRkWY66IhkmXIeeFKgLWmz_p-JK0Qrhh4=",
     url: "https://shimacrobiotics.org/mediterranean-diet-vs-macrobiotics/",
-    date: "Jul 10, 2025",
+    date: "10 juil. 2025",
   },
   {
     id: 5,
-    title: "Managing Stress in Modern Life",
+    title: "Gérer le stress au quotidien",
     summary:
-      "Learn mindfulness and coping strategies to manage stress and boost your well-being.",
+      "Des stratégies concrètes pour mieux gérer le stress et retrouver de l’énergie.",
     image:
       "https://media.istockphoto.com/id/901486122/photo/businesswoman-working-on-a-laptop-under-pressure.webp?a=1&b=1&s=612x612&w=0&k=20&c=hkmv467tmGaPQazO3jc71LooXCVRLh00QCKZSOFCqiw=",
     url: "https://www.cdc.gov/mental-health/living-with/index.html",
-    date: "Jul 5, 2025",
+    date: "5 juil. 2025",
   },
   {
     id: 6,
-    title: "Benefits of Regular Exercise",
+    title: "Les bienfaits d’une activité physique régulière",
     summary:
-      "Explore how consistent physical activity improves your health, mood, and longevity.",
+      "Bouger régulièrement pour améliorer votre santé, votre humeur et votre longévité.",
     image:
       "https://images.unsplash.com/photo-1483721310020-03333e577078?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     url: "https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/exercise/art-20048389",
-    date: "Jul 1, 2025",
+    date: "1 juil. 2025",
   },
 ];
 
@@ -143,7 +143,7 @@ export default function HomeBlogPreview() {
           },
         }}
       >
-        Latest From Our <span className="text-blue-700">Blog</span>
+        Nos derniers <span className="text-blue-700">articles</span>
       </motion.h2>
 
       <motion.div
@@ -187,10 +187,10 @@ export default function HomeBlogPreview() {
               <p className="text-gray-700 flex-grow">{summary}</p>
               <a
                 href={url}
-                aria-label={`Read more about ${title}`}
+                aria-label={`Lire la suite about ${title}`}
                 className="mt-6 inline-block text-blue-700 hover:text-blue-800 font-semibold transition-colors duration-300"
               >
-                Read More &rarr;
+                Lire la suite &rarr;
               </a>
             </div>
           </motion.article>

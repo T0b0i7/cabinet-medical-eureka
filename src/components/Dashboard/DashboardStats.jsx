@@ -15,16 +15,12 @@ import {
   HiMoon,
 } from "react-icons/hi2";
 
-const formatValue = (value, isCurrency = false, currency = "USD") => {
+const formatValue = (value, isCurrency = false) => {
   if (isCurrency) {
-    return value.toLocaleString("en-US", {
-      style: "currency",
-      currency,
-      maximumFractionDigits: 0,
-    });
+    return `${value.toLocaleString("fr-FR")} FCFA`;
   }
   if (typeof value === "number") {
-    return value.toLocaleString();
+    return value.toLocaleString("fr-FR");
   }
   return value;
 };
@@ -113,7 +109,7 @@ const Modal = ({ isOpen, onClose, title, children }) => {
           </h3>
           <button
             type="button"
-            aria-label="Close modal"
+            aria-label="Fermer la fenêtre"
             onClick={onClose}
             className="text-gray-700 hover:text-gray-900 focus:outline-none"
           >
@@ -191,7 +187,7 @@ const StatCard = ({
             title={formatValue(value, isCurrency)}
           >
             {loading ? (
-              <span className="animate-pulse text-gray-400">Loading...</span>
+              <span className="animate-pulse text-gray-400">Chargement...</span>
             ) : (
               formatValue(displayValue, isCurrency)
             )}
@@ -233,26 +229,26 @@ StatCard.defaultProps = {
 const initialStatsData = [
   {
     id: 1,
-    title: "Users",
+    title: "Utilisateurs",
     value: 3580,
     icon: <HiUserGroup className="w-8 h-8 text-indigo-600" aria-hidden="true" />,
-    description: "Active users this month",
+    description: "Utilisateurs actifs ce mois-ci",
   },
   {
     id: 2,
-    title: "Appointments",
+    title: "Rendez-vous",
     value: 248,
     icon: <HiCalendar className="w-8 h-8 text-green-600" aria-hidden="true" />,
-    description: "Scheduled appointments",
+    description: "Rendez-vous programmés",
   },
   {
     id: 3,
-    title: "Revenue",
+    title: "Recettes",
     value: 45120,
     icon: (
       <HiCurrencyDollar className="w-8 h-8 text-yellow-500" aria-hidden="true" />
     ),
-    description: "Total revenue generated",
+    description: "Recettes totales générées",
     isCurrency: true,
   },
   {
@@ -260,21 +256,21 @@ const initialStatsData = [
     title: "Notifications",
     value: 12,
     icon: <HiBell className="w-8 h-8 text-red-600" aria-hidden="true" />,
-    description: "Unread notifications",
+    description: "Notifications non lues",
     hasBadgePulse: true,
   },
 ];
 
 const DashboardStats = () => {
   const [stats, setStats] = useState(initialStatsData);
-  const [loading, setLoading] = useState(true);
+  const [loading, setChargement] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
   const [sortDirection, setSortDirection] = useState("desc");
 
   useEffect(() => {
     const loadTimeout = setTimeout(() => {
-      setLoading(false);
+      setChargement(false);
     }, 1200);
 
     return () => clearTimeout(loadTimeout);
@@ -287,9 +283,9 @@ const DashboardStats = () => {
 
   const closeModal = () => setModalOpen(false);
 
-  const handleRefresh = () => {
+  const handleActualiser = () => {
     if (loading) return;
-    setLoading(true);
+    setChargement(true);
     setTimeout(() => {
       const updatedStats = stats.map((stat) => {
         const changePercent = (Math.random() - 0.5) * 0.2; // +/-10%
@@ -300,7 +296,7 @@ const DashboardStats = () => {
         return { ...stat, value: newValue };
       });
       setStats(updatedStats);
-      setLoading(false);
+      setChargement(false);
     }, 1500);
   };
 
@@ -317,20 +313,20 @@ const DashboardStats = () => {
   return (
     <>
       <section
-        aria-label="Dashboard statistics"
+        aria-label="Statistiques du tableau de bord"
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
       >
         <header className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
           <h2 className="text-3xl font-extrabold text-gray-900">
-            Dashboard Overview
+            Tableau de bord Vue d’ensemble
           </h2>
 
           <div className="flex items-center space-x-3">
             <button
               type="button"
-              onClick={handleRefresh}
+              onClick={handleActualiser}
               disabled={loading}
-              aria-label="Refresh statistics data"
+              aria-label="Actualiser les statistiques"
               className={`inline-flex items-center space-x-2 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 shadow-sm
                 hover:bg-gray-100
                 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1
@@ -342,7 +338,7 @@ const DashboardStats = () => {
                 }`}
                 aria-hidden="true"
               />
-              <span>Refresh</span>
+              <span>Actualiser</span>
             </button>
 
             <button
@@ -356,12 +352,12 @@ const DashboardStats = () => {
               {sortDirection === "asc" ? (
                 <>
                   <HiArrowTrendingUp className="w-5 h-5 mr-1" />
-                  Ascending
+                  Croissant
                 </>
               ) : (
                 <>
                   <HiArrowTrendingDown className="w-5 h-5 mr-1" />
-                  Descending
+                  Décroissant
                 </>
               )}
             </button>
@@ -410,7 +406,7 @@ const DashboardStats = () => {
             </p>
             <p className="mb-4 text-sm text-gray-500 italic">
               Last updated:{" "}
-              {new Date().toLocaleString(undefined, {
+              {new Date().toLocaleString("fr-FR", {
                 dateStyle: "medium",
                 timeStyle: "short",
               })}
@@ -422,11 +418,11 @@ const DashboardStats = () => {
               }
               className="inline-block rounded bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
-              View More Details
+              Voir plus de détails
             </button>
           </>
         ) : (
-          <p>No detail available</p>
+          <p>Aucun détail disponible</p>
         )}
       </Modal>
     </>

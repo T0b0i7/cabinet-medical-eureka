@@ -3,58 +3,58 @@ import React, { useState, useEffect, useRef } from "react";
 const TESTIMONIALS = [
   {
     id: 1,
-    name: "Sophia Johnson",
-    role: "Health Enthusiast",
+    name: "Adjovi Hounsou",
+    role: "Patiente",
     photo:
       "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdvbWFufGVufDB8fDB8fHww",
     rating: 5,
     text:
-      "This blog has completely transformed how I approach my wellness routine. The tips are practical and easy to follow!",
+      "Les conseils publiés m’ont vraiment aidée à améliorer mon quotidien. Simples et faciles à appliquer !",
   },
   {
     id: 2,
-    name: "James Smith",
-    role: "Fitness Trainer",
+    name: "Isidore Aholou",
+    role: "Coach sportif",
     photo:
       "https://plus.unsplash.com/premium_photo-1725022935609-585e3f42b992?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fG1hbiU1Q3xlbnwwfHwwfHx8MA%3D%3D",
     rating: 4,
     text:
-      "I appreciate the well-researched articles and genuine advice. A go-to resource for fitness and health topics.",
+      "J’apprécie la qualité des articles et la clarté des explications. Une référence pour ma santé.",
   },
   {
     id: 3,
-    name: "Emily Davis",
-    role: "Nutritionist",
+    name: "Estelle Agossou",
+    role: "Nutritionniste",
     photo:
       "https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHdvbWFufGVufDB8fDB8fHww",
     rating: 5,
     text:
-      "The balanced diet tips and recipes here are fantastic. I've recommended this blog to all my clients!",
+      "Les conseils nutritionnels sont excellents. Je les recommande à tous mes patients !",
   },
   {
     id: 4,
-    name: "Michael Brown",
-    role: "Yoga Instructor",
+    name: "Benoît Sossou",
+    role: "Professeure de yoga",
     photo:
       "https://plus.unsplash.com/premium_photo-1689977927774-401b12d137d6?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG1hbiU1Q3xlbnwwfHwwfHx8MA%3D%3D",
     rating: 4,
     text:
-      "Great insights on mental health and mindfulness. The articles are very relatable and helpful.",
+      "Des articles très utiles sur le bien-être et la gestion du stress. Je m’y retrouve vraiment.",
   },
   {
     id: 5,
-    name: "Olivia Wilson",
-    role: "Lifestyle Blogger",
+    name: "Sylvie Dossou",
+    role: "Patiente",
     photo:
       "https://plus.unsplash.com/premium_photo-1689266188052-704d33673e69?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHdvbWFufGVufDB8fDB8fHww",
     rating: 5,
     text:
-      "I love how this blog combines science and simplicity. The content always motivates me to live better.",
+      "J’aime la façon dont ce blog allie rigueur et simplicité. Chaque lecture me motive.",
   },
 ];
 
 const Stars = ({ count }) => (
-  <div className="flex mt-1" aria-label={`${count} out of 5 stars`} role="img">
+  <div className="flex mt-1" aria-label={`${count} étoiles sur 5`} role="img">
     {[...Array(5)].map((_, i) => (
       <svg
         key={i}
@@ -103,10 +103,10 @@ export default function BlogTestimonials() {
   return (
     <section
       className="max-w-4xl mx-auto px-6 py-16 bg-white rounded-3xl -my-10 mb-0"
-      aria-label="User testimonials section"
+      aria-label="Témoignages des patients"
     >
       <h2 className="text-4xl font-extrabold text-center mb-12 text-gray-900 relative inline-block">
-        <span className="text-blue-700">What Our Readers</span> Say
+        <span className="text-blue-700">Ce que disent</span> nos lecteurs
         <span className="block h-1.5 w-24 bg-gradient-to-r from-blue-500 to-indigo-600 rounded mt-2 mx-auto"></span>
       </h2>
 
@@ -117,7 +117,7 @@ export default function BlogTestimonials() {
         onTouchEnd={handleTouchEnd}
         role="region"
         aria-roledescription="carousel"
-        aria-label="Testimonials carousel"
+        aria-label="Carrousel des témoignages"
       >
         <div
           className="flex transition-transform duration-700 ease-in-out"
@@ -130,7 +130,7 @@ export default function BlogTestimonials() {
             <article
               key={id}
               className="bg-white/95 backdrop-blur-md rounded-3xl shadow-xl p-10 mx-auto flex-shrink-0 w-full max-w-3xl border border-gray-200"
-              aria-label={`Testimonial by ${name}`}
+              aria-label={`Témoignage de ${name}`}
             >
               <div className="flex items-center mb-6">
                 <div className="relative w-24 h-24 rounded-full ring-4 ring-blue-300 shadow-lg overflow-hidden">
@@ -155,7 +155,7 @@ export default function BlogTestimonials() {
         {/* Navigation arrows */}
         <button
           onClick={() => setCurrentIndex((prev) => (prev === 0 ? length - 1 : prev - 1))}
-          aria-label="Previous testimonial"
+          aria-label="Témoignage précédent"
           className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-4 text-indigo-600 transition"
           style={{ zIndex: 10 }}
         >
@@ -172,7 +172,7 @@ export default function BlogTestimonials() {
 
         <button
           onClick={() => setCurrentIndex((prev) => (prev === length - 1 ? 0 : prev + 1))}
-          aria-label="Next testimonial"
+          aria-label="Témoignage suivant"
           className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-4 text-indigo-600 transition"
           style={{ zIndex: 10 }}
         >
@@ -195,7 +195,7 @@ export default function BlogTestimonials() {
         onTouchEnd={handleTouchEnd}
         role="region"
         aria-roledescription="carousel"
-        aria-label="Testimonials carousel"
+        aria-label="Carrousel des témoignages"
       >
         <div
           className="flex transition-transform duration-700 ease-in-out"
@@ -233,7 +233,7 @@ export default function BlogTestimonials() {
         {/* Navigation arrows for mobile */}
         <button
           onClick={() => setCurrentIndex((prev) => (prev === 0 ? length - 1 : prev - 1))}
-          aria-label="Previous testimonial"
+          aria-label="Témoignage précédent"
           className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 text-indigo-600 transition"
           style={{ zIndex: 10 }}
         >
@@ -250,7 +250,7 @@ export default function BlogTestimonials() {
 
         <button
           onClick={() => setCurrentIndex((prev) => (prev === length - 1 ? 0 : prev + 1))}
-          aria-label="Next testimonial"
+          aria-label="Témoignage suivant"
           className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 text-indigo-600 transition"
           style={{ zIndex: 10 }}
         >

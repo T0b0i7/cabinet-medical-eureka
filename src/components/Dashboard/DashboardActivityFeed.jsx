@@ -12,31 +12,31 @@ const sampleActivities = [
   {
     id: 1,
     type: "login",
-    message: "Logged into the dashboard",
+    message: "Connecté au tableau de bord",
     timestamp: new Date(Date.now() - 5 * 60 * 1000), // 5 mins ago
   },
   {
     id: 2,
     type: "upload",
-    message: "Uploaded a new profile picture",
+    message: "A mis à jour sa photo de profil",
     timestamp: new Date(Date.now() - 20 * 60 * 1000), // 20 mins ago
   },
   {
     id: 3,
     type: "comment",
-    message: "Commented on a post",
+    message: "A commenté une publication",
     timestamp: new Date(Date.now() - 60 * 60 * 1000), // 1 hour ago
   },
   {
     id: 4,
     type: "update",
-    message: "Updated account settings",
+    message: "A modifié les paramètres du compte",
     timestamp: new Date(Date.now() - 3 * 60 * 60 * 1000), // 3 hours ago
   },
   {
     id: 5,
     type: "logout",
-    message: "Logged out",
+    message: "Déconnexion",
     timestamp: new Date(Date.now() - 24 * 60 * 60 * 1000), // 1 day ago
   },
 ];
@@ -53,13 +53,13 @@ const iconsMap = {
 // Utility: format relative time string
 function timeAgo(date) {
   const seconds = Math.floor((Date.now() - date.getTime()) / 1000);
-  if (seconds < 60) return `${seconds} sec${seconds !== 1 ? "s" : ""} ago`;
+  if (seconds < 60) return `il y a ${seconds} s`;
   const minutes = Math.floor(seconds / 60);
-  if (minutes < 60) return `${minutes} min${minutes !== 1 ? "s" : ""} ago`;
+  if (minutes < 60) return `il y a ${minutes} min`;
   const hours = Math.floor(minutes / 60);
-  if (hours < 24) return `${hours} hour${hours !== 1 ? "s" : ""} ago`;
+  if (hours < 24) return `il y a ${hours} h`;
   const days = Math.floor(hours / 24);
-  return `${days} day${days !== 1 ? "s" : ""} ago`;
+  return `il y a ${days} j`;
 }
 
 const DashboardActivityFeed = () => {
@@ -92,7 +92,7 @@ const DashboardActivityFeed = () => {
           userSelect: "none",
         }}
       >
-        Activity Feed
+        Activité récente
       </h2>
 
       <div
@@ -104,7 +104,7 @@ const DashboardActivityFeed = () => {
           boxShadow: "0 4px 15px rgba(0,0,0,0.07)",
           padding: 16,
         }}
-        aria-label="User activity feed"
+        aria-label="Fil d’activité utilisateur"
       >
         {activities.length === 0 && (
           <p
@@ -116,7 +116,7 @@ const DashboardActivityFeed = () => {
               userSelect: "none",
             }}
           >
-            No recent activity
+            Aucune activité récente
           </p>
         )}
 

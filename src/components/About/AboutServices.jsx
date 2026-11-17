@@ -15,44 +15,44 @@ const serviceItems = [
   {
     id: 1,
     icon: <FaStethoscope size={36} className="text-blue-600" />,
-    title: "General Checkup",
+    title: "Médecine générale",
     description:
-      "Comprehensive health examinations to ensure your well-being and early detection of issues.",
+      "Consultations courantes, bilans de santé et suivi personnalisé pour toute la famille.",
   },
   {
     id: 2,
     icon: <FaHeartbeat size={36} className="text-red-500" />,
-    title: "Cardiology Care",
+    title: "ORL",
     description:
-      "Specialized heart care services including diagnostics, treatments, and rehabilitation.",
+      "Consultations spécialisées : audition, sinusites, vertiges et pathologies ORL.",
   },
   {
     id: 3,
     icon: <FaNotesMedical size={36} className="text-green-600" />,
-    title: "Medical Consultation",
+    title: "Chirurgie cervico-faciale",
     description:
-      "Expert advice and diagnosis from experienced healthcare professionals across various fields.",
+      "Explorations et actes chirurgicaux spécialisés de la tête et du cou.",
   },
   {
     id: 4,
     icon: <FaUserNurse size={36} className="text-purple-600" />,
-    title: "Nursing Services",
+    title: "Soins infirmiers",
     description:
-      "Professional nursing support for post-operative care, chronic disease management, and more.",
+      "Soins infirmiers, pansements et accompagnement des patients après une intervention.",
   },
   {
     id: 5,
     icon: <FaSyringe size={36} className="text-indigo-600" />,
     title: "Vaccination",
     description:
-      "Safe and timely immunizations to protect you and your family from various diseases.",
+      "Vaccinations et rappels pour protéger toute la famille.",
   },
   {
     id: 6,
     icon: <FaCapsules size={36} className="text-yellow-600" />,
-    title: "Pharmacy",
+    title: "Pharmacie",
     description:
-      "Access to a wide range of medicines and health products with expert guidance.",
+      "Conseils et accès aux médicaments essentiels avec l’accompagnement du praticien.",
   },
 ];
 
@@ -75,7 +75,7 @@ const itemMotion = {
 export default function AboutServices() {
   return (
     <section
-      aria-label="Our Services"
+      aria-label="Nos spécialités"
       className="bg-white py-20 px-6 sm:px-12 max-w-7xl mx-auto"
     >
       {/* Section header */}
@@ -87,10 +87,10 @@ export default function AboutServices() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
-          Our <span className="text-blue-600">Services</span>
+          Nos <span className="text-blue-600">spécialités</span>
         </h2>
         <p className="mt-4 text-gray-600 text-lg sm:text-xl font-light">
-          Delivering a wide range of healthcare solutions tailored to your needs.
+          Une gamme complète de soins adaptés à vos besoins.
         </p>
       </motion.div>
 

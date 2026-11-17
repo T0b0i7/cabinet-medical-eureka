@@ -7,14 +7,14 @@ function ContactInfo() {
   return (
     <div className="flex flex-col space-y-3 text-gray-700 text-sm sm:text-base select-none">
       <ContactItem
-        href="tel:+18001234567"
+        href="tel:+2290141608339"
         iconPath="M3 10h1l3 3-1.5 1.5a11 11 0 005 5L12 21l3-3 3-3v-1"
-        label="+1 (800) 123-4567"
+        label="+229 01 41 60 83 39"
       />
       <ContactItem
-        href="mailto:support@novahealth.com"
+        href="mailto:contact@cabinet-eureka.bj"
         iconPath="M16 12H8m8 0v6a2 2 0 01-2 2H8a2 2 0 01-2-2v-6"
-        label="support@novahealth.com"
+        label="contact@cabinet-eureka.bj"
       />
     </div>
   );
@@ -47,7 +47,7 @@ function ContactItem({ href, iconPath, label }) {
 export default function PatientInfoFooter() {
   return (
     <motion.section
-      aria-label="Patient information footer"
+      aria-label="Informations patients"
       className="max-w-5xl mx-auto mt-16 px-4 sm:px-6 md:px-12 py-8 rounded-3xl bg-gradient-to-r from-white via-gray-50 to-white shadow-lg border border-gray-200"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
@@ -62,11 +62,11 @@ export default function PatientInfoFooter() {
           transition={{ duration: 0.7, delay: 0.3 }}
         >
           <h3 className="text-2xl sm:text-2xl md:text-3xl font-semibold text-blue-700 mb-2 select-none leading-tight">
-            Thank You for Trusting NovaHealth
+            Merci de faire confiance au Cabinet Médical EURÊKA
           </h3>
           <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
-            Your health and well-being are our top priorities. We’re here to
-            support you every step of the way with compassionate and expert care.
+            Votre santé et votre bien-être sont nos priorités. Nous vous
+            accompagnons à chaque étape avec des soins attentifs et experts.
           </p>
         </motion.div>
 
@@ -81,13 +81,13 @@ export default function PatientInfoFooter() {
 
           <motion.button
             type="button"
-            aria-label="Contact your care team"
+            aria-label="Contactez votre équipe soignante"
             className="bg-blue-700 hover:bg-blue-800 text-white font-semibold text-sm sm:text-base px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg shadow-lg transition-colors focus:outline-none focus:ring-4 focus:ring-blue-300 whitespace-nowrap"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            Contact Your Care Team
+            Contacter l’équipe soignante
           </motion.button>
         </motion.div>
       </div>

@@ -13,33 +13,33 @@ import { motion, AnimatePresence } from 'framer-motion';
 const INITIAL_NOTIFICATIONS = [
   {
     id: '1',
-    title: 'New appointment booked',
-    description: 'Patient John Doe booked a General appointment.',
-    time: '2 minutes ago',
+    title: 'Nouveau rendez-vous réservé',
+    description: 'Koffi Zinsou a réservé une consultation de médecine générale.',
+    time: 'il y a 2 minutes',
     read: false,
     icon: <HiBell className="w-6 h-6 text-indigo-600" />,
   },
   {
     id: '2',
-    title: 'Lab results ready',
-    description: 'Lab results for patient Jane Smith are now available.',
-    time: '15 minutes ago',
+    title: 'Résultats d’analyse prêts',
+    description: 'Les résultats d’analyse de Grâce Ahouandjinou sont disponibles.',
+    time: 'il y a 15 minutes',
     read: false,
     icon: <HiCheckCircle className="w-6 h-6 text-green-600" />,
   },
   {
     id: '3',
-    title: 'Appointment canceled',
-    description: 'Patient Mark Lee canceled his Dental appointment.',
-    time: '1 hour ago',
+    title: 'Rendez-vous annulé',
+    description: 'Benoît Sossou a annulé son rendez-vous dentaire.',
+    time: 'il y a 1 heure',
     read: true,
     icon: <HiX className="w-6 h-6 text-red-600" />,
   },
   {
     id: '4',
-    title: 'System maintenance',
-    description: 'Scheduled maintenance on August 15th from 1am-3am.',
-    time: 'Yesterday',
+    title: 'Maintenance du système',
+    description: 'Maintenance prévue le 15 août de 01h00 à 03h00.',
+    time: 'Hier',
     read: true,
     icon: <HiOutlineBell className="w-6 h-6 text-yellow-600" />,
   },
@@ -52,7 +52,7 @@ const DashboardNotifications = () => {
   const unreadCount = notifications.filter((n) => !n.read).length;
 
   // Mark all notifications as read
-  const handleMarkAllRead = () => {
+  const handleMarkAllLu = () => {
     if (markingAll) return;
     setMarkingAll(true);
     setTimeout(() => {
@@ -62,7 +62,7 @@ const DashboardNotifications = () => {
   };
 
   // Toggle read/unread for a single notification
-  const toggleReadStatus = (id) => {
+  const toggleLuStatut = (id) => {
     setNotifications((prev) =>
       prev.map((n) => (n.id === id ? { ...n, read: !n.read } : n))
     );
@@ -83,9 +83,9 @@ const DashboardNotifications = () => {
         </h2>
 
         <button
-          onClick={handleMarkAllRead}
+          onClick={handleMarkAllLu}
           disabled={markingAll || unreadCount === 0}
-          aria-label="Mark all notifications as read"
+          aria-label="Tout marquer comme lu"
           className={`mt-4 sm:mt-0 inline-flex items-center gap-2 px-4 py-2 rounded-md font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 transition
             ${
               markingAll || unreadCount === 0
@@ -118,7 +118,7 @@ const DashboardNotifications = () => {
           ) : (
             <HiCheckCircle className="w-5 h-5" aria-hidden="true" />
           )}
-          Mark All Read
+          Tout marquer comme lu
         </button>
       </header>
 
@@ -138,7 +138,7 @@ const DashboardNotifications = () => {
               layout
               role="listitem"
               tabIndex={0}
-              onClick={() => toggleReadStatus(id)}
+              onClick={() => toggleLuStatut(id)}
               className={`flex items-start gap-4 p-4 rounded-lg shadow-sm cursor-pointer transition
                 ${
                   read
@@ -146,7 +146,7 @@ const DashboardNotifications = () => {
                     : 'bg-white text-gray-900 font-semibold shadow-md hover:shadow-lg'
                 }
                 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1`}
-              aria-label={`${title}. ${read ? 'Read' : 'Unread'}. Click to mark as ${
+              aria-label={`${title}. ${read ? 'Lu' : 'Non lu'}. Click to mark as ${
                 read ? 'unread' : 'read'
               }.`}
             >

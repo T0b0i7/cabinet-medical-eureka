@@ -9,25 +9,25 @@ const coreValues = [
     icon: <FaHandsHelping className="text-blue-700 w-8 h-8" aria-hidden="true" />,
     title: "Passion",
     description:
-      "Our team is driven by a deep passion to make a positive impact every day.",
+      "Une équipe animée par l’envie de prendre soin de chaque patient, chaque jour.",
   },
   {
     icon: <FaUsers className="text-blue-700 w-8 h-8" aria-hidden="true" />,
     title: "Collaboration",
     description:
-      "We believe in teamwork and open communication to achieve outstanding results.",
+      "Le travail en équipe et la communication au service de votre santé.",
   },
   {
     icon: <FaLightbulb className="text-blue-700 w-8 h-8" aria-hidden="true" />,
     title: "Innovation",
     description:
-      "Constantly pushing boundaries to bring fresh ideas and creative solutions.",
+      "Un plateau technique moderne et des pratiques en constante amélioration.",
   },
   {
     icon: <FaStar className="text-blue-700 w-8 h-8" aria-hidden="true" />,
     title: "Excellence",
     description:
-      "Committed to delivering the highest quality work with integrity and care.",
+      "Une exigence de qualité et une attention sincère portées à chaque patient.",
   },
 ];
 
@@ -50,7 +50,7 @@ export default function OurteamIntro() {
 
   return (
     <section
-      aria-label="Introduction to Our Team"
+      aria-label="Introduction to Notre équipe"
       className="bg-white text-black py-20 px-5 sm:px-8 md:px-12"
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-stretch">
@@ -66,7 +66,7 @@ export default function OurteamIntro() {
             className="text-4xl sm:text-5xl font-extrabold text-blue-700 mb-4 relative inline-block max-w-max"
             variants={itemVariants}
           >
-            <span className="text-black">Meet the Heart of Our</span> Success
+            <span className="text-black">Le cœur de notre</span> réussite
             <span
               aria-hidden="true"
               className="absolute left-0 bottom-[-8px] h-1.5 w-28 bg-blue-200 rounded-full"
@@ -77,10 +77,10 @@ export default function OurteamIntro() {
             className="text-gray-700 max-w-xl text-lg font-light mb-10 leading-relaxed"
             variants={itemVariants}
           >
-            Our team combines passion, expertise, and a collaborative spirit to
-            deliver outstanding results. We are dedicated to innovation and
-            excellence in every project, ensuring the best outcomes for our
-            clients and community.
+            Notre équipe allie passion, expertise et esprit de collaboration pour
+            offrir des soins d’excellence. Nous cultivons l’innovation et la
+            rigueur à chaque étape, au service de nos patients et de la
+            communauté.
           </motion.p>
 
           <motion.div
@@ -117,7 +117,7 @@ export default function OurteamIntro() {
         >
           <img
             src="https://images.unsplash.com/photo-1703809047946-7842d5c6734b?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Team members collaborating in office"
+            alt="Équipe du cabinet en réunion"
             className="w-full h-full object-cover"
             loading="lazy"
             decoding="async"

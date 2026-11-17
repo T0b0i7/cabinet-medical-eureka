@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 
 const CONTACT_OPTIONS = [
-  { id: "email", label: "Email" },
-  { id: "phone", label: "Phone" },
+  { id: "email", label: "E-mail" },
+  { id: "phone", label: "Téléphone" },
   { id: "sms", label: "SMS" },
 ];
 
@@ -59,10 +59,10 @@ export default function PatientContactPreferences() {
   function validateForm() {
     const errors = {};
     if (selectedMethods.length === 0) {
-      errors.methods = "Please select at least one contact method.";
+      errors.methods = "Veuillez choisir au moins un moyen de contact.";
     }
     if (!preferredTime) {
-      errors.time = "Please select the best time to contact.";
+      errors.time = "Veuillez choisir le meilleur moment pour vous contacter.";
     }
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
@@ -77,9 +77,9 @@ export default function PatientContactPreferences() {
     }
 
     alert(
-      `Preferences saved:\nMethods: ${selectedMethods.join(
+      `Préférences enregistrées :\nMoyens : ${selectedMethods.join(
         ", "
-      )}\nBest time to contact: ${preferredTime}`
+      )}\nMeilleur moment : ${preferredTime}`
     );
   }
 
@@ -92,14 +92,14 @@ export default function PatientContactPreferences() {
         id="contact-preferences-title"
         className="text-3xl font-extrabold text-blue-700 mb-6 text-center"
       >
-        Contact Preferences
+        Préférences de contact
       </h2>
 
       <form onSubmit={handleSubmit} noValidate>
         {/* Contact Methods */}
         <fieldset className="mb-6">
           <legend className="text-lg font-semibold text-gray-700 mb-3">
-            Preferred Contact Methods <span className="text-red-600">*</span>
+            Moyens de contact préférés <span className="text-red-600">*</span>
           </legend>
 
           <div className="flex flex-wrap gap-6">
@@ -127,7 +127,7 @@ export default function PatientContactPreferences() {
             htmlFor="preferredTime"
             className="block text-lg font-semibold text-gray-700 mb-2"
           >
-            Best Time to Contact <span className="text-red-600">*</span>
+            Meilleur moment pour vous contacter <span className="text-red-600">*</span>
           </label>
 
           <select
@@ -143,11 +143,11 @@ export default function PatientContactPreferences() {
             required
           >
             <option value="" disabled>
-              Select a time
+              Sélectionner un moment
             </option>
-            <option value="morning">Morning (8AM - 12PM)</option>
-            <option value="afternoon">Afternoon (12PM - 4PM)</option>
-            <option value="evening">Evening (4PM - 8PM)</option>
+            <option value="morning">Matin (08h00 – 12h00)</option>
+            <option value="afternoon">Après-midi (12h00 – 16h00)</option>
+            <option value="evening">Soir (16h00 – 18h00)</option>
           </select>
 
           {formErrors.time && (
@@ -166,7 +166,7 @@ export default function PatientContactPreferences() {
           type="submit"
           className="w-full bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 rounded-lg shadow-md transition-colors focus:outline-none focus:ring-4 focus:ring-blue-300"
         >
-          Save Preferences
+          Enregistrer les préférences
         </button>
       </form>
     </section>

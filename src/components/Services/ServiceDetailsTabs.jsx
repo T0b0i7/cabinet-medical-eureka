@@ -7,24 +7,24 @@ import { FaHeartbeat, FaUserMd, FaSyringe } from "react-icons/fa";
 const tabs = [
   {
     id: "cardiology",
-    label: "Cardiology",
+    label: "ORL",
     icon: FaHeartbeat,
     content:
-      "Our cardiology department provides cutting-edge diagnostics, heart health monitoring, and treatment plans tailored to your cardiovascular needs. We use the latest non-invasive technology to ensure accuracy and comfort.",
+      "Le service ORL prend en charge les troubles de l’audition, les sinusites, les vertiges et les pathologies de la gorge et du nez, avec des explorations adaptées à chaque patient.",
   },
   {
     id: "consultation",
-    label: "Consultation",
+    label: "Chirurgie cervico-faciale",
     icon: FaUserMd,
     content:
-      "Meet with general practitioners and specialists for thorough assessments, second opinions, or preventive advice. Our consultations are patient-first and deeply personalized.",
+      "La chirurgie cervico-faciale couvre les explorations et les actes chirurgicaux spécialisés de la tête et du cou, avec un suivi attentif avant et après l’intervention.",
   },
   {
     id: "vaccination",
-    label: "Vaccination",
+    label: "Médecine générale",
     icon: FaSyringe,
     content:
-      "We offer a wide range of vaccines for children, adults, and travelers — including seasonal flu, COVID-19, and routine immunizations — all administered by licensed staff.",
+      "La médecine générale assure les consultations courantes, les bilans de santé et le suivi des pathologies chroniques, 7 jours sur 7 de 08h00 à 18h00.",
   },
 ];
 
@@ -47,28 +47,27 @@ const ServiceDetailsTabs = () => {
 
   return (
     <section
-      aria-label="Service Details Tabs"
+      aria-label="Détails des spécialités"
       className="bg-white py-20 px-6 md:px-12 my-[-50px] mb-[-80px]"
     >
       <div className="max-w-4xl mx-auto">
         {/* Heading */}
         <header className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
-            Service{" "}
+            Détails des{" "}
             <span className="text-blue-700 underline decoration-blue-300 decoration-4 underline-offset-4">
-              Details
+              spécialités
             </span>
           </h2>
           <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-600 font-light max-w-2xl mx-auto">
-            Tap into the specifics of each service to understand how we care for
-            you.
+            Découvrez le détail de nos prises en charge et les motifs de consultation.
           </p>
         </header>
 
         {/* Tabs */}
         <nav
           role="tablist"
-          aria-label="Service categories"
+          aria-label="Catégories de spécialités"
           className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-10"
         >
           {tabs.map(({ id, label, icon: Icon }) => {

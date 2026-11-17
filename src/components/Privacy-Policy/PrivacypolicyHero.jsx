@@ -13,19 +13,13 @@ function PrivacyPolicyHero() {
             id="privacy-policy-hero-heading"
             className="text-[clamp(2.5rem,5vw,4rem)] font-extrabold tracking-tight leading-tight text-gray-900"
           >
-            Your Privacy,{" "}
+            Votre confidentialité,{" "}
             <span className="text-blue-600 text-xl sm:text-5xl font-semibold align-baseline">
-              Our Commitment
+              Notre engagement
             </span>
           </h1>
-          <p className="mt-8 max-w-lg mx-auto lg:mx-0 text-lg sm:text-xl font-normal leading-relaxed text-gray-700">
-            We prioritize your privacy and protect your personal data with the highest
-            standards. Understand how we collect, use, and safeguard your information.
-          </p>
-          <p className="mt-4 max-w-md mx-auto lg:mx-0 text-sm text-gray-500 tracking-wide">
-            Transparency and control are at the core of our privacy policy — because your
-            trust matters.
-          </p>
+          <p className="mt-8 max-w-lg mx-auto lg:mx-0 text-lg sm:text-xl font-normal leading-relaxed text-gray-700">Nous accordons la plus grande importance à la confidentialité de vos données de santé. Découvrez comment nous les collectons, les utilisons et les protégeons.</p>
+          <p className="mt-4 max-w-md mx-auto lg:mx-0 text-sm text-gray-500 tracking-wide">La transparence et la maîtrise de vos informations sont au cœur de notre politique de confidentialité.</p>
         </div>
 
         {/* Hero image with decorative accent */}
@@ -33,7 +27,7 @@ function PrivacyPolicyHero() {
           <div className="overflow-hidden rounded-3xl border border-indigo-200 shadow-2xl">
             <img
               src="https://images.squarespace-cdn.com/content/v1/6220ad1db2910108f6cfc24f/46da4dd1-e009-4d51-92bc-7bd013235df1/googlevsprivacy.gif"
-              alt="Privacy protection concept with lock and data"
+              alt="Protection des données personnelles"
               className="w-full h-auto object-cover select-none"
               loading="lazy"
               draggable={false}

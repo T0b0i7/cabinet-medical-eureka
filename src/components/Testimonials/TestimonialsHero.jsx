@@ -31,8 +31,8 @@ const TestimonialsHero = () => {
             variants={fadeInUp}
             className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight"
           >
-            <span className="text-blue-700">What</span>{" "}
-            <span className="text-black">Our Clients Say</span>
+            <span className="text-blue-700">Ce que</span>{" "}
+            <span className="text-black">disent nos patients</span>
           </motion.h1>
 
           <motion.p
@@ -40,9 +40,9 @@ const TestimonialsHero = () => {
             variants={fadeInUp}
             className="mt-4 text-base sm:text-lg md:text-xl font-light max-w-lg mx-auto md:mx-0 leading-relaxed"
           >
-            Discover how our services have made a real difference. These are
-            genuine stories from customers who’ve experienced our work
-            first-hand.
+            Découvrez comment notre prise en charge a fait la différence. Des
+            témoignages authentiques de patients qui ont vécu leur parcours au
+            cabinet.
           </motion.p>
 
           <motion.button
@@ -50,10 +50,10 @@ const TestimonialsHero = () => {
             variants={fadeInUp}
             type="button"
             className="mt-7 px-8 py-2.5 bg-blue-700 text-white font-semibold rounded-lg shadow-md hover:bg-blue-800 transition-colors focus:outline-none focus:ring-4 focus:ring-blue-300"
-            aria-label="Read All Testimonials"
-            onClick={() => alert("Redirect to testimonials list")}
+            aria-label="Lire tous les témoignages"
+            onClick={() => alert("Consultez les témoignages ci-dessous")}
           >
-            Read Testimonials
+            Lire les témoignages
           </motion.button>
         </motion.div>
 
@@ -66,7 +66,7 @@ const TestimonialsHero = () => {
         >
           <img
             src="https://images.unsplash.com/photo-1618498082410-b4aa22193b38?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0"
-            alt="Happy customers giving positive reviews"
+            alt="Patients satisfaits de leur prise en charge"
             className="rounded-xl shadow-xl w-full object-cover"
             loading="lazy"
             decoding="async"

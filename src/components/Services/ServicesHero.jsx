@@ -69,7 +69,7 @@ const ServicesHero = () => {
 
   return (
     <section
-      aria-label="Services Hero Section"
+      aria-label="Nos spécialités"
       role="region"
       className="bg-white overflow-hidden"
       ref={sectionRef}
@@ -90,9 +90,9 @@ const ServicesHero = () => {
             tabIndex={-1}
             className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-gray-900 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-500 rounded"
           >
-            Our{" "}
+            Nos{" "}
             <span className="text-blue-700 underline decoration-blue-300 decoration-4 underline-offset-4">
-              Services
+              spécialités
             </span>
           </motion.h1>
 
@@ -100,20 +100,20 @@ const ServicesHero = () => {
             className="mt-6 max-w-xl mx-auto md:mx-0 text-lg sm:text-xl md:text-2xl font-light leading-relaxed text-gray-700 tracking-wide"
             variants={itemVariants}
           >
-            From routine checkups to specialized treatments, we offer
-            comprehensive healthcare services tailored to your individual needs.
+            ORL, chirurgie cervico-faciale et médecine générale : des soins
+            adaptés à chaque patient, dans un cadre moderne à Porto-Novo.
           </motion.p>
 
           <motion.button
             type="button"
             onClick={scrollToExplore}
-            aria-label="Explore our services"
+            aria-label="Découvrir nos spécialités"
             className="mt-10 inline-block bg-blue-600 hover:bg-blue-700 focus-visible:ring-indigo-400 focus:outline-none focus:ring-4 text-white font-semibold px-10 py-4 rounded-lg shadow-lg select-none tracking-wide"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             variants={itemVariants}
           >
-            Explore Services
+            Découvrir nos spécialités
           </motion.button>
         </motion.div>
 
@@ -124,7 +124,7 @@ const ServicesHero = () => {
         >
           <motion.img
             src="https://plus.unsplash.com/premium_photo-1681996356237-db488ab30eb6?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Healthcare Services Illustration"
+            alt="Illustration des soins du cabinet"
             loading="lazy"
             decoding="async"
             draggable={false}

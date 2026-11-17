@@ -11,36 +11,22 @@ function UserPrivacyRights() {
           id="user-privacy-rights-heading"
           className="mb-6 text-3xl font-extrabold text-blue-700"
         >
-          Your Privacy Rights
+          Vos droits en matière de confidentialité
         </h2>
 
-        <p className="mb-6 leading-relaxed text-gray-800 text-lg">
-          You have important rights regarding your personal data. Depending on where you live, these may include:
-        </p>
+        <p className="mb-6 leading-relaxed text-gray-800 text-lg">Vous disposez de droits importants sur vos données personnelles. Selon votre lieu de résidence, ces droits peuvent inclure :</p>
 
         <ul className="max-w-xl list-disc list-inside space-y-3 text-gray-800 text-lg">
-          <li>
-            <strong>Right to Access:</strong> Request a copy of the personal data we hold about you.
-          </li>
-          <li>
-            <strong>Right to Rectification:</strong> Ask us to correct any inaccurate or incomplete data.
-          </li>
-          <li>
-            <strong>Right to Erasure:</strong> Also known as the "right to be forgotten," request deletion of your data under certain circumstances.
-          </li>
-          <li>
-            <strong>Right to Restrict Processing:</strong> Limit how we use your data in specific cases.
-          </li>
-          <li>
-            <strong>Right to Data Portability:</strong> Obtain your data in a structured, commonly used format.
-          </li>
-          <li>
-            <strong>Right to Object:</strong> Object to processing your data for marketing or other purposes.
-          </li>
+          <li>Demander une copie des données personnelles que nous détenons sur vous.</li>
+          <li>Nous demander de corriger toute donnée inexacte ou incomplète.</li>
+          <li>Demander la suppression de vos données dans certaines circonstances.</li>
+          <li>Limiter l’utilisation de vos données dans certains cas.</li>
+          <li>Obtenir vos données dans un format structuré et courant.</li>
+          <li>Vous opposer au traitement de vos données à des fins de communication ou autres.</li>
         </ul>
 
         <p className="mt-6 leading-relaxed text-gray-800 text-lg">
-          To exercise any of these rights, please reach out to us via the contact information provided below.
+          Pour exercer ces droits, contactez-nous via les coordonnées indiquées ci-dessous.
         </p>
       </div>
     </section>

@@ -11,43 +11,43 @@ import { FaStar } from "react-icons/fa";
 const doctorTestimonials = [
   {
     id: 1,
-    name: "Dr. Olivia Martin",
-    specialty: "Cardiologist",
+    name: "Dr Chantal Houngbédji",
+    specialty: "Oto-Rhino-Laryngologiste (ORL)",
     image:
       "https://images.unsplash.com/photo-1579165466949-3180a3d056d5?w=400&auto=format&fit=crop&q=60",
     rating: 5,
     feedback:
-      "Dr. Martin’s expertise and compassion truly made a difference in my treatment journey.",
+      "L’expertise et la bienveillance du Dr Chantal Houngbédji ont vraiment changé mon parcours de soins.",
   },
   {
     id: 2,
-    name: "Dr. James Carter",
-    specialty: "Neurologist",
+    name: "Dr Barthélémy Gnonlonfoun",
+    specialty: "Chirurgien cervico-facial",
     image:
       "https://plus.unsplash.com/premium_photo-1661764895266-f0b195221b77?w=400&auto=format&fit=crop&q=60",
     rating: 4,
     feedback:
-      "Thanks to Dr. Carter, I received the best care possible. Highly recommend!",
+      "Grâce au Dr Isidore Aholou, j’ai reçu les meilleurs soins possibles. Je recommande !",
   },
   {
     id: 3,
-    name: "Dr. Sophia Lee",
-    specialty: "Pediatrician",
+    name: "Dr Sylvie Dossou-Yovo",
+    specialty: "Médecin généraliste",
     image:
       "https://images.unsplash.com/photo-1587500154541-1cafd74f0efc?w=400&auto=format&fit=crop&q=60",
     rating: 5,
     feedback:
-      "Dr. Lee has a wonderful way with children and made us feel very comfortable.",
+      "Le Dr Romuald Adjakpa est excellent avec les enfants et nous a mis parfaitement à l’aise.",
   },
   {
     id: 4,
-    name: "Dr. Michael",
-    specialty: "Orthopedic Surgeon",
+    name: "Dr Romuald Adjakpa",
+    specialty: "Médecin généraliste",
     image:
       "https://plus.unsplash.com/premium_photo-1661720509368-23b026d2667c?w=400&auto=format&fit=crop&q=60",
     rating: 5,
     feedback:
-      "I’m grateful for Dr. Brown’s professionalism and the amazing results I got.",
+      "Je suis reconnaissant du professionnalisme du Dr Romuald Adjakpa et des excellents résultats obtenus.",
   },
 ];
 
@@ -140,7 +140,7 @@ export default function TestimonialsDoctors() {
           id="doctors-heading"
           className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-12 tracking-tight"
         >
-          <span className="text-blue-700">Meet Our Expert</span> Doctors
+          <span className="text-blue-700">Rencontrez nos</span> médecins
         </h2>
 
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">

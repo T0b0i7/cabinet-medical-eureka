@@ -14,15 +14,9 @@ const GoverningLaw = () => {
         Governing Law
       </h2>
 
-      <p className="max-w-3xl mx-auto mb-4 text-base sm:text-lg leading-relaxed font-light text-gray-800">
-        These Terms & Conditions are governed by and interpreted according to the laws of the
-        jurisdiction where NovaHealth operates, without regard to any conflict of law rules.
-      </p>
+      <p className="max-w-3xl mx-auto mb-4 text-base sm:text-lg leading-relaxed font-light text-gray-800">Les présentes conditions générales sont régies et interprétées conformément aux lois applicables au Bénin, sans égard aux règles de conflit de lois.</p>
 
-      <p className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-light text-gray-800">
-        By continuing to use our services, you agree to submit to the exclusive jurisdiction of
-        the courts located in that jurisdiction for any disputes related to these terms.
-      </p>
+      <p className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-light text-gray-800">En continuant à utiliser nos services, vous acceptez la compétence exclusive des tribunaux compétents pour tout litige lié à ces conditions.</p>
     </section>
   );
 };

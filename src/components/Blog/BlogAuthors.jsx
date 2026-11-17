@@ -3,8 +3,8 @@ import React from "react";
 const authorsList = [
   {
     id: 1,
-    fullName: "Emma Johnson",
-    description: "Health & Wellness expert passionate about holistic living.",
+    fullName: "Dr Romuald Adjakpa",
+    description: "Médecin ORL, attaché à une prise en charge globale du patient.",
     avatarUrl:
       "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d29tYW58ZW58MHx8MHx8fDA%3D",
     social: {
@@ -14,8 +14,8 @@ const authorsList = [
   },
   {
     id: 2,
-    fullName: "Liam Smith",
-    description: "Fitness coach and nutrition specialist helping people stay fit.",
+    fullName: "Dr Sylvie Dossou-Yovo",
+    description: "Médecin généraliste, spécialisée dans le suivi des maladies chroniques.",
     avatarUrl:
       "https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWFufGVufDB8fDB8fHww",
     social: {
@@ -25,8 +25,8 @@ const authorsList = [
   },
   {
     id: 3,
-    fullName: "Sophia Lee",
-    description: "Mental health advocate and mindfulness teacher.",
+    fullName: "Grâce Ahouandjinou",
+    description: "Chirurgienne cervico-faciale, engagée pour des soins de qualité.",
     avatarUrl:
       "https://plus.unsplash.com/premium_photo-1689551670902-19b441a6afde?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29tYW58ZW58MHx8MHx8fDA%3D",
     social: {
@@ -36,8 +36,8 @@ const authorsList = [
   },
   {
     id: 4,
-    fullName: "Mason Davis",
-    description: "Expert in natural remedies and holistic health approaches.",
+    fullName: "Dr Isidore Aholou",
+    description: "Médecin généraliste, passionné de prévention et de santé communautaire.",
     avatarUrl:
       "https://plus.unsplash.com/premium_photo-1664533227571-cb18551cac82?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bWFufGVufDB8fDB8fHww",
     social: {
@@ -75,7 +75,7 @@ function AuthorCard({ author }) {
   return (
     <article
       className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center transition-shadow duration-300 hover:shadow-xl border border-gray-200"
-      aria-label={`Profile of ${author.fullName}`}
+      aria-label={`Profil de ${author.fullName}`}
     >
       <img
         src={author.avatarUrl}
@@ -116,7 +116,7 @@ export default function BlogAuthors() {
         id="authors-heading"
         className="text-3xl font-extrabold text-center mb-10 text-gray-900"
       >
-        <span className="text-blue-700">Meet Our</span> Authors
+        <span className="text-blue-700">Nos</span> auteurs
       </h2>
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         {authorsList.map((author) => (
