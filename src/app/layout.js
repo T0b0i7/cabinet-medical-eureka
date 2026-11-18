@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Cabinet Médical — Cotonou, Bénin",
   description:
-    "Cabinet Médical à Cotonou : ORL, chirurgie cervico-faciale et médecine générale. Ouvert 7j/7 de 08h00 à 18h00. Prise de rendez-vous en ligne et par WhatsApp.",
+    "Cabinet Médical à Cotonou : médecine générale, pédiatrie, gynécologie, ORL, cardiologie, dermatologie, ophtalmologie et bien d’autres spécialités. Ouvert 7j/7 de 08h00 à 18h00. Prise de rendez-vous en ligne et par WhatsApp.",
   keywords: [
     "Cabinet Médical",
     "médecin Cotonou",

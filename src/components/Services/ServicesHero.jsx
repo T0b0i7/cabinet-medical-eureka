@@ -100,8 +100,9 @@ const ServicesHero = () => {
             className="mt-6 max-w-xl mx-auto md:mx-0 text-lg sm:text-xl md:text-2xl font-light leading-relaxed text-gray-700 tracking-wide"
             variants={itemVariants}
           >
-            ORL, chirurgie cervico-faciale et médecine générale : des soins
-            adaptés à chaque patient, dans un cadre moderne à Cotonou.
+            Médecine générale, pédiatrie, gynécologie, ORL, cardiologie,
+            dermatologie et bien d’autres spécialités : des soins adaptés à
+            chaque patient, dans un cadre moderne à Cotonou.
           </motion.p>
 
           <motion.button
