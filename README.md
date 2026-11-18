@@ -1,15 +1,25 @@
-# Cabinet Médical EURÊKA — Porto-Novo, Bénin
+# Modèle de site vitrine — Cabinet Médical (prototype)
 
-Site vitrine du **Cabinet Médical EURÊKA**, à Porto-Novo (Bénin).
-Interface 100 % en français, prise de rendez-vous avec récapitulatif **WhatsApp** pré-rempli, et déploiement statique sur **GitHub Pages**.
+**Version modèle générique** du site vitrine : aucun nom, logo ou coordonnée réelle n’est utilisé. Elle sert de base de démonstration à présenter à d’autres cabinets, puis à personnaliser.
+
+Interface 100 % en français, 12 spécialités avec tarifs indicatifs, prise de rendez-vous avec récapitulatif **WhatsApp** pré-rempli, et bandeau « Prototype de démonstration ».
 
 ### 🔗 Aperçus en ligne
 
-- **Vercel (principal) :** **https://cabinet-medical-eureka.vercel.app/**
-- **GitHub Pages :** **https://t0b0i7.github.io/cabinet-medical-eureka/**
+- **Aperçu du modèle :** **https://cabinet-medical-modele.vercel.app/**
+- **Version EURÊKA (branche `main`) :** https://cabinet-medical-eureka.vercel.app/
 
-[![Vercel](https://img.shields.io/badge/Vercel-en%20ligne-000?logo=vercel)](https://cabinet-medical-eureka.vercel.app/)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-en%20ligne-2ea44f?logo=github)](https://t0b0i7.github.io/cabinet-medical-eureka/)
+### 🎛️ Personnaliser pour un cabinet
+
+Le modèle accepte des paramètres d’URL, sans rebuild :
+
+```
+https://cabinet-medical-modele.vercel.app/?clinique=Cabinet+Dentaire+Akpakpa&ville=Parakou&tel=+229+01+97+00+00+00&email=contact@cabinet.bj
+```
+
+Paramètres disponibles : `clinique`, `ville`, `tel`, `email`, `adresse`.
+
+[![Vercel](https://img.shields.io/badge/Vercel-mod%C3%A8le-000?logo=vercel)](https://cabinet-medical-modele.vercel.app/)
 [![Next.js](https://img.shields.io/badge/Next.js-15.5-000?logo=nextdotjs)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-087ea4?logo=react)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-38bdf8?logo=tailwindcss)](https://tailwindcss.com/)
