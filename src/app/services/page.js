@@ -6,6 +6,7 @@ import React from "react"
 import ServicesHero from "@/components/Services/ServicesHero"
 import ServicesIntro from "@/components/Services/ServicesIntro"
 import ServiceList from "@/components/Services/ServiceList"
+import SpecialtiesGrid from "@/components/Services/SpecialtiesGrid"
 import ServiceDetailsTabs from "@/components/Services/ServiceDetailsTabs"
 import SpecializationsCarousel from "@/components/Services/SpecializationsCarousel"
 import ServiceHighlights from "@/components/Services/ServiceHighlights"
@@ -29,6 +30,7 @@ const page = () => {
     <div>
       <ServicesHero />
       <ServicesIntro />
+      <SpecialtiesGrid />
       <ServiceList />
       <ServiceDetailsTabs />
       <SpecializationsCarousel />

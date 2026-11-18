@@ -16,16 +16,16 @@ import {
 } from "react-icons/fa";
 
 const specializations = [
-  { id: 1, title: "ORL", icon: FaBrain },
-  { id: 2, title: "Médecine générale", icon: FaStethoscope },
-  { id: 3, title: "ORL", icon: FaHeartbeat },
-  { id: 4, title: "Audiologie", icon: FaXRay },
-  { id: 5, title: "Explorations ORL", icon: FaSyringe },
-  { id: 6, title: "Suivi post-opératoire", icon: FaTooth },
-  { id: 7, title: "Soins infirmiers", icon: FaUserNurse },
-  { id: 8, title: "ORL pédiatrique", icon: FaBaby },
-  { id: 9, title: "Vaccination", icon: FaProcedures },
-  { id: 10, title: "Bilans de santé", icon: FaSocks },
+  { id: 1, title: "Médecine générale", icon: FaStethoscope },
+  { id: 2, title: "ORL", icon: FaBrain },
+  { id: 3, title: "Chirurgie cervico-faciale", icon: FaProcedures },
+  { id: 4, title: "Pédiatrie", icon: FaBaby },
+  { id: 5, title: "Gynécologie-Obstétrique", icon: FaUserNurse },
+  { id: 6, title: "Cardiologie", icon: FaHeartbeat },
+  { id: 7, title: "Dermatologie", icon: FaSyringe },
+  { id: 8, title: "Ophtalmologie", icon: FaXRay },
+  { id: 9, title: "Dentaire", icon: FaTooth },
+  { id: 10, title: "Kinésithérapie", icon: FaSocks },
 ];
 
 const CARD_WIDTH = 280; // px
