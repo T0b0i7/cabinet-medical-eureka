@@ -11,7 +11,7 @@ const emergencySteps = [
   },
   {
     title: 'Appelez le cabinet',
-    description: 'Contactez immédiatement le cabinet au +229 01 41 60 83 39.',
+    description: 'Contactez immédiatement le cabinet au +229 01 00 00 00 00.',
   },
   {
     title: 'Donnez les détails',

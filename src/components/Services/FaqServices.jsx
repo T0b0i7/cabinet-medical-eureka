@@ -13,7 +13,7 @@ const faqsData = [
   {
     question: "Comment prendre rendez-vous ?",
     answer:
-      "Vous pouvez réserver en ligne sur notre site, par téléphone au +229 01 41 60 83 39 ou par WhatsApp. Les consultations se font au cabinet, sur rendez-vous.",
+      "Vous pouvez réserver en ligne sur notre site, par téléphone au +229 01 00 00 00 00 ou par WhatsApp. Les consultations se font au cabinet, sur rendez-vous.",
   },
   {
     question: "Acceptez-vous les assurances ?",

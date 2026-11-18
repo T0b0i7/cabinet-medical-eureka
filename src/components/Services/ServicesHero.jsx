@@ -101,7 +101,7 @@ const ServicesHero = () => {
             variants={itemVariants}
           >
             ORL, chirurgie cervico-faciale et médecine générale : des soins
-            adaptés à chaque patient, dans un cadre moderne à Porto-Novo.
+            adaptés à chaque patient, dans un cadre moderne à Cotonou.
           </motion.p>
 
           <motion.button

@@ -75,10 +75,10 @@ export default function HomeAbout() {
             variants={fadeUp}
             className="max-w-lg text-gray-900 text-base sm:text-lg font-light mb-8"
           >
-            Au Cabinet Médical EURÊKA, chaque patient bénéficie d’une écoute
+            Au Cabinet Médical, chaque patient bénéficie d’une écoute
             attentive et de soins adaptés. Nos spécialités ORL, chirurgie
             cervico-faciale et médecine générale sont proposées dans un cadre
-            moderne, à Porto-Novo.
+            moderne, à Cotonou.
           </motion.p>
 
           <motion.ul

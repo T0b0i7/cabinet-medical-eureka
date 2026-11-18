@@ -7,7 +7,7 @@ const faqItems = [
   {
     question: "Que faire en cas d’urgence ?",
     answer:
-      "Restez calme, évaluez la situation, appelez immédiatement le cabinet au +229 01 41 60 83 39 et donnez des informations précises sur le lieu et la nature de l’urgence.",
+      "Restez calme, évaluez la situation, appelez immédiatement le cabinet au +229 01 00 00 00 00 et donnez des informations précises sur le lieu et la nature de l’urgence.",
   },
   {
     question: "Quand faut-il appeler le cabinet ?",

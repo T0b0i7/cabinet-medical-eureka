@@ -23,7 +23,7 @@ const faqItemAnimation = {
 // List of FAQ entries, could be extracted elsewhere if needed
 const faqEntries = [
   {
-    question: "Quelles spécialités propose le Cabinet Médical EURÊKA ?",
+    question: "Quelles spécialités propose le Cabinet Médical ?",
     answer:
       "Le cabinet propose des consultations d’ORL, de chirurgie cervico-faciale et de médecine générale, ainsi que des bilans de santé et la prise en charge des urgences légères.",
   },

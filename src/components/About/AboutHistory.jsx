@@ -9,7 +9,7 @@ const timelineData = [
     year: "2005",
     title: "Fondation",
     description:
-      "Le Cabinet Médical EURÊKA est né de la volonté d’offrir à Porto-Novo des soins spécialisés de proximité.",
+      "Le Cabinet Médical est né de la volonté d’offrir à Cotonou des soins spécialisés de proximité.",
   },
   {
     year: "2010",
@@ -72,7 +72,7 @@ export default function AboutHistory() {
           Notre <span className="text-blue-600">histoire</span>
         </h2>
         <p className="mt-4 text-gray-600 text-lg sm:text-xl font-light">
-          Un parcours au service de la santé des familles de Porto-Novo.
+          Un parcours au service de la santé des familles de Cotonou.
         </p>
       </motion.div>
 

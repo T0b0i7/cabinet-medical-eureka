@@ -14,7 +14,7 @@ const TermsConditionsIntro = () => {
         Bienvenue dans nos conditions générales
       </h2>
 
-      <p className="max-w-3xl mx-auto text-gray-700 text-base sm:text-lg leading-relaxed font-light">Au Cabinet Médical EURÊKA, votre confiance compte plus que tout. Ces conditions générales précisent les modalités d’utilisation de notre site et de nos services, ainsi que vos droits et obligations. Nous vous recommandons de les lire attentivement.</p>
+      <p className="max-w-3xl mx-auto text-gray-700 text-base sm:text-lg leading-relaxed font-light">Au Cabinet Médical, votre confiance compte plus que tout. Ces conditions générales précisent les modalités d’utilisation de notre site et de nos services, ainsi que vos droits et obligations. Nous vous recommandons de les lire attentivement.</p>
 
       <p className="max-w-3xl mx-auto text-gray-800 text-base sm:text-lg leading-relaxed font-light mt-4">En continuant à utiliser nos services, vous acceptez ces conditions. Pour toute question, notre équipe reste à votre disposition. Votre sécurité et votre satisfaction demeurent notre priorité.</p>
     </section>

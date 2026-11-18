@@ -55,11 +55,11 @@ const EmergencyFooter = () => {
                 />
               </svg>
               <a
-                href="tel:+2290141608339"
+                href="tel:+2290100000000"
                 className="hover:text-blue-700 transition-colors break-words"
                 aria-label="Appeler le cabinet"
               >
-                +229 01 41 60 83 39
+                +229 01 00 00 00 00
               </a>
             </div>
 
@@ -80,11 +80,11 @@ const EmergencyFooter = () => {
                 />
               </svg>
               <a
-                href="mailto:contact@cabinet-eureka.bj"
+                href="mailto:contact@votre-cabinet.bj"
                 className="hover:text-blue-700 transition-colors break-words"
                 aria-label="Écrire au cabinet"
               >
-                contact@cabinet-eureka.bj
+                contact@votre-cabinet.bj
               </a>
             </div>
           </div>

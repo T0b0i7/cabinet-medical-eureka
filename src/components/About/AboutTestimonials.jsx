@@ -33,7 +33,7 @@ const testimonials = [
       "https://plus.unsplash.com/premium_photo-1674499074395-5277fdd707ee?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8",
     rating: 4,
     feedback:
-      "Une équipe professionnelle et à l’écoute. Je recommande vivement le Cabinet Médical EURÊKA à Porto-Novo.",
+      "Une équipe professionnelle et à l’écoute. Je recommande vivement le Cabinet Médical à Cotonou.",
   },
 ];
 

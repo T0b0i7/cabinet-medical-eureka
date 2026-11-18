@@ -6,14 +6,14 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const faqs = [
   {
-    question: "Qu’est-ce que le Cabinet Médical EURÊKA ?",
+    question: "Qu’est-ce que le Cabinet Médical ?",
     answer:
-      "Le Cabinet Médical EURÊKA est un cabinet de proximité à Porto-Novo proposant l’ORL, la chirurgie cervico-faciale et la médecine générale, avec un accueil 7j/7 de 08h00 à 18h00.",
+      "Le Cabinet Médical est un cabinet de proximité à Cotonou proposant l’ORL, la chirurgie cervico-faciale et la médecine générale, avec un accueil 7j/7 de 08h00 à 18h00.",
   },
   {
     question: "Comment prendre rendez-vous au cabinet ?",
     answer:
-      "Réservez en ligne depuis notre site, par téléphone au +229 01 41 60 83 39 ou par WhatsApp. Choisissez la spécialité, la date et le créneau souhaités.",
+      "Réservez en ligne depuis notre site, par téléphone au +229 01 00 00 00 00 ou par WhatsApp. Choisissez la spécialité, la date et le créneau souhaités.",
   },
   {
     question: "Le cabinet propose-t-il des téléconsultations ?",
@@ -122,7 +122,7 @@ export default function FaqsSearch() {
   return (
     <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h2 className="text-3xl font-extrabold text-gray-900 mb-8 text-center">
-        Questions fréquentes about <span className="text-blue-700">Cabinet Médical EURÊKA</span>
+        Questions fréquentes about <span className="text-blue-700">Cabinet Médical</span>
       </h2>
 
       <div>

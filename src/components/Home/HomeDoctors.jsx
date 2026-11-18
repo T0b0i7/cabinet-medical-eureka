@@ -11,14 +11,14 @@ const doctors = [
     specialty: "Oto-Rhino-Laryngologiste (ORL)",
     photo:
       "https://plus.unsplash.com/premium_photo-1675807264002-74250202f195?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    phone: "+229 01 41 60 83 39",
-    email: "contact@cabinet-eureka.bj",
+    phone: "+229 01 00 00 00 00",
+    email: "contact@votre-cabinet.bj",
     experienceYears: 15,
     achievements:
       "Consultations ORL spécialisées : audition, sinusites, vertiges et pathologies de la gorge.",
     salary: "Consultation : 10 000 à 15 000 FCFA",
     bio:
-      "Le Dr Romuald Adjakpa est oto-rhino-laryngologiste au Cabinet Médical EURÊKA. Il prend en charge les troubles de l’audition, les sinusites chroniques, les vertiges et les affections ORL de l’enfant comme de l’adulte.",
+      "Le Dr Romuald Adjakpa est oto-rhino-laryngologiste au Cabinet Médical. Il prend en charge les troubles de l’audition, les sinusites chroniques, les vertiges et les affections ORL de l’enfant comme de l’adulte.",
   },
   {
     id: 2,
@@ -26,8 +26,8 @@ const doctors = [
     specialty: "Chirurgien cervico-facial",
     photo:
       "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRvY3RvcnN8ZW58MHx8MHx8fDA%3D",
-    phone: "+229 01 41 60 83 39",
-    email: "contact@cabinet-eureka.bj",
+    phone: "+229 01 00 00 00 00",
+    email: "contact@votre-cabinet.bj",
     experienceYears: 12,
     achievements:
       "Explorations et actes chirurgicaux spécialisés de la tête et du cou.",
@@ -41,8 +41,8 @@ const doctors = [
     specialty: "Oto-Rhino-Laryngologiste — audiologie",
     photo:
       "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    phone: "+229 01 41 60 83 39",
-    email: "contact@cabinet-eureka.bj",
+    phone: "+229 01 00 00 00 00",
+    email: "contact@votre-cabinet.bj",
     experienceYears: 9,
     achievements:
       "Suivi des troubles de l’audition et accompagnement des patients appareillés.",
@@ -56,8 +56,8 @@ const doctors = [
     specialty: "Médecin généraliste",
     photo:
       "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGRvY3RvcnN8ZW58MHx8MHx8fDA%3D",
-    phone: "+229 01 41 60 83 39",
-    email: "contact@cabinet-eureka.bj",
+    phone: "+229 01 00 00 00 00",
+    email: "contact@votre-cabinet.bj",
     experienceYears: 11,
     achievements:
       "Consultations courantes, bilans de santé et prise en charge des urgences légères.",

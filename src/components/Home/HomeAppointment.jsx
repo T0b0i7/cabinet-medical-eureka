@@ -242,7 +242,7 @@ export default function HomeAppointment() {
               value={formData.phone}
               onChange={handleChange}
               disabled={isEnvoyerting}
-              placeholder="+229 01 41 60 83 39"
+              placeholder="+229 01 00 00 00 00"
               required
               aria-invalid={!!errors.phone}
               aria-describedby={errors.phone ? "phone-error" : undefined}

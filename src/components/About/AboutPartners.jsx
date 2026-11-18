@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const partnerList = [
   {
     id: 1,
-    name: "CHU de Porto-Novo",
+    name: "CHU de Cotonou",
     logo: "https://globalhealth.co/wp-content/uploads/2023/05/global-health.png",
     website: "https://globalhealth.example.com",
   },

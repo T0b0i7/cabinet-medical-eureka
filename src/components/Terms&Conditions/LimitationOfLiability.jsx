@@ -14,7 +14,7 @@ const LimitationOfLiability = () => {
         Limitation of Liability
       </h2>
 
-      <p className="mb-6 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-light text-gray-800">Le Cabinet Médical EURÊKA et ses partenaires ne peuvent être tenus responsables des dommages directs, indirects, accessoires ou consécutifs résultant de l’utilisation du site.</p>
+      <p className="mb-6 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-light text-gray-800">Le Cabinet Médical et ses partenaires ne peuvent être tenus responsables des dommages directs, indirects, accessoires ou consécutifs résultant de l’utilisation du site.</p>
 
       <p className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-light text-gray-800">En utilisant nos services, vous reconnaissez le faire à vos propres risques. Nous nous efforçons de fournir des informations exactes et à jour, sans pouvoir en garantir l’exhaustivité.</p>
     </section>

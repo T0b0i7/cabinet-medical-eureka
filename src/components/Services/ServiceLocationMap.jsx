@@ -14,7 +14,7 @@ const ServiceLocationMap = () => {
           Nos <span className="text-blue-600">lieux de consultation</span>
         </h2>
         <p className="mt-4 text-gray-600 text-lg sm:text-xl leading-relaxed">
-          Nous accueillons les patients à Porto-Novo et dans ses environs. Retrouvez notre adresse sur la carte ci-dessous.
+          Nous accueillons les patients à Cotonou et dans ses environs. Retrouvez notre adresse sur la carte ci-dessous.
         </p>
       </div>
 

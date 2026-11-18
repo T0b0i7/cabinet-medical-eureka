@@ -12,7 +12,7 @@ const insuranceData = {
   phone: "+229 01 21 30 00 00",
   email: "contact@cnss.bj",
   claimsAddress: `CNSS Bénin
-Porto-Novo
+Cotonou
 Bénin`,
 };
 

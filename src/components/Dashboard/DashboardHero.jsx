@@ -355,7 +355,7 @@ function AccountSidebar({ open, onClose, userName }) {
             Name: <span className="font-medium">{userName}</span>
           </p>
           <p className="text-gray-700">
-            E-mail: <span className="font-medium">admin@cabinet-eureka.bj</span>
+            E-mail: <span className="font-medium">admin@votre-cabinet.bj</span>
           </p>
           <p className="text-gray-700">
             Role: <span className="font-medium">Administrateur</span>
@@ -611,7 +611,7 @@ export default function DashboardHeroFull() {
         {/* Header */}
         <header className="flex justify-between items-center max-w-5xl mx-auto">
           <h1 tabIndex={-1} className="text-3xl font-extrabold tracking-tight text-gray-900 select-none leading-tight">
-            Tableau de bord — Cabinet Médical EURÊKA
+            Tableau de bord — Cabinet Médical
           </h1>
 
           <nav className="flex items-center space-x-6" aria-label="Navigation utilisateur">

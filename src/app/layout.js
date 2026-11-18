@@ -18,22 +18,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Cabinet Médical EURÊKA — Porto-Novo, Bénin",
+  title: "Cabinet Médical — Cotonou, Bénin",
   description:
-    "Cabinet Médical EURÊKA à Porto-Novo : ORL, chirurgie cervico-faciale et médecine générale. Ouvert 7j/7 de 08h00 à 18h00. Prise de rendez-vous en ligne et par WhatsApp.",
+    "Cabinet Médical à Cotonou : ORL, chirurgie cervico-faciale et médecine générale. Ouvert 7j/7 de 08h00 à 18h00. Prise de rendez-vous en ligne et par WhatsApp.",
   keywords: [
-    "Cabinet Médical EURÊKA",
-    "médecin Porto-Novo",
+    "Cabinet Médical",
+    "médecin Cotonou",
     "ORL Bénin",
     "chirurgie cervico-faciale",
-    "médecine générale Porto-Novo",
+    "médecine générale Cotonou",
     "rendez-vous médical Bénin",
   ],
-  authors: [{ name: "Cabinet Médical EURÊKA" }],
+  authors: [{ name: "Cabinet Médical" }],
   openGraph: {
-    title: "Cabinet Médical EURÊKA — Porto-Novo",
+    title: "Cabinet Médical — Cotonou",
     description:
-      "ORL, chirurgie cervico-faciale et médecine générale à Porto-Novo. Ouvert 7j/7 de 08h00 à 18h00.",
+      "ORL, chirurgie cervico-faciale et médecine générale à Cotonou. Ouvert 7j/7 de 08h00 à 18h00.",
     locale: "fr_BJ",
     type: "website",
   },

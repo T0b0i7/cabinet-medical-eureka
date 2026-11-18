@@ -187,7 +187,7 @@ const PatientPersonalDetails = () => {
             value={formData.address}
             onChange={handleChange}
             error={errors.address}
-            placeholder="Porto-Novo, Bénin"
+            placeholder="Cotonou, Bénin"
             required
             disabled={submitting}
             rows={3}

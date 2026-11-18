@@ -14,7 +14,7 @@ function PrivacyPolicyIntroduction() {
           Introduction
         </h2>
 
-        <p className="max-w-3xl mx-auto leading-relaxed text-gray-800 text-lg">Au Cabinet Médical EURÊKA, la protection de vos données personnelles est une responsabilité que nous prenons au sérieux. Cette politique de confidentialité explique comment nous collectons, utilisons, partageons et protégeons vos informations lorsque vous consultez notre site. Nous vous invitons à la lire attentivement pour comprendre vos droits et notre engagement.</p>
+        <p className="max-w-3xl mx-auto leading-relaxed text-gray-800 text-lg">Au Cabinet Médical, la protection de vos données personnelles est une responsabilité que nous prenons au sérieux. Cette politique de confidentialité explique comment nous collectons, utilisons, partageons et protégeons vos informations lorsque vous consultez notre site. Nous vous invitons à la lire attentivement pour comprendre vos droits et notre engagement.</p>
       </div>
     </section>
   );

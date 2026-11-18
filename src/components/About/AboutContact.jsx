@@ -69,21 +69,21 @@ const AboutContact = () => {
             <div className="flex items-center space-x-4 text-gray-800">
               <FaPhoneAlt className="text-blue-700 w-6 h-6" aria-hidden="true" />
               <a
-                href="tel:+2290141608339"
+                href="tel:+2290100000000"
                 className="hover:text-blue-700 transition"
-                aria-label="Appelez-nous au +229 01 41 60 83 39"
+                aria-label="Appelez-nous au +229 01 00 00 00 00"
               >
-                +229 01 41 60 83 39
+                +229 01 00 00 00 00
               </a>
             </div>
             <div className="flex items-center space-x-4 text-gray-800">
               <FaEnvelope className="text-blue-700 w-6 h-6" aria-hidden="true" />
               <a
-                href="mailto:contact@cabinet-eureka.bj"
+                href="mailto:contact@votre-cabinet.bj"
                 className="hover:text-blue-700 transition"
-                aria-label="Écrivez-nous à contact@cabinet-eureka.bj"
+                aria-label="Écrivez-nous à contact@votre-cabinet.bj"
               >
-                contact@cabinet-eureka.bj
+                contact@votre-cabinet.bj
               </a>
             </div>
             <div className="flex flex-col space-y-2 text-gray-800 max-w-md">
@@ -93,7 +93,7 @@ const AboutContact = () => {
                   aria-hidden="true"
                 />
                 <address className="not-italic">
-                  Cabinet Médical EURÊKA, Porto-Novo, Bénin
+                  Cabinet Médical, Cotonou, Bénin
                 </address>
               </div>
 
@@ -101,7 +101,7 @@ const AboutContact = () => {
               <div className="w-full aspect-[16/9] rounded-lg overflow-hidden border border-gray-300 shadow-sm mt-12">
                 <iframe
                   title="Localisation du cabinet sur la carte"
-                  src="https://www.google.com/maps?q=Porto-Novo,B%C3%A9nin&output=embed"
+                  src="https://www.google.com/maps?q=Cotonou,B%C3%A9nin&output=embed"
                   loading="lazy"
                   className="w-full h-full border-0"
                   allowFullScreen

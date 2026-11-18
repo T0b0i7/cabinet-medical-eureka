@@ -22,7 +22,7 @@ const ContactInfo = () => {
             aria-hidden="true"
           />
           <address className="not-italic leading-relaxed">
-            Porto-Novo,
+            Cotonou,
             <br />
             Bénin
             <br />
@@ -43,10 +43,10 @@ const ContactInfo = () => {
         <div className="flex items-center gap-4">
           <FaEnvelope className="w-6 h-6 text-blue-600" aria-hidden="true" />
           <a
-            href="mailto:contact@cabinet-eureka.bj"
+            href="mailto:contact@votre-cabinet.bj"
             className="rounded focus:outline-none focus:ring-2 focus:ring-blue-400 hover:underline"
           >
-            contact@cabinet-eureka.bj
+            contact@votre-cabinet.bj
           </a>
         </div>
 

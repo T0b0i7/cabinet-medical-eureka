@@ -14,7 +14,7 @@ const TerminationClause = () => {
         Termination Clause
       </h2>
 
-      <p className="mb-6 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-light text-gray-800">Le Cabinet Médical EURÊKA se réserve le droit de suspendre ou de mettre fin à votre accès à nos services à tout moment, sans préavis, en cas de manquement aux présentes conditions.</p>
+      <p className="mb-6 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-light text-gray-800">Le Cabinet Médical se réserve le droit de suspendre ou de mettre fin à votre accès à nos services à tout moment, sans préavis, en cas de manquement aux présentes conditions.</p>
 
       <p className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-light text-gray-800">En cas de résiliation, vos droits d’accès prennent fin immédiatement, les obligations nées antérieurement demeurant applicables.</p>
     </section>

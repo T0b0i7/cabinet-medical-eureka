@@ -15,7 +15,7 @@ const TermsConditionsHero = () => {
           Conditions générales
         </h1>
 
-        <p className="mx-auto max-w-3xl text-lg sm:text-xl font-light leading-relaxed opacity-90">Avant d’utiliser le site du Cabinet Médical EURÊKA, veuillez prendre un moment pour lire attentivement ces conditions générales. En accédant à nos services, vous acceptez de les respecter.</p>
+        <p className="mx-auto max-w-3xl text-lg sm:text-xl font-light leading-relaxed opacity-90">Avant d’utiliser le site du Cabinet Médical, veuillez prendre un moment pour lire attentivement ces conditions générales. En accédant à nos services, vous acceptez de les respecter.</p>
       </div>
     </section>
   );

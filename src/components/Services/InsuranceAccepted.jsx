@@ -150,7 +150,7 @@ export default function InsuranceAccepted() {
           className="max-w-3xl text-center text-lg sm:text-xl text-gray-700 font-light mb-14"
           variants={itemVariants}
         >
-          Le Cabinet Médical EURÊKA travaille avec plusieurs assurances et mutuelles pour faciliter votre prise en charge. Vérifiez ci-dessous si votre assurance est acceptée.
+          Le Cabinet Médical travaille avec plusieurs assurances et mutuelles pour faciliter votre prise en charge. Vérifiez ci-dessous si votre assurance est acceptée.
         </motion.p>
 
         <motion.ul

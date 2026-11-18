@@ -15,13 +15,13 @@ const faqsByCategory = {
       id: 101,
       question: "Quelles spécialités propose le cabinet ?",
       answer:
-        "Le Cabinet Médical EURÊKA propose l’ORL, la chirurgie cervico-faciale et la médecine générale, ainsi que des bilans de santé et la prise en charge des urgences légères.",
+        "Le Cabinet Médical propose l’ORL, la chirurgie cervico-faciale et la médecine générale, ainsi que des bilans de santé et la prise en charge des urgences légères.",
     },
     {
       id: 102,
       question: "Comment contacter le cabinet ?",
       answer:
-        "Vous pouvez nous joindre au +229 01 41 60 83 39, par WhatsApp ou par e-mail à contact@cabinet-eureka.bj, 7j/7 de 08h00 à 18h00.",
+        "Vous pouvez nous joindre au +229 01 00 00 00 00, par WhatsApp ou par e-mail à contact@votre-cabinet.bj, 7j/7 de 08h00 à 18h00.",
     },
   ],
   2: [

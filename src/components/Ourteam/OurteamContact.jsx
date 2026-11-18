@@ -141,12 +141,12 @@ export default function OurteamContact() {
           {/* Contact details panel */}
           <aside className="flex flex-col justify-between bg-white rounded-2xl shadow-lg p-6 sm:p-8">
             <div className="space-y-6">
-              <ContactInfoItem icon={<FaPhoneAlt />} label="Appelez-nous" value="+229 01 41 60 83 39" />
-              <ContactInfoItem icon={<FaEnvelope />} label="Écrivez-nous" value="contact@cabinet-eureka.bj" />
+              <ContactInfoItem icon={<FaPhoneAlt />} label="Appelez-nous" value="+229 01 00 00 00 00" />
+              <ContactInfoItem icon={<FaEnvelope />} label="Écrivez-nous" value="contact@votre-cabinet.bj" />
               <ContactInfoItem
                 icon={<FaMapMarkerAlt />}
                 label="Rendez-nous visite"
-                value="Porto-Novo, Bénin"
+                value="Cotonou, Bénin"
               />
             </div>
 

@@ -69,7 +69,7 @@ export default function AboutMission() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
           >
-            Notre mission est d’offrir des soins de qualité, accessibles et humains aux familles de Porto-Novo et de ses environs. Nous mettons le plateau technique et l’écoute au service de chaque patient.
+            Notre mission est d’offrir des soins de qualité, accessibles et humains aux familles de Cotonou et de ses environs. Nous mettons le plateau technique et l’écoute au service de chaque patient.
           </motion.p>
 
           <motion.ul

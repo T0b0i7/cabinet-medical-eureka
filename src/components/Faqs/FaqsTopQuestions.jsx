@@ -3,8 +3,8 @@
 import React from "react";
 
 const topQuestions = [
-  "Qu’est-ce que le Cabinet Médical EURÊKA ?",
-  "Comment prendre rendez-vous au Cabinet Médical EURÊKA ?",
+  "Qu’est-ce que le Cabinet Médical ?",
+  "Comment prendre rendez-vous au Cabinet Médical ?",
   "Le cabinet propose-t-il des téléconsultations ?",
   "Quelles assurances sont acceptées ?",
   "Les médecins du cabinet sont-ils qualifiés ?",

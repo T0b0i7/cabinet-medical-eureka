@@ -6,7 +6,7 @@ import { FaChevronDown } from "react-icons/fa";
 
 const faqItems = [
   {
-    question: "Quels services propose le Cabinet Médical EURÊKA ?",
+    question: "Quels services propose le Cabinet Médical ?",
     answer:
       "Le cabinet propose des consultations d’ORL, de chirurgie cervico-faciale et de médecine générale, ainsi que des bilans de santé, le suivi des maladies chroniques et la prise en charge des urgences légères.",
   },
@@ -18,7 +18,7 @@ const faqItems = [
   {
     question: "Peut-on prendre rendez-vous en ligne ?",
     answer:
-      "Oui, vous pouvez réserver votre rendez-vous en ligne depuis notre site, par téléphone au +229 01 41 60 83 39 ou directement par WhatsApp. Des créneaux sont disponibles le jour même selon les possibilités.",
+      "Oui, vous pouvez réserver votre rendez-vous en ligne depuis notre site, par téléphone au +229 01 00 00 00 00 ou directement par WhatsApp. Des créneaux sont disponibles le jour même selon les possibilités.",
   },
   {
     question: "Acceptez-vous les assurances santé ?",

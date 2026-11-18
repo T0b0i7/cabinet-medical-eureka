@@ -5,7 +5,7 @@ import React from "react";
 const faqData = [
   {
     id: 1,
-    question: "Quels services propose le Cabinet Médical EURÊKA ?",
+    question: "Quels services propose le Cabinet Médical ?",
     answer:
       "Le cabinet propose des consultations d’ORL, de chirurgie cervico-faciale et de médecine générale, des bilans de santé, le suivi des maladies chroniques et la prise en charge des urgences légères.",
   },
@@ -13,7 +13,7 @@ const faqData = [
     id: 2,
     question: "Comment prendre ou modifier un rendez-vous ?",
     answer:
-      "Vous pouvez réserver ou modifier un rendez-vous en ligne, par téléphone au +229 01 41 60 83 39 ou par WhatsApp, 7j/7 de 08h00 à 18h00.",
+      "Vous pouvez réserver ou modifier un rendez-vous en ligne, par téléphone au +229 01 00 00 00 00 ou par WhatsApp, 7j/7 de 08h00 à 18h00.",
   },
   {
     id: 3,

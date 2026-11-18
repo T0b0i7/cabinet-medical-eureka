@@ -14,7 +14,7 @@ const IntellectualProperty = () => {
         Intellectual Property
       </h2>
 
-      <p className="mb-6 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-light text-gray-800">L’ensemble des contenus, marques, logos et éléments de propriété intellectuelle présents sur le site du Cabinet Médical EURÊKA sont détenus ou dûment licenciés par le cabinet.</p>
+      <p className="mb-6 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-light text-gray-800">L’ensemble des contenus, marques, logos et éléments de propriété intellectuelle présents sur le site du Cabinet Médical sont détenus ou dûment licenciés par le cabinet.</p>
 
       <p className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-light text-gray-800">Toute utilisation non autorisée de notre propriété intellectuelle peut enfreindre le droit d’auteur ou d’autres lois et entraîner des conséquences juridiques.</p>
     </section>

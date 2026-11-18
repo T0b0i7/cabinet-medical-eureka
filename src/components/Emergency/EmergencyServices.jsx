@@ -107,7 +107,7 @@ const EmergencyServices = () => {
             type="button"
             className="mt-10 px-8 py-3 bg-blue-700 text-white font-semibold rounded-lg shadow-md hover:bg-blue-800 transition-colors focus:outline-none focus:ring-4 focus:ring-blue-300"
             aria-label="Appeler le cabinet"
-            onClick={() => window.open("tel:+2290141608339")}
+            onClick={() => window.open("tel:+2290100000000")}
           >
             Contacter les urgences
           </button>

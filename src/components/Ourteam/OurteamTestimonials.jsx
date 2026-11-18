@@ -21,7 +21,7 @@ const testimonials = [
     name: "Benoît Sossou",
     role: "Infirmier",
     photo: "https://plus.unsplash.com/premium_photo-1661688930817-025934217478?q=80&w=1287&auto=format&fit=crop",
-    location: "Porto-Novo, Bénin",
+    location: "Cotonou, Bénin",
     date: "1er août 2025",
     rating: 4,
     text:
@@ -36,7 +36,7 @@ const testimonials = [
     date: "20 juin 2025",
     rating: 5,
     text:
-      "Un accueil chaleureux et une vraie compétence. Je recommande vivement le Cabinet Médical EURÊKA.",
+      "Un accueil chaleureux et une vraie compétence. Je recommande vivement le Cabinet Médical.",
   },
 ];
 

@@ -104,7 +104,7 @@ export default function AboutHero() {
             className="mt-6 max-w-xl mx-auto md:mx-0 text-lg sm:text-xl md:text-2xl font-light leading-relaxed text-gray-700 tracking-wide"
             variants={fadeInItem}
           >
-            Le Cabinet Médical EURÊKA met à votre service une équipe expérimentée en ORL, chirurgie cervico-faciale et médecine générale, avec une attention particulière au confort de chaque patient.
+            Le Cabinet Médical met à votre service une équipe expérimentée en ORL, chirurgie cervico-faciale et médecine générale, avec une attention particulière au confort de chaque patient.
           </motion.p>
 
           <motion.button

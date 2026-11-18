@@ -7,14 +7,14 @@ function ContactInfo() {
   return (
     <div className="flex flex-col space-y-3 text-gray-700 text-sm sm:text-base select-none">
       <ContactItem
-        href="tel:+2290141608339"
+        href="tel:+2290100000000"
         iconPath="M3 10h1l3 3-1.5 1.5a11 11 0 005 5L12 21l3-3 3-3v-1"
-        label="+229 01 41 60 83 39"
+        label="+229 01 00 00 00 00"
       />
       <ContactItem
-        href="mailto:contact@cabinet-eureka.bj"
+        href="mailto:contact@votre-cabinet.bj"
         iconPath="M16 12H8m8 0v6a2 2 0 01-2 2H8a2 2 0 01-2-2v-6"
-        label="contact@cabinet-eureka.bj"
+        label="contact@votre-cabinet.bj"
       />
     </div>
   );
@@ -62,7 +62,7 @@ export default function PatientInfoFooter() {
           transition={{ duration: 0.7, delay: 0.3 }}
         >
           <h3 className="text-2xl sm:text-2xl md:text-3xl font-semibold text-blue-700 mb-2 select-none leading-tight">
-            Merci de faire confiance au Cabinet Médical EURÊKA
+            Merci de faire confiance au Cabinet Médical
           </h3>
           <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
             Votre santé et votre bien-être sont nos priorités. Nous vous

@@ -230,7 +230,7 @@ export default function HomeContact() {
             id="phone"
             name="phone"
             type="tel"
-            placeholder="+229 01 41 60 83 39"
+            placeholder="+229 01 00 00 00 00"
             value={formData.phone}
             onChange={handleChange}
             disabled={isSubmitting}

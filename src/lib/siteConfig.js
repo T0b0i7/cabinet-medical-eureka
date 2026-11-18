@@ -1,17 +1,17 @@
-// Configuration de marque du Cabinet Médical EURÊKA.
+// Configuration de marque du Cabinet Médical.
 // Toutes les valeurs peuvent être surchargées via l'URL :
 //   ?clinique=...&ville=...&tel=...&email=...&adresse=...
 // ce qui permet de réutiliser le même déploiement pour d'autres prospects.
 
 export const DEFAULT_SITE = {
-  clinic: "Cabinet Médical EURÊKA",
-  city: "Porto-Novo",
+  clinic: "Cabinet Médical",
+  city: "Cotonou",
   country: "Bénin",
-  phone: "+229 01 41 60 83 39",
-  phoneRaw: "+2290141608339",
-  whatsapp: "2290141608339",
-  email: "contact@cabinet-eureka.bj",
-  address: "Porto-Novo, Bénin",
+  phone: "+229 01 00 00 00 00",
+  phoneRaw: "+2290100000000",
+  whatsapp: "2290100000000",
+  email: "contact@votre-cabinet.bj",
+  address: "Cotonou, Bénin",
   hours: "Ouvert 7j/7, de 08h00 à 18h00",
   hoursShort: "7j/7 · 08h00 – 18h00",
   tagline: "Votre santé, notre priorité",

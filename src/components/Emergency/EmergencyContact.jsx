@@ -89,10 +89,10 @@ const EmergencyContact = () => {
                   </svg>
                 }
                 label="Téléphone"
-                href="tel:+2290141608339"
+                href="tel:+2290100000000"
                 ariaLabel="Appeler le cabinet"
               >
-                +229 01 41 60 83 39
+                +229 01 00 00 00 00
               </ContactDetail>
 
               <ContactDetail
@@ -110,10 +110,10 @@ const EmergencyContact = () => {
                   </svg>
                 }
                 label="E-mail"
-                href="mailto:contact@cabinet-eureka.bj"
+                href="mailto:contact@votre-cabinet.bj"
                 ariaLabel="Envoyer un e-mail au cabinet"
               >
-                contact@cabinet-eureka.bj
+                contact@votre-cabinet.bj
               </ContactDetail>
 
               <ContactDetail
@@ -137,9 +137,9 @@ const EmergencyContact = () => {
                 label="Adresse"
               >
                 <address className="not-italic max-w-md">
-                  Cabinet Médical EURÊKA,
+                  Cabinet Médical,
                   <br />
-                  Porto-Novo, Bénin
+                  Cotonou, Bénin
                 </address>
               </ContactDetail>
             </div>

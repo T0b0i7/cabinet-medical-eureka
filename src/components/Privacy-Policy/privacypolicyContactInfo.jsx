@@ -19,7 +19,7 @@ function ContactInfoSection() {
           <div className="flex items-center gap-4">
             <FaMapMarkerAlt className="flex-shrink-0 w-6 h-6 text-blue-600" />
             <address className="not-italic">
-              Porto-Novo,
+              Cotonou,
               <br />
               Bénin
             </address>
@@ -34,8 +34,8 @@ function ContactInfoSection() {
 
           <div className="flex items-center gap-4">
             <FaEnvelope className="flex-shrink-0 w-6 h-6 text-blue-600" />
-            <a href="mailto:contact@cabinet-eureka.bj" className="hover:underline">
-              contact@cabinet-eureka.bj
+            <a href="mailto:contact@votre-cabinet.bj" className="hover:underline">
+              contact@votre-cabinet.bj
             </a>
           </div>
 

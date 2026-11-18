@@ -18,12 +18,12 @@ const faqList = [
   {
     question: "Recevez-vous les patients venus de l’extérieur ?",
     answer:
-      "Oui, le cabinet accueille les patients de Porto-Novo et de tout le Bénin, ainsi que les visiteurs de passage.",
+      "Oui, le cabinet accueille les patients de Cotonou et de tout le Bénin, ainsi que les visiteurs de passage.",
   },
   {
     question: "Comment rejoindre votre équipe ?",
     answer:
-      "Vous pouvez adresser votre candidature à contact@cabinet-eureka.bj.",
+      "Vous pouvez adresser votre candidature à contact@votre-cabinet.bj.",
   },
   {
     question: "Quelles sont vos spécialités médicales ?",

@@ -7,7 +7,7 @@ const emergencyContactsData = [
     id: 1,
     name: "Adjovi Hounsou",
     relationship: "Conjoint(e)",
-    phone: "+229 01 41 60 83 39",
+    phone: "+229 01 00 00 00 00",
     email: "adjovi.hounsou@example.bj",
   },
   {

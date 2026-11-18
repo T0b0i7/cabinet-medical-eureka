@@ -10,7 +10,7 @@ const teamProfiles = [
     photo:
       "https://images.unsplash.com/photo-1688588162416-f7a7e726e0bf?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     bio: "Accueille les patients et coordonne les rendez-vous au quotidien.",
-    email: "accueil@cabinet-eureka.bj",
+    email: "accueil@votre-cabinet.bj",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const teamProfiles = [
     photo:
       "https://plus.unsplash.com/premium_photo-1661764878654-3d0fc2eefcca?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     bio: "Assure les soins infirmiers et le suivi des patients au cabinet.",
-    email: "soins@cabinet-eureka.bj",
+    email: "soins@votre-cabinet.bj",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const teamProfiles = [
     photo:
       "https://images.unsplash.com/photo-1679581356089-e65ea18c7f61?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     bio: "Accompagne les futures mamans avant et après la naissance.",
-    email: "maternite@cabinet-eureka.bj",
+    email: "maternite@votre-cabinet.bj",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const teamProfiles = [
     photo:
       "https://plus.unsplash.com/premium_photo-1723514536306-26fe5c4adeb7?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     bio: "Coordonne les parcours de soins et l’organisation du cabinet.",
-    email: "coordination@cabinet-eureka.bj",
+    email: "coordination@votre-cabinet.bj",
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ const teamProfiles = [
     photo:
       "https://plus.unsplash.com/premium_photo-1702598606780-7ecee80ef5e1?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     bio: "Veille à la qualité et à la sécurité des soins dispensés.",
-    email: "qualite@cabinet-eureka.bj",
+    email: "qualite@votre-cabinet.bj",
   },
   {
     id: 6,
@@ -55,7 +55,7 @@ const teamProfiles = [
     photo:
       "https://plus.unsplash.com/premium_photo-1661718954553-f775043016d5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     bio: "Gère les stocks, le matériel médical et la logistique du cabinet.",
-    email: "logistique@cabinet-eureka.bj",
+    email: "logistique@votre-cabinet.bj",
   },
 ];
 

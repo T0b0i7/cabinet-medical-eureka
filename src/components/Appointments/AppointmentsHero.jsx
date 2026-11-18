@@ -586,13 +586,13 @@ export default function AppointmentsHero() {
                 <div>
                   <div className="text-sm font-medium text-gray-900">Besoin d’aide ?</div>
                   <div className="text-xs text-slate-500">
-                    Appelez-nous au <span className="font-semibold">+229 01 41 60 83 39</span>
+                    Appelez-nous au <span className="font-semibold">+229 01 00 00 00 00</span>
                   </div>
                 </div>
                 <div>
                   <a
                     className="px-3 py-2 rounded-lg border border-slate-300 hover:bg-slate-100"
-                    href="tel:+2290141608339"
+                    href="tel:+2290100000000"
                   >
                     Appeler
                   </a>
