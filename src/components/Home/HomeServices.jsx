@@ -9,6 +9,8 @@ import {
   FaCapsules,
   FaXRay,
   FaBriefcaseMedical,
+  FaBaby,
+  FaFemale,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -39,6 +41,24 @@ const services = [
     description:
       "Consultations courantes, bilans de santé et prise en charge des urgences légères.",
     icon: <FaStethoscope className="text-4xl text-blue-700" />,
+  },
+  {
+    title: "Pédiatrie",
+    description:
+      "Suivi du nourrisson et de l’enfant, vaccinations et conseils aux parents.",
+    icon: <FaBaby className="text-4xl text-pink-600" />,
+  },
+  {
+    title: "Gynécologie-Obstétrique",
+    description:
+      "Suivi de grossesse, consultations gynécologiques et échographies.",
+    icon: <FaFemale className="text-4xl text-purple-600" />,
+  },
+  {
+    title: "Cardiologie",
+    description:
+      "Dépistage de l’hypertension, électrocardiogramme et bilan cardiovasculaire.",
+    icon: <FaHeartbeat className="text-4xl text-rose-600" />,
   },
 ];
 

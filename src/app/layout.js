@@ -6,6 +6,7 @@ import Footer from "../components/Footer/Footer.jsx";
 import SmoothScrollInit from "../components/SmoothScrollInit.jsx";
 import SiteConfigProvider from "../components/SiteConfigProvider.jsx";
 import WhatsAppButton from "../components/WhatsAppButton.jsx";
+import PrototypeNotice from "../components/PrototypeNotice.jsx";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,6 +48,9 @@ export default function RootLayout({ children }) {
       >
         <SiteConfigProvider>
           <Navbar />
+
+          {/* Bandeau prototype (version modèle uniquement) */}
+          <PrototypeNotice />
 
           {/* Initialisation du défilement fluide */}
           <SmoothScrollInit />

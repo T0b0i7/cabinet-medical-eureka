@@ -9,6 +9,10 @@ import {
   FaUserMd,
   FaPills,
   FaXRay,
+  FaBaby,
+  FaFemale,
+  FaTooth,
+  FaBone,
 } from "react-icons/fa";
 
 const services = [
@@ -53,6 +57,34 @@ const services = [
     title: "Radiologie et imagerie",
     description:
       "Explorations et examens complémentaires réalisés avec un plateau technique moderne.",
+  },
+  {
+    id: 7,
+    icon: <FaBaby className="text-blue-600" size={32} aria-hidden="true" />,
+    title: "Pédiatrie",
+    description:
+      "Suivi du nourrisson et de l’enfant, vaccinations et accompagnement des parents. Tarif : 7 000 FCFA.",
+  },
+  {
+    id: 8,
+    icon: <FaFemale className="text-blue-600" size={32} aria-hidden="true" />,
+    title: "Gynécologie-Obstétrique",
+    description:
+      "Suivi de grossesse, consultations gynécologiques et échographies. Tarif : 10 000 FCFA.",
+  },
+  {
+    id: 9,
+    icon: <FaTooth className="text-blue-600" size={32} aria-hidden="true" />,
+    title: "Dentaire et stomatologie",
+    description:
+      "Détartrage, soins dentaires et conseils d’hygiène bucco-dentaire. Tarif : 10 000 FCFA.",
+  },
+  {
+    id: 10,
+    icon: <FaBone className="text-blue-600" size={32} aria-hidden="true" />,
+    title: "Kinésithérapie",
+    description:
+      "Rééducation, prise en charge des douleurs et séances de mobilité. Tarif : 8 000 FCFA / séance.",
   },
 ];
 

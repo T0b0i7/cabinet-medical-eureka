@@ -19,6 +19,14 @@ export const DEFAULT_SITE = {
 
 export const SPECIALTIES = [
   {
+    id: "medecine-generale",
+    label: "Médecine Générale & Suivi",
+    short: "Médecine Générale",
+    description:
+      "Consultations courantes, bilans de santé et prise en charge des urgences légères.",
+    price: "5 000 FCFA",
+  },
+  {
     id: "orl",
     label: "Oto-Rhino-Laryngologie (ORL)",
     short: "ORL",
@@ -35,12 +43,76 @@ export const SPECIALTIES = [
     price: "sur devis",
   },
   {
-    id: "medecine-generale",
-    label: "Médecine Générale & Suivi",
-    short: "Médecine Générale",
+    id: "pediatrie",
+    label: "Pédiatrie",
+    short: "Pédiatrie",
     description:
-      "Consultations courantes, bilans de santé et prise en charge des urgences légères.",
-    price: "5 000 FCFA",
+      "Suivi du nourrisson et de l’enfant, vaccinations, croissance et conseils aux parents.",
+    price: "7 000 FCFA",
+  },
+  {
+    id: "gynecologie",
+    label: "Gynécologie-Obstétrique",
+    short: "Gynécologie",
+    description:
+      "Suivi de grossesse, consultations gynécologiques, planning familial et échographies.",
+    price: "10 000 FCFA",
+  },
+  {
+    id: "cardiologie",
+    label: "Cardiologie",
+    short: "Cardiologie",
+    description:
+      "Dépistage et suivi de l’hypertension, électrocardiogramme et bilan cardiovasculaire.",
+    price: "15 000 FCFA",
+  },
+  {
+    id: "dermatologie",
+    label: "Dermatologie",
+    short: "Dermatologie",
+    description:
+      "Traitement des affections de la peau, allergies, acné et suivi des maladies chroniques.",
+    price: "10 000 FCFA",
+  },
+  {
+    id: "ophtalmologie",
+    label: "Ophtalmologie",
+    short: "Ophtalmologie",
+    description:
+      "Contrôle de la vue, dépistage du glaucome et suivi des pathologies oculaires.",
+    price: "10 000 FCFA",
+  },
+  {
+    id: "dentaire",
+    label: "Dentaire & Stomatologie",
+    short: "Dentaire",
+    description:
+      "Détartrage, soins dentaires, extractions simples et conseils d’hygiène bucco-dentaire.",
+    price: "10 000 FCFA",
+  },
+  {
+    id: "kinesitherapie",
+    label: "Kinésithérapie",
+    short: "Kinésithérapie",
+    description:
+      "Rééducation après traumatisme, prise en charge des douleurs et séances de mobilité.",
+    price: "8 000 FCFA / séance",
+  },
+  {
+    id: "imagerie",
+    label: "Imagerie & Échographie",
+    short: "Imagerie",
+    description:
+      "Échographies abdominales, obstétricales et pelviennes sur rendez-vous.",
+    price: "12 000 FCFA",
+  },
+  {
+    id: "laboratoire",
+    label: "Laboratoire d’analyses",
+    short: "Analyses",
+    description:
+      "Prélèvements sanguins, bilans biologiques courants et résultats sous 24 à 48 h.",
+    price: "à partir de 5 000 FCFA",
   },
 ];
 
